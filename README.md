@@ -18,7 +18,7 @@ Here's all the software I use and the quirks to them:
 Here's a list of all fonts used and where they are used.
 
 - Arial
-    - Used with no anti-aliasing at 8-10px to replace smaller pixel fonts (like "Press START to skip")
+    - Used bold with no anti-aliasing at 8-10px to replace smaller pixel fonts (like "Press START to skip")
 - Arial Rounded MT Bold
     - Used for any cartoon text replacements
 - FOT-Kurokane Std (Megamix Modified)
