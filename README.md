@@ -21,6 +21,7 @@ Here's a list of all fonts used and where they are used:
     - Used bold with no anti-aliasing at 8-10px to replace smaller pixel fonts (like "Press START to skip")
 - Arial Rounded MT Bold
     - Used for the Stage Name/Descriptions on the "Select a Stage" menu. When used in this context it's also given an additional 1px outline at size 37px font and then scaled down (typically squished around 30% horizontally as well)
+    - Uaws doe the Game Name/Descriptions on the "Select a Game" menu. Used in the same way as Stages.
 - FOT-Kurokane Std (Megamix Modified)
     - Used for game titles in the "Select a Game" menu
     - Used for the "No Continues" text on leaderboard entries
