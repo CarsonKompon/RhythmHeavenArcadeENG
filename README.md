@@ -28,6 +28,8 @@ Here's a list of all fonts used and where they are used.
     - Used for most plain text, like game descriptions, tutorial popups, ect
 - FOT-Slump Std DB
     - Used for header labels like "Select a Mode"
+- Tim Sale Lower-Bold
+    - Used for the "ENCORE", "EXPERT", "MASTER", and "EXTRA" titles on the "Select a Stage" menu
 - VDL-GigaJr B
     - Used for titles on the leaderboard menu
 - WarioWareInc V2 Medium
