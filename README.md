@@ -15,7 +15,7 @@ Here's all the software I use and the quirks to them:
 
 # Fonts
 
-Here's a list of all fonts used and where they are used.
+Here's a list of all fonts used and where they are used:
 
 - Arial
     - Used bold with no anti-aliasing at 8-10px to replace smaller pixel fonts (like "Press START to skip")
@@ -28,6 +28,8 @@ Here's a list of all fonts used and where they are used.
     - Used for most plain text, like game descriptions, tutorial popups, ect
 - FOT-Slump Std DB
     - Used for header labels like "Select a Mode", or "Select a Stage"
+- FOT-Yuruka Std UB
+    - Used for "Clear with a SUPERB for 1 extra play" banner
 - Tim Sale Lower-Bold
     - Used for the "ENCORE", "EXPERT", "MASTER", and "EXTRA" titles on the "Select a Stage" menu
 - VDL-GigaJr B
