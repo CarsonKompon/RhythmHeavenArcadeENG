@@ -1,0 +1,196 @@
+﻿<Window x:Class="ModdingTool.App.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="clr-namespace:ModdingTool.App.ViewModels"
+        mc:Ignorable="d"
+        Title="Texture Workshop" Height="820" Width="1440" MinHeight="620" MinWidth="1080"
+        Background="#F3F1EC" FontFamily="Segoe UI" Loaded="OnLoaded" Closing="OnClosing">
+    <Window.Resources>
+        <SolidColorBrush x:Key="Ink" Color="#222522" />
+        <SolidColorBrush x:Key="Muted" Color="#6D746D" />
+        <SolidColorBrush x:Key="Accent" Color="#D9563F" />
+        <SolidColorBrush x:Key="Panel" Color="#FCFBF7" />
+        <Style TargetType="Button">
+            <Setter Property="Padding" Value="12,7" />
+            <Setter Property="Margin" Value="0,0,8,0" />
+            <Setter Property="Cursor" Value="Hand" />
+        </Style>
+        <Style x:Key="TextureListStyle" TargetType="ListBox">
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled" />
+            <Setter Property="VirtualizingPanel.IsVirtualizing" Value="True" />
+            <Setter Property="VirtualizingPanel.VirtualizationMode" Value="Recycling" />
+            <Setter Property="AllowDrop" Value="True" />
+        </Style>
+        <ItemsPanelTemplate x:Key="TextureGridPanel">
+            <WrapPanel />
+        </ItemsPanelTemplate>
+        <ItemsPanelTemplate x:Key="TextureListPanel">
+            <VirtualizingStackPanel />
+        </ItemsPanelTemplate>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+        <DataTemplate x:Key="TextureTemplate" DataType="{x:Type vm:TextureItemViewModel}">
+            <Grid Width="150" Height="178" Margin="5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="136" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Border Background="#E9E8E2" BorderBrush="#D1D2CB" BorderThickness="1" CornerRadius="3">
+                    <Grid>
+                           <Image Source="{Binding Thumbnail}" Stretch="Uniform" Margin="7" RenderOptions.BitmapScalingMode="HighQuality"
+                               Loaded="ThumbnailLoaded" />
+                        <Border Background="#CCB5332A" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="5"
+                                Padding="5,2" CornerRadius="2" Visibility="{Binding HasError, Converter={StaticResource BooleanToVisibilityConverter}}">
+                            <TextBlock Text="ERROR" Foreground="White" FontSize="10" FontWeight="Bold" />
+                        </Border>
+                        <Border Background="#CC36705A" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5"
+                                Padding="5,2" CornerRadius="2" Visibility="{Binding IsSeen, Converter={StaticResource BooleanToVisibilityConverter}}">
+                            <TextBlock Text="SEEN" Foreground="White" FontSize="10" FontWeight="Bold" />
+                        </Border>
+                    </Grid>
+                </Border>
+                <StackPanel Grid.Row="1" Margin="2,5,2,0">
+                    <TextBlock Text="{Binding FileName}" Foreground="{StaticResource Ink}" FontSize="12" TextTrimming="CharacterEllipsis" />
+                    <TextBlock Text="{Binding GroupName}" Foreground="{StaticResource Muted}" FontSize="10" TextTrimming="CharacterEllipsis" />
+                </StackPanel>
+            </Grid>
+        </DataTemplate>
+        <DataTemplate x:Key="TextureListTemplate" DataType="{x:Type vm:TextureItemViewModel}">
+            <Grid Height="52" Margin="3,1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="54" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="120" />
+                </Grid.ColumnDefinitions>
+                <Border Background="#E9E8E2" BorderBrush="#D1D2CB" BorderThickness="1" CornerRadius="2" Margin="2">
+                    <Image Source="{Binding Thumbnail}" Stretch="Uniform" Margin="3" Loaded="ThumbnailLoaded" />
+                </Border>
+                <StackPanel Grid.Column="1" VerticalAlignment="Center" Margin="8,0">
+                    <TextBlock Text="{Binding FileName}" Foreground="{StaticResource Ink}" FontWeight="SemiBold" />
+                    <TextBlock Text="{Binding CopySourceFileName, TargetNullValue=Base image}" Foreground="{StaticResource Muted}" FontSize="10" />
+                </StackPanel>
+                <TextBlock Grid.Column="2" Text="{Binding GroupName}" Foreground="{StaticResource Muted}"
+                           VerticalAlignment="Center" TextTrimming="CharacterEllipsis" Margin="5" />
+            </Grid>
+        </DataTemplate>
+    </Window.Resources>
+    <DockPanel>
+        <Border DockPanel.Dock="Top" Background="#222522" Padding="18,12">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <StackPanel>
+                    <TextBlock Text="TEXTURE WORKSHOP" Foreground="White" FontFamily="Bahnschrift" FontSize="21" FontWeight="SemiBold" />
+                    <TextBlock Text="Flycast replacement workspace" Foreground="#ADB4AD" FontSize="11" />
+                </StackPanel>
+                <StackPanel Grid.Column="1" Margin="30,0" VerticalAlignment="Center">
+                    <TextBlock Text="{Binding OriginalFolder, TargetNullValue=Original folder not selected}" Foreground="#D7DBD6" FontSize="11" TextTrimming="CharacterEllipsis" />
+                    <TextBlock Text="{Binding OutputFolder, TargetNullValue=Modified folder not selected}" Foreground="#D7DBD6" FontSize="11" TextTrimming="CharacterEllipsis" />
+                </StackPanel>
+                <StackPanel Grid.Column="2" Orientation="Horizontal" VerticalAlignment="Center">
+                    <Button Content="Original folder" Click="ChooseOriginalFolder" />
+                    <Button Content="Modified folder" Click="ChooseOutputFolder" />
+                    <Button Content="List / Grid" Click="ToggleView" Margin="0" />
+                </StackPanel>
+            </Grid>
+        </Border>
+        <Border DockPanel.Dock="Bottom" Background="#E1DFD8" Padding="14,8" BorderBrush="#C8C6BF" BorderThickness="0,1,0,0">
+            <TextBlock Text="{Binding Status}" Foreground="{StaticResource Muted}" />
+        </Border>
+        <Grid Margin="14">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="5*" MinWidth="350" />
+                <ColumnDefinition Width="8" />
+                <ColumnDefinition Width="5*" MinWidth="350" />
+                <ColumnDefinition Width="8" />
+                <ColumnDefinition Width="310" />
+            </Grid.ColumnDefinitions>
+            <Border Background="{StaticResource Panel}" BorderBrush="#D3D1C9" BorderThickness="1" CornerRadius="4">
+                <DockPanel>
+                    <Border DockPanel.Dock="Top" Padding="14,11" BorderBrush="#DDDAD2" BorderThickness="0,0,0,1">
+                        <Grid>
+                            <TextBlock Text="ORIGINAL TEXTURES" FontFamily="Bahnschrift" FontWeight="SemiBold"
+                                       Foreground="{StaticResource Ink}" VerticalAlignment="Center" />
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                                <CheckBox Content="Hide seen" VerticalAlignment="Center" Margin="0,0,14,0"
+                                          Checked="HideSeenChanged" Unchecked="HideSeenChanged" />
+                                <Button Content="‹" ToolTip="Previous page" Click="PreviousOriginalPage"
+                                        IsEnabled="{Binding CanShowPreviousOriginals}" Padding="9,3" />
+                                <TextBlock VerticalAlignment="Center" Margin="4,0,12,0">
+                                    <Run Text="{Binding OriginalPage}" /><Run Text=" / " /><Run Text="{Binding OriginalPageCount}" />
+                                </TextBlock>
+                                <Button Content="›" ToolTip="Next page" Click="NextOriginalPage"
+                                        IsEnabled="{Binding CanShowNextOriginals}" Padding="9,3" Margin="0" />
+                            </StackPanel>
+                        </Grid>
+                    </Border>
+                    <ListBox x:Name="OriginalList" ItemsSource="{Binding Originals}" ItemTemplate="{StaticResource TextureTemplate}"
+                             Style="{StaticResource TextureListStyle}" PreviewMouseLeftButtonDown="TextureListMouseDown"
+                             PreviewMouseMove="TextureListMouseMove" MouseDoubleClick="TextureDoubleClick"
+                             PreviewMouseRightButtonDown="OriginalListRightButtonDown" SelectionChanged="TextureSelectionChanged"
+                             SelectionMode="Extended" ItemsPanel="{StaticResource TextureGridPanel}">
+                        <ListBox.ContextMenu>
+                            <ContextMenu>
+                                <MenuItem Header="Mark as seen" Click="MarkOriginalsSeen" />
+                                <MenuItem Header="Mark as unseen" Click="MarkOriginalsUnseen" />
+                            </ContextMenu>
+                        </ListBox.ContextMenu>
+                    </ListBox>
+                </DockPanel>
+            </Border>
+            <GridSplitter Grid.Column="1" Width="8" HorizontalAlignment="Stretch" Background="Transparent" />
+            <Border Grid.Column="2" Background="{StaticResource Panel}" BorderBrush="#D3D1C9" BorderThickness="1" CornerRadius="4">
+                <DockPanel>
+                    <Border DockPanel.Dock="Top" Padding="14,11" BorderBrush="#DDDAD2" BorderThickness="0,0,0,1">
+                        <TextBlock Text="MODIFIED / LIVE OUTPUT" FontFamily="Bahnschrift" FontWeight="SemiBold" Foreground="{StaticResource Ink}" />
+                    </Border>
+                    <ListBox x:Name="OutputList" ItemsSource="{Binding Outputs}" SelectedItem="{Binding SelectedOutput}"
+                             ItemTemplate="{StaticResource TextureTemplate}" Style="{StaticResource TextureListStyle}"
+                             PreviewMouseLeftButtonDown="TextureListMouseDown" PreviewMouseMove="TextureListMouseMove"
+                             MouseDoubleClick="TextureDoubleClick" DragOver="OutputDragOver" Drop="OutputDrop"
+                             SelectionChanged="TextureSelectionChanged" SelectionMode="Extended"
+                             ItemsPanel="{StaticResource TextureGridPanel}" />
+                </DockPanel>
+            </Border>
+            <GridSplitter Grid.Column="3" Width="8" HorizontalAlignment="Stretch" Background="Transparent" />
+            <Border Grid.Column="4" Background="{StaticResource Panel}" BorderBrush="#D3D1C9" BorderThickness="1" CornerRadius="4" Padding="16">
+                <StackPanel DataContext="{Binding SelectedTexture}">
+                    <TextBlock Text="INSPECTOR" FontFamily="Bahnschrift" FontSize="16" FontWeight="SemiBold" />
+                    <Border Height="230" Background="#E9E8E2" BorderBrush="#D1D2CB" BorderThickness="1" CornerRadius="3" Margin="0,14,0,12">
+                        <Image Source="{Binding Thumbnail}" Stretch="Uniform" Margin="10" Loaded="ThumbnailLoaded" />
+                    </Border>
+                    <TextBlock Text="{Binding FileName, TargetNullValue=Select a texture}" FontWeight="SemiBold" TextTrimming="CharacterEllipsis" />
+                    <TextBlock Text="{Binding FullPath}" Foreground="{StaticResource Muted}" FontSize="10" TextWrapping="Wrap" Margin="0,3,0,18" />
+                    <StackPanel Visibility="{Binding IsOutput, Converter={StaticResource BooleanToVisibilityConverter}}">
+                    <TextBlock Text="COPY IMAGE" FontSize="11" FontWeight="Bold" />
+                    <Border AllowDrop="True" DragOver="CopyImageDragOver" Drop="CopyImageDrop" Background="#F4E8D4"
+                            BorderBrush="#C99A54" BorderThickness="1" CornerRadius="3" Padding="10" Margin="0,6,0,7">
+                        <TextBlock Text="{Binding CopySourceFileName, TargetNullValue=Drop a modified image here}" TextTrimming="CharacterEllipsis" />
+                    </Border>
+                    <Button Content="Clear Copy Image" Click="ClearCopy" HorizontalAlignment="Left" Margin="0,0,0,16" />
+                    <TextBlock Text="BRIGHTNESS" FontSize="11" FontWeight="Bold" />
+                    <Grid Margin="0,5,0,8">
+                        <Grid.ColumnDefinitions><ColumnDefinition /><ColumnDefinition Width="48" /></Grid.ColumnDefinitions>
+                        <Slider Minimum="0" Maximum="100" TickFrequency="5" Value="{Binding Brightness}" IsEnabled="{Binding HasCopySource}" />
+                        <TextBlock Grid.Column="1" Text="{Binding Brightness, StringFormat={}{0}%}" HorizontalAlignment="Right" VerticalAlignment="Center" />
+                    </Grid>
+                    <Button Content="Save brightness" Click="SaveBrightness" HorizontalAlignment="Left" Margin="0,0,0,20" />
+                    <Separator />
+                    <TextBlock Text="GROUP" FontSize="11" FontWeight="Bold" Margin="0,16,0,5" />
+                    <TextBox x:Name="GroupNameBox" Text="{Binding GroupName}" Padding="7" />
+                    <StackPanel Orientation="Horizontal" Margin="0,8,0,0">
+                        <Button Content="Rename" Click="RenameGroup" />
+                        <Button Content="Ungroup" Click="Ungroup" />
+                    </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+        </Grid>
+    </DockPanel>
+</Window>

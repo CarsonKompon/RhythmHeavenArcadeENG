@@ -1,0 +1,288 @@
+﻿using System.IO;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Input;
+using ModdingTool.App.Services;
+using ModdingTool.App.ViewModels;
+using Microsoft.Win32;
+
+namespace ModdingTool.App;
+
+/// <summary>
+/// Interaction logic for MainWindow.xaml
+/// </summary>
+public partial class MainWindow : Window
+{
+    private readonly MainViewModel viewModel = new();
+    private Point dragStart;
+    private string? pendingOriginalFolder;
+    private string? pendingOutputFolder;
+
+    public MainWindow()
+    {
+        InitializeComponent();
+        DataContext = viewModel;
+    }
+
+    private async void OnLoaded(object sender, RoutedEventArgs e)
+    {
+        var settings = await AppSettingsStore.LoadAsync();
+        if (Directory.Exists(settings.OriginalFolder) && Directory.Exists(settings.OutputFolder))
+        {
+            pendingOriginalFolder = settings.OriginalFolder;
+            pendingOutputFolder = settings.OutputFolder;
+            await TryOpenFoldersAsync();
+        }
+    }
+
+    private async void ChooseOriginalFolder(object sender, RoutedEventArgs e)
+    {
+        var dialog = new OpenFolderDialog { Title = "Choose the original texture folder" };
+        if (dialog.ShowDialog(this) == true)
+        {
+            pendingOriginalFolder = dialog.FolderName;
+            await TryOpenFoldersAsync();
+        }
+    }
+
+    private async void ChooseOutputFolder(object sender, RoutedEventArgs e)
+    {
+        var dialog = new OpenFolderDialog { Title = "Choose the modified / live output folder" };
+        if (dialog.ShowDialog(this) == true)
+        {
+            pendingOutputFolder = dialog.FolderName;
+            await TryOpenFoldersAsync();
+        }
+    }
+
+    private async Task TryOpenFoldersAsync()
+    {
+        if (pendingOriginalFolder is not null && pendingOutputFolder is not null)
+        {
+            await viewModel.OpenFoldersAsync(pendingOriginalFolder, pendingOutputFolder);
+            await AppSettingsStore.SaveAsync(new AppSettings(pendingOriginalFolder, pendingOutputFolder));
+        }
+    }
+
+    private void ToggleView(object sender, RoutedEventArgs e)
+    {
+        viewModel.ToggleView();
+        var panelName = viewModel.IsGridView ? "TextureGridPanel" : "TextureListPanel";
+        var panel = (ItemsPanelTemplate)FindResource(panelName);
+        OriginalList.ItemsPanel = panel;
+        OutputList.ItemsPanel = panel;
+        var templateName = viewModel.IsGridView ? "TextureTemplate" : "TextureListTemplate";
+        OriginalList.ItemTemplate = (DataTemplate)FindResource(templateName);
+        OutputList.ItemTemplate = (DataTemplate)FindResource(templateName);
+    }
+
+    private void PreviousOriginalPage(object sender, RoutedEventArgs e)
+    {
+        viewModel.ShowPreviousOriginals();
+        OriginalList.ScrollIntoView(OriginalList.Items.Cast<object>().FirstOrDefault());
+    }
+
+    private void NextOriginalPage(object sender, RoutedEventArgs e)
+    {
+        viewModel.ShowNextOriginals();
+        OriginalList.ScrollIntoView(OriginalList.Items.Cast<object>().FirstOrDefault());
+    }
+
+    private void ThumbnailLoaded(object sender, RoutedEventArgs e)
+    {
+        if (sender is FrameworkElement { DataContext: TextureItemViewModel item })
+        {
+            item.EnsureThumbnail();
+        }
+    }
+
+    private void TextureListMouseDown(object sender, MouseButtonEventArgs e)
+    {
+        dragStart = e.GetPosition(null);
+    }
+
+    private void TextureListMouseMove(object sender, MouseEventArgs e)
+    {
+        if (e.LeftButton != MouseButtonState.Pressed || sender is not ListBox listBox)
+        {
+            return;
+        }
+
+        var position = e.GetPosition(null);
+        if (Math.Abs(position.X - dragStart.X) < SystemParameters.MinimumHorizontalDragDistance &&
+            Math.Abs(position.Y - dragStart.Y) < SystemParameters.MinimumVerticalDragDistance)
+        {
+            return;
+        }
+
+        if (FindItem(e.OriginalSource as DependencyObject) is { DataContext: TextureItemViewModel item })
+        {
+            if (!listBox.SelectedItems.Contains(item))
+            {
+                listBox.SelectedItem = item;
+            }
+
+            var items = listBox.SelectedItems.Cast<TextureItemViewModel>().ToArray();
+            DragDrop.DoDragDrop(listBox, new DataObject(typeof(TextureItemViewModel[]), items), DragDropEffects.Copy | DragDropEffects.Move);
+        }
+    }
+
+    private void TextureSelectionChanged(object sender, SelectionChangedEventArgs e)
+    {
+        if (sender is not ListBox listBox || listBox.SelectedItem is not TextureItemViewModel item)
+        {
+            return;
+        }
+
+        viewModel.SelectedTexture = item;
+        viewModel.SelectedOutput = item.IsOutput ? item : null;
+    }
+
+    private void OriginalListRightButtonDown(object sender, MouseButtonEventArgs e)
+    {
+        if (FindItem(e.OriginalSource as DependencyObject) is not { DataContext: TextureItemViewModel item } container)
+        {
+            return;
+        }
+
+        if (!container.IsSelected)
+        {
+            OriginalList.SelectedItems.Clear();
+            container.IsSelected = true;
+        }
+    }
+
+    private async void MarkOriginalsSeen(object sender, RoutedEventArgs e) =>
+        await viewModel.SetSeenAsync(OriginalList.SelectedItems.Cast<TextureItemViewModel>().ToArray(), true);
+
+    private async void MarkOriginalsUnseen(object sender, RoutedEventArgs e) =>
+        await viewModel.SetSeenAsync(OriginalList.SelectedItems.Cast<TextureItemViewModel>().ToArray(), false);
+
+    private void HideSeenChanged(object sender, RoutedEventArgs e)
+    {
+        if (sender is CheckBox checkBox)
+        {
+            viewModel.SetHideSeenOriginals(checkBox.IsChecked == true);
+        }
+    }
+
+    private void TextureDoubleClick(object sender, MouseButtonEventArgs e)
+    {
+        if (FindItem(e.OriginalSource as DependencyObject) is { DataContext: TextureItemViewModel item })
+        {
+            viewModel.OpenInEditor(item);
+        }
+    }
+
+    private void OutputDragOver(object sender, DragEventArgs e)
+    {
+        e.Effects = e.Data.GetDataPresent(typeof(TextureItemViewModel[])) ? DragDropEffects.Copy : DragDropEffects.None;
+        e.Handled = true;
+    }
+
+    private async void OutputDrop(object sender, DragEventArgs e)
+    {
+        if (e.Data.GetData(typeof(TextureItemViewModel[])) is not TextureItemViewModel[] draggedItems || draggedItems.Length == 0)
+        {
+            return;
+        }
+
+        if (!draggedItems[0].IsOutput)
+        {
+            await viewModel.CopyOriginalsAsync(draggedItems);
+            return;
+        }
+
+        if (FindItem(e.OriginalSource as DependencyObject) is { DataContext: TextureItemViewModel target })
+        {
+            string? newGroupName = null;
+            if (target.GroupName == "Ungrouped")
+            {
+                newGroupName = PromptForGroupName();
+                if (newGroupName is null)
+                {
+                    return;
+                }
+            }
+
+            await viewModel.GroupAsync(draggedItems, target, newGroupName);
+        }
+    }
+
+    private void CopyImageDragOver(object sender, DragEventArgs e)
+    {
+        e.Effects = e.Data.GetData(typeof(TextureItemViewModel[])) is TextureItemViewModel[] { Length: 1 } items && items[0].IsOutput
+            ? DragDropEffects.Link
+            : DragDropEffects.None;
+        e.Handled = true;
+    }
+
+    private async void CopyImageDrop(object sender, DragEventArgs e)
+    {
+        if (e.Data.GetData(typeof(TextureItemViewModel[])) is TextureItemViewModel[] { Length: 1 } items && items[0].IsOutput)
+        {
+            await viewModel.AssignCopyAsync(items[0]);
+        }
+    }
+
+    private async void SaveBrightness(object sender, RoutedEventArgs e) => await viewModel.ApplyBrightnessAsync();
+
+    private async void ClearCopy(object sender, RoutedEventArgs e) => await viewModel.ClearCopyAsync();
+
+    private async void RenameGroup(object sender, RoutedEventArgs e) =>
+        await viewModel.RenameSelectedGroupAsync(GroupNameBox.Text);
+
+    private async void Ungroup(object sender, RoutedEventArgs e) => await viewModel.UngroupSelectedAsync();
+
+    private void OnClosing(object? sender, System.ComponentModel.CancelEventArgs e) => viewModel.Dispose();
+
+    private string? PromptForGroupName()
+    {
+        var input = new TextBox { Margin = new Thickness(0, 8, 0, 14), Padding = new Thickness(7), Text = "New group" };
+        var dialog = new Window
+        {
+            Title = "Create texture group",
+            Owner = this,
+            WindowStartupLocation = WindowStartupLocation.CenterOwner,
+            ResizeMode = ResizeMode.NoResize,
+            SizeToContent = SizeToContent.WidthAndHeight,
+            Background = System.Windows.Media.Brushes.White,
+            Content = new StackPanel
+            {
+                Margin = new Thickness(18),
+                Width = 320,
+                Children =
+                {
+                    new TextBlock { Text = "Group name", FontWeight = FontWeights.SemiBold },
+                    input
+                }
+            }
+        };
+        var buttons = new StackPanel { Orientation = Orientation.Horizontal, HorizontalAlignment = HorizontalAlignment.Right };
+        var cancel = new Button { Content = "Cancel", IsCancel = true };
+        var create = new Button { Content = "Create", IsDefault = true, Margin = new Thickness(8, 0, 0, 0) };
+        create.Click += (_, _) =>
+        {
+            if (!string.IsNullOrWhiteSpace(input.Text))
+            {
+                dialog.DialogResult = true;
+            }
+        };
+        buttons.Children.Add(cancel);
+        buttons.Children.Add(create);
+        ((StackPanel)dialog.Content).Children.Add(buttons);
+        input.SelectAll();
+        input.Focus();
+        return dialog.ShowDialog() == true ? input.Text.Trim() : null;
+    }
+
+    private static ListBoxItem? FindItem(DependencyObject? source)
+    {
+        while (source is not null and not ListBoxItem)
+        {
+            source = System.Windows.Media.VisualTreeHelper.GetParent(source);
+        }
+
+        return source as ListBoxItem;
+    }
+}
