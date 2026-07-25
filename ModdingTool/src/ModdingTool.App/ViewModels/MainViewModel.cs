@@ -10,7 +10,7 @@ namespace ModdingTool.App.ViewModels;
 
 public sealed partial class MainViewModel : ObservableObject, IDisposable
 {
-    private const int OriginalPageSize = 200;
+    private const int OriginalPageSize = 100;
     private readonly TextureWorkspace workspace = new();
     private readonly Dictionary<string, DateTime> pendingChanges = new(StringComparer.OrdinalIgnoreCase);
     private IReadOnlyList<string> scannedOriginalFileNames = [];
@@ -116,13 +116,28 @@ public sealed partial class MainViewModel : ObservableObject, IDisposable
 
         await RunAsync(async () =>
         {
-            foreach (var item in items)
+            if (outputWatcher is not null)
             {
-                await workspace.CopyOriginalAsync(item.FileName, true);
+                outputWatcher.EnableRaisingEvents = false;
             }
 
-            RefreshCollections(items[0].FileName);
-            Status = $"Copied {items.Count:N0} texture(s).";
+            try
+            {
+                foreach (var item in items)
+                {
+                    await workspace.CopyOriginalAsync(item.FileName, true);
+                }
+
+                RefreshCollections(items[0].FileName);
+                Status = $"Copied {items.Count:N0} texture(s).";
+            }
+            finally
+            {
+                if (outputWatcher is not null)
+                {
+                    outputWatcher.EnableRaisingEvents = true;
+                }
+            }
         });
     }
 
@@ -133,14 +148,19 @@ public sealed partial class MainViewModel : ObservableObject, IDisposable
             return;
         }
 
-        foreach (var item in items.Where(item => !item.IsOutput))
+        var originals = items.Where(item => !item.IsOutput).ToArray();
+        foreach (var item in originals)
         {
             GetEntry(item.FileName).IsSeen = isSeen;
+            item.IsSeen = isSeen;
         }
 
-        await workspace.SaveAsync();
-        ApplyOriginalFilter();
+        if (HideSeenOriginals && isSeen)
+        {
+            RemoveSeenFromCurrentPage(originals);
+        }
         Status = $"Marked {items.Count:N0} original texture(s) as {(isSeen ? "seen" : "unseen")}.";
+        await workspace.SaveAsync();
     }
 
     public void SetHideSeenOriginals(bool hideSeen)
@@ -379,6 +399,44 @@ public sealed partial class MainViewModel : ObservableObject, IDisposable
         foreach (var fileName in originalFileNames
                      .Skip((OriginalPage - 1) * OriginalPageSize)
                      .Take(OriginalPageSize))
+        {
+            Originals.Add(new TextureItemViewModel(fileName, OriginalFolder!, false)
+            {
+                IsSeen = GetEntry(fileName).IsSeen
+            });
+        }
+
+        OnPropertyChanged(nameof(CanShowPreviousOriginals));
+        OnPropertyChanged(nameof(CanShowNextOriginals));
+    }
+
+    private void RemoveSeenFromCurrentPage(IReadOnlyCollection<TextureItemViewModel> seenItems)
+    {
+        var seenNames = seenItems.Select(item => item.FileName).ToHashSet(StringComparer.OrdinalIgnoreCase);
+        var previousPage = OriginalPage;
+        originalFileNames = scannedOriginalFileNames
+            .Where(fileName => !GetEntry(fileName).IsSeen)
+            .ToArray();
+        OriginalCount = originalFileNames.Count;
+        OriginalPageCount = Math.Max(1, (int)Math.Ceiling(OriginalCount / (double)OriginalPageSize));
+        OriginalPage = Math.Min(OriginalPage, OriginalPageCount);
+
+        if (OriginalPage != previousPage)
+        {
+            RefreshOriginalPage();
+            return;
+        }
+
+        foreach (var item in Originals.Where(item => seenNames.Contains(item.FileName)).ToArray())
+        {
+            Originals.Remove(item);
+        }
+
+        var desiredPage = originalFileNames
+            .Skip((OriginalPage - 1) * OriginalPageSize)
+            .Take(OriginalPageSize);
+        var visibleNames = Originals.Select(item => item.FileName).ToHashSet(StringComparer.OrdinalIgnoreCase);
+        foreach (var fileName in desiredPage.Where(fileName => !visibleNames.Contains(fileName)))
         {
             Originals.Add(new TextureItemViewModel(fileName, OriginalFolder!, false)
             {

@@ -23,6 +23,9 @@ The last folder pair reopens automatically. Both explorers intentionally show to
 ## Workflow
 
 - Drag an image from **Original Textures** into **Modified / Live Output** to copy it with the same filename.
+- Use Ctrl-click or Shift-click to select multiple textures, then drag the selection to copy or group it as one operation.
+- Select an original texture to preview it in the inspector without showing output-editing controls.
+- Right-click one or more selected originals to mark them as seen or unseen. Use **Hide seen** above the original browser to focus on textures that still need review.
 - Drag one modified image onto another to put both in a virtual group. Rename or remove the group from the inspector.
 - Select a modified image, then drag another modified image into **Copy Image**. The selected image is regenerated from the dragged source but keeps its own filename.
 - Adjust **Brightness** from 0 to 100 and select **Save brightness**. Brightness scales RGB while preserving transparency.

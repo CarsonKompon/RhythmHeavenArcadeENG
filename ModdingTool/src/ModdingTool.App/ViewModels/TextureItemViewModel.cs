@@ -7,6 +7,8 @@ namespace ModdingTool.App.ViewModels;
 
 public sealed partial class TextureItemViewModel : ObservableObject
 {
+    private Task<ImageSource?>? thumbnailLoadTask;
+
     public TextureItemViewModel(string fileName, string folder, bool isOutput)
     {
         FileName = fileName;
@@ -45,7 +47,7 @@ public sealed partial class TextureItemViewModel : ObservableObject
         OnPropertyChanged(nameof(HasCopySource));
     }
 
-    public void EnsureThumbnail()
+    public async Task EnsureThumbnailAsync()
     {
         if (Thumbnail is not null || HasError)
         {
@@ -54,7 +56,70 @@ public sealed partial class TextureItemViewModel : ObservableObject
 
         try
         {
-            using var stream = new FileStream(FullPath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite | FileShare.Delete);
+            thumbnailLoadTask ??= ThumbnailCache.LoadAsync(FullPath);
+            Thumbnail = await thumbnailLoadTask;
+            HasError = false;
+        }
+        catch
+        {
+            Thumbnail = null;
+            HasError = true;
+        }
+    }
+
+    private static class ThumbnailCache
+    {
+        private const int Capacity = 400;
+        private static readonly Dictionary<string, ImageSource> Images = new(StringComparer.OrdinalIgnoreCase);
+        private static readonly Queue<string> InsertionOrder = new();
+        private static readonly SemaphoreSlim DecodeSlots = new(4);
+        private static readonly object SyncRoot = new();
+
+        public static async Task<ImageSource?> LoadAsync(string path)
+        {
+            var file = new FileInfo(path);
+            var cacheKey = $"{path}|{file.Length}|{file.LastWriteTimeUtc.Ticks}";
+            lock (SyncRoot)
+            {
+                if (Images.TryGetValue(cacheKey, out var cached))
+                {
+                    return cached;
+                }
+            }
+
+            await DecodeSlots.WaitAsync();
+            try
+            {
+                lock (SyncRoot)
+                {
+                    if (Images.TryGetValue(cacheKey, out var cached))
+                    {
+                        return cached;
+                    }
+                }
+
+                var image = await Task.Run(() => Decode(path));
+                lock (SyncRoot)
+                {
+                    Images[cacheKey] = image;
+                    InsertionOrder.Enqueue(cacheKey);
+                    while (Images.Count > Capacity)
+                    {
+                        Images.Remove(InsertionOrder.Dequeue());
+                    }
+                }
+
+                return image;
+            }
+            finally
+            {
+                DecodeSlots.Release();
+            }
+        }
+
+        private static ImageSource Decode(string path)
+        {
+            using var stream = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.ReadWrite | FileShare.Delete);
             var image = new BitmapImage();
             image.BeginInit();
             image.CacheOption = BitmapCacheOption.OnLoad;
@@ -62,13 +127,7 @@ public sealed partial class TextureItemViewModel : ObservableObject
             image.StreamSource = stream;
             image.EndInit();
             image.Freeze();
-            Thumbnail = image;
-            HasError = false;
-        }
-        catch
-        {
-            Thumbnail = null;
-            HasError = true;
+            return image;
         }
     }
 }

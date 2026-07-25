@@ -15,6 +15,7 @@ public partial class MainWindow : Window
 {
     private readonly MainViewModel viewModel = new();
     private Point dragStart;
+    private TextureItemViewModel[] dragItems = [];
     private string? pendingOriginalFolder;
     private string? pendingOutputFolder;
 
@@ -78,27 +79,42 @@ public partial class MainWindow : Window
 
     private void PreviousOriginalPage(object sender, RoutedEventArgs e)
     {
+        ScrollOriginalsToTop();
         viewModel.ShowPreviousOriginals();
-        OriginalList.ScrollIntoView(OriginalList.Items.Cast<object>().FirstOrDefault());
     }
 
     private void NextOriginalPage(object sender, RoutedEventArgs e)
     {
+        ScrollOriginalsToTop();
         viewModel.ShowNextOriginals();
-        OriginalList.ScrollIntoView(OriginalList.Items.Cast<object>().FirstOrDefault());
     }
 
-    private void ThumbnailLoaded(object sender, RoutedEventArgs e)
+    private void ScrollOriginalsToTop()
+    {
+        if (FindVisualChild<ScrollViewer>(OriginalList) is { } scrollViewer)
+        {
+            scrollViewer.ScrollToTop();
+        }
+    }
+
+    private async void ThumbnailLoaded(object sender, RoutedEventArgs e)
     {
         if (sender is FrameworkElement { DataContext: TextureItemViewModel item })
         {
-            item.EnsureThumbnail();
+            await item.EnsureThumbnailAsync();
         }
     }
 
     private void TextureListMouseDown(object sender, MouseButtonEventArgs e)
     {
         dragStart = e.GetPosition(null);
+        if (sender is ListBox listBox &&
+            FindItem(e.OriginalSource as DependencyObject) is { DataContext: TextureItemViewModel item })
+        {
+            dragItems = listBox.SelectedItems.Contains(item)
+                ? listBox.SelectedItems.Cast<TextureItemViewModel>().ToArray()
+                : [item];
+        }
     }
 
     private void TextureListMouseMove(object sender, MouseEventArgs e)
@@ -122,8 +138,7 @@ public partial class MainWindow : Window
                 listBox.SelectedItem = item;
             }
 
-            var items = listBox.SelectedItems.Cast<TextureItemViewModel>().ToArray();
-            DragDrop.DoDragDrop(listBox, new DataObject(typeof(TextureItemViewModel[]), items), DragDropEffects.Copy | DragDropEffects.Move);
+            DragDrop.DoDragDrop(listBox, new DataObject(typeof(TextureItemViewModel[]), dragItems), DragDropEffects.Copy | DragDropEffects.Move);
         }
     }
 
@@ -284,5 +299,24 @@ public partial class MainWindow : Window
         }
 
         return source as ListBoxItem;
+    }
+
+    private static T? FindVisualChild<T>(DependencyObject parent) where T : DependencyObject
+    {
+        for (var index = 0; index < System.Windows.Media.VisualTreeHelper.GetChildrenCount(parent); index++)
+        {
+            var child = System.Windows.Media.VisualTreeHelper.GetChild(parent, index);
+            if (child is T match)
+            {
+                return match;
+            }
+
+            if (FindVisualChild<T>(child) is { } descendant)
+            {
+                return descendant;
+            }
+        }
+
+        return null;
     }
 }
