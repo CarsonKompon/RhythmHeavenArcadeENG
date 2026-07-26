@@ -17,6 +17,7 @@ public partial class MainWindow : Window
     private Point dragStart;
     private TextureItemViewModel[] dragItems = [];
     private TextureItemViewModel? inspectorBeforeDrag;
+    private OutputGroupViewModel? contextOutputGroup;
     private string? pendingOriginalFolder;
     private string? pendingOutputFolder;
 
@@ -29,6 +30,9 @@ public partial class MainWindow : Window
     private async void OnLoaded(object sender, RoutedEventArgs e)
     {
         var settings = await AppSettingsStore.LoadAsync();
+        viewModel.SetHideSeenOriginals(settings.HideSeenOriginals);
+        viewModel.SetHideTodoOriginals(settings.HideTodoOriginals);
+        viewModel.HideGroups = settings.HideGroups;
         if (Directory.Exists(settings.OriginalFolder) && Directory.Exists(settings.OutputFolder))
         {
             pendingOriginalFolder = settings.OriginalFolder;
@@ -62,9 +66,16 @@ public partial class MainWindow : Window
         if (pendingOriginalFolder is not null && pendingOutputFolder is not null)
         {
             await viewModel.OpenFoldersAsync(pendingOriginalFolder, pendingOutputFolder);
-            await AppSettingsStore.SaveAsync(new AppSettings(pendingOriginalFolder, pendingOutputFolder));
+            await AppSettingsStore.SaveAsync(GetCurrentSettings());
         }
     }
+
+    private AppSettings GetCurrentSettings() => new(
+        pendingOriginalFolder,
+        pendingOutputFolder,
+        viewModel.HideSeenOriginals,
+        viewModel.HideTodoOriginals,
+        viewModel.HideGroups);
 
     private void ToggleView(object sender, RoutedEventArgs e)
     {
@@ -203,6 +214,11 @@ public partial class MainWindow : Window
 
     private void OutputListRightButtonDown(object sender, MouseButtonEventArgs e)
     {
+        contextOutputGroup = FindVisualParent<GroupItem>(e.OriginalSource as DependencyObject)?.DataContext is
+            System.Windows.Data.CollectionViewGroup { Name: OutputGroupViewModel group }
+                ? group
+                : null;
+
         if (FindItem(e.OriginalSource as DependencyObject) is not { DataContext: TextureItemViewModel item } container)
         {
             return;
@@ -230,13 +246,13 @@ public partial class MainWindow : Window
 
     private async void RenameGroupFromMenu(object sender, RoutedEventArgs e)
     {
-        if (viewModel.SelectedOutput is not { OutputGroup.Id: not null } item ||
-            PromptForGroupName(item.GroupName) is not { } name)
+        var group = contextOutputGroup ?? viewModel.SelectedOutput?.OutputGroup;
+        if (group?.Id is not { } groupId || PromptForGroupName(group.Name) is not { } name)
         {
             return;
         }
 
-        await viewModel.RenameSelectedGroupAsync(name);
+        await viewModel.RenameGroupAsync(groupId, name);
     }
 
     private async void RemoveFromGroup(object sender, RoutedEventArgs e)
@@ -250,10 +266,6 @@ public partial class MainWindow : Window
     private async void MoveTextureUp(object sender, RoutedEventArgs e) => await viewModel.MoveSelectedItemAsync(-1);
 
     private async void MoveTextureDown(object sender, RoutedEventArgs e) => await viewModel.MoveSelectedItemAsync(1);
-
-    private async void MoveGroupUp(object sender, RoutedEventArgs e) => await viewModel.MoveSelectedGroupAsync(-1);
-
-    private async void MoveGroupDown(object sender, RoutedEventArgs e) => await viewModel.MoveSelectedGroupAsync(1);
 
     private async void OutputGroupExpanded(object sender, RoutedEventArgs e)
     {
@@ -301,18 +313,30 @@ public partial class MainWindow : Window
             return;
         }
 
+        var targetContainer = FindItem(e.OriginalSource as DependencyObject);
+        var targetGroup = FindVisualParent<GroupItem>(e.OriginalSource as DependencyObject)?.DataContext is
+            System.Windows.Data.CollectionViewGroup { Name: OutputGroupViewModel group }
+                ? group
+                : null;
+
         if (!draggedItems[0].IsOutput)
         {
-            await viewModel.CopyOriginalsAsync(draggedItems);
+            if (await viewModel.CopyOriginalsAsync(draggedItems) && targetGroup?.Id is { } destinationGroupId)
+            {
+                await viewModel.AddFilesToGroupAsync(draggedItems.Select(item => item.FileName).ToArray(), destinationGroupId);
+            }
             return;
         }
 
-        var targetContainer = FindItem(e.OriginalSource as DependencyObject);
-        if (targetContainer is null &&
-            FindVisualParent<GroupItem>(e.OriginalSource as DependencyObject) is
-                { DataContext: System.Windows.Data.CollectionViewGroup { Name: OutputGroupViewModel { Id: null } } })
+        if (targetContainer is null && targetGroup?.Id is null)
         {
             await viewModel.UngroupItemsAsync(draggedItems);
+            return;
+        }
+
+        if (targetContainer is null && targetGroup?.Id is { } groupId)
+        {
+            await viewModel.AddItemsToGroupAsync(draggedItems, groupId);
             return;
         }
 
@@ -362,7 +386,11 @@ public partial class MainWindow : Window
 
     private async void Ungroup(object sender, RoutedEventArgs e) => await viewModel.UngroupSelectedAsync();
 
-    private void OnClosing(object? sender, System.ComponentModel.CancelEventArgs e) => viewModel.Dispose();
+    private void OnClosing(object? sender, System.ComponentModel.CancelEventArgs e)
+    {
+        AppSettingsStore.Save(GetCurrentSettings());
+        viewModel.Dispose();
+    }
 
     private string? PromptForGroupName(string initialName = "New group")
     {

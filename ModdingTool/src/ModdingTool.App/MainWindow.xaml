@@ -165,9 +165,11 @@
                             <TextBlock Text="ORIGINAL TEXTURES" FontFamily="Bahnschrift" FontWeight="SemiBold"
                                        Foreground="{StaticResource Ink}" VerticalAlignment="Center" />
                             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                                <CheckBox Content="Hide seen" VerticalAlignment="Center" Margin="0,0,14,0"
+                                <CheckBox Content="Hide seen" IsChecked="{Binding HideSeenOriginals, Mode=OneWay}"
+                                          VerticalAlignment="Center" Margin="0,0,14,0"
                                           Checked="HideSeenChanged" Unchecked="HideSeenChanged" />
-                                <CheckBox Content="Hide TODO" VerticalAlignment="Center" Margin="0,0,14,0"
+                                <CheckBox Content="Hide TODO" IsChecked="{Binding HideTodoOriginals, Mode=OneWay}"
+                                          VerticalAlignment="Center" Margin="0,0,14,0"
                                           Checked="HideTodoChanged" Unchecked="HideTodoChanged" />
                                 <Button Content="‹" ToolTip="Previous page" Click="PreviousOriginalPage"
                                         IsEnabled="{Binding CanShowPreviousOriginals}" Padding="9,3" />
@@ -227,9 +229,6 @@
                                 <Separator />
                                 <MenuItem Header="Move texture up" Click="MoveTextureUp" />
                                 <MenuItem Header="Move texture down" Click="MoveTextureDown" />
-                                <Separator />
-                                <MenuItem Header="Move group up" Click="MoveGroupUp" />
-                                <MenuItem Header="Move group down" Click="MoveGroupDown" />
                             </ContextMenu>
                         </ListBox.ContextMenu>
                     </ListBox>

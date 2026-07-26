@@ -3,7 +3,12 @@ using System.Text.Json;
 
 namespace ModdingTool.App.Services;
 
-public sealed record AppSettings(string? OriginalFolder, string? OutputFolder);
+public sealed record AppSettings(
+    string? OriginalFolder = null,
+    string? OutputFolder = null,
+    bool HideSeenOriginals = false,
+    bool HideTodoOriginals = false,
+    bool HideGroups = false);
 
 public static class AppSettingsStore
 {
@@ -18,15 +23,15 @@ public static class AppSettingsStore
         {
             if (!File.Exists(SettingsPath))
             {
-                return new AppSettings(null, null);
+                return new AppSettings();
             }
 
             await using var stream = File.OpenRead(SettingsPath);
-            return await JsonSerializer.DeserializeAsync<AppSettings>(stream) ?? new AppSettings(null, null);
+            return await JsonSerializer.DeserializeAsync<AppSettings>(stream) ?? new AppSettings();
         }
         catch
         {
-            return new AppSettings(null, null);
+            return new AppSettings();
         }
     }
 
@@ -40,6 +45,15 @@ public static class AppSettingsStore
             await JsonSerializer.SerializeAsync(stream, settings);
         }
 
+        File.Move(temporaryPath, SettingsPath, true);
+    }
+
+    public static void Save(AppSettings settings)
+    {
+        var directory = Path.GetDirectoryName(SettingsPath)!;
+        Directory.CreateDirectory(directory);
+        var temporaryPath = SettingsPath + ".tmp";
+        File.WriteAllText(temporaryPath, JsonSerializer.Serialize(settings));
         File.Move(temporaryPath, SettingsPath, true);
     }
 }

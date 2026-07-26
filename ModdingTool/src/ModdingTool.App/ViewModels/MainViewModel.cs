@@ -84,15 +84,15 @@ public sealed partial class MainViewModel : ObservableObject, IDisposable
 
     public async Task CopyOriginalAsync(TextureItemViewModel item) => await CopyOriginalsAsync([item]);
 
-    public async Task CopyOriginalsAsync(IReadOnlyList<TextureItemViewModel> items)
+    public async Task<bool> CopyOriginalsAsync(IReadOnlyList<TextureItemViewModel> items)
     {
-        if (OutputFolder is null || items.Count == 0) return;
+        if (OutputFolder is null || items.Count == 0) return false;
         var existingCount = items.Count(item => File.Exists(Path.Combine(OutputFolder, item.FileName)));
         if (existingCount > 0 && MessageBox.Show(
                 $"Replace {existingCount:N0} existing modified texture(s)?",
                 "Replace texture", MessageBoxButton.YesNo, MessageBoxImage.Question) != MessageBoxResult.Yes)
         {
-            return;
+            return false;
         }
 
         await RunAsync(async () =>
@@ -109,6 +109,7 @@ public sealed partial class MainViewModel : ObservableObject, IDisposable
                 if (outputWatcher is not null) outputWatcher.EnableRaisingEvents = true;
             }
         });
+        return true;
     }
 
     public async Task SetSeenAsync(IReadOnlyList<TextureItemViewModel> items, bool value) =>
@@ -213,6 +214,40 @@ public sealed partial class MainViewModel : ObservableObject, IDisposable
         Status = $"Created group {group.Name}.";
     }
 
+    public async Task AddItemsToGroupAsync(IReadOnlyList<TextureItemViewModel> items, Guid groupId)
+    {
+        await AddFilesToGroupAsync(items.Where(item => item.IsOutput).Select(item => item.FileName).ToArray(), groupId);
+    }
+
+    public async Task AddFilesToGroupAsync(IReadOnlyList<string> fileNames, Guid groupId)
+    {
+        var group = workspace.Project.Groups.FirstOrDefault(candidate => candidate.Id == groupId);
+        if (group is null || fileNames.Count == 0) return;
+
+        var affectedGroups = new HashSet<Guid>();
+        var nextOrder = workspace.Project.Textures.Values.Count(entry => entry.GroupId == groupId);
+        foreach (var fileName in fileNames)
+        {
+            var entry = GetEntry(fileName);
+            if (entry.GroupId == groupId) continue;
+            if (entry.GroupId is { } oldGroupId) affectedGroups.Add(oldGroupId);
+            entry.GroupId = groupId;
+            entry.Order = nextOrder++;
+        }
+
+        foreach (var oldGroupId in affectedGroups)
+        {
+            if (workspace.Project.Textures.Values.All(entry => entry.GroupId != oldGroupId))
+            {
+                workspace.Project.Groups.RemoveAll(candidate => candidate.Id == oldGroupId);
+            }
+        }
+
+        await workspace.SaveAsync();
+        RefreshCollections(fileNames[0]);
+        Status = $"Added {fileNames.Count:N0} texture(s) to {group.Name}.";
+    }
+
     public async Task SetGroupCollapsedAsync(Guid? groupId, bool collapsed)
     {
         var group = workspace.Project.Groups.FirstOrDefault(candidate => candidate.Id == groupId);
@@ -244,29 +279,20 @@ public sealed partial class MainViewModel : ObservableObject, IDisposable
         RefreshCollections(selectedFileName);
     }
 
-    public async Task MoveSelectedGroupAsync(int direction)
-    {
-        if (SelectedOutput is null) return;
-        var selectedFileName = SelectedOutput.FileName;
-        var groupId = GetEntry(selectedFileName).GroupId;
-        var groups = workspace.Project.Groups.OrderBy(group => group.Order).ToList();
-        var index = groups.FindIndex(group => group.Id == groupId);
-        var targetIndex = index + direction;
-        if (index < 0 || targetIndex < 0 || targetIndex >= groups.Count) return;
-        (groups[index], groups[targetIndex]) = (groups[targetIndex], groups[index]);
-        for (var order = 0; order < groups.Count; order++) groups[order].Order = order;
-        await workspace.SaveAsync();
-        RefreshCollections(selectedFileName);
-    }
-
     public async Task RenameSelectedGroupAsync(string name)
     {
-        if (SelectedOutput is null || string.IsNullOrWhiteSpace(name)) return;
-        var group = workspace.Project.Groups.FirstOrDefault(candidate => candidate.Id == GetEntry(SelectedOutput.FileName).GroupId);
+        if (SelectedOutput is null || GetEntry(SelectedOutput.FileName).GroupId is not { } groupId) return;
+        await RenameGroupAsync(groupId, name);
+    }
+
+    public async Task RenameGroupAsync(Guid groupId, string name)
+    {
+        if (string.IsNullOrWhiteSpace(name)) return;
+        var group = workspace.Project.Groups.FirstOrDefault(candidate => candidate.Id == groupId);
         if (group is null) return;
         group.Name = name.Trim();
         await workspace.SaveAsync();
-        RefreshCollections(SelectedOutput.FileName);
+        RefreshCollections(SelectedOutput?.FileName);
         Status = $"Renamed group to {group.Name}.";
     }
 
@@ -385,7 +411,10 @@ public sealed partial class MainViewModel : ObservableObject, IDisposable
 
         Outputs.Clear();
         foreach (var fileName in workspace.ScanOutputs()
-                     .OrderBy(fileName => GetEntry(fileName).GroupId is { } groupId && presentations.TryGetValue(groupId, out var group) ? group.Order : int.MaxValue)
+                     .OrderBy(fileName => GetEntry(fileName).GroupId is null)
+                     .ThenBy(fileName => GetEntry(fileName).GroupId is { } groupId && presentations.TryGetValue(groupId, out var group)
+                         ? group.Name
+                         : string.Empty, StringComparer.OrdinalIgnoreCase)
                      .ThenBy(fileName => GetEntry(fileName).Order)
                      .ThenBy(fileName => fileName, StringComparer.OrdinalIgnoreCase))
         {

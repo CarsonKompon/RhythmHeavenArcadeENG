@@ -27,9 +27,9 @@ The last folder pair reopens automatically. Both explorers intentionally show to
 - Select an original texture to preview it in the inspector without showing output-editing controls.
 - Right-click one or more selected originals to mark them as seen, unseen, TODO, or not TODO. Use **Hide seen** and **Hide TODO** above the original browser to focus the review list.
 - Drag one modified image onto another to put both in a virtual group. Dragging near either browser's top or bottom edge scrolls while the drag remains active.
-- Right-click a modified texture to create or rename its group, remove the selected texture(s) from the group, move a texture within its group, or move the whole group up and down.
+- Right-click a modified texture to create or rename its group, remove the selected texture(s) from the group, or move a texture within its group.
 - Drop grouped textures onto the blank **Ungrouped** section to remove them from their group. Dropping onto an ungrouped texture still creates a new group containing the source and target textures.
-- Output groups have distinct background colors and expandable headers. Expanded/collapsed state and ordering persist in `.texturemod.json`.
+- Named output groups are sorted alphabetically above **Ungrouped** and start collapsed. Use **Hide groups** to show only the Ungrouped grid; texture ordering within each section persists in `.texturemod.json`.
 - Select a modified image, then drag another modified image into **Copy Image**. The selected image is regenerated from the dragged source but keeps its own filename.
 - Adjust **Brightness** from 0 to 100 and select **Save brightness**. Brightness scales RGB while preserving transparency.
 - Copy Image chains are supported. Their brightness values multiply through the chain, and cycles are rejected.
