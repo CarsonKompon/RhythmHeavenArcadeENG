@@ -16,6 +16,7 @@ public partial class MainWindow : Window
     private readonly MainViewModel viewModel = new();
     private Point dragStart;
     private TextureItemViewModel[] dragItems = [];
+    private TextureItemViewModel? inspectorBeforeDrag;
     private string? pendingOriginalFolder;
     private string? pendingOutputFolder;
 
@@ -72,6 +73,9 @@ public partial class MainWindow : Window
         var panel = (ItemsPanelTemplate)FindResource(panelName);
         OriginalList.ItemsPanel = panel;
         OutputList.ItemsPanel = panel;
+        OutputList.HorizontalContentAlignment = viewModel.IsGridView
+            ? HorizontalAlignment.Left
+            : HorizontalAlignment.Stretch;
         var templateName = viewModel.IsGridView ? "TextureTemplate" : "TextureListTemplate";
         OriginalList.ItemTemplate = (DataTemplate)FindResource(templateName);
         OutputList.ItemTemplate = (DataTemplate)FindResource(templateName);
@@ -111,6 +115,7 @@ public partial class MainWindow : Window
         if (sender is ListBox listBox &&
             FindItem(e.OriginalSource as DependencyObject) is { DataContext: TextureItemViewModel item })
         {
+            inspectorBeforeDrag = item.IsOutput ? viewModel.SelectedTexture : null;
             dragItems = listBox.SelectedItems.Contains(item)
                 ? listBox.SelectedItems.Cast<TextureItemViewModel>().ToArray()
                 : [item];
@@ -133,9 +138,10 @@ public partial class MainWindow : Window
 
         if (FindItem(e.OriginalSource as DependencyObject) is { DataContext: TextureItemViewModel item })
         {
-            if (!listBox.SelectedItems.Contains(item))
+            if (item.IsOutput && inspectorBeforeDrag is not null)
             {
-                listBox.SelectedItem = item;
+                viewModel.SelectedTexture = inspectorBeforeDrag;
+                viewModel.SelectedOutput = inspectorBeforeDrag.IsOutput ? inspectorBeforeDrag : null;
             }
 
             DragDrop.DoDragDrop(listBox, new DataObject(typeof(TextureItemViewModel[]), dragItems), DragDropEffects.Copy | DragDropEffects.Move);
@@ -173,11 +179,95 @@ public partial class MainWindow : Window
     private async void MarkOriginalsUnseen(object sender, RoutedEventArgs e) =>
         await viewModel.SetSeenAsync(OriginalList.SelectedItems.Cast<TextureItemViewModel>().ToArray(), false);
 
+    private async void MarkOriginalsTodo(object sender, RoutedEventArgs e) =>
+        await viewModel.SetTodoAsync(OriginalList.SelectedItems.Cast<TextureItemViewModel>().ToArray(), true);
+
+    private async void ClearOriginalsTodo(object sender, RoutedEventArgs e) =>
+        await viewModel.SetTodoAsync(OriginalList.SelectedItems.Cast<TextureItemViewModel>().ToArray(), false);
+
     private void HideSeenChanged(object sender, RoutedEventArgs e)
     {
         if (sender is CheckBox checkBox)
         {
             viewModel.SetHideSeenOriginals(checkBox.IsChecked == true);
+        }
+    }
+
+    private void HideTodoChanged(object sender, RoutedEventArgs e)
+    {
+        if (sender is CheckBox checkBox)
+        {
+            viewModel.SetHideTodoOriginals(checkBox.IsChecked == true);
+        }
+    }
+
+    private void OutputListRightButtonDown(object sender, MouseButtonEventArgs e)
+    {
+        if (FindItem(e.OriginalSource as DependencyObject) is not { DataContext: TextureItemViewModel item } container)
+        {
+            return;
+        }
+
+        if (!container.IsSelected)
+        {
+            OutputList.SelectedItems.Clear();
+            container.IsSelected = true;
+        }
+
+        viewModel.SelectedOutput = item;
+        viewModel.SelectedTexture = item;
+    }
+
+    private async void CreateGroupFromTexture(object sender, RoutedEventArgs e)
+    {
+        if (viewModel.SelectedOutput is not { } item || PromptForGroupName() is not { } name)
+        {
+            return;
+        }
+
+        await viewModel.CreateGroupAsync(item, name);
+    }
+
+    private async void RenameGroupFromMenu(object sender, RoutedEventArgs e)
+    {
+        if (viewModel.SelectedOutput is not { OutputGroup.Id: not null } item ||
+            PromptForGroupName(item.GroupName) is not { } name)
+        {
+            return;
+        }
+
+        await viewModel.RenameSelectedGroupAsync(name);
+    }
+
+    private async void RemoveFromGroup(object sender, RoutedEventArgs e)
+    {
+        var items = OutputList.SelectedItems.Cast<TextureItemViewModel>()
+            .Where(item => item.OutputGroup?.Id is not null)
+            .ToArray();
+        await viewModel.UngroupItemsAsync(items);
+    }
+
+    private async void MoveTextureUp(object sender, RoutedEventArgs e) => await viewModel.MoveSelectedItemAsync(-1);
+
+    private async void MoveTextureDown(object sender, RoutedEventArgs e) => await viewModel.MoveSelectedItemAsync(1);
+
+    private async void MoveGroupUp(object sender, RoutedEventArgs e) => await viewModel.MoveSelectedGroupAsync(-1);
+
+    private async void MoveGroupDown(object sender, RoutedEventArgs e) => await viewModel.MoveSelectedGroupAsync(1);
+
+    private async void OutputGroupExpanded(object sender, RoutedEventArgs e)
+    {
+        if (sender is Expander { DataContext: System.Windows.Data.CollectionViewGroup { Name: OutputGroupViewModel group } })
+        {
+            await viewModel.SetGroupCollapsedAsync(group.Id, false);
+        }
+    }
+
+    private async void OutputGroupCollapsed(object sender, RoutedEventArgs e)
+    {
+        if (sender is Expander { DataContext: System.Windows.Data.CollectionViewGroup { Name: OutputGroupViewModel group } })
+        {
+            await viewModel.SetGroupCollapsedAsync(group.Id, true);
         }
     }
 
@@ -191,8 +281,17 @@ public partial class MainWindow : Window
 
     private void OutputDragOver(object sender, DragEventArgs e)
     {
+        AutoScroll(OutputList, e);
         e.Effects = e.Data.GetDataPresent(typeof(TextureItemViewModel[])) ? DragDropEffects.Copy : DragDropEffects.None;
         e.Handled = true;
+    }
+
+    private void TextureListDragOver(object sender, DragEventArgs e)
+    {
+        if (sender is ListBox listBox)
+        {
+            AutoScroll(listBox, e);
+        }
     }
 
     private async void OutputDrop(object sender, DragEventArgs e)
@@ -208,8 +307,22 @@ public partial class MainWindow : Window
             return;
         }
 
-        if (FindItem(e.OriginalSource as DependencyObject) is { DataContext: TextureItemViewModel target })
+        var targetContainer = FindItem(e.OriginalSource as DependencyObject);
+        if (targetContainer is null &&
+            FindVisualParent<GroupItem>(e.OriginalSource as DependencyObject) is
+                { DataContext: System.Windows.Data.CollectionViewGroup { Name: OutputGroupViewModel { Id: null } } })
         {
+            await viewModel.UngroupItemsAsync(draggedItems);
+            return;
+        }
+
+        if (targetContainer is { DataContext: TextureItemViewModel target })
+        {
+            if (draggedItems.All(item => item == target))
+            {
+                return;
+            }
+
             string? newGroupName = null;
             if (target.GroupName == "Ungrouped")
             {
@@ -251,9 +364,9 @@ public partial class MainWindow : Window
 
     private void OnClosing(object? sender, System.ComponentModel.CancelEventArgs e) => viewModel.Dispose();
 
-    private string? PromptForGroupName()
+    private string? PromptForGroupName(string initialName = "New group")
     {
-        var input = new TextBox { Margin = new Thickness(0, 8, 0, 14), Padding = new Thickness(7), Text = "New group" };
+        var input = new TextBox { Margin = new Thickness(0, 8, 0, 14), Padding = new Thickness(7), Text = initialName };
         var dialog = new Window
         {
             Title = "Create texture group",
@@ -291,6 +404,25 @@ public partial class MainWindow : Window
         return dialog.ShowDialog() == true ? input.Text.Trim() : null;
     }
 
+    private static void AutoScroll(ListBox listBox, DragEventArgs e)
+    {
+        const double edgeSize = 56;
+        var position = e.GetPosition(listBox);
+        if (FindVisualChild<ScrollViewer>(listBox) is not { } scrollViewer)
+        {
+            return;
+        }
+
+        if (position.Y < edgeSize)
+        {
+            scrollViewer.LineUp();
+        }
+        else if (position.Y > listBox.ActualHeight - edgeSize)
+        {
+            scrollViewer.LineDown();
+        }
+    }
+
     private static ListBoxItem? FindItem(DependencyObject? source)
     {
         while (source is not null and not ListBoxItem)
@@ -315,6 +447,21 @@ public partial class MainWindow : Window
             {
                 return descendant;
             }
+        }
+
+        return null;
+    }
+
+    private static T? FindVisualParent<T>(DependencyObject? child) where T : DependencyObject
+    {
+        while (child is not null)
+        {
+            if (child is T match)
+            {
+                return match;
+            }
+
+            child = System.Windows.Media.VisualTreeHelper.GetParent(child);
         }
 
         return null;

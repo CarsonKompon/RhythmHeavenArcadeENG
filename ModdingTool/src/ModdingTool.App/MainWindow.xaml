@@ -31,6 +31,49 @@
         <ItemsPanelTemplate x:Key="TextureListPanel">
             <VirtualizingStackPanel />
         </ItemsPanelTemplate>
+        <ItemsPanelTemplate x:Key="OutputGroupListPanel">
+            <VirtualizingStackPanel />
+        </ItemsPanelTemplate>
+        <GroupStyle x:Key="OutputGroupStyle" Panel="{StaticResource OutputGroupListPanel}">
+            <GroupStyle.ContainerStyle>
+                <Style TargetType="GroupItem">
+                    <Setter Property="HorizontalAlignment" Value="Stretch" />
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="GroupItem">
+                                <Border Background="{Binding Name.Background}" BorderBrush="#C8CBC4" BorderThickness="1"
+                                    CornerRadius="4" Margin="0,5" Padding="8" HorizontalAlignment="Stretch"
+                                    Width="{Binding ActualWidth, ElementName=OutputList}">
+                                    <Grid>
+                                        <Expander x:Name="GroupDrawer" IsExpanded="{Binding Name.IsExpanded, Mode=OneTime}"
+                                              HorizontalContentAlignment="Stretch"
+                                              Expanded="OutputGroupExpanded" Collapsed="OutputGroupCollapsed">
+                                            <Expander.Header>
+                                                <TextBlock Text="{Binding Name.Name}" FontFamily="Bahnschrift"
+                                                           FontWeight="SemiBold" FontSize="13" Margin="4,2,8,6" />
+                                            </Expander.Header>
+                                            <ItemsPresenter />
+                                        </Expander>
+                                        <StackPanel x:Name="UngroupedSection" Visibility="Collapsed">
+                                            <TextBlock Text="UNGROUPED" FontFamily="Bahnschrift" FontWeight="SemiBold"
+                                                       FontSize="12" Foreground="{StaticResource Muted}" Margin="4,2,8,6" />
+                                            <ItemsPresenter />
+                                        </StackPanel>
+                                    </Grid>
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <DataTrigger Binding="{Binding Name.Id}" Value="{x:Null}">
+                                        <Setter TargetName="GroupDrawer" Property="Visibility" Value="Collapsed" />
+                                        <Setter TargetName="UngroupedSection" Property="Visibility" Value="Visible" />
+                                    </DataTrigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </GroupStyle.ContainerStyle>
+        </GroupStyle>
         <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
         <DataTemplate x:Key="TextureTemplate" DataType="{x:Type vm:TextureItemViewModel}">
             <Grid Width="150" Height="178" Margin="5">
@@ -49,6 +92,10 @@
                         <Border Background="#CC36705A" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5"
                                 Padding="5,2" CornerRadius="2" Visibility="{Binding IsSeen, Converter={StaticResource BooleanToVisibilityConverter}}">
                             <TextBlock Text="SEEN" Foreground="White" FontSize="10" FontWeight="Bold" />
+                        </Border>
+                        <Border Background="#D6C88A24" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="5"
+                                Padding="5,2" CornerRadius="2" Visibility="{Binding IsTodo, Converter={StaticResource BooleanToVisibilityConverter}}">
+                            <TextBlock Text="TODO" Foreground="White" FontSize="10" FontWeight="Bold" />
                         </Border>
                     </Grid>
                 </Border>
@@ -120,6 +167,8 @@
                             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                                 <CheckBox Content="Hide seen" VerticalAlignment="Center" Margin="0,0,14,0"
                                           Checked="HideSeenChanged" Unchecked="HideSeenChanged" />
+                                <CheckBox Content="Hide TODO" VerticalAlignment="Center" Margin="0,0,14,0"
+                                          Checked="HideTodoChanged" Unchecked="HideTodoChanged" />
                                 <Button Content="‹" ToolTip="Previous page" Click="PreviousOriginalPage"
                                         IsEnabled="{Binding CanShowPreviousOriginals}" Padding="9,3" />
                                 <TextBlock VerticalAlignment="Center" Margin="4,0,12,0">
@@ -134,11 +183,15 @@
                              Style="{StaticResource TextureListStyle}" PreviewMouseLeftButtonDown="TextureListMouseDown"
                              PreviewMouseMove="TextureListMouseMove" MouseDoubleClick="TextureDoubleClick"
                              PreviewMouseRightButtonDown="OriginalListRightButtonDown" SelectionChanged="TextureSelectionChanged"
+                             DragOver="TextureListDragOver"
                              SelectionMode="Extended" ItemsPanel="{StaticResource TextureGridPanel}">
                         <ListBox.ContextMenu>
                             <ContextMenu>
                                 <MenuItem Header="Mark as seen" Click="MarkOriginalsSeen" />
                                 <MenuItem Header="Mark as unseen" Click="MarkOriginalsUnseen" />
+                                <Separator />
+                                <MenuItem Header="Mark as TODO" Click="MarkOriginalsTodo" />
+                                <MenuItem Header="Clear TODO" Click="ClearOriginalsTodo" />
                             </ContextMenu>
                         </ListBox.ContextMenu>
                     </ListBox>
@@ -148,14 +201,38 @@
             <Border Grid.Column="2" Background="{StaticResource Panel}" BorderBrush="#D3D1C9" BorderThickness="1" CornerRadius="4">
                 <DockPanel>
                     <Border DockPanel.Dock="Top" Padding="14,11" BorderBrush="#DDDAD2" BorderThickness="0,0,0,1">
-                        <TextBlock Text="MODIFIED / LIVE OUTPUT" FontFamily="Bahnschrift" FontWeight="SemiBold" Foreground="{StaticResource Ink}" />
+                        <Grid>
+                            <TextBlock Text="MODIFIED / LIVE OUTPUT" FontFamily="Bahnschrift" FontWeight="SemiBold"
+                                       Foreground="{StaticResource Ink}" VerticalAlignment="Center" />
+                            <CheckBox Content="Hide groups" IsChecked="{Binding HideGroups}"
+                                      HorizontalAlignment="Right" VerticalAlignment="Center" />
+                        </Grid>
                     </Border>
-                    <ListBox x:Name="OutputList" ItemsSource="{Binding Outputs}" SelectedItem="{Binding SelectedOutput}"
+                    <ListBox x:Name="OutputList" ItemsSource="{Binding OutputView}" SelectedItem="{Binding SelectedOutput}"
                              ItemTemplate="{StaticResource TextureTemplate}" Style="{StaticResource TextureListStyle}"
+                             HorizontalContentAlignment="Left"
                              PreviewMouseLeftButtonDown="TextureListMouseDown" PreviewMouseMove="TextureListMouseMove"
                              MouseDoubleClick="TextureDoubleClick" DragOver="OutputDragOver" Drop="OutputDrop"
+                             PreviewMouseRightButtonDown="OutputListRightButtonDown"
                              SelectionChanged="TextureSelectionChanged" SelectionMode="Extended"
-                             ItemsPanel="{StaticResource TextureGridPanel}" />
+                             ItemsPanel="{StaticResource TextureGridPanel}">
+                        <ListBox.GroupStyle>
+                            <StaticResource ResourceKey="OutputGroupStyle" />
+                        </ListBox.GroupStyle>
+                        <ListBox.ContextMenu>
+                            <ContextMenu>
+                                <MenuItem Header="Create group from texture" Click="CreateGroupFromTexture" />
+                                <MenuItem Header="Rename group" Click="RenameGroupFromMenu" />
+                                <MenuItem Header="Remove from group" Click="RemoveFromGroup" />
+                                <Separator />
+                                <MenuItem Header="Move texture up" Click="MoveTextureUp" />
+                                <MenuItem Header="Move texture down" Click="MoveTextureDown" />
+                                <Separator />
+                                <MenuItem Header="Move group up" Click="MoveGroupUp" />
+                                <MenuItem Header="Move group down" Click="MoveGroupDown" />
+                            </ContextMenu>
+                        </ListBox.ContextMenu>
+                    </ListBox>
                 </DockPanel>
             </Border>
             <GridSplitter Grid.Column="3" Width="8" HorizontalAlignment="Stretch" Background="Transparent" />

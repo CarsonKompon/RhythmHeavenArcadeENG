@@ -25,8 +25,11 @@ The last folder pair reopens automatically. Both explorers intentionally show to
 - Drag an image from **Original Textures** into **Modified / Live Output** to copy it with the same filename.
 - Use Ctrl-click or Shift-click to select multiple textures, then drag the selection to copy or group it as one operation.
 - Select an original texture to preview it in the inspector without showing output-editing controls.
-- Right-click one or more selected originals to mark them as seen or unseen. Use **Hide seen** above the original browser to focus on textures that still need review.
-- Drag one modified image onto another to put both in a virtual group. Rename or remove the group from the inspector.
+- Right-click one or more selected originals to mark them as seen, unseen, TODO, or not TODO. Use **Hide seen** and **Hide TODO** above the original browser to focus the review list.
+- Drag one modified image onto another to put both in a virtual group. Dragging near either browser's top or bottom edge scrolls while the drag remains active.
+- Right-click a modified texture to create or rename its group, remove the selected texture(s) from the group, move a texture within its group, or move the whole group up and down.
+- Drop grouped textures onto the blank **Ungrouped** section to remove them from their group. Dropping onto an ungrouped texture still creates a new group containing the source and target textures.
+- Output groups have distinct background colors and expandable headers. Expanded/collapsed state and ordering persist in `.texturemod.json`.
 - Select a modified image, then drag another modified image into **Copy Image**. The selected image is regenerated from the dragged source but keeps its own filename.
 - Adjust **Brightness** from 0 to 100 and select **Save brightness**. Brightness scales RGB while preserving transparency.
 - Copy Image chains are supported. Their brightness values multiply through the chain, and cycles are rejected.

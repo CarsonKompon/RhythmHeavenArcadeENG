@@ -22,6 +22,7 @@ public sealed class TextureProject
 public sealed class TextureEntry
 {
     public bool IsSeen { get; set; }
+    public bool IsTodo { get; set; }
 
     public string? CopySourceFileName { get; set; }
 
@@ -40,5 +41,5 @@ public sealed class TextureGroup
 
     public int Order { get; set; }
 
-    public bool IsCollapsed { get; set; }
+    public bool IsCollapsed { get; set; } = true;
 }

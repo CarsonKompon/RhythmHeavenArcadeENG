@@ -22,6 +22,8 @@ public sealed partial class TextureItemViewModel : ObservableObject
 
     public bool IsOutput { get; }
 
+    public OutputGroupViewModel? OutputGroup { get; set; }
+
     [ObservableProperty]
     private ImageSource? thumbnail;
 
@@ -39,6 +41,9 @@ public sealed partial class TextureItemViewModel : ObservableObject
 
     [ObservableProperty]
     private bool isSeen;
+
+    [ObservableProperty]
+    private bool isTodo;
 
     public bool HasCopySource => !string.IsNullOrWhiteSpace(CopySourceFileName);
 
