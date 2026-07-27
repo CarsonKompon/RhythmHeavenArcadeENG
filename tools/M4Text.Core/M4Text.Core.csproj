@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>M4Text</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Needed for Shift-JIS (code page 932) on .NET Core. -->
+    <PackageReference Include="System.Text.Encoding.CodePages" Version="9.0.0" />
+  </ItemGroup>
+
+</Project>
