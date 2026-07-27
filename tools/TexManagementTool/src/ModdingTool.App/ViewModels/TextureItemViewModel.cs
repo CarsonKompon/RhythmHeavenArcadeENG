@@ -45,6 +45,9 @@ public sealed partial class TextureItemViewModel : ObservableObject
     [ObservableProperty]
     private bool isTodo;
 
+    [ObservableProperty]
+    private bool isUnfinished;
+
     public bool HasCopySource => !string.IsNullOrWhiteSpace(CopySourceFileName);
 
     partial void OnCopySourceFileNameChanged(string? value)

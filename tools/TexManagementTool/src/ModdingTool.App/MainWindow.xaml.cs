@@ -2,6 +2,7 @@
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Threading;
 using ModdingTool.App.Services;
 using ModdingTool.App.ViewModels;
 using Microsoft.Win32;
@@ -32,13 +33,20 @@ public partial class MainWindow : Window
         var settings = await AppSettingsStore.LoadAsync();
         viewModel.SetHideSeenOriginals(settings.HideSeenOriginals);
         viewModel.SetHideTodoOriginals(settings.HideTodoOriginals);
-        viewModel.HideGroups = settings.HideGroups;
+        viewModel.LeftPaneSource = settings.LeftPaneSource ?? PaneSource.Originals;
+        viewModel.RightPaneSource = settings.RightPaneSource ?? PaneSource.Output;
+        viewModel.LeftHideGroups = settings.LeftHideGroups ?? false;
+        viewModel.RightHideGroups = settings.RightHideGroups ?? settings.HideGroups;
+        viewModel.LeftOnlyUnfinished = settings.LeftOnlyUnfinished;
+        viewModel.RightOnlyUnfinished = settings.RightOnlyUnfinished;
         if (Directory.Exists(settings.OriginalFolder) && Directory.Exists(settings.OutputFolder))
         {
             pendingOriginalFolder = settings.OriginalFolder;
             pendingOutputFolder = settings.OutputFolder;
             await TryOpenFoldersAsync();
         }
+
+        await Dispatcher.InvokeAsync(ApplyViewLayout, DispatcherPriority.Loaded);
     }
 
     private async void ChooseOriginalFolder(object sender, RoutedEventArgs e)
@@ -75,21 +83,39 @@ public partial class MainWindow : Window
         pendingOutputFolder,
         viewModel.HideSeenOriginals,
         viewModel.HideTodoOriginals,
-        viewModel.HideGroups);
+        viewModel.RightHideGroups,
+        viewModel.LeftPaneSource,
+        viewModel.RightPaneSource,
+        viewModel.LeftHideGroups,
+        viewModel.RightHideGroups,
+        viewModel.LeftOnlyUnfinished,
+        viewModel.RightOnlyUnfinished);
 
     private void ToggleView(object sender, RoutedEventArgs e)
     {
         viewModel.ToggleView();
+        ApplyViewLayout();
+    }
+
+    private void ApplyViewLayout()
+    {
         var panelName = viewModel.IsGridView ? "TextureGridPanel" : "TextureListPanel";
         var panel = (ItemsPanelTemplate)FindResource(panelName);
-        OriginalList.ItemsPanel = panel;
-        OutputList.ItemsPanel = panel;
-        OutputList.HorizontalContentAlignment = viewModel.IsGridView
-            ? HorizontalAlignment.Left
-            : HorizontalAlignment.Stretch;
         var templateName = viewModel.IsGridView ? "TextureTemplate" : "TextureListTemplate";
-        OriginalList.ItemTemplate = (DataTemplate)FindResource(templateName);
-        OutputList.ItemTemplate = (DataTemplate)FindResource(templateName);
+        var template = (DataTemplate)FindResource(templateName);
+        var itemStyleName = viewModel.IsGridView ? "TextureGridItemStyle" : "TextureListItemStyle";
+        var itemStyle = (Style)FindResource(itemStyleName);
+        foreach (var listBox in AllPaneLists)
+        {
+            listBox.ItemsPanel = panel;
+            listBox.ItemContainerStyle = itemStyle;
+            listBox.HorizontalContentAlignment = viewModel.IsGridView
+                ? HorizontalAlignment.Left
+                : HorizontalAlignment.Stretch;
+            listBox.ItemTemplate = template;
+            listBox.Items.Refresh();
+            listBox.InvalidateMeasure();
+        }
     }
 
     private void PreviousOriginalPage(object sender, RoutedEventArgs e)
@@ -106,9 +132,9 @@ public partial class MainWindow : Window
 
     private void ScrollOriginalsToTop()
     {
-        if (FindVisualChild<ScrollViewer>(OriginalList) is { } scrollViewer)
+        foreach (var listBox in new[] { LeftOriginalList, RightOriginalList })
         {
-            scrollViewer.ScrollToTop();
+            FindVisualChild<ScrollViewer>(listBox)?.ScrollToTop();
         }
     }
 
@@ -170,8 +196,15 @@ public partial class MainWindow : Window
         viewModel.SelectedOutput = item.IsOutput ? item : null;
     }
 
-    private void OriginalListRightButtonDown(object sender, MouseButtonEventArgs e)
+    private void PaneListRightButtonDown(object sender, MouseButtonEventArgs e)
     {
+        if (sender is not ListBox listBox) return;
+
+        contextOutputGroup = FindVisualParent<GroupItem>(e.OriginalSource as DependencyObject)?.DataContext is
+            System.Windows.Data.CollectionViewGroup { Name: OutputGroupViewModel group }
+                ? group
+                : null;
+
         if (FindItem(e.OriginalSource as DependencyObject) is not { DataContext: TextureItemViewModel item } container)
         {
             return;
@@ -179,22 +212,31 @@ public partial class MainWindow : Window
 
         if (!container.IsSelected)
         {
-            OriginalList.SelectedItems.Clear();
+            listBox.SelectedItems.Clear();
             container.IsSelected = true;
         }
+
+        viewModel.SelectedTexture = item;
+        viewModel.SelectedOutput = item.IsOutput ? item : null;
     }
 
     private async void MarkOriginalsSeen(object sender, RoutedEventArgs e) =>
-        await viewModel.SetSeenAsync(OriginalList.SelectedItems.Cast<TextureItemViewModel>().ToArray(), true);
+        await viewModel.SetSeenAsync(GetContextSelection(sender), true);
 
     private async void MarkOriginalsUnseen(object sender, RoutedEventArgs e) =>
-        await viewModel.SetSeenAsync(OriginalList.SelectedItems.Cast<TextureItemViewModel>().ToArray(), false);
+        await viewModel.SetSeenAsync(GetContextSelection(sender), false);
 
     private async void MarkOriginalsTodo(object sender, RoutedEventArgs e) =>
-        await viewModel.SetTodoAsync(OriginalList.SelectedItems.Cast<TextureItemViewModel>().ToArray(), true);
+        await viewModel.SetTodoAsync(GetContextSelection(sender), true);
 
     private async void ClearOriginalsTodo(object sender, RoutedEventArgs e) =>
-        await viewModel.SetTodoAsync(OriginalList.SelectedItems.Cast<TextureItemViewModel>().ToArray(), false);
+        await viewModel.SetTodoAsync(GetContextSelection(sender), false);
+
+    private async void MarkOutputsUnfinished(object sender, RoutedEventArgs e) =>
+        await viewModel.SetUnfinishedAsync(GetContextSelection(sender), true);
+
+    private async void ClearOutputsUnfinished(object sender, RoutedEventArgs e) =>
+        await viewModel.SetUnfinishedAsync(GetContextSelection(sender), false);
 
     private void HideSeenChanged(object sender, RoutedEventArgs e)
     {
@@ -210,28 +252,6 @@ public partial class MainWindow : Window
         {
             viewModel.SetHideTodoOriginals(checkBox.IsChecked == true);
         }
-    }
-
-    private void OutputListRightButtonDown(object sender, MouseButtonEventArgs e)
-    {
-        contextOutputGroup = FindVisualParent<GroupItem>(e.OriginalSource as DependencyObject)?.DataContext is
-            System.Windows.Data.CollectionViewGroup { Name: OutputGroupViewModel group }
-                ? group
-                : null;
-
-        if (FindItem(e.OriginalSource as DependencyObject) is not { DataContext: TextureItemViewModel item } container)
-        {
-            return;
-        }
-
-        if (!container.IsSelected)
-        {
-            OutputList.SelectedItems.Clear();
-            container.IsSelected = true;
-        }
-
-        viewModel.SelectedOutput = item;
-        viewModel.SelectedTexture = item;
     }
 
     private async void CreateGroupFromTexture(object sender, RoutedEventArgs e)
@@ -257,7 +277,7 @@ public partial class MainWindow : Window
 
     private async void RemoveFromGroup(object sender, RoutedEventArgs e)
     {
-        var items = OutputList.SelectedItems.Cast<TextureItemViewModel>()
+        var items = GetContextSelection(sender)
             .Where(item => item.OutputGroup?.Id is not null)
             .ToArray();
         await viewModel.UngroupItemsAsync(items);
@@ -291,23 +311,22 @@ public partial class MainWindow : Window
         }
     }
 
-    private void OutputDragOver(object sender, DragEventArgs e)
-    {
-        AutoScroll(OutputList, e);
-        e.Effects = e.Data.GetDataPresent(typeof(TextureItemViewModel[])) ? DragDropEffects.Copy : DragDropEffects.None;
-        e.Handled = true;
-    }
-
-    private void TextureListDragOver(object sender, DragEventArgs e)
+    private void PaneDragOver(object sender, DragEventArgs e)
     {
         if (sender is ListBox listBox)
         {
             AutoScroll(listBox, e);
+            e.Effects = IsOutputPane(listBox) && e.Data.GetDataPresent(typeof(TextureItemViewModel[]))
+                ? DragDropEffects.Copy
+                : DragDropEffects.None;
+            e.Handled = true;
         }
     }
 
     private async void OutputDrop(object sender, DragEventArgs e)
     {
+        if (sender is not ListBox listBox || !IsOutputPane(listBox)) return;
+
         if (e.Data.GetData(typeof(TextureItemViewModel[])) is not TextureItemViewModel[] draggedItems || draggedItems.Length == 0)
         {
             return;
@@ -493,5 +512,20 @@ public partial class MainWindow : Window
         }
 
         return null;
+    }
+
+    private ListBox[] AllPaneLists => [LeftOriginalList, LeftOutputList, RightOriginalList, RightOutputList];
+
+    private bool IsOutputPane(ListBox listBox) => listBox == LeftOutputList || listBox == RightOutputList;
+
+    private static TextureItemViewModel[] GetContextSelection(object sender)
+    {
+        if (sender is MenuItem menuItem &&
+            ItemsControl.ItemsControlFromItemContainer(menuItem) is ContextMenu { PlacementTarget: ListBox listBox })
+        {
+            return listBox.SelectedItems.Cast<TextureItemViewModel>().ToArray();
+        }
+
+        return [];
     }
 }

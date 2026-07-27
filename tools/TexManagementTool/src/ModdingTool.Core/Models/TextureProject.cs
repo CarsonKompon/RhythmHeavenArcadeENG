@@ -23,6 +23,7 @@ public sealed class TextureEntry
 {
     public bool IsSeen { get; set; }
     public bool IsTodo { get; set; }
+    public bool IsUnfinished { get; set; }
 
     public string? CopySourceFileName { get; set; }
 

@@ -19,7 +19,13 @@ public sealed class ProjectStoreTests
         try
         {
             var project = new TextureProject();
-            project.Textures["ABCDEF12.png"] = new TextureEntry { Brightness = 42, IsSeen = true, IsTodo = true };
+            project.Textures["ABCDEF12.png"] = new TextureEntry
+            {
+                Brightness = 42,
+                IsSeen = true,
+                IsTodo = true,
+                IsUnfinished = true
+            };
             project.Groups.Add(new TextureGroup { Name = "Menus", Order = 2, IsCollapsed = true });
             var store = new ProjectStore();
 
@@ -29,6 +35,7 @@ public sealed class ProjectStoreTests
             Assert.Equal(42, loaded.Textures["abcdef12.PNG"].Brightness);
             Assert.True(loaded.Textures["abcdef12.PNG"].IsSeen);
             Assert.True(loaded.Textures["abcdef12.PNG"].IsTodo);
+            Assert.True(loaded.Textures["abcdef12.PNG"].IsUnfinished);
             Assert.True(loaded.Groups.Single().IsCollapsed);
             Assert.Equal(2, loaded.Groups.Single().Order);
         }

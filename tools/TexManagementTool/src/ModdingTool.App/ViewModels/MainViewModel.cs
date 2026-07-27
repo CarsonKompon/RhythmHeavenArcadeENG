@@ -10,6 +10,12 @@ using ModdingTool.Core.Services;
 
 namespace ModdingTool.App.ViewModels;
 
+public enum PaneSource
+{
+    Originals,
+    Output
+}
+
 public sealed partial class MainViewModel : ObservableObject, IDisposable
 {
     private const int OriginalPageSize = 100;
@@ -31,7 +37,12 @@ public sealed partial class MainViewModel : ObservableObject, IDisposable
     [ObservableProperty] private TextureItemViewModel? selectedTexture;
     [ObservableProperty] private bool hideSeenOriginals;
     [ObservableProperty] private bool hideTodoOriginals;
-    [ObservableProperty] private bool hideGroups;
+    [ObservableProperty] private PaneSource leftPaneSource = PaneSource.Originals;
+    [ObservableProperty] private PaneSource rightPaneSource = PaneSource.Output;
+    [ObservableProperty] private bool leftHideGroups;
+    [ObservableProperty] private bool rightHideGroups;
+    [ObservableProperty] private bool leftOnlyUnfinished;
+    [ObservableProperty] private bool rightOnlyUnfinished;
     [ObservableProperty] private bool isGridView = true;
     [ObservableProperty] private string status = "Choose original and modified texture folders to begin.";
     [ObservableProperty] private int originalPage = 1;
@@ -40,16 +51,24 @@ public sealed partial class MainViewModel : ObservableObject, IDisposable
 
     public MainViewModel()
     {
-        OutputView = CollectionViewSource.GetDefaultView(Outputs);
-        OutputView.GroupDescriptions.Add(new PropertyGroupDescription(nameof(TextureItemViewModel.OutputGroup)));
-        OutputView.Filter = item => !HideGroups || item is TextureItemViewModel { OutputGroup.Id: null };
+        LeftOutputView = CreateOutputView(item => item is TextureItemViewModel texture &&
+            (!LeftHideGroups || texture.OutputGroup?.Id is null) &&
+            (!LeftOnlyUnfinished || texture.IsUnfinished));
+        RightOutputView = CreateOutputView(item => item is TextureItemViewModel texture &&
+            (!RightHideGroups || texture.OutputGroup?.Id is null) &&
+            (!RightOnlyUnfinished || texture.IsUnfinished));
     }
 
     public bool CanShowPreviousOriginals => OriginalPage > 1;
     public bool CanShowNextOriginals => OriginalPage < OriginalPageCount;
+    public bool IsLeftOriginals => LeftPaneSource == PaneSource.Originals;
+    public bool IsLeftOutput => LeftPaneSource == PaneSource.Output;
+    public bool IsRightOriginals => RightPaneSource == PaneSource.Originals;
+    public bool IsRightOutput => RightPaneSource == PaneSource.Output;
     public ObservableCollection<TextureItemViewModel> Originals { get; } = [];
     public ObservableCollection<TextureItemViewModel> Outputs { get; } = [];
-    public ICollectionView OutputView { get; }
+    public ICollectionView LeftOutputView { get; }
+    public ICollectionView RightOutputView { get; }
 
     public async Task OpenFoldersAsync(string originalFolder, string outputFolder)
     {
@@ -118,6 +137,22 @@ public sealed partial class MainViewModel : ObservableObject, IDisposable
     public async Task SetTodoAsync(IReadOnlyList<TextureItemViewModel> items, bool value) =>
         await SetOriginalFlagAsync(items, value, true);
 
+    public async Task SetUnfinishedAsync(IReadOnlyList<TextureItemViewModel> items, bool value)
+    {
+        var outputs = items.Where(item => item.IsOutput).ToArray();
+        if (outputs.Length == 0) return;
+        foreach (var item in outputs)
+        {
+            GetEntry(item.FileName).IsUnfinished = value;
+            item.IsUnfinished = value;
+        }
+
+        if (LeftOnlyUnfinished) LeftOutputView.Refresh();
+        if (RightOnlyUnfinished) RightOutputView.Refresh();
+        Status = $"Marked {outputs.Length:N0} modified texture(s) as {(value ? "unfinished" : "finished")}.";
+        await workspace.SaveAsync();
+    }
+
     public void SetHideSeenOriginals(bool hide)
     {
         HideSeenOriginals = hide;
@@ -184,16 +219,14 @@ public sealed partial class MainViewModel : ObservableObject, IDisposable
                 IsCollapsed = true
             };
             workspace.Project.Groups.Add(group);
-            targetEntry.GroupId = group.Id;
-            targetEntry.Order = 0;
+            AssignToGroup(targetEntry, group.Id, 0);
         }
 
         var nextOrder = workspace.Project.Textures.Values.Count(entry => entry.GroupId == group.Id);
         foreach (var item in items)
         {
             var entry = GetEntry(item.FileName);
-            entry.GroupId = group.Id;
-            entry.Order = nextOrder++;
+            AssignToGroup(entry, group.Id, nextOrder++);
         }
 
         await workspace.SaveAsync();
@@ -207,8 +240,7 @@ public sealed partial class MainViewModel : ObservableObject, IDisposable
         var group = new TextureGroup { Name = name.Trim(), Order = workspace.Project.Groups.Count, IsCollapsed = true };
         workspace.Project.Groups.Add(group);
         var entry = GetEntry(item.FileName);
-        entry.GroupId = group.Id;
-        entry.Order = 0;
+        AssignToGroup(entry, group.Id, 0);
         await workspace.SaveAsync();
         RefreshCollections(item.FileName);
         Status = $"Created group {group.Name}.";
@@ -231,8 +263,7 @@ public sealed partial class MainViewModel : ObservableObject, IDisposable
             var entry = GetEntry(fileName);
             if (entry.GroupId == groupId) continue;
             if (entry.GroupId is { } oldGroupId) affectedGroups.Add(oldGroupId);
-            entry.GroupId = groupId;
-            entry.Order = nextOrder++;
+            AssignToGroup(entry, groupId, nextOrder++);
         }
 
         foreach (var oldGroupId in affectedGroups)
@@ -256,9 +287,36 @@ public sealed partial class MainViewModel : ObservableObject, IDisposable
         await workspace.SaveAsync();
     }
 
-    partial void OnHideGroupsChanged(bool value)
+    partial void OnLeftHideGroupsChanged(bool value)
     {
-        OutputView.Refresh();
+        LeftOutputView.Refresh();
+    }
+
+    partial void OnRightHideGroupsChanged(bool value)
+    {
+        RightOutputView.Refresh();
+    }
+
+    partial void OnLeftOnlyUnfinishedChanged(bool value)
+    {
+        LeftOutputView.Refresh();
+    }
+
+    partial void OnRightOnlyUnfinishedChanged(bool value)
+    {
+        RightOutputView.Refresh();
+    }
+
+    partial void OnLeftPaneSourceChanged(PaneSource value)
+    {
+        OnPropertyChanged(nameof(IsLeftOriginals));
+        OnPropertyChanged(nameof(IsLeftOutput));
+    }
+
+    partial void OnRightPaneSourceChanged(PaneSource value)
+    {
+        OnPropertyChanged(nameof(IsRightOriginals));
+        OnPropertyChanged(nameof(IsRightOutput));
     }
 
     public async Task MoveSelectedItemAsync(int direction)
@@ -393,6 +451,13 @@ public sealed partial class MainViewModel : ObservableObject, IDisposable
         return entry;
     }
 
+    private static void AssignToGroup(TextureEntry entry, Guid groupId, int order)
+    {
+        entry.GroupId = groupId;
+        entry.Order = order;
+        if (entry.IsTodo) entry.IsUnfinished = true;
+    }
+
     private void RefreshCollections(string? selectedFileName = null)
     {
         var selectedName = selectedFileName ?? SelectedOutput?.FileName;
@@ -423,6 +488,7 @@ public sealed partial class MainViewModel : ObservableObject, IDisposable
             {
                 CopySourceFileName = entry.CopySourceFileName,
                 Brightness = entry.Brightness,
+                IsUnfinished = entry.IsUnfinished,
                 OutputGroup = entry.GroupId is { } groupId && presentations.TryGetValue(groupId, out var group) ? group : ungrouped
             };
             item.GroupName = item.OutputGroup.Name;
@@ -432,6 +498,15 @@ public sealed partial class MainViewModel : ObservableObject, IDisposable
 
         SelectedOutput = Outputs.FirstOrDefault(item => string.Equals(item.FileName, selectedName, StringComparison.OrdinalIgnoreCase));
         if (SelectedOutput is not null) SelectedTexture = SelectedOutput;
+    }
+
+    private ICollectionView CreateOutputView(Predicate<object> filter)
+    {
+        var source = new CollectionViewSource { Source = Outputs };
+        var view = source.View;
+        view.GroupDescriptions.Add(new PropertyGroupDescription(nameof(TextureItemViewModel.OutputGroup)));
+        view.Filter = filter;
+        return view;
     }
 
     private void ApplyOriginalFilter()

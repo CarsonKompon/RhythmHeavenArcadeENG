@@ -1,5 +1,6 @@
 using System.IO;
 using System.Text.Json;
+using ModdingTool.App.ViewModels;
 
 namespace ModdingTool.App.Services;
 
@@ -8,7 +9,13 @@ public sealed record AppSettings(
     string? OutputFolder = null,
     bool HideSeenOriginals = false,
     bool HideTodoOriginals = false,
-    bool HideGroups = false);
+    bool HideGroups = false,
+    PaneSource? LeftPaneSource = null,
+    PaneSource? RightPaneSource = null,
+    bool? LeftHideGroups = null,
+    bool? RightHideGroups = null,
+    bool LeftOnlyUnfinished = false,
+    bool RightOnlyUnfinished = false);
 
 public static class AppSettingsStore
 {

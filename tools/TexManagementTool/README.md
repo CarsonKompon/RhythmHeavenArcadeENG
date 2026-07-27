@@ -28,7 +28,9 @@ The last folder pair reopens automatically. Both explorers intentionally show to
 - Right-click one or more selected originals to mark them as seen, unseen, TODO, or not TODO. Use **Hide seen** and **Hide TODO** above the original browser to focus the review list.
 - Drag one modified image onto another to put both in a virtual group. Dragging near either browser's top or bottom edge scrolls while the drag remains active.
 - Right-click a modified texture to create or rename its group, remove the selected texture(s) from the group, or move a texture within its group.
+- Right-click one or more modified textures to mark or clear them as unfinished. Each output pane has an independent **Only unfinished** filter, which also hides groups with no unfinished textures.
 - Drop grouped textures onto the blank **Ungrouped** section to remove them from their group. Dropping onto an ungrouped texture still creates a new group containing the source and target textures.
+- Use either pane's header selector to show **Original Textures** or **Modified / Live Output** on that side. Two output panes can use **Hide groups** independently, making one an Ungrouped source grid and the other a group-drawer destination.
 - Named output groups are sorted alphabetically above **Ungrouped** and start collapsed. Use **Hide groups** to show only the Ungrouped grid; texture ordering within each section persists in `.texturemod.json`.
 - Select a modified image, then drag another modified image into **Copy Image**. The selected image is regenerated from the dragged source but keeps its own filename.
 - Adjust **Brightness** from 0 to 100 and select **Save brightness**. Brightness scales RGB while preserving transparency.
