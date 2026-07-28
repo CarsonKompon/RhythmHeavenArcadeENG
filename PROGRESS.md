@@ -1,0 +1,276 @@
+# Progress
+
+This is tracking all the progress of known textures that need to be updated or strings that need to be replaced. There are likely more than this but this is what I'm currently aware of and what I'm working through.
+
+- [ ] Attract Mode
+    - [x] Title Screen
+        - [x] Logo
+        - [x] Additional Text
+    - [ ] Leaderboards
+        - [x] Leaderboard UI/Headers
+        - [ ] Default Leaderboard Names
+        - [ ] Ability to enter english names
+    - [x] Drummer Attract Mode
+    - [ ] Cat Machine Attract Mode
+    - [x] Love Machine Attract Mode
+- [ ] Menus
+    - [x] Select a Mode Screen
+        - [x] All UI text
+        - [x] Updated Rhythm Heaven logo in the background
+    - [x] Select a Stage Screen
+        - [x] 1P Stage Select
+        - [x] 2P Stage Select
+    - [x] Select a Game Screen
+        - [x] All 1P UI + Games from each Stage
+        - [x] All 2P UI + Games from each Stage
+    - [ ] OK / Superb / Try Again
+    - [ ] Would you like to continue? Screen
+    - [ ] Congratulations + final flow score Screen
+- [] Multiplayer UI
+    - [x] "YOUR TURN" text
+    - [ ] Compatibility Test
+        - [ ] The UI
+        - [x] All results text 
+- [ ] Games
+    - [ ] Karate Man
+        - [ ] Intro Card
+        - [ ] EX Intro Card
+        - [ ] 1P Tutorial/Practice
+        - [ ] 2P Tutorial/Practice
+        - [ ] Results Text
+        - [ ] End Card Text
+    - [ ] Rhythm Tweezers
+        - [x] Intro Card
+        - [x] EX Intro Card
+        - [ ] 1P Tutorial/Practice
+        - [x] 2P Tutorial/Practice
+        - [ ] Results Text
+        - [ ] End Card Text
+    - [ ] Marching Orders
+        - [ ] Intro Card
+        - [x] EX Intro Card
+        - [ ] 1P Tutorial/Practice
+        - [ ] 2P Tutorial/Practice
+        - [ ] Results Text
+        - [ ] End Card Text
+    - [ ] Spaceball
+        - [ ] Intro Card
+        - [ ] EX Intro Card
+        - [ ] Tutorial/Practice
+        - [ ] Results Text
+        - [ ] End Card Text
+    - [ ] The Clappy Trio
+        - [ ] Intro Card
+        - [ ] EX Intro Card
+        - [ ] Tutorial/Practice
+        - [ ] Results Text
+        - [ ] End Card Text
+    - [ ] Remix 1
+        - [ ] Intro Card
+        - [ ] EX Intro Card
+        - [ ] Results Text
+        - [ ] End Card Text
+    - [ ] Sneaky Spirits
+        - [x] Intro Card
+        - [ ] 1P Tutorial/Practice
+        - [ ] 2P Tutorial/Practice
+        - [ ] Results Text
+        - [ ] End Card Text
+    - [ ] Samurai Slice
+        - [x] Intro Card
+        - [ ] Tutorial/Practice
+        - [ ] Results Text
+        - [ ] End Card Text
+    - [ ] Rat Race
+        - [ ] Intro Card
+        - [ ] 1P Tutorial/Practice
+        - [ ] 2P Tutorial/Practice
+        - [ ] Results Text
+        - [ ] End Card Text
+    - [ ] Sick Beats
+        - [x] Intro Card
+        - [x] Tutorial/Practice
+        - [ ] Results Text
+        - [ ] End Card Text
+    - [ ] The Bon Odori
+        - [x] Intro Card
+        - [ ] 1P Tutorial/Practice
+        - [ ] 2P Tutorial/Practice
+        - [ ] In-game lyrics
+        - [ ] Results Text
+        - [ ] End Card Text
+    - [ ] Remix 2
+        - [ ] Intro Card
+        - [ ] Results Text
+        - [ ] End Card Text
+    - [ ] Wizard's Waltz
+        - [ ] Intro Card
+        - [ ] Tutorial/Practice
+        - [ ] Results Text
+        - [ ] End Card Text
+    - [ ] Showtime
+        - [ ] Intro Card
+        - [ ] Tutorial/Practice
+        - [ ] Results Text
+        - [ ] End Card Text
+    - [ ] Bunny Hop
+        - [ ] Intro Card
+        - [ ] Tutorial/Practice
+        - [ ] Results Text
+        - [ ] End Card Text
+    - [ ] Tram & Pauline
+        - [ ] Intro Card
+        - [ ] Tutorial/Practice
+        - [ ] Results Text
+        - [ ] End Card Text
+    - [ ] Space Dance
+        - [ ] Intro Card
+        - [ ] 1P Tutorial/Practice
+        - [ ] 2P Tutorial/Practice
+        - [ ] Results Text
+        - [ ] End Card Text
+    - [ ] Remix 3
+        - [ ] Intro Card
+        - [ ] Results Text
+        - [ ] End Card Text
+    - [ ] Quiz Show
+        - [ ] Intro Card
+        - [ ] Tutorial/Practice
+        - [ ] Results Text
+        - [ ] End Card Text
+    - [ ] Night Walk
+        - [ ] Intro Card
+        - [ ] Tutorial/Practice
+        - [ ] Results Text
+        - [ ] End Card Text
+    - [ ] Power Calligraphy
+        - [ ] Intro Card
+        - [ ] 1P Tutorial/Practice
+        - [ ] 2P Tutorial/Practice
+        - [ ] Results Text
+        - [ ] End Card Text
+    - [ ] Polyrhythm
+        - [ ] Intro Card
+        - [ ] Tutorial/Practice
+        - [ ] Results Text
+        - [ ] End Card Text
+    - [ ] Rap Men
+        - [ ] Intro Card
+        - [ ] Tutorial/Practice
+        - [ ] In-game lyrics
+        - [ ] Results Text
+        - [ ] End Card Text
+    - [ ] Remix 4
+        - [ ] Intro Card
+        - [ ] Results Text
+        - [ ] End Card Text
+    - [ ] Bouncy Road
+        - [ ] Intro Card
+        - [ ] Tutorial/Practice
+        - [ ] Results Text
+        - [ ] End Card Text
+    - [ ] Ninja Bodyguard
+        - [ ] Intro Card
+        - [ ] 2P Tutorial/Practice
+        - [ ] Results Text
+        - [ ] End Card Text
+    - [ ] Toss Team
+        - [ ] Intro Card
+        - [ ] Tutorial/Practice
+        - [ ] Results Text
+        - [ ] End Card Text
+    - [ ] Fireworks
+        - [x] Intro Card
+        - [ ] Tutorial/Practice
+        - [ ] Results Text
+        - [ ] End Card Text
+    - [ ] Tap Trial
+        - [ ] Intro Card
+        - [ ] 1P Tutorial/Practice
+        - [ ] 2P Tutorial/Practice
+        - [ ] Results Text
+        - [ ] End Card Text
+    - [ ] Remix 5
+        - [ ] Intro Card
+        - [ ] Results Text
+        - [ ] End Card Text
+    - [ ] The Snappy Trio
+        - [ ] Intro Card
+        - [ ] Results Text
+        - [ ] End Card Text
+    - [ ] The Bon Dance
+        - [ ] Intro Card
+        - [ ] In-game Lyrics
+        - [ ] Results Text
+        - [ ] End Card Text
+    - [ ] Cosmic Dance
+        - [ ] Intro Card
+        - [ ] 2P Tutorial/Practice
+        - [ ] Results Text
+        - [ ] End Card Text
+    - [ ] Rap Women
+        - [ ] Intro Card
+        - [ ] In-game Lyrics
+        - [ ] Results Text
+        - [ ] End Card Text
+    - [ ] Turbo Tap Trial
+        - [ ] Intro Card
+        - [ ] 2P Tutorial/Practice
+        - [ ] Results Text
+        - [ ] End Card Text
+    - [ ] Remix 6
+        - [ ] Intro Card
+        - [ ] Results Text
+        - [ ] End Card Text
+    - Karate Man 2
+        - [ ] 2P Tutorial/Practice
+        - [ ] Results Text
+        - [ ] End Card Text
+    - Rhythm Tweezers 2
+        - [ ] 2P Tutorial/Practice
+        - [ ] Results Text
+        - [ ] End Card Text
+    - Ninja Descendant
+        - [ ] Intro Card
+        - [ ] 2P Tutorial/Practice
+        - [ ] Results Text
+        - [ ] End Card Text
+    - Night Walk 2
+        - [ ] Intro Card
+        - [ ] Results Text
+        - [ ] End Card Text
+    - Marching Orders 2
+        - [ ] Intro Card
+        - [ ] 2P Tutorial/Practice
+        - [ ] Results Text
+        - [ ] End Card Text
+    - Remix 7
+        - [ ] Intro Card
+        - [ ] Results Text
+        - [ ] End Card Text
+    - Bouncy Road 2
+        - [ ] Intro Card
+        - [ ] Results Text
+        - [ ] End Card Text
+    - Toss Team 2
+        - [ ] Intro Card
+        - [ ] Results Text
+        - [ ] End Card Text
+    - Polyrhythm 2
+        - [ ] Intro Card
+        - [ ] Results Text
+        - [ ] End Card Text
+    - Spaceball 2
+        - [ ] Intro Card
+        - [ ] 2P Tutorial/Practice
+        - [ ] Results Text
+        - [ ] End Card Text
+    - Sneaky Spirits 2
+        - [ ] Intro Card
+        - [ ] 2P Tutorial/Practice
+        - [ ] Results Text
+        - [ ] End Card Text
+    - Remix 8
+        - [ ] Intro Card
+        - [ ] Results Text
+        - [ ] End Card Text
