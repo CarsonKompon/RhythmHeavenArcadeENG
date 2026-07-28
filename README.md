@@ -6,6 +6,8 @@ The translation work is based on [Rhythm Heaven Silver](https://github.com/Shaff
 
 For information on how to contribute, read [CONTRIBUTING.md](./CONTRIBUTING.md)
 
+https://github.com/user-attachments/assets/5d118ebc-ba47-40db-b719-2b122d8f833b
+
 # Additional Credits
 
 Huge thank you to all of the following people:
