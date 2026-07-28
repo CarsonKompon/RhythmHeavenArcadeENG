@@ -110,15 +110,19 @@ jobs:
           The patch verifies your ROM via an embedded checksum and refuses to
           apply to the wrong dump.
           EOF
-          (cd dist && zip -qr "${PKG}.zip" "$PKG")
+          # Versioned zip is only used for Release assets. The workflow artifact
+          # uploads the folder contents directly (see next step) so it isn't a
+          # zip-inside-a-zip.
+          (cd "dist/$PKG" && zip -qr "../${PKG}.zip" .)
           echo "PKG_ZIP=dist/${PKG}.zip" >> "$GITHUB_ENV"
+          echo "PKG_DIR=dist/${PKG}" >> "$GITHUB_ENV"
           ls -l dist
 
       - name: Upload workflow artifact
         uses: actions/upload-artifact@v4
         with:
           name: text-patch
-          path: ${{ env.PKG_ZIP }}
+          path: ${{ env.PKG_DIR }}/*
           if-no-files-found: error
 
       - name: Attach to Release
