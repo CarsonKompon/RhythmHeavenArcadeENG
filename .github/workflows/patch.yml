@@ -7,16 +7,18 @@
 #   * Only the produced .bps patches (which contain just our own deltas) are
 #     published — never any original, decrypted, or modified ROM bytes.
 #   * Triggers are limited to events that only repo collaborators can raise
-#     (releases, version tags, manual dispatch). GitHub does not expose secrets
-#     to workflows triggered by forked-PRs, so the ROM cannot be exfiltrated by
-#     a malicious pull request. The repository guard below is defense-in-depth.
+#     (pushes to main, releases, version tags, manual dispatch). GitHub does
+#     not expose secrets to workflows triggered by forked-PRs, so the ROM
+#     cannot be exfiltrated by a malicious pull request. The repository guard
+#     below is defense-in-depth.
 name: Build text patch
 
 on:
+  push:
+    branches: [main]
+    tags: ['v*']
   release:
     types: [published]
-  push:
-    tags: ['v*']
   workflow_dispatch:
 
 permissions:
