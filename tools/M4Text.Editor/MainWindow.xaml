@@ -6,6 +6,9 @@
         FontFamily="Segoe UI" FontSize="13">
     <Window.Resources>
         <local:HexConverter x:Key="Hex" />
+        <local:EscapeConverter x:Key="Escape" />
+        <local:BoolToVisibilityConverter x:Key="BoolToVis" />
+        <local:NotNullConverter x:Key="NotNull" />
     </Window.Resources>
     <DockPanel Margin="8">
         <!-- Top controls -->
@@ -55,12 +58,15 @@
                 <TextBlock Grid.Column="4" Text="Show:" VerticalAlignment="Center" Margin="12,0,6,0" />
                 <ComboBox Grid.Column="5" Width="140" ItemsSource="{Binding EncodingFilters}" SelectedItem="{Binding EncodingFilter}" VerticalAlignment="Center" />
                 <CheckBox Grid.Column="6" Content="Modified only" IsChecked="{Binding ShowModifiedOnly}" VerticalAlignment="Center" Margin="12,0,0,0" />
+                <CheckBox Grid.Column="11" Content="Show hidden" IsChecked="{Binding ShowHidden}" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="12,0,12,0" />
                 <TextBlock Grid.Column="7" Text="Sort:" VerticalAlignment="Center" Margin="12,0,6,0" />
                 <ComboBox Grid.Column="8" Width="140" ItemsSource="{Binding SortModes}" SelectedItem="{Binding SortMode}" VerticalAlignment="Center" />
                 <TextBlock Grid.Column="9" Text="Pad:" VerticalAlignment="Center" Margin="12,0,6,0" />
                 <ComboBox Grid.Column="10" Width="80" ItemsSource="{Binding PadModes}" SelectedItem="{Binding SelectedPadMode}" VerticalAlignment="Center" />
                 <StackPanel Grid.Column="12" Orientation="Horizontal" Margin="12,0,0,0">
                     <Button Content="Revert" Command="{Binding RevertSelectedCommand}" Padding="10,3" Margin="0,0,6,0" />
+                    <Button Content="Load changes…" Command="{Binding LoadChangesCommand}" Padding="10,3" Margin="0,0,6,0" />
+                    <Button Content="Save changes…" Command="{Binding SaveChangesCommand}" Padding="10,3" Margin="0,0,6,0" />
                     <Button Content="Save .dec" Command="{Binding SaveDecCommand}" Padding="10,3" Margin="0,0,6,0" />
                     <Button Content="Export ROM…" Command="{Binding ExportRomCommand}" Padding="10,3" FontWeight="SemiBold" />
                 </StackPanel>
@@ -79,18 +85,35 @@
                     <Run Text="{Binding ModifiedCount, Mode=OneWay}" FontWeight="Bold" />
                     <Run Text="   Over limit: " />
                     <Run Text="{Binding OverLimitCount, Mode=OneWay}" FontWeight="Bold" Foreground="Red" />
+                    <Run Text="   Hidden: " />
+                    <Run Text="{Binding HiddenCount, Mode=OneWay}" FontWeight="Bold" />
                 </TextBlock>
             </StatusBarItem>
         </StatusBar>
 
-        <!-- Grid -->
-        <DataGrid ItemsSource="{Binding EntriesView}" SelectedItem="{Binding SelectedEntry}"
+        <!-- Tabs: string editor + read-only layout/references browser -->
+        <TabControl>
+            <TabItem Header="Strings">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" MinHeight="120" />
+                    </Grid.RowDefinitions>
+                    <DataGrid Grid.Row="0" ItemsSource="{Binding EntriesView}" SelectedItem="{Binding SelectedEntry}"
+                  x:Name="StringsGrid"
                   AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False"
                   CanUserSortColumns="True" GridLinesVisibility="Horizontal"
-                  HeadersVisibility="Column" SelectionMode="Single"
+                  HeadersVisibility="Column" SelectionMode="Extended"
                   FontFamily="Yu Gothic UI, Meiryo, Segoe UI"
                   EnableRowVirtualization="True" EnableColumnVirtualization="True"
                   VirtualizingPanel.IsVirtualizing="True" VirtualizingPanel.VirtualizationMode="Recycling">
+            <DataGrid.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Hide selected" Click="HideSelected_Click" />
+                    <MenuItem Header="Unhide selected" Click="UnhideSelected_Click" />
+                </ContextMenu>
+            </DataGrid.ContextMenu>
             <DataGrid.RowStyle>
                 <Style TargetType="DataGridRow">
                     <Style.Triggers>
@@ -104,6 +127,10 @@
                             </MultiDataTrigger.Conditions>
                             <Setter Property="Background" Value="#FFFFF6C8" />
                         </MultiDataTrigger>
+                        <DataTrigger Binding="{Binding IsHidden}" Value="True">
+                            <Setter Property="Foreground" Value="#FF9AA0A6" />
+                            <Setter Property="FontStyle" Value="Italic" />
+                        </DataTrigger>
                     </Style.Triggers>
                 </Style>
             </DataGrid.RowStyle>
@@ -114,12 +141,179 @@
                 <DataGridTextColumn Header="Max" Binding="{Binding MaxBytes}" IsReadOnly="True" Width="50" />
                 <DataGridTextColumn Header="Used" Binding="{Binding EditedByteLength}" IsReadOnly="True" Width="50" />
                 <DataGridTextColumn Header="Left" Binding="{Binding RemainingBytes}" IsReadOnly="True" Width="50" />
-                <DataGridTextColumn Header="Original" Binding="{Binding Original}" IsReadOnly="True" Width="2*" />
+                <DataGridTextColumn Header="Original" Binding="{Binding Original, Converter={StaticResource Escape}}" IsReadOnly="True" Width="2*" />
                 <!-- PropertyChanged keeps the per-row Used/Left/highlight live while
                      typing; the (global) status-bar counts are debounced in the VM so
                      the whole list isn't rescanned on every keystroke. -->
-                <DataGridTextColumn Header="Edited (English)" Binding="{Binding Edited, UpdateSourceTrigger=PropertyChanged}" Width="2*" />
+                <DataGridTextColumn Header="Edited (English, \n = line break)" Binding="{Binding Edited, Converter={StaticResource Escape}, UpdateSourceTrigger=PropertyChanged}" Width="2*" />
             </DataGrid.Columns>
         </DataGrid>
+
+                    <GridSplitter Grid.Row="1" Height="4" HorizontalAlignment="Stretch"
+                                  Background="#FFCFCFCF" ResizeBehavior="PreviousAndNext" />
+
+                    <!-- Multi-line detail editor for the selected string. Binds the raw
+                         Edited text (real newlines) so multi-line messages are edited
+                         naturally instead of typing literal \n in the grid cell. -->
+                    <Border Grid.Row="2" BorderBrush="#FFCFCFCF" BorderThickness="1" Padding="8" Margin="0,4,0,0">
+                        <DockPanel DataContext="{Binding SelectedEntry}">
+                            <TextBlock DockPanel.Dock="Top" FontWeight="SemiBold"
+                                       Text="Multi-line editor (Enter = new line)" Margin="0,0,0,4" />
+                            <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" Margin="0,6,0,0">
+                                <TextBlock VerticalAlignment="Center" Margin="0,0,12,0">
+                                    <Run Text="{Binding EditedByteLength, Mode=OneWay}" FontWeight="Bold" />
+                                    <Run Text=" / " />
+                                    <Run Text="{Binding MaxBytes, Mode=OneWay}" />
+                                    <Run Text=" bytes" />
+                                </TextBlock>
+                                <TextBlock Text="OVER LIMIT" Foreground="Red" FontWeight="Bold"
+                                           VerticalAlignment="Center"
+                                           Visibility="{Binding IsOverLimit, Converter={StaticResource BoolToVis}}" />
+                            </StackPanel>
+                            <TextBox Text="{Binding Edited, UpdateSourceTrigger=PropertyChanged}"
+                                     AcceptsReturn="True" TextWrapping="Wrap"
+                                     VerticalScrollBarVisibility="Auto"
+                                     FontFamily="Yu Gothic UI, Meiryo, Consolas"
+                                     IsEnabled="{Binding DataContext, RelativeSource={RelativeSource Self}, Converter={StaticResource NotNull}}" />
+                        </DockPanel>
+                    </Border>
+                </Grid>
+            </TabItem>
+
+            <TabItem Header="Layout / References">
+                <DockPanel>
+                    <!-- Region + filter controls for the reference scan -->
+                    <Grid DockPanel.Dock="Top" Margin="0,0,0,6">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="90" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="90" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="From:" VerticalAlignment="Center" Margin="0,0,6,0" />
+                        <TextBox Grid.Column="1" Text="{Binding RefFrom, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" FontFamily="Consolas" />
+                        <TextBlock Grid.Column="2" Text="To:" VerticalAlignment="Center" Margin="12,0,6,0" />
+                        <TextBox Grid.Column="3" Text="{Binding RefTo, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" FontFamily="Consolas" />
+                        <TextBlock Grid.Column="4" Text="Contains:" VerticalAlignment="Center" Margin="12,0,6,0" />
+                        <TextBox Grid.Column="5" Text="{Binding RefFilterText, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" />
+                        <Button Grid.Column="6" Content="Scan" Command="{Binding ScanReferencesCommand}" Margin="12,0,0,0" Padding="14,3" FontWeight="SemiBold" />
+                        <TextBlock Grid.Column="7" VerticalAlignment="Center" Margin="12,0,0,0">
+                            <Run Text="{Binding ReferenceCount, Mode=OneWay}" FontWeight="Bold" />
+                            <Run Text=" refs" />
+                        </TextBlock>
+                    </Grid>
+
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" MinHeight="120" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="2*" MinHeight="120" />
+                        </Grid.RowDefinitions>
+
+                        <DataGrid Grid.Row="0" ItemsSource="{Binding References}"
+                                  SelectedItem="{Binding SelectedReference}"
+                                  AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False"
+                                  IsReadOnly="True" CanUserSortColumns="True" GridLinesVisibility="Horizontal"
+                                  HeadersVisibility="Column" SelectionMode="Single"
+                                  FontFamily="Yu Gothic UI, Meiryo, Segoe UI"
+                                  EnableRowVirtualization="True" VirtualizingPanel.IsVirtualizing="True"
+                                  VirtualizingPanel.VirtualizationMode="Recycling">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Ptr @ ROM" Binding="{Binding PointerOffset, Converter={StaticResource Hex}}" Width="100" />
+                                <DataGridTextColumn Header="Str @ ROM" Binding="{Binding StringOffset, Converter={StaticResource Hex}}" Width="100" />
+                                <DataGridTextColumn Header="RAM" Binding="{Binding StringRam, Converter={StaticResource Hex}}" Width="100" />
+                                <DataGridTextColumn Header="Text (full message, \n = line break)" Binding="{Binding EditText, Converter={StaticResource Escape}}" Width="2*" />
+                                <DataGridTextColumn Header="Record fields (candidate X/Y/scale)" Binding="{Binding Fields}" Width="*" FontFamily="Consolas" />
+                            </DataGrid.Columns>
+                        </DataGrid>
+
+                        <GridSplitter Grid.Row="1" Height="5" HorizontalAlignment="Stretch"
+                                      Background="#DDD" ResizeBehavior="PreviousAndNext" ResizeDirection="Rows" />
+
+                        <!-- Detail: editable multi-line message + record words for the
+                             selected reference. The message spans the whole slot up to
+                             the next referenced string (fragmented lines are rejoined);
+                             integer words (e.g. candidate width/height) are tunable too. -->
+                        <DockPanel Grid.Row="2" Margin="0,6,0,0">
+                            <Grid DockPanel.Dock="Top" Margin="0,0,0,4">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <TextBlock VerticalAlignment="Center" TextTrimming="CharacterEllipsis"
+                                           Text="{Binding SelectedReference.StringOffset, Converter={StaticResource Hex}, StringFormat='Message slot @ ROM {0}'}" />
+                                <Button Grid.Column="1" Content="Apply field edits to ic8"
+                                        Command="{Binding SaveFieldEditsCommand}" Padding="12,3" FontWeight="SemiBold" />
+                            </Grid>
+
+                            <!-- Multi-line message editor. Real line breaks map to the
+                                 game's LF (0x0A); the slot is NUL-terminated/padded on save. -->
+                            <Border DockPanel.Dock="Top" BorderBrush="#CCC" BorderThickness="1" Margin="0,0,0,6" Padding="6">
+                                <DockPanel>
+                                    <Grid DockPanel.Dock="Top" Margin="0,0,0,4">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="Auto" />
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Text="Message (Enter = new line):" VerticalAlignment="Center" FontWeight="SemiBold" />
+                                        <TextBlock Grid.Column="2" VerticalAlignment="Center" Margin="0,0,12,0"
+                                                   Text="{Binding SelectedReference.ByteSummary}">
+                                            <TextBlock.Style>
+                                                <Style TargetType="TextBlock">
+                                                    <Setter Property="Foreground" Value="#2A2" />
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding SelectedReference.IsOverLimit}" Value="True">
+                                                            <Setter Property="Foreground" Value="#C00" />
+                                                            <Setter Property="FontWeight" Value="Bold" />
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </TextBlock.Style>
+                                        </TextBlock>
+                                        <Button Grid.Column="3" Content="Save text to ic8"
+                                                Command="{Binding SaveReferenceTextCommand}" Padding="12,3" FontWeight="SemiBold" />
+                                    </Grid>
+                                    <TextBox Text="{Binding SelectedReference.EditText, UpdateSourceTrigger=PropertyChanged}"
+                                             AcceptsReturn="True" AcceptsTab="False" TextWrapping="Wrap"
+                                             VerticalScrollBarVisibility="Auto" MinHeight="70" MaxHeight="140"
+                                             FontFamily="Yu Gothic UI, Meiryo, Segoe UI" FontSize="14"
+                                             IsEnabled="{Binding SelectedReference.CanExpand, FallbackValue=False}" />
+                                </DockPanel>
+                            </Border>
+
+                            <DataGrid ItemsSource="{Binding SelectedReference.FieldRows}"
+                                      AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False"
+                                      CanUserSortColumns="False" GridLinesVisibility="All"
+                                      HeadersVisibility="Column" SelectionMode="Single" FontFamily="Consolas">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="Rel" Binding="{Binding Rel}" Width="55" IsReadOnly="True" />
+                                    <DataGridTextColumn Header="ROM" Binding="{Binding RomHex}" Width="90" IsReadOnly="True" />
+                                    <DataGridTextColumn Header="Kind" Binding="{Binding Kind}" Width="110" IsReadOnly="True" />
+                                    <DataGridTextColumn Header="Value" Binding="{Binding ValueText, UpdateSourceTrigger=PropertyChanged}" Width="*">
+                                        <DataGridTextColumn.CellStyle>
+                                            <Style TargetType="DataGridCell">
+                                                <Setter Property="IsEnabled" Value="{Binding IsEditable}" />
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding IsModified}" Value="True">
+                                                        <Setter Property="Background" Value="#FFF6C7" />
+                                                        <Setter Property="FontWeight" Value="Bold" />
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </DataGridTextColumn.CellStyle>
+                                    </DataGridTextColumn>
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </DockPanel>
+                    </Grid>
+                </DockPanel>
+            </TabItem>
+        </TabControl>
     </DockPanel>
 </Window>

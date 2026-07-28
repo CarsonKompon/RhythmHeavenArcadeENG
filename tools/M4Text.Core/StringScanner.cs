@@ -33,6 +33,61 @@ public static class StringScanner
         }
     }
 
+    /// <summary>
+    /// Unified message scanner used by the editor. A "message" is one contiguous run
+    /// of printable ASCII, valid multi-byte UTF-8 (any script), and interior bare
+    /// line-breaks (0x0A), terminated by NUL or any other control/invalid byte. This
+    /// keeps a whole multi-line message — including English lines that contain the odd
+    /// full-width symbol (e.g. <c>＆</c>, <c>〜</c>) and multi-line Japanese — as ONE
+    /// editable entry, so line breaks survive a round-trip instead of the message being
+    /// split (per line, or at each non-ASCII glyph) and re-fragmented on save.
+    /// A run is emitted when it has at least <paramref name="minJapanese"/> Japanese
+    /// characters or at least <paramref name="minAscii"/> printable ASCII characters.
+    /// </summary>
+    public static IEnumerable<FoundString> ScanMessages(byte[] data, int minAscii, int minJapanese)
+    {
+        int n = data.Length;
+        int i = 0;
+        while (i < n)
+        {
+            // A run may only start on real content (printable ASCII or a valid,
+            // non-control multi-byte codepoint) — never on LF/NUL/other control.
+            byte b0 = data[i];
+            if (!IsPrintableAscii(b0))
+            {
+                if (b0 < 0x80) { i++; continue; }
+                if (DecodeUtf8(data, i, out _) == 0) { i++; continue; }
+            }
+
+            int start = i;
+            int asciiCount = 0, multibyteCount = 0, japaneseCount = 0;
+            int contentEnd = start; // exclusive end of the last non-LF content byte
+            int j = i;
+            while (j < n)
+            {
+                byte b = data[j];
+                if (IsPrintableAscii(b)) { asciiCount++; j++; contentEnd = j; continue; }
+                if (b == 0x0a) { j++; continue; }   // interior line break (trailing LFs get trimmed)
+                if (b < 0x80) break;                 // NUL / other control -> end of message
+                int len = DecodeUtf8(data, j, out int cp);
+                if (len == 0) break;                 // invalid UTF-8 -> end of message
+                multibyteCount++;
+                if (IsJapaneseCodepoint(cp)) japaneseCount++;
+                j += len; contentEnd = j;
+            }
+
+            int byteLen = contentEnd - start;
+            if (byteLen > 0 && (japaneseCount >= minJapanese || asciiCount >= minAscii))
+            {
+                string enc = multibyteCount > 0 ? "utf8" : "ascii";
+                var text = (enc == "utf8" ? Encoding.UTF8 : Encoding.ASCII).GetString(data, start, byteLen);
+                yield return new FoundString(start, enc, byteLen, text);
+            }
+
+            i = contentEnd > start ? contentEnd : start + 1;
+        }
+    }
+
     private static bool IsSjisLead(byte b) => (b >= 0x81 && b <= 0x9f) || (b >= 0xe0 && b <= 0xfc);
     private static bool IsSjisTrail(byte b) => (b >= 0x40 && b <= 0x7e) || (b >= 0x80 && b <= 0xfc);
     private static bool IsSjisHalfKana(byte b) => b >= 0xa1 && b <= 0xdf;

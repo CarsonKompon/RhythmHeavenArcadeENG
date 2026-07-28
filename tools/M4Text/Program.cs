@@ -26,6 +26,11 @@ try
         case "roundtrip": return Roundtrip(rest, picPath);
         case "verify": return Verify(rest, picPath);
         case "find": return Find(rest);
+        case "map": return Map(rest);
+        case "refs": return Refs(rest);
+        case "xrefs": return XRefs(rest);
+        case "textrefs": return TextRefs(rest);
+        case "disasm": return Disasm(rest);
         case "keys": return Keys(picPath);
         default:
             Console.Error.WriteLine($"Unknown command: {command}");
@@ -118,6 +123,178 @@ int Find(string[] a)
     return 0;
 }
 
+// Prints the NAOMI transfer/load table (ROM<->RAM segments) from a decrypted
+// ROM image, and optionally resolves an address in either direction.
+int Map(string[] a)
+{
+    string input = a.FirstOrDefault(x => !x.StartsWith("--"))
+        ?? throw new ArgumentException("map requires a decrypted ROM file.");
+    byte[] rom = File.ReadAllBytes(input);
+    var map = RomMemoryMap.Parse(rom);
+
+    Console.WriteLine($"Transfer/load table ({map.Segments.Count} segment(s)):");
+    Console.WriteLine("  romOffset   romEnd      ramAddr     ramEnd      length      rawField");
+    foreach (var s in map.Segments)
+        Console.WriteLine($"  0x{s.RomOffset:x8}  0x{s.RomEnd:x8}  0x{s.RamAddress:x8}  0x{s.RamEnd:x8}  0x{s.Length:x8}  0x{s.RawRomField:x8}");
+
+    string? ro = GetOption(a, "--resolve");        // ROM offset -> RAM
+    if (ro is not null)
+    {
+        long off = ParseNumber(ro);
+        uint? ram = map.RomToRam(off);
+        Console.WriteLine(ram is uint r
+            ? $"ROM 0x{off:x8} -> RAM 0x{r:x8}"
+            : $"ROM 0x{off:x8} -> (unmapped)");
+    }
+
+    string? ra = GetOption(a, "--resolve-ram");     // RAM -> ROM offset
+    if (ra is not null)
+    {
+        uint addr = (uint)ParseNumber(ra);
+        long? off = map.RamToRom(addr);
+        Console.WriteLine(off is long o
+            ? $"RAM 0x{addr:x8} -> ROM 0x{o:x8}"
+            : $"RAM 0x{addr:x8} -> (unmapped)");
+    }
+    return 0;
+}
+
+// Finds every 32-bit pointer (literal-pool constant) that references a given target,
+// specified as either a ROM offset (default) or a RAM address (--ram).
+int Refs(string[] a)
+{
+    string input = a.FirstOrDefault(x => !x.StartsWith("--"))
+        ?? throw new ArgumentException("refs requires a decrypted ROM file.");
+    string? target = GetOption(a, "--target");
+    if (target is null)
+        throw new ArgumentException("refs requires --target <romOffset|ramAddr>.");
+
+    byte[] rom = File.ReadAllBytes(input);
+    var map = RomMemoryMap.Parse(rom);
+
+    // Resolve the target to a RAM address (that's what pointers hold).
+    uint ramAddr;
+    if (GetOption(a, "--ram") is not null || target.StartsWith("0x0c", StringComparison.OrdinalIgnoreCase))
+        ramAddr = (uint)ParseNumber(target);
+    else
+    {
+        long off = ParseNumber(target);
+        ramAddr = map.RomToRam(off) ?? throw new InvalidOperationException($"ROM 0x{off:x8} is not mapped to RAM.");
+        Console.WriteLine($"Target ROM 0x{off:x8} -> RAM 0x{ramAddr:x8}");
+    }
+
+    var hits = PointerScanner.FindU32(rom, ramAddr);
+    Console.WriteLine($"{hits.Count} pointer(s) to RAM 0x{ramAddr:x8}:");
+    foreach (long h in hits)
+    {
+        uint? ptrRam = map.RomToRam(h);
+        Console.WriteLine(ptrRam is uint pr
+            ? $"  literal @ ROM 0x{h:x8}  (RAM 0x{pr:x8})"
+            : $"  literal @ ROM 0x{h:x8}  (unmapped)");
+    }
+    return 0;
+}
+
+// Finds every 32-bit word pointing anywhere into a RAM address range. Unlike
+// `refs` (exact target), this locates handlers that reference a table by an
+// interior address, which is how we find the code that walks a menu table.
+int XRefs(string[] a)
+{
+    string input = a.FirstOrDefault(x => !x.StartsWith("--"))
+        ?? throw new ArgumentException("xrefs requires a decrypted ROM file.");
+    string? fromS = GetOption(a, "--from");
+    string? toS = GetOption(a, "--to");
+    if (fromS is null || toS is null)
+        throw new ArgumentException("xrefs requires --from <ramAddr> and --to <ramAddr>.");
+
+    uint low = (uint)ParseNumber(fromS);
+    uint high = (uint)ParseNumber(toS);
+    int align = int.TryParse(GetOption(a, "--align"), out int al) ? al : 1;
+
+    byte[] rom = File.ReadAllBytes(input);
+    var map = RomMemoryMap.Parse(rom);
+
+    var hits = PointerScanner.FindU32InRange(rom, low, high, align);
+    Console.WriteLine($"{hits.Count} word(s) pointing into RAM [0x{low:x8}, 0x{high:x8}):");
+    foreach (var h in hits)
+    {
+        uint? ptrRam = map.RomToRam(h.Offset);
+        string site = ptrRam is uint pr ? $"RAM 0x{pr:x8}" : "unmapped";
+        Console.WriteLine($"  @ ROM 0x{h.Offset:x8} ({site}) -> 0x{h.Value:x8}");
+    }
+    return 0;
+}
+
+// Enumerates every 32-bit pointer in the mapped image that targets the text
+// region, resolving each to its on-screen string. This is the data backbone for a
+// layout/display-list view: each hit is a place where a string is referenced, and
+// the words immediately around the pointer are candidate layout fields (X/Y/scale).
+int TextRefs(string[] a)
+{
+    string input = a.FirstOrDefault(x => !x.StartsWith("--"))
+        ?? throw new ArgumentException("textrefs requires a decrypted ROM file.");
+    // Text region to match against (ROM offsets). Defaults cover the rhytngk script block.
+    long from = ParseNumber(GetOption(a, "--from") ?? "0x230000");
+    long to = ParseNumber(GetOption(a, "--to") ?? "0x260000");
+    int minLen = int.TryParse(GetOption(a, "--min"), out int ml) ? ml : 2;
+    // Optional: dump N u32 words on each side of the pointer, classified as int/ptr.
+    int context = int.TryParse(GetOption(a, "--context"), out int cx) ? cx : 0;
+    string? filter = GetOption(a, "--contains");
+
+    byte[] rom = File.ReadAllBytes(input);
+    var map = RomMemoryMap.Parse(rom);
+
+    int found = 0;
+    foreach (var r in TextReferenceScanner.Scan(rom, map, from, to, minLen, filter, context))
+    {
+        Console.WriteLine($"ptr @ ROM 0x{r.PointerRom:x8} (RAM 0x{r.PointerRam:x8}) -> str ROM 0x{r.StringRom:x8} (RAM 0x{r.StringRam:x8})  \"{Sanitize(r.Text)}\"");
+        foreach (var f in r.Context)
+        {
+            string cls = f.TargetRom is long wr ? $"ptr->ROM 0x{wr:x8}" : $"int {(int)f.Value}";
+            string mark = f.RelOffset == 0 ? " <== textPtr" : "";
+            Console.WriteLine($"    +{f.RelOffset,4}  0x{f.Rom:x8}: 0x{f.Value:x8}  {cls}{mark}");
+        }
+        found++;
+    }
+    Console.WriteLine($"{found} text pointer(s) in [0x{from:x}, 0x{to:x}).");
+    return 0;
+}
+
+// Parses a decimal or 0x-prefixed hex number.
+static long ParseNumber(string s)
+{
+    s = s.Trim();
+    return s.StartsWith("0x", StringComparison.OrdinalIgnoreCase)
+        ? Convert.ToInt64(s[2..], 16)
+        : long.Parse(s);
+}
+
+// Disassembles SH-4 code from a ROM offset (default) or RAM address (--ram).
+int Disasm(string[] a)
+{
+    string input = a.FirstOrDefault(x => !x.StartsWith("--"))
+        ?? throw new ArgumentException("disasm requires a decrypted ROM file.");
+    string? at = GetOption(a, "--at");
+    if (at is null)
+        throw new ArgumentException("disasm requires --at <romOffset|ramAddr>.");
+    int count = int.TryParse(GetOption(a, "--count"), out int c) ? c : 32;
+
+    byte[] rom = File.ReadAllBytes(input);
+    var map = RomMemoryMap.Parse(rom);
+
+    long romOff;
+    if (GetOption(a, "--ram") is not null || at.StartsWith("0x0c", StringComparison.OrdinalIgnoreCase))
+        romOff = map.RamToRom((uint)ParseNumber(at)) ?? throw new InvalidOperationException("RAM address is not mapped.");
+    else
+        romOff = ParseNumber(at);
+
+    var dis = new Sh4Disassembler(rom, map);
+    Console.WriteLine("  romOffset   ramAddr   bytes  mnemonic");
+    foreach (string line in dis.Disassemble(romOff, count))
+        Console.WriteLine(line);
+    return 0;
+}
+
 static string Sanitize(string s)
 {
     var sb = new StringBuilder(s.Length);
@@ -196,6 +373,30 @@ static void PrintUsage()
           m4text roundtrip <in>       [--pic <ic3>]   Verify decrypt->encrypt is byte-identical
           m4text verify    <rom.ic8>  [options]      Validate an exported ROM (size/header/string)
           m4text find      <decrypted> [options]      List candidate strings (offset/enc/len/text)
+          m4text map       <decrypted> [options]      Print NAOMI ROM<->RAM transfer table
+          m4text refs      <decrypted> --target <a>   Find pointers to a ROM offset or RAM address
+          m4text textrefs  <decrypted> [options]      List every text pointer + target string (+record)
+          m4text disasm    <decrypted> --at <a>       Disassemble SH-4 code at an offset/address
+
+        map options:
+          --resolve <romOffset>        Resolve a ROM offset to its RAM address
+          --resolve-ram <ramAddr>      Resolve a RAM address to its ROM offset
+
+        refs options:
+          --target <romOffset|ramAddr> Target to find pointers to (required)
+          --ram                        Treat --target as a RAM address (else ROM offset)
+
+        textrefs options:
+          --from <romOffset>           Start of text region to match (default 0x230000)
+          --to <romOffset>             End of text region to match (default 0x260000)
+          --min N                      Minimum target string length (default 2)
+          --contains "text"            Only show references whose string contains text
+          --context N                  Dump N u32 words each side of the pointer (record fields)
+
+        disasm options:
+          --at <romOffset|ramAddr>     Where to start disassembling (required)
+          --count N                    Instruction count (default 32)
+          --ram                        Treat --at as a RAM address (else ROM offset)
 
         verify options:
           --pic <ic3>                  PIC key file (defaults to workspace ic3)

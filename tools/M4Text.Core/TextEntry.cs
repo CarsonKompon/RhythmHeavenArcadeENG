@@ -47,8 +47,13 @@ public sealed class TextEntry : INotifyPropertyChanged
         get => _edited;
         set
         {
-            if (_edited == value) return;
-            _edited = value ?? string.Empty;
+            // Normalize line endings to a bare LF. A WPF multi-line TextBox stores and
+            // returns breaks as CRLF, so binding it two-way would otherwise inject stray
+            // \r bytes — falsely marking untouched entries modified and corrupting the
+            // saved slot (the game uses a single 0x0A). \r never belongs in ROM text.
+            string v = (value ?? string.Empty).Replace("\r\n", "\n").Replace("\r", "\n");
+            if (_edited == v) return;
+            _edited = v;
             OnPropertyChanged();
             OnPropertyChanged(nameof(EditedByteLength));
             OnPropertyChanged(nameof(RemainingBytes));
@@ -65,6 +70,15 @@ public sealed class TextEntry : INotifyPropertyChanged
     public int RemainingBytes => MaxBytes - EditedByteLength;
     public bool IsModified => !string.Equals(_edited, Original, StringComparison.Ordinal);
     public bool IsOverLimit => EditedByteLength > MaxBytes;
+
+    // UI-only flag: lets the user hide junk/non-text slots from the Strings list.
+    // Persisted by the editor (keyed on File+Offset), never written to the ROM.
+    private bool _isHidden;
+    public bool IsHidden
+    {
+        get => _isHidden;
+        set { if (_isHidden == value) return; _isHidden = value; OnPropertyChanged(); }
+    }
 
     /// <summary>
     /// Encodes the edited text and pads to exactly <see cref="MaxBytes"/> so the

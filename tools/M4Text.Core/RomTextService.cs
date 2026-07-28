@@ -124,6 +124,8 @@ public sealed class RomTextService
     }
 
     // Decodes a fixed slot, trimming trailing NUL pad bytes written by BuildSlotBytes.
+    // Interior line breaks (0x0A) are preserved (decoded as \n) so a multi-line message
+    // round-trips; only trailing NUL padding is stripped.
     private static string DecodeSlot(byte[] data, int offset, int len, string encoding)
     {
         int realLen = len;
@@ -159,9 +161,10 @@ public sealed class RomTextService
         var list = new List<TextEntry>();
         foreach (var (name, data) in _files)
         {
-            foreach (var s in StringScanner.ScanAscii(data, minAscii))
-                list.Add(new TextEntry(name, s.Offset, s.Encoding, s.Text, s.ByteLength));
-            foreach (var s in StringScanner.ScanUtf8(data, minJapanese))
+            // One unified pass keeps each multi-line message (ASCII, Japanese, or mixed
+            // with the odd full-width glyph) as a single entry, so editing preserves its
+            // line breaks instead of fragmenting it.
+            foreach (var s in StringScanner.ScanMessages(data, minAscii, minJapanese))
                 list.Add(new TextEntry(name, s.Offset, s.Encoding, s.Text, s.ByteLength));
         }
         list.Sort((a, b) =>
@@ -195,6 +198,46 @@ public sealed class RomTextService
             count++;
         }
         return count;
+    }
+
+    /// <summary>
+    /// Returns the live in-memory plaintext buffer for a decrypted file (e.g. "ic8"),
+    /// or null if it is not loaded. Callers must not mutate the returned array
+    /// except through <see cref="PatchDword"/> so modified-file tracking stays correct.
+    /// </summary>
+    public byte[]? GetFileBytes(string decName)
+        => _files.TryGetValue(decName, out var data) ? data : null;
+
+    /// <summary>
+    /// Writes a little-endian 32-bit value at <paramref name="offset"/> in the given
+    /// decrypted file and flags it modified so it is included in SaveDec/Export.
+    /// Used by the Layout tab to edit display-list record fields (positions/sizes)
+    /// directly. Throws if the file is missing or the offset is out of range.
+    /// </summary>
+    public void PatchDword(string decName, long offset, uint value)
+    {
+        if (!_files.TryGetValue(decName, out var data))
+            throw new InvalidOperationException($"File '{decName}' is not loaded.");
+        if (offset < 0 || offset + 4 > data.Length)
+            throw new ArgumentOutOfRangeException(nameof(offset), $"Offset 0x{offset:x} is outside '{decName}'.");
+        System.Buffers.Binary.BinaryPrimitives.WriteUInt32LittleEndian(data.AsSpan((int)offset, 4), value);
+        _modifiedFiles.Add(decName);
+    }
+
+    /// <summary>
+    /// Overwrites a byte range in the given decrypted file and flags it modified.
+    /// Used to write a whole record string slot (multi-line message + terminator +
+    /// NUL padding) in one shot. Throws if the file is missing or the range is out
+    /// of bounds.
+    /// </summary>
+    public void PatchBytes(string decName, long offset, ReadOnlySpan<byte> data)
+    {
+        if (!_files.TryGetValue(decName, out var buf))
+            throw new InvalidOperationException($"File '{decName}' is not loaded.");
+        if (offset < 0 || offset + data.Length > buf.Length)
+            throw new ArgumentOutOfRangeException(nameof(offset), $"Range at 0x{offset:x} is outside '{decName}'.");
+        data.CopyTo(buf.AsSpan((int)offset, data.Length));
+        _modifiedFiles.Add(decName);
     }
 
     /// <summary>Persists the (edited) plaintext buffers back to the *.dec files.</summary>
