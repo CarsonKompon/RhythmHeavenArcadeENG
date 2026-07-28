@@ -92,23 +92,22 @@ jobs:
           mkdir -p "dist/$PKG"
           cp out/*.bps "dist/$PKG/"
           cat > "dist/$PKG/APPLY.txt" <<'EOF'
-          Rhythm Heaven Arcade ENG — text patch (BPS)
+          Rhythm Heaven Arcade ENG
 
-          These .bps patches add the English text to your own Rhythm Tengoku
-          (rhytngk) ROM. No ROM data is included — you must supply your own dump.
+          This patch adds English text to your own Rhythm Tengoku (rhytngk) ROM.
+          No ROM data is included, you must supply your own dump.
 
           How to apply:
-            1. Get a BPS patcher: Floating IPS ("flips") or the web tool
-               https://www.marcrobledo.com/RomPatcher.js/
-            2. Extract your rhytngk romset .zip.
+            1. Get a BPS patcher or use the web tool https://www.marcrobledo.com/RomPatcher.js/
+            2. Extract your rhytngk rom if it's in a .zip file.
             3. Apply each .bps to the file with the SAME base name:
-                 fpr-24423.ic8.bps  ->  fpr-24423.ic8
-            4. Re-zip the files back into rhytngk.zip (or point Flycast at the
-               folder). Note: a patched file will fail MAME's strict CRC audit —
-               load it in Flycast, or with MAME's loose-file / override options.
-
-          The patch verifies your ROM via an embedded checksum and refuses to
-          apply to the wrong dump.
+               fpr-24423.ic8.bps  ->  fpr-24423.ic8
+            4. Re-zip the files back into rhytngk.zip
+            5. Go to your Flycast directory and create a new folder `data/textures/` and
+              place the RHYTHM-TENGOKU_JAPAN folder inside, so you have something like:
+              `Flycast/data/textures/RHYTHM-TENGOKU_JAPAN/`
+            6. Open Flycast and then make sure you go into the Options and enable "Load Custom Textures"
+               (and "Preload Custom Textures" if you want to ensure there's no lag)
           EOF
           # Bundle the Flycast custom-texture pack, PNGs ONLY (exclude psd/txt/etc.).
           # cp --parents preserves the RHYTHM-TENGOKU_JAPAN/... sub-paths.
