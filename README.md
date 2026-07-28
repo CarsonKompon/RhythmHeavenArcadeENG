@@ -4,39 +4,7 @@ This is an English mod/texture pack for Rhythm Tengoku (the arcade release by SE
 
 The translation work is based on [Rhythm Heaven Silver](https://github.com/ShaffySwitcher/RhythmHeavenSilver)/[Rhythm Heaven Advance](https://github.com/RHAdvance/RhythmHeavenAdvance) and some computer-aided translations to fill in any gaps.
 
-# Software
-
-Here's all the software I use and the quirks to them:
-
-- Paint.NET
-    - When it comes to creating text, I will typically create the text at 37px and then scale that down with the transform tools (set to Bicubic). This makes it look a bit sharper and gives you more pixel information to work with if you need to squish it on the X (which sometimes has to be done to make english text fit where the japanese text was since they use a lot less characters)
-- Photopea
-    - This is what I use when I need some sort of feature Paint.NET doesn't offer, like skewing a transform or using 3D perspective
-
-# Fonts
-
-Here's a list of all fonts used and where they are used:
-
-- Arial
-    - Used bold with no anti-aliasing at 8-10px to replace smaller pixel fonts (like "Press START to skip")
-- Arial Rounded MT Bold
-    - Used for the Stage Name/Descriptions on the "Select a Stage" menu. When used in this context it's also given an additional 1px outline at size 37px font and then scaled down (typically squished around 30% horizontally as well)
-    - Uaws doe the Game Name/Descriptions on the "Select a Game" menu. Used in the same way as Stages.
-- FOT-Kurokane Std (Megamix Modified)
-    - Used for game titles in the "Select a Game" menu
-    - Used for the "No Continues" text on leaderboard entries
-- FOT-RodinNTLG Pro DB
-    - Used for most plain text, like game descriptions, tutorial popups, ect
-- FOT-Slump Std DB
-    - Used for header labels like "Select a Mode", or "Select a Stage"
-- FOT-Yuruka Std UB
-    - Used for "Clear with a SUPERB for 1 extra play" banner
-- Tim Sale Lower-Bold
-    - Used for the "ENCORE", "EXPERT", "MASTER", and "EXTRA" titles on the "Select a Stage" menu
-- VDL-GigaJr B
-    - Used for titles on the leaderboard menu
-- WarioWareInc V2 Medium
-    - Used for some pixel font replacements in Rhythm Tweezers
+For information on how to contribute, read [CONTRIBUTING.md](./CONTRIBUTING.md)
 
 # Additional Credits
 
@@ -45,7 +13,16 @@ Huge thank you to all of the following people:
 - @ShaffySwitcher - Created the original Rhythm Heaven Silver
 - @RHAdvance - An incredible team who still works hard every day to bring Rhythm Tengoku to western audiences
 - @Tailx501 - Created the RhythmHeavenResourcesPack
-- @ikyih - Started a similar project to this a few years ago (which inspired me to start and finish this one)
+- @ikyih - Started a similar project to this a few years ago (which inspired me to start this one)
+
+# AI Usage
+
+This project uses AI for some of the english translations (text that is unique to Rhythm Tengoku Arcade).
+If you are a translator and wish to improve any of the existing translations, feel free to make a PR.
+
+The custom tools in the `tools/` folder are mostly vibe-coded to make the mundane tasks infinitely easier.
+
+**ALL ART IS MADE BY A HUMAN. NO AI GENERATED ART IS USED NOR WILL IT EVER BE CONSIDERED.**
 
 # Copyright
 
