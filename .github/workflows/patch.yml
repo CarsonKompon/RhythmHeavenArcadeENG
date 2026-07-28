@@ -110,6 +110,10 @@ jobs:
           The patch verifies your ROM via an embedded checksum and refuses to
           apply to the wrong dump.
           EOF
+          # Bundle the Flycast custom-texture pack, PNGs ONLY (exclude psd/txt/etc.).
+          # cp --parents preserves the RHYTHM-TENGOKU_JAPAN/... sub-paths.
+          find RHYTHM-TENGOKU_JAPAN -type f -iname '*.png' -exec cp --parents {} "dist/$PKG/" \;
+          echo "Bundled $(find "dist/$PKG/RHYTHM-TENGOKU_JAPAN" -type f -iname '*.png' | wc -l) texture PNG(s)."
           # Versioned zip is only used for Release assets. The workflow artifact
           # uploads the folder contents directly (see next step) so it isn't a
           # zip-inside-a-zip.
