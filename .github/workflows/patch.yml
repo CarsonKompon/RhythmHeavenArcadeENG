@@ -121,7 +121,7 @@ jobs:
       - name: Upload workflow artifact
         uses: actions/upload-artifact@v4
         with:
-          name: text-patch
+          name: rhythmheavenarcadeeng-text-patch
           path: ${{ env.PKG_DIR }}/*
           if-no-files-found: error
 
