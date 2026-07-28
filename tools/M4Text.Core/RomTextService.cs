@@ -39,17 +39,17 @@ public sealed class RomTextService
 
     /// <summary>
     /// Loads every *.dec file in the folder. When none are present and a PIC key
-    /// is supplied, the encrypted ROM set (searched in the work folder and the
-    /// PIC's own folder) is decrypted into *.dec first, so an empty work folder
-    /// bootstraps itself instead of failing.
+    /// is supplied, the encrypted ROM set (searched in the work folder, the optional
+    /// <paramref name="romFolder"/>, and the PIC's own folder) is decrypted into
+    /// *.dec first, so an empty work folder bootstraps itself instead of failing.
     /// </summary>
-    public static RomTextService Load(string workFolder, string? picPath = null)
+    public static RomTextService Load(string workFolder, string? picPath = null, string? romFolder = null)
     {
         var svc = new RomTextService(workFolder);
         svc.LoadDecFiles();
 
         if (svc._files.Count == 0 && !string.IsNullOrWhiteSpace(picPath))
-            svc.DecryptFromRoms(picPath!);
+            svc.DecryptFromRoms(picPath!, romFolder);
 
         if (svc._files.Count == 0)
             throw new InvalidOperationException(
@@ -66,10 +66,14 @@ public sealed class RomTextService
 
     // Decrypts any known encrypted ROM file it can find into memory and writes a
     // matching pristine .dec so subsequent launches load instantly.
-    private void DecryptFromRoms(string picPath)
+    private void DecryptFromRoms(string picPath, string? romFolder = null)
     {
         string picDir = Path.GetDirectoryName(Path.GetFullPath(picPath)) ?? WorkFolder;
-        string[] searchDirs = { WorkFolder, picDir };
+        string[] searchDirs = new[] { WorkFolder, romFolder, picDir }
+            .Where(d => !string.IsNullOrWhiteSpace(d))
+            .Select(d => d!)
+            .Distinct(StringComparer.OrdinalIgnoreCase)
+            .ToArray();
         M4Codec? codec = null;
         Directory.CreateDirectory(WorkFolder);
 
@@ -249,20 +253,36 @@ public sealed class RomTextService
 
     /// <summary>
     /// Re-encrypts the modified plaintext buffers with the M4 key from
-    /// <paramref name="picPath"/> and writes the encrypted ROM files into
-    /// <paramref name="outFolder"/>. Only files with applied edits are exported.
+    /// <paramref name="picPath"/> and returns them keyed by encrypted ROM filename
+    /// (e.g. "fpr-24423.ic8"). Only files with applied edits are included. Nothing
+    /// is written to disk — used by the patch builder to diff in memory.
     /// </summary>
-    public IReadOnlyList<string> ExportEncrypted(string picPath, string outFolder)
+    public IReadOnlyDictionary<string, byte[]> ExportEncryptedToMemory(string picPath)
     {
         var codec = new M4Codec(File.ReadAllBytes(picPath));
-        Directory.CreateDirectory(outFolder);
-        var written = new List<string>();
+        var result = new Dictionary<string, byte[]>(StringComparer.OrdinalIgnoreCase);
         foreach (string name in _modifiedFiles)
         {
             if (!_files.TryGetValue(name, out var data)) continue;
             string romName = DecToRom.TryGetValue(name, out var rn) ? rn : name + ".bin";
             var enc = (byte[])data.Clone();
             codec.Encrypt(enc);
+            result[romName] = enc;
+        }
+        return result;
+    }
+
+    /// <summary>
+    /// Re-encrypts the modified plaintext buffers with the M4 key from
+    /// <paramref name="picPath"/> and writes the encrypted ROM files into
+    /// <paramref name="outFolder"/>. Only files with applied edits are exported.
+    /// </summary>
+    public IReadOnlyList<string> ExportEncrypted(string picPath, string outFolder)
+    {
+        Directory.CreateDirectory(outFolder);
+        var written = new List<string>();
+        foreach (var (romName, enc) in ExportEncryptedToMemory(picPath))
+        {
             string outPath = Path.Combine(outFolder, romName);
             File.WriteAllBytes(outPath, enc);
             written.Add(outPath);

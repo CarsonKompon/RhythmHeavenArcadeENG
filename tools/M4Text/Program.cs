@@ -32,6 +32,8 @@ try
         case "textrefs": return TextRefs(rest);
         case "disasm": return Disasm(rest);
         case "keys": return Keys(picPath);
+        case "apply": return Apply(rest, picPath);
+        case "patch": return Patch(rest, picPath);
         default:
             Console.Error.WriteLine($"Unknown command: {command}");
             PrintUsage();
@@ -347,6 +349,153 @@ int Verify(string[] a, string pic)
     return naomi && rom.Length == expectSize ? 0 : 2;
 }
 
+// Applies a ROM-free changes file to an original ROM set and emits a BPS binary patch
+// per changed ROM file. This is the CI target: it never leaves a full ROM on disk —
+// only the tiny .bps files, which are safe to publish (they contain just our deltas).
+int Patch(string[] a, string picDefault)
+{
+    string romDir = GetOption(a, "--rom")
+        ?? throw new ArgumentException("patch requires --rom <dir> (folder with the fpr-*.ic* set + PIC).");
+    string changesPath = GetOption(a, "--changes")
+        ?? throw new ArgumentException("patch requires --changes <file>.");
+    string outDir = GetOption(a, "--out")
+        ?? throw new ArgumentException("patch requires --out <dir>.");
+
+    string pic = GetOption(a, "--pic")
+        ?? new[] { Path.Combine(romDir, "317-0503-jpn.ic3") }.FirstOrDefault(File.Exists)
+        ?? picDefault;
+
+    PadMode pad = (GetOption(a, "--pad") ?? "auto").ToLowerInvariant() switch
+    {
+        "null" => PadMode.Null,
+        "space" => PadMode.Space,
+        _ => PadMode.Auto,
+    };
+
+    string? pinnedWork = GetOption(a, "--work");
+    string work = pinnedWork ?? Path.Combine(Path.GetTempPath(), "m4text-patch-" + Guid.NewGuid().ToString("n"));
+    bool cleanup = pinnedWork is null;
+
+    try
+    {
+        Directory.CreateDirectory(work);
+        var svc = RomTextService.Load(work, pic, romDir);
+        var entries = svc.GetEntries(forceRescan: true);
+
+        var patch = M4TextPatch.Load(changesPath);
+        var result = patch.Apply(entries);
+        int written = svc.ApplyEdits(entries, pad);                 // throws on any over-limit edit
+
+        Directory.CreateDirectory(outDir);
+        var modified = svc.ExportEncryptedToMemory(pic);            // encrypted, in memory only
+        var madePatches = new List<string>();
+
+        foreach (var (romName, targetBytes) in modified)
+        {
+            string origPath = Path.Combine(romDir, romName);
+            if (!File.Exists(origPath))
+            {
+                Console.Error.WriteLine($"  ! original '{romName}' not found in --rom; skipping its patch.");
+                continue;
+            }
+            byte[] sourceBytes = File.ReadAllBytes(origPath);
+            byte[] bps = BpsPatch.Create(sourceBytes, targetBytes);
+
+            // Self-check: apply the patch we just built back onto the original and confirm
+            // it reproduces the target exactly, so a broken patch can never be published.
+            byte[] roundTrip = BpsPatch.Apply(sourceBytes, bps);
+            if (!roundTrip.AsSpan().SequenceEqual(targetBytes))
+                throw new InvalidOperationException($"BPS self-check failed for {romName}; patch not written.");
+
+            string bpsPath = Path.Combine(outDir, romName + ".bps");
+            File.WriteAllBytes(bpsPath, bps);
+            madePatches.Add(bpsPath);
+        }
+
+        Console.WriteLine($"Applied {result.Applied} edit(s) from {Path.GetFileName(changesPath)} "
+            + $"({written} slot(s)); wrote {madePatches.Count} BPS patch(es).");
+        if (result.Missing > 0)
+            Console.WriteLine($"  {result.Missing} edit(s) had no matching slot in this ROM (skipped).");
+        if (result.Mismatched > 0)
+            Console.WriteLine($"  {result.Mismatched} edit(s) differ from this ROM's original text (applied anyway; check ROM version).");
+        foreach (var p in madePatches)
+            Console.WriteLine($"  -> {p} ({new FileInfo(p).Length:N0} bytes)");
+
+        return madePatches.Count > 0 ? 0 : 3;
+    }
+    finally
+    {
+        if (cleanup && Directory.Exists(work))
+        {
+            try { Directory.Delete(work, recursive: true); } catch { /* scratch dir; ignore */ }
+        }
+    }
+}
+
+// Applies a ROM-free changes file (changes.m4text.json) to an original ROM set and
+// writes the re-encrypted, modified ROM files. This is the headless equivalent of the
+// editor's Load-changes + Export-ROM, so CI can rebuild patch inputs with no GUI.
+int Apply(string[] a, string picDefault)
+{
+    string romDir = GetOption(a, "--rom")
+        ?? throw new ArgumentException("apply requires --rom <dir> (folder with the fpr-*.ic* set + PIC).");
+    string changesPath = GetOption(a, "--changes")
+        ?? throw new ArgumentException("apply requires --changes <file>.");
+    string outDir = GetOption(a, "--out")
+        ?? throw new ArgumentException("apply requires --out <dir>.");
+
+    // Prefer an explicit --pic, else the PIC shipped alongside the ROM set, else the
+    // workspace default. CI bundles the PIC with the ic files, so the middle case wins.
+    string pic = GetOption(a, "--pic")
+        ?? new[] { Path.Combine(romDir, "317-0503-jpn.ic3") }.FirstOrDefault(File.Exists)
+        ?? picDefault;
+
+    PadMode pad = (GetOption(a, "--pad") ?? "auto").ToLowerInvariant() switch
+    {
+        "null" => PadMode.Null,
+        "space" => PadMode.Space,
+        _ => PadMode.Auto,
+    };
+
+    // Decrypt into a scratch work folder so the ROM dir stays pristine (never gets
+    // *.dec spilled into it). Reused/persisted only when --work pins a location.
+    string? pinnedWork = GetOption(a, "--work");
+    string work = pinnedWork ?? Path.Combine(Path.GetTempPath(), "m4text-apply-" + Guid.NewGuid().ToString("n"));
+    bool cleanup = pinnedWork is null;
+
+    try
+    {
+        Directory.CreateDirectory(work); // must exist before the .dec scan enumerates it
+        var svc = RomTextService.Load(work, pic, romDir);
+        // Fresh scan gives pristine Original text to validate the patch against.
+        var entries = svc.GetEntries(forceRescan: true);
+
+        var patch = M4TextPatch.Load(changesPath);
+        var result = patch.Apply(entries);
+        int written = svc.ApplyEdits(entries, pad);           // throws on any over-limit edit
+        var files = svc.ExportEncrypted(pic, outDir);
+
+        Console.WriteLine($"Applied {result.Applied} edit(s) from {Path.GetFileName(changesPath)} "
+            + $"({written} slot(s) written across {files.Count} file(s)).");
+        if (result.Missing > 0)
+            Console.WriteLine($"  {result.Missing} edit(s) had no matching slot in this ROM (skipped).");
+        if (result.Mismatched > 0)
+            Console.WriteLine($"  {result.Mismatched} edit(s) differ from this ROM's original text (applied anyway; check ROM version).");
+        foreach (var f in files)
+            Console.WriteLine($"  -> {f}");
+
+        // No modified files means nothing to patch: signal so CI can skip empty output.
+        return files.Count > 0 ? 0 : 3;
+    }
+    finally
+    {
+        if (cleanup && Directory.Exists(work))
+        {
+            try { Directory.Delete(work, recursive: true); } catch { /* scratch dir; ignore */ }
+        }
+    }
+}
+
 static (string input, string output) TwoPaths(string[] a, string cmd)
 {
     var positional = a.Where(x => !x.StartsWith("--")).ToArray();
@@ -377,6 +526,8 @@ static void PrintUsage()
           m4text refs      <decrypted> --target <a>   Find pointers to a ROM offset or RAM address
           m4text textrefs  <decrypted> [options]      List every text pointer + target string (+record)
           m4text disasm    <decrypted> --at <a>       Disassemble SH-4 code at an offset/address
+          m4text apply     --rom <dir> --changes <f> --out <dir>   Apply a changes file -> re-encrypted ROM
+          m4text patch     --rom <dir> --changes <f> --out <dir>   Apply changes -> BPS patch per changed file
 
         map options:
           --resolve <romOffset>        Resolve a ROM offset to its RAM address
@@ -402,6 +553,22 @@ static void PrintUsage()
           --pic <ic3>                  PIC key file (defaults to workspace ic3)
           --size N                     expected file size in bytes (default 67108864)
           --find "text"                confirm an edited string is present in the decrypted image
+
+        apply options:
+          --rom <dir>                  folder holding the original fpr-*.ic* set (+ PIC) (required)
+          --changes <file>             ROM-free changes file (changes.m4text.json) (required)
+          --out <dir>                  where the re-encrypted, modified ROM files are written (required)
+          --pic <ic3>                  PIC key (default: <rom>/317-0503-jpn.ic3, else workspace ic3)
+          --pad auto|null|space        padding for shorter replacements (default auto)
+          --work <dir>                 reuse/persist the scratch decrypt folder (default: temp, deleted)
+
+        patch options:                 (same as apply; output is BPS patches instead of ROM files)
+          --rom <dir>                  folder holding the original fpr-*.ic* set (+ PIC) (required)
+          --changes <file>             ROM-free changes file (changes.m4text.json) (required)
+          --out <dir>                  where <romfile>.bps patches are written (required)
+          --pic <ic3>                  PIC key (default: <rom>/317-0503-jpn.ic3, else workspace ic3)
+          --pad auto|null|space        padding for shorter replacements (default auto)
+          --work <dir>                 reuse/persist the scratch decrypt folder (default: temp, deleted)
 
         find options:
           --encoding ascii|utf8|sjis|both   (default both = ascii+utf8)

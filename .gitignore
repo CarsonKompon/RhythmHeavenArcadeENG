@@ -1,1 +1,33 @@
 backup/*
+
+# ─────────────────────────────────────────────────────────────────────────────
+# ROM data — NEVER commit original, decrypted, or modified ROM bytes.
+# Only the ROM-free changes.m4text.json (and the human-made PNG textures) belong
+# in this repo. Patches are published as release assets, not committed.
+# ─────────────────────────────────────────────────────────────────────────────
+# Encrypted NAOMI M4 cart files + PIC key (any location)
+*.ic3
+*.ic8
+*.ic9
+*.ic10
+*.ic11
+fpr-*.ic*
+317-*.ic*
+# Decrypted / plaintext ROM images
+*.dec
+# MAME-style romset zips a user might drop in the tree
+rhytngk*.zip
+# BPS binary patches (produced by CI as release assets, not source-controlled)
+*.bps
+
+# Decrypt/scan scratch + per-user editor caches (derived from the ROM)
+tools/M4Text/work/
+tools/**/_patchtest/
+.m4text-index.json
+.m4text-hidden.json
+
+# ── .NET build output ──
+[Bb]in/
+[Oo]bj/
+.vs/
+*.user

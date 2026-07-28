@@ -1,0 +1,130 @@
+# Builds the distributable BPS text patch from the committed, ROM-free
+# changes.m4text.json plus a ROM supplied privately at build time.
+#
+# SECURITY / COPYRIGHT:
+#   * The ROM is NEVER stored in this repo. It is fetched at build time from a
+#     private URL kept in the ROM_BUNDLE_URL secret and deleted afterwards.
+#   * Only the produced .bps patches (which contain just our own deltas) are
+#     published — never any original, decrypted, or modified ROM bytes.
+#   * Triggers are limited to events that only repo collaborators can raise
+#     (releases, version tags, manual dispatch). GitHub does not expose secrets
+#     to workflows triggered by forked-PRs, so the ROM cannot be exfiltrated by
+#     a malicious pull request. The repository guard below is defense-in-depth.
+name: Build text patch
+
+on:
+  release:
+    types: [published]
+  push:
+    tags: ['v*']
+  workflow_dispatch:
+
+permissions:
+  contents: write   # needed to attach .bps assets to the Release
+
+concurrency:
+  group: build-patch-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-patch:
+    # Never run on forks (they have no ROM secret) — extra safety on top of
+    # GitHub's fork-PR secret withholding.
+    if: github.repository == 'CarsonKompon/RhythmHeavenArcadeENG'
+    runs-on: ubuntu-latest
+    env:
+      ROM_BUNDLE_URL: ${{ secrets.ROM_BUNDLE_URL }}
+      ROM_BUNDLE_SHA256: ${{ secrets.ROM_BUNDLE_SHA256 }}   # optional integrity pin
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up .NET 10
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+
+      - name: Build m4text tool (Release)
+        run: dotnet build tools/M4Text/M4Text.csproj -c Release -v q
+
+      - name: Fetch ROM bundle (private, transient)
+        run: |
+          set -euo pipefail
+          if [ -z "${ROM_BUNDLE_URL:-}" ]; then
+            echo "::error::ROM_BUNDLE_URL secret is not set. Add a private URL to the fpr-*.ic* + 317-0503-jpn.ic3 bundle (zip)."
+            exit 1
+          fi
+          mkdir -p .rom
+          echo "Downloading ROM bundle…"
+          curl -fSL --retry 3 "$ROM_BUNDLE_URL" -o .rom/bundle.zip
+          if [ -n "${ROM_BUNDLE_SHA256:-}" ]; then
+            echo "${ROM_BUNDLE_SHA256}  .rom/bundle.zip" | sha256sum -c -
+          else
+            echo "::warning::ROM_BUNDLE_SHA256 not set — skipping bundle integrity check (recommended to set it)."
+          fi
+          unzip -q .rom/bundle.zip -d .rom/extracted
+          # Locate the folder that actually holds the cart, wherever it sits in the zip.
+          IC8="$(find .rom/extracted -type f -name 'fpr-24423.ic8' | head -n1)"
+          if [ -z "$IC8" ]; then
+            echo "::error::fpr-24423.ic8 not found in the ROM bundle."
+            exit 1
+          fi
+          echo "ROMDIR=$(dirname "$IC8")" >> "$GITHUB_ENV"
+
+      - name: Build BPS patch from changes.m4text.json
+        run: |
+          set -euo pipefail
+          mkdir -p out
+          dotnet tools/M4Text/bin/Release/net10.0/m4text.dll patch \
+            --rom "$ROMDIR" \
+            --changes changes.m4text.json \
+            --out out
+          echo "Produced patches:"
+          ls -l out
+
+      - name: Package release bundle
+        run: |
+          set -euo pipefail
+          VER="${GITHUB_REF_NAME:-$(git rev-parse --short HEAD)}"
+          PKG="RhythmHeavenArcadeENG-text-${VER}"
+          mkdir -p "dist/$PKG"
+          cp out/*.bps "dist/$PKG/"
+          cat > "dist/$PKG/APPLY.txt" <<'EOF'
+          Rhythm Heaven Arcade ENG — text patch (BPS)
+
+          These .bps patches add the English text to your own Rhythm Tengoku
+          (rhytngk) ROM. No ROM data is included — you must supply your own dump.
+
+          How to apply:
+            1. Get a BPS patcher: Floating IPS ("flips") or the web tool
+               https://www.marcrobledo.com/RomPatcher.js/
+            2. Extract your rhytngk romset .zip.
+            3. Apply each .bps to the file with the SAME base name:
+                 fpr-24423.ic8.bps  ->  fpr-24423.ic8
+            4. Re-zip the files back into rhytngk.zip (or point Flycast at the
+               folder). Note: a patched file will fail MAME's strict CRC audit —
+               load it in Flycast, or with MAME's loose-file / override options.
+
+          The patch verifies your ROM via an embedded checksum and refuses to
+          apply to the wrong dump.
+          EOF
+          (cd dist && zip -qr "${PKG}.zip" "$PKG")
+          echo "PKG_ZIP=dist/${PKG}.zip" >> "$GITHUB_ENV"
+          ls -l dist
+
+      - name: Upload workflow artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: text-patch
+          path: ${{ env.PKG_ZIP }}
+          if-no-files-found: error
+
+      - name: Attach to Release
+        if: github.event_name == 'release' || startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: ${{ env.PKG_ZIP }}
+
+      - name: Scrub ROM (always)
+        if: always()
+        run: rm -rf .rom

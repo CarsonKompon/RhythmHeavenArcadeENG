@@ -598,15 +598,9 @@ public sealed class MainViewModel : INotifyPropertyChanged
 
     // ---- Portable changes file (ROM-free, human-editable JSON) ---------------
 
-    private static readonly System.Text.Json.JsonSerializerOptions PatchJson = new()
-    {
-        WriteIndented = true,
-        Encoder = System.Text.Encodings.Web.JavaScriptEncoder.UnsafeRelaxedJsonEscaping, // keep 日本語 readable
-    };
-
     // Writes only the edits (and hide-list) to JSON so they can be committed to a repo
-    // without any ROM data. Each edit records file+offset+encoding, the pristine
-    // Original (so a collaborator's ROM can be validated on load) and the new text.
+    // without any ROM data. Format/serialization lives in M4Text.Core so the CLI and
+    // editor stay in lock-step.
     private void SaveChanges()
     {
         if (_service is null) return;
@@ -619,25 +613,10 @@ public sealed class MainViewModel : INotifyPropertyChanged
         };
         if (dlg.ShowDialog() != true) return;
 
-        var patch = new M4TextPatch
-        {
-            Edits = _all.Where(e => e.IsModified)
-                .OrderBy(e => e.File, StringComparer.OrdinalIgnoreCase).ThenBy(e => e.Offset)
-                .Select(e => new PatchEdit
-                {
-                    File = e.File,
-                    Offset = $"0x{e.Offset:x}",
-                    Encoding = e.Encoding,
-                    Original = e.Original,
-                    Text = e.Edited,
-                })
-                .ToList(),
-            Hidden = _hidden.OrderBy(k => k, StringComparer.OrdinalIgnoreCase).ToList(),
-        };
-
         try
         {
-            File.WriteAllText(dlg.FileName, System.Text.Json.JsonSerializer.Serialize(patch, PatchJson));
+            var patch = M4TextPatch.FromEntries(_all, _hidden);
+            patch.Save(dlg.FileName);
             Status = $"Saved {patch.Edits.Count} edit(s) and {patch.Hidden.Count} hidden slot(s) to {Path.GetFileName(dlg.FileName)}.";
         }
         catch (Exception ex)
@@ -646,9 +625,7 @@ public sealed class MainViewModel : INotifyPropertyChanged
         }
     }
 
-    // Applies a changes file onto the currently loaded ROM. Edits are matched by
-    // file+offset; the stored Original is compared against this ROM so version drift
-    // is reported rather than silently mis-applied.
+    // Applies a changes file onto the currently loaded ROM via the shared core.
     private void LoadChanges()
     {
         if (_service is null) return;
@@ -660,31 +637,18 @@ public sealed class MainViewModel : INotifyPropertyChanged
         };
         if (dlg.ShowDialog() != true) return;
 
-        M4TextPatch? patch;
+        M4TextPatch patch;
         try
         {
-            patch = System.Text.Json.JsonSerializer.Deserialize<M4TextPatch>(File.ReadAllText(dlg.FileName), PatchJson);
+            patch = M4TextPatch.Load(dlg.FileName);
         }
         catch (Exception ex)
         {
             Status = $"Load changes failed: {ex.Message}";
             return;
         }
-        if (patch is null) { Status = "Load changes failed: not a valid changes file."; return; }
 
-        var byKey = _all.GroupBy(e => (e.File, e.Offset)).ToDictionary(g => g.Key, g => g.First());
-        int applied = 0, missing = 0, mismatched = 0;
-        foreach (var ed in patch.Edits ?? new())
-        {
-            if (!TryParseHex(ed.Offset, out long off)) { missing++; continue; }
-            if (!byKey.TryGetValue((ed.File, off), out var entry)) { missing++; continue; }
-            // Warn (but still apply) when this ROM's slot differs from the one the edit
-            // was authored against — usually a different game/region/revision.
-            if (!string.IsNullOrEmpty(ed.Original) && !string.Equals(ed.Original, entry.Original, StringComparison.Ordinal))
-                mismatched++;
-            entry.Edited = ed.Text ?? entry.Original;
-            applied++;
-        }
+        var result = patch.Apply(_all);
 
         // Merge the hide-list from the file into the current one.
         if (patch.Hidden is { Count: > 0 })
@@ -697,18 +661,9 @@ public sealed class MainViewModel : INotifyPropertyChanged
         RaiseCounts();
         OnPropertyChanged(nameof(HiddenCount));
         RefreshEntriesView();
-        Status = $"Applied {applied} edit(s) from {Path.GetFileName(dlg.FileName)}"
-               + (missing > 0 ? $", {missing} not found" : "")
-               + (mismatched > 0 ? $", {mismatched} differ from this ROM (check version)" : "") + ".";
-    }
-
-    private static bool TryParseHex(string? s, out long value)
-    {
-        value = 0;
-        s = s?.Trim();
-        if (string.IsNullOrEmpty(s)) return false;
-        if (s.StartsWith("0x", StringComparison.OrdinalIgnoreCase)) s = s[2..];
-        return long.TryParse(s, System.Globalization.NumberStyles.HexNumber, null, out value);
+        Status = $"Applied {result.Applied} edit(s) from {Path.GetFileName(dlg.FileName)}"
+               + (result.Missing > 0 ? $", {result.Missing} not found" : "")
+               + (result.Mismatched > 0 ? $", {result.Mismatched} differ from this ROM (check version)" : "") + ".";
     }
 
     private void ApplySort() => ApplySortTo(EntriesView);
@@ -747,31 +702,6 @@ public sealed class MainViewModel : INotifyPropertyChanged
         OnPropertyChanged(name);
         return true;
     }
-}
-
-/// <summary>
-/// ROM-free, human-editable changes file. Holds only the edits (and the hide-list)
-/// so translation work can be committed to a repository without any original,
-/// decrypted, or modified ROM bytes. Collaborators clone the repo, supply their own
-/// ROM, and load this file to reproduce and extend the edits.
-/// </summary>
-public sealed class M4TextPatch
-{
-    public string Format { get; set; } = "m4text-changes";
-    public int Version { get; set; } = 1;
-    public List<PatchEdit> Edits { get; set; } = new();
-    public List<string> Hidden { get; set; } = new();
-}
-
-/// <summary>One edited slot. Offset is hex text (e.g. "0x24ed68"); Original is the
-/// pristine slot text, kept only to validate against a collaborator's ROM.</summary>
-public sealed class PatchEdit
-{
-    public string File { get; set; } = "";
-    public string Offset { get; set; } = "";
-    public string Encoding { get; set; } = "";
-    public string Original { get; set; } = "";
-    public string Text { get; set; } = "";
 }
 
 /// <summary>
