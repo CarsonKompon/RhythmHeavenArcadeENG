@@ -225,55 +225,55 @@ This is tracking all the progress of known textures that need to be updated or s
         - [ ] Intro Card
         - [ ] Results Text
         - [ ] End Card Text
-    - Karate Man 2
+    - [ ] Karate Man 2
         - [ ] 2P Tutorial/Practice
         - [ ] Results Text
         - [ ] End Card Text
-    - Rhythm Tweezers 2
+    - [ ] Rhythm Tweezers 2
         - [x] 2P Tutorial/Practice
         - [ ] Results Text
         - [ ] End Card Text
-    - Ninja Descendant
+    - [ ] Ninja Descendant
         - [ ] Intro Card
         - [ ] 2P Tutorial/Practice
         - [ ] Results Text
         - [ ] End Card Text
-    - Night Walk 2
+    - [ ] Night Walk 2
         - [ ] Intro Card
         - [ ] Results Text
         - [ ] End Card Text
-    - Marching Orders 2
-        - [ ] Intro Card
-        - [ ] 2P Tutorial/Practice
-        - [ ] Results Text
-        - [ ] End Card Text
-    - Remix 7
-        - [ ] Intro Card
-        - [ ] Results Text
-        - [ ] End Card Text
-    - Bouncy Road 2
-        - [ ] Intro Card
-        - [ ] Results Text
-        - [ ] End Card Text
-    - Toss Team 2
-        - [ ] Intro Card
-        - [ ] Results Text
-        - [ ] End Card Text
-    - Polyrhythm 2
-        - [ ] Intro Card
-        - [ ] Results Text
-        - [ ] End Card Text
-    - Spaceball 2
+    - [ ] Marching Orders 2
         - [ ] Intro Card
         - [ ] 2P Tutorial/Practice
         - [ ] Results Text
         - [ ] End Card Text
-    - Sneaky Spirits 2
+    - [ ] Remix 7
+        - [ ] Intro Card
+        - [ ] Results Text
+        - [ ] End Card Text
+    - [ ] Bouncy Road 2
+        - [ ] Intro Card
+        - [ ] Results Text
+        - [ ] End Card Text
+    - [ ] Toss Team 2
+        - [ ] Intro Card
+        - [ ] Results Text
+        - [ ] End Card Text
+    - [ ] Polyrhythm 2
+        - [ ] Intro Card
+        - [ ] Results Text
+        - [ ] End Card Text
+    - [ ] Spaceball 2
         - [ ] Intro Card
         - [ ] 2P Tutorial/Practice
         - [ ] Results Text
         - [ ] End Card Text
-    - Remix 8
+    - [ ] Sneaky Spirits 2
+        - [ ] Intro Card
+        - [ ] 2P Tutorial/Practice
+        - [ ] Results Text
+        - [ ] End Card Text
+    - [ ] Remix 8
         - [ ] Intro Card
         - [ ] Results Text
         - [ ] End Card Text
