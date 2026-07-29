@@ -42,6 +42,8 @@ This is tracking all the progress of known textures that need to be updated or s
         - [ ] 2P Tutorial/Practice
         - [ ] Results Text
         - [ ] End Card Text
+        - [ ] EX Results Text
+        - [x] EX End Card Text
     - [ ] Rhythm Tweezers
         - [x] Intro Card
         - [x] EX Intro Card
@@ -49,6 +51,8 @@ This is tracking all the progress of known textures that need to be updated or s
         - [x] 2P Tutorial/Practice
         - [ ] Results Text
         - [ ] End Card Text
+        - [ ] EX Results Text
+        - [x] EX End Card Text
     - [ ] Marching Orders
         - [ ] Intro Card
         - [x] EX Intro Card
@@ -56,23 +60,31 @@ This is tracking all the progress of known textures that need to be updated or s
         - [ ] 2P Tutorial/Practice
         - [ ] Results Text
         - [ ] End Card Text
+        - [ ] EX Results Text
+        - [x] EX End Card Text
     - [ ] Spaceball
         - [ ] Intro Card
         - [x] EX Intro Card
         - [ ] Tutorial/Practice
         - [ ] Results Text
         - [ ] End Card Text
+        - [ ] EX Results Text
+        - [x] EX End Card Text
     - [ ] The Clappy Trio
         - [ ] Intro Card
         - [x] EX Intro Card
         - [ ] Tutorial/Practice
         - [ ] Results Text
         - [ ] End Card Text
+        - [ ] EX Results Text
+        - [x] EX End Card Text
     - [ ] Remix 1
         - [ ] Intro Card
         - [ ] EX Intro Card
         - [ ] Results Text
         - [ ] End Card Text
+        - [ ] EX Results Text
+        - [x] EX End Card Text
     - [ ] Sneaky Spirits
         - [x] Intro Card
         - [ ] 1P Tutorial/Practice

@@ -749,21 +749,126 @@
       "Offset": "0x237c98",
       "Encoding": "utf8",
       "Original": "大会当日はイマイチでした。",
-      "Text": "Things were lacking at the tournament."
+      "Text": "The tournament didn't go so well..."
     },
     {
       "File": "ic8",
       "Offset": "0x237cc0",
       "Encoding": "utf8",
       "Original": "大会当日、わりといいカンジでした！",
-      "Text": "On the day of, things went south..."
+      "Text": "I may not have won, but I did really well!"
     },
     {
       "File": "ic8",
       "Offset": "0x237cf4",
       "Encoding": "utf8",
       "Original": "あの大会で優勝しちゃった！！",
-      "Text": "On the day of, things went pretty well!"
+      "Text": "I won the tournament, and took home gold!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x237d20",
+      "Encoding": "utf8",
+      "Original": "毛が速すぎるんだよなぁ…",
+      "Text": "I can't pluck at this speed!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x237d48",
+      "Encoding": "utf8",
+      "Original": "なかなか手ごわい毛だったなぁ",
+      "Text": "These hairs are too tough to pluck."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x237d74",
+      "Encoding": "utf8",
+      "Original": "うーん、スッキリ！花でも見るか！",
+      "Text": "Look at those flowers! They're so relaxing..."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x237da8",
+      "Encoding": "utf8",
+      "Original": "たいきゃく！たいきゃくでーす！！",
+      "Text": "MONSTER! Retreat! Retreat!!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x237ddc",
+      "Encoding": "utf8",
+      "Original": "あっ、まいごちゃん 発見でーす！",
+      "Text": "Ah, there's the lost puppy!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x237e0c",
+      "Encoding": "utf8",
+      "Original": "まいごちゃんを助けたヨ！やった！！",
+      "Text": "We rescued the lost puppy! Hooray!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x237e40",
+      "Encoding": "utf8",
+      "Original": "うわっ、ダメだ〜！",
+      "Text": "Agh, it's over..."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x237e5c",
+      "Encoding": "utf8",
+      "Original": "えい。",
+      "Text": "Graaaah!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x237e68",
+      "Encoding": "utf8",
+      "Original": "やりましたー！！",
+      "Text": "A home run! I did it!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x237e84",
+      "Encoding": "utf8",
+      "Original": "おいてかないで〜っ！",
+      "Text": "Wait! Don't leave without us!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x237ea4",
+      "Encoding": "utf8",
+      "Original": "楽しいスペースクルージング。",
+      "Text": "This is one nice space cruise!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x237ed0",
+      "Encoding": "utf8",
+      "Original": "未知の星に１番のり！偉業！！",
+      "Text": "I've discovered a new planet! Stellar!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x237efc",
+      "Encoding": "utf8",
+      "Original": "まだまだ、これからだネ。",
+      "Text": "This is going to take a while..."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x237f24",
+      "Encoding": "utf8",
+      "Original": "ふつうでした〜。ピヨピヨ。",
+      "Text": "Just a normal chick. Cheep-Cheep!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x237f4c",
+      "Encoding": "utf8",
+      "Original": "りっぱに成長したネ！りりしい！！",
+      "Text": "You've grown splendidly! You seem dignified!"
     },
     {
       "File": "ic8",
