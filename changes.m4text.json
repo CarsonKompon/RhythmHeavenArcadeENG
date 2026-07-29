@@ -1803,6 +1803,13 @@
     },
     {
       "File": "ic8",
+      "Offset": "0x241bfc",
+      "Encoding": "utf8",
+      "Original": "とりあえず、ごはん 食べとこう！",
+      "Text": "Time for a lunch break!"
+    },
+    {
+      "File": "ic8",
       "Offset": "0x24ec74",
       "Encoding": "utf8",
       "Original": "レディース＆ジェドメン！\nウエルカム トゥ ザ\nリズム天国!!\nナイス トゥ ミーチュー",
@@ -1821,6 +1828,20 @@
       "Encoding": "utf8",
       "Original": "カンタンなのに快感！から\nスリリングで刺激的！まで\n幅広く用意してます。\nお気軽にどうぞ〜",
       "Text": "We got a wide variety for you!\nSimple, yet satisfying...\nThrilling, and exciting...\nEnjoy them all at your leisure~"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x251b18",
+      "Encoding": "utf8",
+      "Original": "師匠のおことば",
+      "Text": "Words from the Master"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x252318",
+      "Encoding": "utf8",
+      "Original": "さいご キマってた！",
+      "Text": "You nailed the ending!"
     }
   ],
   "Hidden": [
