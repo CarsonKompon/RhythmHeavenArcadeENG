@@ -767,6 +767,636 @@
     },
     {
       "File": "ic8",
+      "Offset": "0x237f80",
+      "Encoding": "utf8",
+      "Original": "ステージ１",
+      "Text": "Stage 1"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x237f90",
+      "Encoding": "utf8",
+      "Original": "ステージ２",
+      "Text": "Stage 2"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x237fa0",
+      "Encoding": "utf8",
+      "Original": "ステージ３",
+      "Text": "Stage 3"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x237fb0",
+      "Encoding": "utf8",
+      "Original": "ステージ４",
+      "Text": "Stage 4"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x237fc0",
+      "Encoding": "utf8",
+      "Original": "ステージ５",
+      "Text": "Stage 5"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x237fd0",
+      "Encoding": "utf8",
+      "Original": "リバイバル",
+      "Text": "Revival"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x237fe0",
+      "Encoding": "utf8",
+      "Original": "テクニシャン",
+      "Text": "Expert"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x237ff4",
+      "Encoding": "utf8",
+      "Original": "ラストテクニシャン",
+      "Text": "Master"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x238010",
+      "Encoding": "utf8",
+      "Original": "エクストラ",
+      "Text": "Extra"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x238020",
+      "Encoding": "utf8",
+      "Original": "カラテ家",
+      "Text": "Karate Man"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x238044",
+      "Encoding": "utf8",
+      "Original": "リズム脱毛",
+      "Text": "Rhythm Tweezers"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x238068",
+      "Encoding": "utf8",
+      "Original": "マーチャ",
+      "Text": "Marchers"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x23808c",
+      "Encoding": "utf8",
+      "Original": "エアーバッター",
+      "Text": "Spaceball"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x2380b8",
+      "Encoding": "utf8",
+      "Original": "パチパチ三人衆",
+      "Text": "The Clappy Trio"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x2380e4",
+      "Encoding": "utf8",
+      "Original": "リミックス １",
+      "Text": "Remix 1"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x23810c",
+      "Encoding": "utf8",
+      "Original": "しろいおばけ",
+      "Text": "Sneaky Spirits"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x238134",
+      "Encoding": "utf8",
+      "Original": "ゐあひ斬り",
+      "Text": "Samurai Slice"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x238158",
+      "Encoding": "utf8",
+      "Original": "こっそり ラット",
+      "Text": "Rat Race"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x238184",
+      "Encoding": "utf8",
+      "Original": "バイキン はかせ",
+      "Text": "Sick Beats"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x23819c",
+      "Encoding": "utf8",
+      "Original": "ザ☆ぼんおどり",
+      "Text": "The☆Bon Odori"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x2381c8",
+      "Encoding": "utf8",
+      "Original": "リミックス ２",
+      "Text": "Remix 2"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x2381dc",
+      "Encoding": "utf8",
+      "Original": "まほうつかい",
+      "Text": "Wizard's Waltz"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x238204",
+      "Encoding": "utf8",
+      "Original": "ショータイム",
+      "Text": "Showtime"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x23822c",
+      "Encoding": "utf8",
+      "Original": "ウサギとび",
+      "Text": "Bunny Hop"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x23823c",
+      "Encoding": "utf8",
+      "Original": "トランとポリン",
+      "Text": "Tram & Pauline"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x238268",
+      "Encoding": "utf8",
+      "Original": "スペースダンス",
+      "Text": "Space Dance"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x238280",
+      "Encoding": "utf8",
+      "Original": "リミックス ３",
+      "Text": "Remix 3"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x238294",
+      "Encoding": "utf8",
+      "Original": "クイズ",
+      "Text": "Quiz Show"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x2382a0",
+      "Encoding": "utf8",
+      "Original": "ナイトウォーク",
+      "Text": "Night Walk"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x2382b8",
+      "Encoding": "utf8",
+      "Original": "リズムお習字",
+      "Text": "Power Calligraphy"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x2382cc",
+      "Encoding": "utf8",
+      "Original": "ポリリズム",
+      "Text": "Polyrhythm"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x2382f0",
+      "Encoding": "utf8",
+      "Original": "ラップメン",
+      "Text": "Rap Men"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x238314",
+      "Encoding": "utf8",
+      "Original": "リミックス ４",
+      "Text": "Remix 4"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x238328",
+      "Encoding": "utf8",
+      "Original": "ホッピングロード",
+      "Text": "Bouncy Road"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x238344",
+      "Encoding": "utf8",
+      "Original": "忍者",
+      "Text": "Ninja"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x23834c",
+      "Encoding": "utf8",
+      "Original": "トスボーイズ",
+      "Text": "Toss Team"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x238374",
+      "Encoding": "utf8",
+      "Original": "花火",
+      "Text": "FireW"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x23837c",
+      "Encoding": "utf8",
+      "Original": "タップダンス",
+      "Text": "Tap Trial"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x238390",
+      "Encoding": "utf8",
+      "Original": "リミックス ５",
+      "Text": "Remix 5"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x2383a4",
+      "Encoding": "utf8",
+      "Original": "バリバリ三人衆",
+      "Text": "The Snappy Trio"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x2383bc",
+      "Encoding": "utf8",
+      "Original": "ボンダンス",
+      "Text": "The☆Bon Dance"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x2383cc",
+      "Encoding": "utf8",
+      "Original": "コスモダンス",
+      "Text": "Cosmic Dance"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x2383e0",
+      "Encoding": "utf8",
+      "Original": "ラップウイメン",
+      "Text": "Rap Women"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x2383f8",
+      "Encoding": "utf8",
+      "Original": "スーパータップ",
+      "Text": "Turbo Tap Trial"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x238410",
+      "Encoding": "utf8",
+      "Original": "リミックス ６",
+      "Text": "Remix 6"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x238424",
+      "Encoding": "utf8",
+      "Original": "カラテ家 ２",
+      "Text": "Karate Man 2"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x238438",
+      "Encoding": "utf8",
+      "Original": "リズム脱毛 ２",
+      "Text": "Rhythm Tweezers 2"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x23844c",
+      "Encoding": "utf8",
+      "Original": "忍者の子孫",
+      "Text": "Ninja Desc"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x23845c",
+      "Encoding": "utf8",
+      "Original": "ナイトウォーク ２",
+      "Text": "Night Walk 2"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x238478",
+      "Encoding": "utf8",
+      "Original": "マーチャ ２",
+      "Text": "Marchers 2"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x23848c",
+      "Encoding": "utf8",
+      "Original": "リミックス ７",
+      "Text": "Remix 7"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x2384a0",
+      "Encoding": "utf8",
+      "Original": "ホッピングロード ２",
+      "Text": "Bouncy Road 2"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x2384c0",
+      "Encoding": "utf8",
+      "Original": "トスボーイズ ２",
+      "Text": "Toss Team 2"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x2384d8",
+      "Encoding": "utf8",
+      "Original": "ポリリズム ２",
+      "Text": "Polyrhythm 2"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x2384ec",
+      "Encoding": "utf8",
+      "Original": "エアーバッター ２",
+      "Text": "Spaceball 2"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x238508",
+      "Encoding": "utf8",
+      "Original": "しろいおばけ ２",
+      "Text": "Sneaky Spirits 2"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x238520",
+      "Encoding": "utf8",
+      "Original": "リミックス ８",
+      "Text": "Remix 8"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x238534",
+      "Encoding": "utf8",
+      "Original": "カラテ家ＥＸ",
+      "Text": "Karate Man EX"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x238548",
+      "Encoding": "utf8",
+      "Original": "リズム脱毛ＥＸ",
+      "Text": "Rhythm Tweezers EX"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x238560",
+      "Encoding": "utf8",
+      "Original": "マーチャＥＸ",
+      "Text": "Marchers EX"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x238574",
+      "Encoding": "utf8",
+      "Original": "エアーバッターＥＸ",
+      "Text": "Spaceball EX"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x238590",
+      "Encoding": "utf8",
+      "Original": "パチパチ三人衆ＥＸ",
+      "Text": "The Clappy Trio EX"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x2385ac",
+      "Encoding": "utf8",
+      "Original": "リミックス １ＥＸ",
+      "Text": "Remix 1 EX"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x2385c8",
+      "Encoding": "utf8",
+      "Original": "カラテ家\u3000２Ｐ",
+      "Text": "Karate Man 2P"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x2385e0",
+      "Encoding": "utf8",
+      "Original": "リズム脱毛\u3000２Ｐ",
+      "Text": "Rhythm Tweezers 2P"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x2385fc",
+      "Encoding": "utf8",
+      "Original": "マーチャ\u3000２Ｐ",
+      "Text": "Marchers 2P"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x238614",
+      "Encoding": "utf8",
+      "Original": "エアーバッター\u3000２Ｐ",
+      "Text": "Spaceball 2P"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x238634",
+      "Encoding": "utf8",
+      "Original": "しろいおばけ\u3000２Ｐ",
+      "Text": "Sneaky Spirits 2P"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x238650",
+      "Encoding": "utf8",
+      "Original": "こっそり ラット\u3000２Ｐ",
+      "Text": "Rat Race 2P"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x238670",
+      "Encoding": "utf8",
+      "Original": "ウサギとび\u3000２Ｐ",
+      "Text": "Bunny Hop 2P"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x23868c",
+      "Encoding": "utf8",
+      "Original": "ザ☆ぼんおどり\u3000２Ｐ",
+      "Text": "The☆Bon Odori 2P"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x2386ac",
+      "Encoding": "utf8",
+      "Original": "スペースダンス\u3000２Ｐ",
+      "Text": "Space Dance 2P"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x2386cc",
+      "Encoding": "utf8",
+      "Original": "リズムお習字\u3000２Ｐ",
+      "Text": "Power Calligraphy 2P"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x2386e8",
+      "Encoding": "utf8",
+      "Original": "忍者\u3000２Ｐ",
+      "Text": "Ninja 2P"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x2386f8",
+      "Encoding": "utf8",
+      "Original": "タップダンス\u3000２Ｐ",
+      "Text": "Tap Trial 2P"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x238714",
+      "Encoding": "utf8",
+      "Original": "カラテ家 ２\u3000２Ｐ",
+      "Text": "Karate Man 2 2P"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x238730",
+      "Encoding": "utf8",
+      "Original": "リズム脱毛 ２\u3000２Ｐ",
+      "Text": "Rhythm Tweezers 2 2P"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x238750",
+      "Encoding": "utf8",
+      "Original": "コスモダンス\u3000２Ｐ",
+      "Text": "Cosmic Dance 2P"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x23876c",
+      "Encoding": "utf8",
+      "Original": "マーチャ ２\u3000２Ｐ",
+      "Text": "Marchers 2 2P"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x238788",
+      "Encoding": "utf8",
+      "Original": "しろいおばけ ２\u3000２Ｐ",
+      "Text": "Sneaky Spirits 2 2P"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x2387a8",
+      "Encoding": "utf8",
+      "Original": "忍者の子孫\u3000２Ｐ",
+      "Text": "Ninja Desc 2P"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x2387c4",
+      "Encoding": "utf8",
+      "Original": "エアーバッター ２\u3000２Ｐ",
+      "Text": "Spaceball 2 2P"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x2387e8",
+      "Encoding": "utf8",
+      "Original": "スーパータップ\u3000２Ｐ",
+      "Text": "Turbo Tap Trial 2P"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x238808",
+      "Encoding": "utf8",
+      "Original": "カラテ家\u3000ＥＸ\u3000２Ｐ",
+      "Text": "Karate Man EX 2P"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x238828",
+      "Encoding": "utf8",
+      "Original": "リズム脱毛\u3000ＥＸ\u3000２Ｐ",
+      "Text": "Rhythm Tweezers EX 2P"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x23884c",
+      "Encoding": "utf8",
+      "Original": "マーチャ\u3000ＥＸ\u3000２Ｐ",
+      "Text": "Marchers EX 2P"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x23886c",
+      "Encoding": "utf8",
+      "Original": "エアーバッター\u3000ＥＸ\u3000２Ｐ",
+      "Text": "Spaceball EX 2P"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x238894",
+      "Encoding": "utf8",
+      "Original": "アドバタイズドラムサムライ",
+      "Text": "Drummer Attract Mode"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x2388bc",
+      "Encoding": "utf8",
+      "Original": "アドバタイズネコマシーン",
+      "Text": "Cat Machine Attract Mode"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x2388e4",
+      "Encoding": "utf8",
+      "Original": "アドバタイズ告白マシーン",
+      "Text": "Love Machine Attract Mode"
+    },
+    {
+      "File": "ic8",
       "Offset": "0x24ec74",
       "Encoding": "utf8",
       "Original": "レディース＆ジェドメン！\nウエルカム トゥ ザ\nリズム天国!!\nナイス トゥ ミーチュー",
