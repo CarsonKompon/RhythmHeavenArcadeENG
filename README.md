@@ -14,7 +14,7 @@ To play this english patch for yourself, you need to supply your own legally obt
 
 1. Download the latest version of the patch [here](https://nightly.link/CarsonKompon/RhythmHeavenArcadeENG/workflows/patch/main/rhythmheavenarcadeeng-text-patch.zip?h=c4b10950b7cd07aa0deef6b14f771f6469d56995).
 2. Use a [BPS Patcher](https://www.marcrobledo.com/RomPatcher.js/) to apply any bps files to the files in your ROM. If your ROM is a .zip file, you'll need to unzip the files, apply the patch, and then re-zip
-3. Open [Flycast](https://github.com/flyinghead/flycast), go into the Options and enable "Load Custom Textures". You should also enable "Preload Custom Textures" to prevent and flickering textures
+3. Open [Flycast](https://github.com/flyinghead/flycast), go into the Options and enable "Load Custom Textures". You should also enable "Preload Custom Textures" to prevent any flickering textures
 4. Now you can launch the game in Flycast and enjoy Rhythm Tengoku's arcade experience in english 🙂
 
 # Additional Credits
