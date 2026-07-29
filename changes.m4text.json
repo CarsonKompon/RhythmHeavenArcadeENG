@@ -1523,6 +1523,69 @@
     },
     {
       "File": "ic8",
+      "Offset": "0x238dbc",
+      "Encoding": "utf8",
+      "Original": "また、",
+      "Text": "Also,"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x238dc8",
+      "Encoding": "utf8",
+      "Original": "あと、",
+      "Text": "And,"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x238dd4",
+      "Encoding": "utf8",
+      "Original": "…でも、",
+      "Text": "But,"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x238de4",
+      "Encoding": "utf8",
+      "Original": "しかも、",
+      "Text": "What's more,"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x238df4",
+      "Encoding": "utf8",
+      "Original": "さらに、",
+      "Text": "Furthermore,"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x238e58",
+      "Encoding": "utf8",
+      "Original": "よしと\u3000します。",
+      "Text": "I'd say that's good."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x238e74",
+      "Encoding": "utf8",
+      "Original": "とりあえず．．．",
+      "Text": "Fow now..."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x238e90",
+      "Encoding": "utf8",
+      "Original": "まぁまぁ、\u3000かな。",
+      "Text": "Decent, I guess."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x238eac",
+      "Encoding": "utf8",
+      "Original": "う〜ん．．．",
+      "Text": "Hmm..."
+    },
+    {
+      "File": "ic8",
       "Offset": "0x24ec74",
       "Encoding": "utf8",
       "Original": "レディース＆ジェドメン！\nウエルカム トゥ ザ\nリズム天国!!\nナイス トゥ ミーチュー",
