@@ -1586,6 +1586,223 @@
     },
     {
       "File": "ic8",
+      "Offset": "0x238ee8",
+      "Encoding": "utf8",
+      "Original": "やるき",
+      "Text": "Willpower"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x238ef4",
+      "Encoding": "utf8",
+      "Original": "どうたい\u3000しりょく",
+      "Text": "Visual Accuracy"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x238f10",
+      "Encoding": "utf8",
+      "Original": "まえむきな\u3000しせい",
+      "Text": "Attitude"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x238f2c",
+      "Encoding": "utf8",
+      "Original": "あんていの\u3000ほど",
+      "Text": "Consistency"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x238f48",
+      "Encoding": "utf8",
+      "Original": "リズムの\u3000しん",
+      "Text": "Sense of Rhythm"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x238f60",
+      "Encoding": "utf8",
+      "Original": "いっかんせい\u3000みたいなもの",
+      "Text": "Coherence"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x238f88",
+      "Encoding": "utf8",
+      "Original": "りんきおうへん",
+      "Text": "Adaptability"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x238fa0",
+      "Encoding": "utf8",
+      "Original": "じゅうなんせい",
+      "Text": "Flexibility"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x238fb8",
+      "Encoding": "utf8",
+      "Original": "ちゅういぶかさ",
+      "Text": "Attentiveness"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x238fd0",
+      "Encoding": "utf8",
+      "Original": "せきにんかん",
+      "Text": "Responsibility"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x238fe4",
+      "Encoding": "utf8",
+      "Original": "ここ\u3000イッパツ",
+      "Text": "Clutch Factor"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x238ffc",
+      "Encoding": "utf8",
+      "Original": "てがたい\u3000かんじ",
+      "Text": "Reliability"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x239018",
+      "Encoding": "utf8",
+      "Original": "せつやく\u3000のうりょく",
+      "Text": "Thriftiness"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x239038",
+      "Encoding": "utf8",
+      "Original": "ごうりてき\u3000さいのう",
+      "Text": "Rational Talent"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x239058",
+      "Encoding": "utf8",
+      "Original": "おちつき",
+      "Text": "Composure"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x239068",
+      "Encoding": "utf8",
+      "Original": "らいねんの\u3000れんあい\u3000うん",
+      "Text": "Next year's love luck"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x239090",
+      "Encoding": "utf8",
+      "Original": "ことしの\u3000きんせん\u3000うん",
+      "Text": "This year's financial luck"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x2390b8",
+      "Encoding": "utf8",
+      "Original": "あしたの\u3000てんき",
+      "Text": "Tomorrow's weather"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x2390d4",
+      "Encoding": "utf8",
+      "Original": "きのうの\u3000やしょく",
+      "Text": "Yesterday's midnight snack"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x2390f0",
+      "Encoding": "utf8",
+      "Original": "けつえきがた（すいそく）",
+      "Text": "Blood Type (Estimated)"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x239118",
+      "Encoding": "utf8",
+      "Original": "そだちの\u3000よさ",
+      "Text": "Refinement"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x239130",
+      "Encoding": "utf8",
+      "Original": "にんげんせい",
+      "Text": "Humanity"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x239144",
+      "Encoding": "utf8",
+      "Original": "シロートめの\u3000ピッタシさ",
+      "Text": "Layman's Perspective"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x23916c",
+      "Encoding": "utf8",
+      "Original": "いっぱんてき\u3000バッチシど",
+      "Text": "Overall Perfection"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x239194",
+      "Encoding": "utf8",
+      "Original": "ほどほどの\u3000せいかくさ",
+      "Text": "Moderate Accuracy"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x2391b8",
+      "Encoding": "utf8",
+      "Original": "テクニック\u3000レベル",
+      "Text": "Skill Level"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x2391d4",
+      "Encoding": "utf8",
+      "Original": "てきおう\u3000のうりょく",
+      "Text": "Adaptability"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x2391f4",
+      "Encoding": "utf8",
+      "Original": "あたまの\u3000かいてん\u3000スピード",
+      "Text": "Quick-wittedness"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x239220",
+      "Encoding": "utf8",
+      "Original": "プロから\u3000みた\u3000ピッタシさ",
+      "Text": "Pro-level precision"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x239248",
+      "Encoding": "utf8",
+      "Original": "リズムかん\u3000バッチシさ",
+      "Text": "Spot-on sense of rhythm"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x23926c",
+      "Encoding": "utf8",
+      "Original": "なっとくの\u3000せいかくさ",
+      "Text": "Satisfying accuracy"
+    },
+    {
+      "File": "ic8",
       "Offset": "0x24ec74",
       "Encoding": "utf8",
       "Original": "レディース＆ジェドメン！\nウエルカム トゥ ザ\nリズム天国!!\nナイス トゥ ミーチュー",
