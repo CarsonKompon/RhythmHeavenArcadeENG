@@ -2654,7 +2654,7 @@
       "isUnfinished": true,
       "copySourceFileName": null,
       "brightness": 100,
-      "groupId": "0ad6960b-429c-4950-94cd-fd436885611d",
+      "groupId": null,
       "order": 3
     },
     "63abd873.png": {
@@ -22274,7 +22274,7 @@
       "id": "65e40735-8f7c-4028-b858-36a63a5ae42f",
       "name": "UI_GameInstructions",
       "order": 6,
-      "isCollapsed": true
+      "isCollapsed": false
     },
     {
       "id": "9df039ef-820e-43bb-9b7f-7a6f7e11f0a7",

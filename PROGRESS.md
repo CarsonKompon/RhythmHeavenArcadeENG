@@ -26,7 +26,7 @@ This is tracking all the progress of known textures that need to be updated or s
     - [ ] OK / Superb / Try Again
     - [ ] Would you like to continue? Screen
     - [ ] Congratulations + final flow score Screen
-- [] Multiplayer UI
+- [ ] Multiplayer UI
     - [x] "YOUR TURN" text
     - [ ] Compatibility Test
         - [ ] The UI
@@ -55,13 +55,13 @@ This is tracking all the progress of known textures that need to be updated or s
         - [ ] End Card Text
     - [ ] Spaceball
         - [ ] Intro Card
-        - [ ] EX Intro Card
+        - [x] EX Intro Card
         - [ ] Tutorial/Practice
         - [ ] Results Text
         - [ ] End Card Text
     - [ ] The Clappy Trio
         - [ ] Intro Card
-        - [ ] EX Intro Card
+        - [x] EX Intro Card
         - [ ] Tutorial/Practice
         - [ ] Results Text
         - [ ] End Card Text
@@ -124,7 +124,7 @@ This is tracking all the progress of known textures that need to be updated or s
         - [ ] Results Text
         - [ ] End Card Text
     - [ ] Space Dance
-        - [ ] Intro Card
+        - [x] Intro Card
         - [ ] 1P Tutorial/Practice
         - [ ] 2P Tutorial/Practice
         - [ ] Results Text
@@ -165,8 +165,8 @@ This is tracking all the progress of known textures that need to be updated or s
         - [ ] Results Text
         - [ ] End Card Text
     - [ ] Bouncy Road
-        - [ ] Intro Card
-        - [ ] Tutorial/Practice
+        - [x] Intro Card
+        - [x] Tutorial/Practice
         - [ ] Results Text
         - [ ] End Card Text
     - [ ] Ninja Bodyguard
@@ -227,7 +227,7 @@ This is tracking all the progress of known textures that need to be updated or s
         - [ ] Results Text
         - [ ] End Card Text
     - Rhythm Tweezers 2
-        - [ ] 2P Tutorial/Practice
+        - [x] 2P Tutorial/Practice
         - [ ] Results Text
         - [ ] End Card Text
     - Ninja Descendant
