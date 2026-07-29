@@ -30,7 +30,10 @@ This is tracking all the progress of known textures that need to be updated or s
     - [x] "YOUR TURN" text
     - [ ] Compatibility Test
         - [ ] The UI
-        - [x] All results text 
+        - [x] All results text
+- [ ] Debug Menu
+    - [ ] All debug text
+    - [ ] Easy entry into the debug menu
 - [ ] Games
     - [ ] Karate Man
         - [ ] Intro Card
