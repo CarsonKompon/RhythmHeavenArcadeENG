@@ -1397,6 +1397,111 @@
     },
     {
       "File": "ic8",
+      "Offset": "0x238ab8",
+      "Encoding": "utf8",
+      "Original": "フツーなドラム",
+      "Text": "Standard Drums"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x238ad0",
+      "Encoding": "utf8",
+      "Original": "ドライなドラム",
+      "Text": "Dry Drums"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x238ae8",
+      "Encoding": "utf8",
+      "Original": "パワーなドラム",
+      "Text": "Power Drums"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x238b00",
+      "Encoding": "utf8",
+      "Original": "テクノなドラム",
+      "Text": "Techno Drums"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x238b18",
+      "Encoding": "utf8",
+      "Original": "マットなドラム",
+      "Text": "Muted Drums"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x238b30",
+      "Encoding": "utf8",
+      "Original": "アジアなドラム",
+      "Text": "Asian Drums"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x238b48",
+      "Encoding": "utf8",
+      "Original": "ライトなドラム",
+      "Text": "Light Drums"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x238b60",
+      "Encoding": "utf8",
+      "Original": "ハードなドラム",
+      "Text": "Hard Drums"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x238b78",
+      "Encoding": "utf8",
+      "Original": "ハットテクなドラム",
+      "Text": "Hi-Hat Technique Drums"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x238b94",
+      "Encoding": "utf8",
+      "Original": "カカトテクなドラム １",
+      "Text": "Heel Technique Drums 1"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x238bb4",
+      "Encoding": "utf8",
+      "Original": "カカトテクなドラム ２",
+      "Text": "Heel Technique Drums 2"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x238bd4",
+      "Encoding": "utf8",
+      "Original": "音効なドラム",
+      "Text": "SFK Drums"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x238be8",
+      "Encoding": "utf8",
+      "Original": "タップなドラム",
+      "Text": "Tap Drums"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x238c00",
+      "Encoding": "utf8",
+      "Original": "風切るドラム",
+      "Text": "Slicing Drums"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x238c14",
+      "Encoding": "utf8",
+      "Original": "さむらいドラム",
+      "Text": "Samurai Drums"
+    },
+    {
+      "File": "ic8",
       "Offset": "0x238c2c",
       "Encoding": "utf8",
       "Original": "メモリがいっぱいです。\nデータは残らないけど演奏する？",
