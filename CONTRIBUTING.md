@@ -1,5 +1,17 @@
 If you plan on contributing, this file contains everything I use to make this project, and how I use it.
 
+# Decisions Made
+
+These are decisions I've made for this translation project, but am to further discussion:
+
+- Remixes use their descriptions from the GBA game instead of their generic arcade descriptions
+- Marching Orders is sometimes called "Marchers" in instances where the text replacement doesn't fit
+- Polyrhythm keeps the name of "Polyrhythm" even though it's similar to "Built to Scale" from future titles
+- "Rap Men" and "Rap Women" are preferred over "RAPMEN" and "RAPWOMEN"
+- "Toss Team" is preferred over "Toss Boys"
+- "Turbo Tap Trial" is preferred over "Tap Trial 2"
+- "Ninja Descendant" is preferred over "Ninja Bodyguard 2"
+
 # Software
 
 Here's all the software I use and the quirks to them:
