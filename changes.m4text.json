@@ -1397,6 +1397,27 @@
     },
     {
       "File": "ic8",
+      "Offset": "0x238c2c",
+      "Encoding": "utf8",
+      "Original": "メモリがいっぱいです。\nデータは残らないけど演奏する？",
+      "Text": "Memory is full. Data won't be saved.\nDo you want to continue anyway?"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x238c7c",
+      "Encoding": "utf8",
+      "Original": "演奏データは10コしか残せません。\nデータは残らないけど演奏する？",
+      "Text": "You can only save up to 10 performance recordings.\nThe data won't be saved. Continue?"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x238cdc",
+      "Encoding": "utf8",
+      "Original": "メモリが少なくなってきてます。\nこのまま演奏する？",
+      "Text": "Memory is running low.\nDo you want to play anyway?"
+    },
+    {
+      "File": "ic8",
       "Offset": "0x24ec74",
       "Encoding": "utf8",
       "Original": "レディース＆ジェドメン！\nウエルカム トゥ ザ\nリズム天国!!\nナイス トゥ ミーチュー",
