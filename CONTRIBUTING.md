@@ -2,7 +2,7 @@ If you plan on contributing, this file contains everything I use to make this pr
 
 # Decisions Made
 
-These are decisions I've made for this translation project, but am to further discussion:
+These are decisions I've made for this translation project, but am open to further discussion:
 
 - Remixes use their descriptions from the GBA game instead of their generic arcade descriptions
 - Marching Orders is sometimes called "Marchers" in instances where the text replacement doesn't fit
