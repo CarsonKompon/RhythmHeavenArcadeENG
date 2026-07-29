@@ -10,7 +10,7 @@ https://github.com/user-attachments/assets/5d118ebc-ba47-40db-b719-2b122d8f833b
 
 # How to Play
 
-To play this english patch for yourself, you need to do 2 things.
+To play this english patch for yourself, you need to do a few things.
 
 1. Download the latest version of the patch [here](https://nightly.link/CarsonKompon/RhythmHeavenArcadeENG/workflows/patch/main/rhythmheavenarcadeeng-text-patch.zip?h=c4b10950b7cd07aa0deef6b14f771f6469d56995).
 2. Use a [BPS Patcher](https://www.marcrobledo.com/RomPatcher.js/) to apply any bps files to the files in your ROM. If your ROM is a .zip file, you'll need to unzip the files, apply the patch, and then re-zip
@@ -21,10 +21,10 @@ To play this english patch for yourself, you need to do 2 things.
 
 Huge thank you to all of the following people:
 
-- @ShaffySwitcher - Created the original Rhythm Heaven Silver
-- @RHAdvance - An incredible team who still works hard every day to bring Rhythm Tengoku to western audiences
-- @Tailx501 - Created the RhythmHeavenResourcesPack
-- @ikyih - Started a similar project to this a few years ago (which inspired me to start this one)
+- [@ShaffySwitcher](https://github.com/ShaffySwitcher) - Created the original Rhythm Heaven Silver
+- [@RHAdvance](https://github.com/RHAdvance) - An incredible team who still works hard every day to bring Rhythm Tengoku to western audiences
+- [@Tailx501](https://github.com/Tailx501) - Created the RhythmHeavenResourcesPack
+- [@ikyih](https://github.com/ikyih) - Started a similar project to this a few years ago (which inspired me to start this one)
 
 # AI Usage
 
