@@ -10,7 +10,7 @@ https://github.com/user-attachments/assets/5d118ebc-ba47-40db-b719-2b122d8f833b
 
 # How to Play
 
-To play this english patch for yourself, you need to do a few things.
+To play this english patch for yourself, you need to supply your own legally obtained ROM, and do a few things:
 
 1. Download the latest version of the patch [here](https://nightly.link/CarsonKompon/RhythmHeavenArcadeENG/workflows/patch/main/rhythmheavenarcadeeng-text-patch.zip?h=c4b10950b7cd07aa0deef6b14f771f6469d56995).
 2. Use a [BPS Patcher](https://www.marcrobledo.com/RomPatcher.js/) to apply any bps files to the files in your ROM. If your ROM is a .zip file, you'll need to unzip the files, apply the patch, and then re-zip
