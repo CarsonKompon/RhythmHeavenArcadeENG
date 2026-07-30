@@ -205,6 +205,20 @@ public sealed class RomTextService
     }
 
     /// <summary>
+    /// Writes an entry's current text into the plaintext buffer regardless of its
+    /// modified state, and flags the file modified. Used to persist a revert so a
+    /// later Save .dec/Export overwrites previously-saved edited bytes with the
+    /// original ones (ApplyEdits skips non-modified entries and would leave them).
+    /// </summary>
+    public void WriteSlot(TextEntry e, PadMode padMode)
+    {
+        if (!_files.TryGetValue(e.File, out var data)) return;
+        byte[] slot = e.BuildSlotBytes(padMode);
+        Array.Copy(slot, 0, data, e.Offset, slot.Length);
+        _modifiedFiles.Add(e.File);
+    }
+
+    /// <summary>
     /// Returns the live in-memory plaintext buffer for a decrypted file (e.g. "ic8"),
     /// or null if it is not loaded. Callers must not mutate the returned array
     /// except through <see cref="PatchDword"/> so modified-file tracking stays correct.

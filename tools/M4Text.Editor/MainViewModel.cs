@@ -20,6 +20,13 @@ public sealed class MainViewModel : INotifyPropertyChanged
     // reload/rescan. Persisted next to the .dec files; never affects the ROM bytes.
     private readonly HashSet<string> _hidden = new(StringComparer.OrdinalIgnoreCase);
 
+    // Remembers the last changes.m4text.json the user saved/loaded so the Save/Load
+    // dialogs reopen on it. Persisted per-user (survives across work folders/sessions).
+    private string? _lastChangesPath;
+    private static string ChangesPathStore => Path.Combine(
+        Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
+        "M4TextEditor", "last-changes-path.txt");
+
     private ICollectionView _entriesView;
     public ICollectionView EntriesView { get => _entriesView; private set => Set(ref _entriesView, value); }
 
@@ -81,6 +88,8 @@ public sealed class MainViewModel : INotifyPropertyChanged
 
         SaveChangesCommand = new RelayCommand(SaveChanges, () => _service is not null && !IsBusy);
         LoadChangesCommand = new RelayCommand(LoadChanges, () => _service is not null && !IsBusy);
+
+        _lastChangesPath = LoadLastChangesPath();
 
         // Auto-load on startup so a returning user lands straight on their data
         // (index makes this fast; empty folders bootstrap via decrypt).
@@ -328,6 +337,8 @@ public sealed class MainViewModel : INotifyPropertyChanged
         {
             if (!e.IsModified) continue;
             e.Edited = e.Original;
+            // Write the original bytes back so Save .dec/Export don't keep a prior edit.
+            _service?.WriteSlot(e, SelectedPadMode);
             changed = true;
         }
         if (!changed) return;
@@ -500,6 +511,30 @@ public sealed class MainViewModel : INotifyPropertyChanged
     private static string SafeDir(string? path)
         => !string.IsNullOrWhiteSpace(path) && Directory.Exists(path) ? path! : Environment.CurrentDirectory;
 
+    // Prefer the folder of the last-used changes file; fall back to the work folder.
+    private string ChangesInitialDir
+        => SafeDir(_lastChangesPath is { } p ? Path.GetDirectoryName(p) : WorkFolder);
+
+    private void RememberChangesPath(string path)
+    {
+        _lastChangesPath = path;
+        try
+        {
+            Directory.CreateDirectory(Path.GetDirectoryName(ChangesPathStore)!);
+            File.WriteAllText(ChangesPathStore, path);
+        }
+        catch { /* best-effort: a missing recent path just falls back to the work folder */ }
+    }
+
+    private static string? LoadLastChangesPath()
+    {
+        try
+        {
+            return File.Exists(ChangesPathStore) ? File.ReadAllText(ChangesPathStore).Trim() : null;
+        }
+        catch { return null; }
+    }
+
     private bool FilterPredicate(object obj)
     {
         if (obj is not TextEntry e) return false;
@@ -624,8 +659,8 @@ public sealed class MainViewModel : INotifyPropertyChanged
         {
             Title = "Save changes (ROM-free JSON)",
             Filter = "M4Text changes (*.m4text.json)|*.m4text.json|JSON (*.json)|*.json",
-            FileName = "changes.m4text.json",
-            InitialDirectory = SafeDir(WorkFolder),
+            FileName = _lastChangesPath is { } p ? Path.GetFileName(p) : "changes.m4text.json",
+            InitialDirectory = ChangesInitialDir,
         };
         if (dlg.ShowDialog() != true) return;
 
@@ -633,6 +668,7 @@ public sealed class MainViewModel : INotifyPropertyChanged
         {
             var patch = M4TextPatch.FromEntries(_all, _hidden);
             patch.Save(dlg.FileName);
+            RememberChangesPath(dlg.FileName);
             Status = $"Saved {patch.Edits.Count} edit(s) and {patch.Hidden.Count} hidden slot(s) to {Path.GetFileName(dlg.FileName)}.";
         }
         catch (Exception ex)
@@ -649,7 +685,8 @@ public sealed class MainViewModel : INotifyPropertyChanged
         {
             Title = "Load changes (ROM-free JSON)",
             Filter = "M4Text changes (*.m4text.json)|*.m4text.json|JSON (*.json)|*.json|All files|*.*",
-            InitialDirectory = SafeDir(WorkFolder),
+            FileName = _lastChangesPath is { } p ? Path.GetFileName(p) : null,
+            InitialDirectory = ChangesInitialDir,
         };
         if (dlg.ShowDialog() != true) return;
 
@@ -663,6 +700,8 @@ public sealed class MainViewModel : INotifyPropertyChanged
             Status = $"Load changes failed: {ex.Message}";
             return;
         }
+
+        RememberChangesPath(dlg.FileName);
 
         var result = patch.Apply(_all);
 
