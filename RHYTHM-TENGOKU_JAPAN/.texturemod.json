@@ -141,8 +141,8 @@
       "isSeen": false,
       "isTodo": false,
       "isUnfinished": false,
-      "copySourceFileName": null,
-      "brightness": 100,
+      "copySourceFileName": "2995d00.png",
+      "brightness": 42,
       "groupId": "b55c54fe-d942-487e-9dda-91066e406dec",
       "order": 5
     },
@@ -22244,7 +22244,7 @@
       "id": "dcfd1b20-3ac3-4dd6-8e35-0e45209a4c58",
       "name": "UI_PauseText",
       "order": 1,
-      "isCollapsed": false
+      "isCollapsed": true
     },
     {
       "id": "e5017523-2f98-4f0d-8351-d422d6fb78a7",
@@ -22262,7 +22262,7 @@
       "id": "0ad6960b-429c-4950-94cd-fd436885611d",
       "name": "UI_GameCards",
       "order": 4,
-      "isCollapsed": false
+      "isCollapsed": true
     },
     {
       "id": "7e59d871-abaa-4054-a1f3-476ff9fdef8b",
@@ -22286,7 +22286,7 @@
       "id": "69fcc79f-e02e-4f50-b509-fb9bedaeb96d",
       "name": "Minigame_Drummer_Green",
       "order": 8,
-      "isCollapsed": false
+      "isCollapsed": true
     },
     {
       "id": "eb12a8f7-647e-4f83-8468-5ad9bc81fa51",
@@ -22310,7 +22310,7 @@
       "id": "b55c54fe-d942-487e-9dda-91066e406dec",
       "name": "Game_RhythmTweezers_NoPeeking",
       "order": 12,
-      "isCollapsed": true
+      "isCollapsed": false
     },
     {
       "id": "4a8d67f3-05f0-44ee-a320-cfcc3f25a67c",
