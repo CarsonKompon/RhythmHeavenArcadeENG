@@ -1964,10 +1964,1417 @@
     },
     {
       "File": "ic8",
+      "Offset": "0x241b88",
+      "Encoding": "utf8",
+      "Original": "とんでくるモノを\nAボタンでパンチ！\nよくあるゲーム？\n…かもね。",
+      "Text": "The key to karate,\nlike all things, is rhythm.\nNow, let us throw some\nstuff for you to hit."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x241be4",
+      "Encoding": "utf8",
+      "Original": "明日が あるさ。",
+      "Text": "I must try again..."
+    },
+    {
+      "File": "ic8",
       "Offset": "0x241bfc",
       "Encoding": "utf8",
       "Original": "とりあえず、ごはん 食べとこう！",
       "Text": "Time for a lunch break!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x241c2c",
+      "Encoding": "utf8",
+      "Original": "こんなに ブッとばしちゃった！！",
+      "Text": "Look at all this stuff I hit!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x241c5c",
+      "Encoding": "utf8",
+      "Original": "とんでくるモノを\nAボタンでパンチ！\nでも、 スピードが\nヘンテコだヨ。",
+      "Text": "Something's up with\nthe speed! Stay sharp\nas we throw you some\nmore stuff to hit."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x241cc0",
+      "Encoding": "utf8",
+      "Original": "テンポが なんだー！！",
+      "Text": "What's with the speed changes!?"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x241ce0",
+      "Encoding": "utf8",
+      "Original": "ま、さておき。 ごはん 食べよう！",
+      "Text": "Well, that's that. Let's eat!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x241d10",
+      "Encoding": "utf8",
+      "Original": "ざっと こんなモンだぜー！！",
+      "Text": "I think we've gone through everything!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x241d3c",
+      "Encoding": "utf8",
+      "Original": "順番に拍手をするヨ！\nあなたは３番目。\n前の2人をよく見てネ！",
+      "Text": "Clap your hands in\norder! You're the third\nclapper. Keep an eye\non the other two!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x241d94",
+      "Encoding": "utf8",
+      "Original": "仲間が帰っちゃった！",
+      "Text": "The trio just went solo!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x241db4",
+      "Encoding": "utf8",
+      "Original": "満足するのは まだ早いかもね。",
+      "Text": "You need to come to practice more..."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x241de0",
+      "Encoding": "utf8",
+      "Original": "この三人衆、 息ピッタリだ！！",
+      "Text": "Trio-riffic!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x241e0c",
+      "Encoding": "utf8",
+      "Original": "ラフだった彼らが\nバリっとスーツを\n着てきたヨ！\nカッコイイ！！",
+      "Text": "Look at the trio in their\nWestern outfits!\nSo cool! Dare we say\nthey look... snappy?"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x241e68",
+      "Encoding": "utf8",
+      "Original": "キャー！ ゆるしてー！！",
+      "Text": "I spent everything on this outfit!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x241e8c",
+      "Encoding": "utf8",
+      "Original": "あとチョットなんだけどね…",
+      "Text": "We were so close..."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x241eb4",
+      "Encoding": "utf8",
+      "Original": "息ピッタリでーす！ イェーイ！",
+      "Text": "Perfect sync! It's gotta be the outfits..."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x241ee0",
+      "Encoding": "utf8",
+      "Original": "十字ボタンとＡボタンの同時押しをマスターだ！けっこうカンタンだ。たぶん…",
+      "Text": "Manage the 十 and Ａ\npaths at the same time\nto keep those red rods\nrolling! Simple enough?"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x241f50",
+      "Encoding": "utf8",
+      "Original": "赤いモノ、量産は たいへんだなぁ…",
+      "Text": "Producing these is harder than I thought..."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x241f84",
+      "Encoding": "utf8",
+      "Original": "どんどん 赤いモノを 生産だ！",
+      "Text": "Still getting the hang of making these."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x241fb0",
+      "Encoding": "utf8",
+      "Original": "赤いモノを 生産しまくりだネ！！",
+      "Text": "We've produced more than we can stock!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x241fe0",
+      "Encoding": "utf8",
+      "Original": "これぞ左右独立！\nテンポよく こなして\nレッツ ポリリズム！\nイェーイ！",
+      "Text": "The left and right paths\nhave unique patterns!\nMind the tempo and\nplay to the polyrhythm!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x242044",
+      "Encoding": "utf8",
+      "Original": "赤いモノ、もっと生産しなきゃ…",
+      "Text": "We need to produce a whole lore mote..."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x242074",
+      "Encoding": "utf8",
+      "Original": "もっともっと 赤いモノを 生産だ！",
+      "Text": "Producing more of these wouldn't hurt!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x2420a4",
+      "Encoding": "utf8",
+      "Original": "赤いモノを じゃんじゃん生産しちゃうヨ！！",
+      "Text": "Red rod production is at an all time high!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x2420e4",
+      "Encoding": "utf8",
+      "Original": "音楽にあわせて\nジャンプしてネ！\n星たちが あつまって\nあなたも夜空へ…",
+      "Text": "What's better than a\nstroll in the starlight?\nHow about a series of\njumps in the starlight?"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24214c",
+      "Encoding": "utf8",
+      "Original": "つぎは もっと がんばってネ…",
+      "Text": "Didn't see that hole in the dark!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x242178",
+      "Encoding": "utf8",
+      "Original": "夜空の おさんぽ、 たのしいな。",
+      "Text": "Nothing like a stroll at night."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x2421a8",
+      "Encoding": "utf8",
+      "Original": "星たちが かんげいしてるヨ！",
+      "Text": "You followed us up here!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x2421d4",
+      "Encoding": "utf8",
+      "Original": "音楽にあわせて\nジャンプしてネ！\nビリビリウオに\n気をつけよう。",
+      "Text": "Time to jump in the\nstarlight again!\nKeep a look out\nfor the electric fish."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x242230",
+      "Encoding": "utf8",
+      "Original": "うひゃー！ しっぱいしちゃった！！",
+      "Text": "No! You fell!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x242264",
+      "Encoding": "utf8",
+      "Original": "夜風が とっても きもちいいな。",
+      "Text": "The night breeze feels so cool..."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x242294",
+      "Encoding": "utf8",
+      "Original": "星たちと おともだちだヨ！",
+      "Text": "You made friends with the stars!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x2422bc",
+      "Encoding": "utf8",
+      "Original": "どんどん生えてくる\nうっとうしい「毛」！\nぬいちゃえ、 \nぬいちゃえ！",
+      "Text": "My roots are showing!\nCan you pluck them off?"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x242320",
+      "Encoding": "utf8",
+      "Original": "これじゃ 売りものに ならん！",
+      "Text": "I can't sell these!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24234c",
+      "Encoding": "utf8",
+      "Original": "なんで うちのヤサイは 毛がはえるんだ？",
+      "Text": "Wh-why do my vegetables grow hair?"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x242388",
+      "Encoding": "utf8",
+      "Original": "スッキリそうかい！ 空気がうまい！！",
+      "Text": "So nice and clean! Even the air seems fresher!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x2423c0",
+      "Encoding": "utf8",
+      "Original": "またしても生えてくる\nうっとうしい「毛」！\nぬいちゃえ、 \nぬいちゃえ！",
+      "Text": "My roots are\ngrowing back!\nYou've got to pluck\nthem off again!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x242428",
+      "Encoding": "utf8",
+      "Original": "なんで 毛が はえるんだー！？",
+      "Text": "They're growing back already!?"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x242454",
+      "Encoding": "utf8",
+      "Original": "しかしなんで うちのヤサイだけに 毛が…？",
+      "Text": "Why do only my vegetables grow hair, anyway...?"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x242490",
+      "Encoding": "utf8",
+      "Original": "スッキリそうかい！ 空気がうますぎ！！",
+      "Text": "How refreshing! The air is cool and crisp!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x2424c8",
+      "Encoding": "utf8",
+      "Original": "助手からの知らせ\n「大変です！\nバイキン発生です！！\n先生、たすけて〜」",
+      "Text": "We have an outbreak\nof an unknown virus!\nHelp us, Dr. Cutlery!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x242530",
+      "Encoding": "utf8",
+      "Original": "研究は失敗だ。",
+      "Text": "Experiment failed..."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x242548",
+      "Encoding": "utf8",
+      "Original": "失敗は成功のもとカモ！",
+      "Text": "You must fail to succeed!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24256c",
+      "Encoding": "utf8",
+      "Original": "ものすごいクスリができた！！",
+      "Text": "We've created breakthrough medicine!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x242598",
+      "Encoding": "utf8",
+      "Original": "とんでくる丸い玉。\nあれはイイやつです。\n落とさないでネ！",
+      "Text": "See that ball bouncing\ndown the road?\nYou wouldn't want to\nlet it fall...would you?"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x2425ec",
+      "Encoding": "utf8",
+      "Original": "なかなか ムズカシー！",
+      "Text": "Ow! That was hard..."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24260c",
+      "Encoding": "utf8",
+      "Original": "けっこうな コンビネーションだったネ！",
+      "Text": "Nice combo!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x242644",
+      "Encoding": "utf8",
+      "Original": "かんたん かんたん♪",
+      "Text": "Where's the challenge?"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x242664",
+      "Encoding": "utf8",
+      "Original": "ホッピングロード２",
+      "Text": "Bouncy Road 2"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x242680",
+      "Encoding": "utf8",
+      "Original": "とんでくる丸い玉。\nほんとにイイやつ\nなんですヨ〜。\n落とさないでネ！",
+      "Text": "See that ball bouncing\ndown the road?\nIt's such a nice ball,\nso don't let it fall!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x2426e4",
+      "Encoding": "utf8",
+      "Original": "エーン！ しっぱい！！",
+      "Text": "Ow! We failed!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x242704",
+      "Encoding": "utf8",
+      "Original": "なかなか がんばっていたネ！",
+      "Text": "We're working our hardest!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x242730",
+      "Encoding": "utf8",
+      "Original": "らくちん らくちん♪",
+      "Text": "Easy come, easy go."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x242750",
+      "Encoding": "utf8",
+      "Original": "敵襲(てきしゅう)だ！\n十字ボタンとAボタンで応戦(おうせん)だ！\nフジヤマ（ふじさん）！！",
+      "Text": "An enemy is attacking\nyour lord! Block the\narrows with your sword\nusing the 十!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x2427d0",
+      "Encoding": "utf8",
+      "Original": "ゲッ！ トノが きぜつしてる！！",
+      "Text": "My lord has fainted! Nooooo!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x242800",
+      "Encoding": "utf8",
+      "Original": "トノ！ ごめんなさ〜い。",
+      "Text": "I can't apologize enough, my lord!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x242824",
+      "Encoding": "utf8",
+      "Original": "アッパレって 言われちゃったゼ！！",
+      "Text": "Not a scratch! He said I'm admirable!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x242858",
+      "Encoding": "utf8",
+      "Original": "オレのじいちゃんの\nじいちゃんの\nじいちゃんは\n忍者なんだぜ。",
+      "Text": "You know, my family's\nancestors came from\na lone lineage of ninjas.\nCool, right?"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x2428b0",
+      "Encoding": "utf8",
+      "Original": "まけるな！ おまえが頼りなのだー！！",
+      "Text": "You can't give up! She's counting on you!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x2428e8",
+      "Encoding": "utf8",
+      "Original": "うむ、スジは良いな。がんばれ！",
+      "Text": "You are... strong. Don't give up yet."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x242918",
+      "Encoding": "utf8",
+      "Original": "オヌシは強い。お幸せに…！",
+      "Text": "You've proven yourself! The saviour!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x242940",
+      "Encoding": "utf8",
+      "Original": "白いヤツが こちらを\nバカにしている！\nムキーッ！！\nこらしめちゃおう！",
+      "Text": "These spirits aren't\nexactly evil, but they\nARE mean: they'll laugh\nat you if you miss."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x2429a8",
+      "Encoding": "utf8",
+      "Original": "逃げたヤツにイタズラされた！",
+      "Text": "Escaped ghosts are nothing but trouble."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x2429d4",
+      "Encoding": "utf8",
+      "Original": "しとめた！",
+      "Text": "Keep moving!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x2429e4",
+      "Encoding": "utf8",
+      "Original": "いっぱい しとめた！！",
+      "Text": "No ghost escapes on your watch!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x242a04",
+      "Encoding": "utf8",
+      "Original": "白いヤツが こちらを\nナメきっている！\nムカムカーッ！！\nこらしめちゃおう！",
+      "Text": "Those spirits are\nacting up again!\nLet them have it,\narchery style!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x242a70",
+      "Encoding": "utf8",
+      "Original": "うわー！ やられほうだいだ！",
+      "Text": "Gah! They slipped right past you!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x242a9c",
+      "Encoding": "utf8",
+      "Original": "おばけ「ナ、ナンダヨ〜」",
+      "Text": "L-let me go! Please!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x242ac4",
+      "Encoding": "utf8",
+      "Original": "みんな、反省してネ！",
+      "Text": "You ghosts will remember this!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x242ae4",
+      "Encoding": "utf8",
+      "Original": "そこのけ そこのけ\n奴らが通る。\nおぬしは サムライ、\n斬り捨て 御免！",
+      "Text": "Demons have put\nthe town in a panic!\nCome on, Samurai--\nslice them all!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x242b48",
+      "Encoding": "utf8",
+      "Original": "刃こぼれしちまった！",
+      "Text": "I've broken my blade!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x242b68",
+      "Encoding": "utf8",
+      "Original": "さらに精進（しょうじん）すべし！",
+      "Text": "I shall push myself harder!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x242b9c",
+      "Encoding": "utf8",
+      "Original": "切れあじ、 サイコーだ！！",
+      "Text": "Have you ever seen swords this sharp?"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x242bc4",
+      "Encoding": "utf8",
+      "Original": "ズームをきにするな！\n心でボールを打て！\n視覚に頼るな！\nどんと行け〜！",
+      "Text": "Ignore the camera's\nzooms! Make the ball\nzoom away! Don't blink!\nDon't wipe your tears!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x242c2c",
+      "Encoding": "utf8",
+      "Original": "これで ゆるしてください。",
+      "Text": "Can I have my ball back?"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x242c54",
+      "Encoding": "utf8",
+      "Original": "さらに上を目指して練習だ！",
+      "Text": "Must... train... harder..."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x242c7c",
+      "Encoding": "utf8",
+      "Original": "こんなの もらっちゃったー！",
+      "Text": "I won first \"space\"!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x242ca8",
+      "Encoding": "utf8",
+      "Original": "ズームをきにするな！\n心でボールを打て！\n視覚に頼るな！\n涙もふくな〜！",
+      "Text": "Ignore the camera's\nzooms! Just believe\nin yourself and\nsend the ball flying!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x242d10",
+      "Encoding": "utf8",
+      "Original": "ナニスルノデスカー！",
+      "Text": "Next time, swing some more!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x242d30",
+      "Encoding": "utf8",
+      "Original": "こんなところで 終われない！",
+      "Text": "I can't give up now!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x242d5c",
+      "Encoding": "utf8",
+      "Original": "みんな、見て見てー！",
+      "Text": "Guys, guys, look what I won!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x242d7c",
+      "Encoding": "utf8",
+      "Original": "タップダンズ",
+      "Text": "Tap Trial"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x242d90",
+      "Encoding": "utf8",
+      "Original": "あなたは女の子。\nとなりのサルたちに\n合わせてタップを\nきざむッス！",
+      "Text": "You are the girl.\nThey are the monkeys.\nFollow them to tap\nstardom!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x242df4",
+      "Encoding": "utf8",
+      "Original": "無念だわ。",
+      "Text": "Better tap out."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x242e04",
+      "Encoding": "utf8",
+      "Original": "ちょっと、 ヘンなトコあったけどネ！",
+      "Text": "You were ALMOST as good as a monkey..."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x242e3c",
+      "Encoding": "utf8",
+      "Original": "気分は もう、サイコー！！",
+      "Text": "Tap loves you too, Giraffe!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x242e64",
+      "Encoding": "utf8",
+      "Original": "サルがパワーアップ！\nあなたは かれらに\nついていけるか！？\nまけるな〜！",
+      "Text": "The monkeys are\nbringing their A game!\nCan you keep up? Don't\nlet them out-tap you!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x242ecc",
+      "Encoding": "utf8",
+      "Original": "ガーン！",
+      "Text": "Yikes..."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x242edc",
+      "Encoding": "utf8",
+      "Original": "う〜ん… すこし ちがうカンジ…",
+      "Text": "Hey... Where'd our rhythm go?"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x242f0c",
+      "Encoding": "utf8",
+      "Original": "この気持ち、とまらなーい！",
+      "Text": "Monkeys are the key to tappiness!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x242f34",
+      "Encoding": "utf8",
+      "Original": "行進をするのだ。\nかってな行動はチームをダメにする！\nがんばりたまえ。",
+      "Text": "Ready, march! Following\norders as a unit builds\nyour camaraderie.\nAlso, rhythm."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x242f9c",
+      "Encoding": "utf8",
+      "Original": "わぁっ！おいてけぼりされた！",
+      "Text": "Wait! You left without us!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x242fc8",
+      "Encoding": "utf8",
+      "Original": "今日の任務は、おそうじでーす♪",
+      "Text": "Today's mission: Cleaning."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x242ff8",
+      "Encoding": "utf8",
+      "Original": "宇宙人の救出、大成功！！",
+      "Text": "Success! We rescued the alien!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x243020",
+      "Encoding": "utf8",
+      "Original": "行進をするのだ。\nこんどのは ちょっと\nテクニカルだ！\nがんばりたまえ。",
+      "Text": "Ready, march!\nThis mission requires\nfinesse and technique,\nso march your best!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x243088",
+      "Encoding": "utf8",
+      "Original": "こ、これでは、イカン！う〜む…",
+      "Text": "This is unacceptable..."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x2430b8",
+      "Encoding": "utf8",
+      "Original": "ぐっ！ もっとカッコよくおどらなければ！",
+      "Text": "I know we can perform better than that!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x2430f4",
+      "Encoding": "utf8",
+      "Original": "ごほうびに、こんなのもらってしまった！！",
+      "Text": "Now THIS is a reward!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x243134",
+      "Encoding": "utf8",
+      "Original": "あなたはまほう使い。\nさみしがりやの\nおじょうちゃんに花を\nプレゼントしよう。",
+      "Text": "There's a lonely girl\nover there. Put your\nflower power to good\nuse and cheer her up!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x2431a4",
+      "Encoding": "utf8",
+      "Original": "こんなのヤダ〜、 こわいヨ〜！",
+      "Text": "I hate this~ I'm scared!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x2431d0",
+      "Encoding": "utf8",
+      "Original": "もっと 花がさくと うれしいな〜。",
+      "Text": "These will look SO lovely when they bloom!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x243200",
+      "Encoding": "utf8",
+      "Original": "わーい、 わたし もう さみしくないヨ！",
+      "Text": "Who could feel lonely with all these flowers?"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x243238",
+      "Encoding": "utf8",
+      "Original": "ジャンプが得意な\n白いウサギさん。\nビートにのって\n海をわたろう！",
+      "Text": "This rabbit has an\nimpossible goal: to jump\nto the moon! Can you\nmake this dream reality?"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x243298",
+      "Encoding": "utf8",
+      "Original": "月に帰りた〜い！",
+      "Text": "That didn't quite work.."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x2432b4",
+      "Encoding": "utf8",
+      "Original": "着地は失敗しちゃった…",
+      "Text": "Didn't quite stick the landing..."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x2432d8",
+      "Encoding": "utf8",
+      "Original": "まん点！！",
+      "Text": "Great landing!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x2432e8",
+      "Encoding": "utf8",
+      "Original": "夏といえばさ、\nやっぱ花火かな？\n色あざやかに\n打ち上げよう！",
+      "Text": "It's not summer\nwithout fireworks!\nLight them up to fill the\nsky with pretty colors!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x243340",
+      "Encoding": "utf8",
+      "Original": "ゲホゲホッ… 失敗。",
+      "Text": "I think I blew it..."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x243360",
+      "Encoding": "utf8",
+      "Original": "なかなかのデキだぜ！",
+      "Text": "That wasn't half bad!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x243380",
+      "Encoding": "utf8",
+      "Original": "花火のことならオレにまかせろ！！",
+      "Text": "I am THE go-to fireworks guy!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x2433b4",
+      "Encoding": "utf8",
+      "Original": "筆を使って日本語を\n書きます。\nあなたがするのは\nオイシイとこだけ。",
+      "Text": "Japanese calligraphy\nrequires grace, finesse,\nand a shocking amount\nof upper body strength."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x243418",
+      "Encoding": "utf8",
+      "Original": "ふ〜…  アカンわ。",
+      "Text": "I should stick to pencils."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x243434",
+      "Encoding": "utf8",
+      "Original": "お習字を もっと楽しもう！",
+      "Text": "Precision! Grace! What's not to like?"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24345c",
+      "Encoding": "utf8",
+      "Original": "お習字って ノリノリだネ！！",
+      "Text": "Woo! Calligraphy party?"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x243488",
+      "Encoding": "utf8",
+      "Original": "リズムお習字 ２",
+      "Text": "Power Calligraphy 2"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x2434a0",
+      "Encoding": "utf8",
+      "Original": "なかよし３人組、\n声をかけあいながら\nいつも楽しくトスの\n練習してます。",
+      "Text": "This trio of friends love\npracticing volleyball.\nListen for their names\nas they pass their ball!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x243508",
+      "Encoding": "utf8",
+      "Original": "ダメダメだァ〜！",
+      "Text": "We've been tossed out!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x243524",
+      "Encoding": "utf8",
+      "Original": "まだまだもっと上手にできるはず！",
+      "Text": "Next time, we'll toss better than the best!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x243558",
+      "Encoding": "utf8",
+      "Original": "目標は、 トス世界選手権 優勝だー！！",
+      "Text": "Toss World Championship, here we come!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x243590",
+      "Encoding": "utf8",
+      "Original": "ボロボロだァ〜！",
+      "Text": "We're a complete wreck!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x2435ac",
+      "Encoding": "utf8",
+      "Original": "最強メンバーのたんじょうだー！！",
+      "Text": "The ultimate team is born!!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x2435e0",
+      "Encoding": "utf8",
+      "Original": "あなたはネズミ。\n大スキなチーズを\nめざして\nストップ＆ゴー！！",
+      "Text": "You are a rat. She is\na cat. You love cheese.\nAll the ingredients of a\ntense encounter."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24363c",
+      "Encoding": "utf8",
+      "Original": "チーズ 食べたいよ〜…",
+      "Text": "We could try eating the plate.."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24365c",
+      "Encoding": "utf8",
+      "Original": "チーズ おいしいね。",
+      "Text": "I love cheese. Like, a LOT."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24367c",
+      "Encoding": "utf8",
+      "Original": "みんな、 よかったネ！",
+      "Text": "We need a family to eat it all!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24369c",
+      "Encoding": "utf8",
+      "Original": "こぎつねトラン、\nそしてポリンの\nアクロバティックショーがはじまるヨ！",
+      "Text": "Gather round, one and\nall! Tram and Pauline's\nacrobatic magic show\nis about to begin!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x243704",
+      "Encoding": "utf8",
+      "Original": "大しっぱいだ〜！！",
+      "Text": "The show was a failure!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x243720",
+      "Encoding": "utf8",
+      "Original": "ちゅうとハンパでした…",
+      "Text": "At least we only messed up half.."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x243744",
+      "Encoding": "utf8",
+      "Original": "コンビネーション バッチシ！！",
+      "Text": "We're the perfect duo!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x243770",
+      "Encoding": "utf8",
+      "Original": "ペンギン君たちの\nショータイムが\nはじまるヨ！\nわーいわーい！",
+      "Text": "Our penguins\nare ready for their act!\nGet out there and wow\nthe crowd! It's showtime!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x2437c8",
+      "Encoding": "utf8",
+      "Original": "お客さん、 おこってたネ…",
+      "Text": "We've betrayed the audience..."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x2437f0",
+      "Encoding": "utf8",
+      "Original": "ボクたち こんなもんじゃないはず…",
+      "Text": "I know we're capable of more than this..."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x243824",
+      "Encoding": "utf8",
+      "Original": "やった！！ お客さん 楽しんでくれたー！！",
+      "Text": "They loved us out there!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x243860",
+      "Encoding": "utf8",
+      "Original": "ここは無重力の宇宙。\nでも、 おどろうヨ！\nレッツスペースダンス！",
+      "Text": "You want a dancing\nchallenge? Try dancing\nin zero gravity!\nIN SPAAAAAAAAACE!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x2438c0",
+      "Encoding": "utf8",
+      "Original": "ブ、 ブラックホールだー！！",
+      "Text": "Our despair lead us into a black hole!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x2438ec",
+      "Encoding": "utf8",
+      "Original": "あの星のように かがやきたいな…",
+      "Text": "Let's aim for the stars!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24391c",
+      "Encoding": "utf8",
+      "Original": "ボクたちは スペーススーパースター！！",
+      "Text": "We are galactic superstars!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x243954",
+      "Encoding": "utf8",
+      "Original": "宇宙を代表する\nダンサーたち！\nキレた動きに\nくぎづけです！！",
+      "Text": "These paragons of\ndancing have mastered\ntheir zero-G moves\nand want to show off!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x2439ac",
+      "Encoding": "utf8",
+      "Original": "お、おわりだー！！",
+      "Text": "We cannot go on like THIS!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x2439c8",
+      "Encoding": "utf8",
+      "Original": "あなたたちって こんなものなの？",
+      "Text": "Is that the best you guys can do?"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x2439f8",
+      "Encoding": "utf8",
+      "Original": "ボクたちは スーパーコスモスターさ！！",
+      "Text": "All aboard... for SPACE!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x243a30",
+      "Encoding": "utf8",
+      "Original": "クールなふたり組が\nやってきた！\nアツいラップで\n大コーフンだぜ！",
+      "Text": "The coolest rapping\nduo has arrived! Their\nhot rapping skills are\nthe talk of the town!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x243a90",
+      "Encoding": "utf8",
+      "Original": "オレたち、 ダサいやん…",
+      "Text": "We need more practice..."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x243ab4",
+      "Encoding": "utf8",
+      "Original": "チェッ。 なんか 調子わるいわぁ。",
+      "Text": "I think our tone was off."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x243ae4",
+      "Encoding": "utf8",
+      "Original": "これからも よろしく たのんまっせー！！",
+      "Text": "We're looking forward to hearing from you again!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x243b20",
+      "Encoding": "utf8",
+      "Original": "あのラップメンに\nライバルが登場だ！\nキュートなボイスに\nもう メロメロ！",
+      "Text": "The Rap Men have\nsome new rivals!\nDon't be deceived\nby their cute voices!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x243b88",
+      "Encoding": "utf8",
+      "Original": "こんなん ちゃうわぁ…",
+      "Text": "No... This isn't right."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x243ba8",
+      "Encoding": "utf8",
+      "Original": "なんか ちょっと イマイチかも…！",
+      "Text": "I know we can rap better than this!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x243bd8",
+      "Encoding": "utf8",
+      "Original": "そうそう コレコレ、これやわー！！イェーイ！",
+      "Text": "Yes, yes, YES! We've got it!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x243c1c",
+      "Encoding": "utf8",
+      "Original": "司会者の、\n「たたいた回数」を\n当てるカンタンな\nクイズです。",
+      "Text": "Play a quiz where you\ncopy the host pattern.\nSeems simple, right?\nSimple, but not easy."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x243c74",
+      "Encoding": "utf8",
+      "Original": "ま、 こんなものさ。",
+      "Text": "I can do it. I can do it..."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x243c94",
+      "Encoding": "utf8",
+      "Original": "次回に向けて 勉強、勉強…Zzz",
+      "Text": "Must study... for next time... Zzz..."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x243cc0",
+      "Encoding": "utf8",
+      "Original": "世界旅行 もらっちゃった！",
+      "Text": "I won the grand prize! A world tour!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x243ce8",
+      "Encoding": "utf8",
+      "Original": "ぼんおどりの\nうたに あわせて\nパンッと 手を\nたたきましょう。",
+      "Text": "Let's celebrate the\nBon Festival!\nClap along as they sing\ntheir traditional song!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x243d40",
+      "Encoding": "utf8",
+      "Original": "さむいわ…",
+      "Text": "I'm so cold..."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x243d50",
+      "Encoding": "utf8",
+      "Original": "せんこう花火って、せつないね。",
+      "Text": "Oh... The quaint fizzle of a sparkler..."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x243d80",
+      "Encoding": "utf8",
+      "Original": "あー、楽しかった！",
+      "Text": "I can't wait for next year!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x243d9c",
+      "Encoding": "utf8",
+      "Original": "これが いまどきの\nぼんおどり！\nノリノリだヨ！\nイェーイ！",
+      "Text": "The Bon Festival has\na modern-day style!\nClap along to this\nnew arrangement!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x243df0",
+      "Encoding": "utf8",
+      "Original": "もういや…",
+      "Text": "It's over..."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x243e00",
+      "Encoding": "utf8",
+      "Original": "うーん、雨がふってきちゃった。",
+      "Text": "When did it start raining?"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x243e30",
+      "Encoding": "utf8",
+      "Original": "ボンダンスって すごく楽しいよネー！",
+      "Text": "Our new Bon Dance is a lot of fun!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x243e68",
+      "Encoding": "utf8",
+      "Original": "キミの実力を\n試してみてみる？\nこれまでの経験が\nモノを言うヨ〜！",
+      "Text": "Let's test your skills!\nStage 1's games have\nall been remixed!\nThink you can beat it?"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x243ec8",
+      "Encoding": "utf8",
+      "Original": "今回のデキ ： 猫のおやつクラス",
+      "Text": "You were as good as... a cat's snack."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x243ef8",
+      "Encoding": "utf8",
+      "Original": "今回のデキ ： 朝食クラス",
+      "Text": "You were as good as... breakfast."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x243f1c",
+      "Encoding": "utf8",
+      "Original": "今回のデキ ： なんと、 ディナークラス！！",
+      "Text": "You were as good as... why, a delicious dinner!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x243f5c",
+      "Encoding": "utf8",
+      "Original": "今回の熱気 ： ひとりで練習レベル",
+      "Text": "That was as lively as... playing by yourself."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x243f8c",
+      "Encoding": "utf8",
+      "Original": "今回の熱気 ： 楽しくキャッチボールレベル",
+      "Text": "That was as lively as... a pleasant game of catch."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x243fc8",
+      "Encoding": "utf8",
+      "Original": "今回の熱気 ： すごい大会レベル！！",
+      "Text": "That was as lively as... a baseball tournament!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x243ffc",
+      "Encoding": "utf8",
+      "Original": "今回のラブ ： ブロークンハートかも…",
+      "Text": "Their love ended in... heartbreak..."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x244034",
+      "Encoding": "utf8",
+      "Original": "今回のラブ ： とってもフレンドリーな感じ♪",
+      "Text": "Their love ended in... a good friendship."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x244074",
+      "Encoding": "utf8",
+      "Original": "今回のラブ ： ラブラブでーす！！",
+      "Text": "Their love ended in... a tender marriage!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x2440a4",
+      "Encoding": "utf8",
+      "Original": "今回の天気 ： 雨",
+      "Text": "The forecast... rain."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x2440bc",
+      "Encoding": "utf8",
+      "Original": "今回の天気 ： くもり",
+      "Text": "The forecast... very cloudy."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x2440dc",
+      "Encoding": "utf8",
+      "Original": "今回の天気 ： ハッピーな晴れ！！",
+      "Text": "The forecast... clear skies all day!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24410c",
+      "Encoding": "utf8",
+      "Original": "今回のふたり ： ジャマされてしまった！",
+      "Text": "This couple is... in trouble!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x244148",
+      "Encoding": "utf8",
+      "Original": "今回のふたり ： このさき、チョット不安かも…",
+      "Text": "This couple is... a little nervous..."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24418c",
+      "Encoding": "utf8",
+      "Original": "今回のふたり ： 幸せになりました♪",
+      "Text": "This couple is... living happily-ever-after!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x2441c0",
+      "Encoding": "utf8",
+      "Original": "今回の内容 ： ややさみしいカンジ",
+      "Text": "Your fish tank is... pretty sparse."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x2441f0",
+      "Encoding": "utf8",
+      "Original": "今回の内容 ： 意外なカンジ",
+      "Text": "Your fish tank is... unique for sure!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x244218",
+      "Encoding": "utf8",
+      "Original": "今回の内容 ： アンビリーバボーなカンジ！！",
+      "Text": "Your fish tank is... unbelievable!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x244258",
+      "Encoding": "utf8",
+      "Original": "今回のきょうりゅう ： いじわる",
+      "Text": "Your Jurassic visit was... terrifying!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x244288",
+      "Encoding": "utf8",
+      "Original": "今回のきょうりゅう ： ほのぼの",
+      "Text": "Your Jurassic visit was... rather tame."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x2442b8",
+      "Encoding": "utf8",
+      "Original": "今回のきょうりゅう ： 楽しすぎ〜！！",
+      "Text": "Your Jurassic visit was... too much fun!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x2442f0",
+      "Encoding": "utf8",
+      "Original": "今回のドライブ ： んもぅ…",
+      "Text": "Your road trip was... oh boy..."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x244318",
+      "Encoding": "utf8",
+      "Original": "今回のドライブ ： まだまだかかるなぁ",
+      "Text": "Your road trip was... a little long."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x244350",
+      "Encoding": "utf8",
+      "Original": "今回のドライブ ： とっても爽快！！",
+      "Text": "Your road trip was... absolutely spectacular!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x244384",
+      "Encoding": "utf8",
+      "Original": "喫茶カウンセル",
+      "Text": "Cafe Counceling"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24439c",
+      "Encoding": "utf8",
+      "Original": "最近の調子 どう？\nなにか気になれば\nここで相談を\nしてみよう。",
+      "Text": "How are you feeling?\nIf something's on your\nmind, feel free to\ncome and talk."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x2443f8",
+      "Encoding": "utf8",
+      "Original": "おもちゃ",
+      "Text": "Rhythm Toys"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x244408",
+      "Encoding": "utf8",
+      "Original": "メダルを あつめて\n音のでるおもちゃで\nあそんでみてネ！\nいくつかあるヨ。",
+      "Text": "Collect medals to\nplay with some\nRhythm Toys!\nCheck them out!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x244470",
+      "Encoding": "utf8",
+      "Original": "ゲーム",
+      "Text": "Endless"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24447c",
+      "Encoding": "utf8",
+      "Original": "メダルを あつめて\nとくべつなゲームに\n挑戦してみてネ！\nいくつかあるヨ。",
+      "Text": "Collect medals to\nunlock special\nEndless Games!\nCheck them out!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x2444e4",
+      "Encoding": "utf8",
+      "Original": "ドラムレッスン",
+      "Text": "Drum Lessons"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x2444fc",
+      "Encoding": "utf8",
+      "Original": "メダルを あつめて\nドラムのレッスンを\nうけてみよう。\n上手になってネ！",
+      "Text": "Collect medals to take\nsome Drum Lessons.\nYou could become\na master drummer!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x244564",
+      "Encoding": "utf8",
+      "Original": "スタッフ",
+      "Text": "Credits"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x244574",
+      "Encoding": "utf8",
+      "Original": "もし よかったら\n見てみてネ。\nこのゲームの\nスタッフたちです。",
+      "Text": "Here's the staff who\nhelped develop\nthis game. Feel free\nto take a look!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x2445d0",
+      "Encoding": "utf8",
+      "Original": "ライブ",
+      "Text": "Concert"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x2445dc",
+      "Encoding": "utf8",
+      "Original": "ライブに出演だ！\nキミのリズム感は\nよいと思うから\nどうぞお気楽に〜",
+      "Text": "We're hosting a\nconcert! You've got\ngood rhythm, right?\nSo, give it a try!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x244640",
+      "Encoding": "utf8",
+      "Original": "おばちゃん「またつぎ、がんばりなよ！」",
+      "Text": "Cafe Owner: \"Give it your best shot next time!\""
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24467c",
+      "Encoding": "utf8",
+      "Original": "オーナー「キミ、なかなか スジあるヨ」",
+      "Text": "Owner: \"You've got real potential, kid.\""
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x2446b4",
+      "Encoding": "utf8",
+      "Original": "プロデューサー「うちで、ガンバってみない？」",
+      "Text": "Producer: \"Why not come work with us?\""
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x2446f8",
+      "Encoding": "utf8",
+      "Original": "新ゲーム",
+      "Text": "New Game"
     },
     {
       "File": "ic8",
