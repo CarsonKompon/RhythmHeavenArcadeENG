@@ -398,6 +398,22 @@ public sealed partial class MainViewModel : ObservableObject, IDisposable
         var path = item.FullPath;
         if (item.IsOutput && item.HasCopySource && OutputFolder is not null)
             path = Path.Combine(OutputFolder, workspace.Resolve(item.FileName).BaseFileName);
+        OpenImagePath(path);
+    }
+
+    public void OpenOriginalInEditor(TextureItemViewModel item)
+    {
+        if (OriginalFolder is null) return;
+        OpenImagePath(Path.Combine(OriginalFolder, item.FileName));
+    }
+
+    // Prefer a layered source file (Photoshop, then Paint.NET) over the rasterized PNG so
+    // edits open with their original layers intact.
+    private static readonly string[] EditableExtensions = [".psd", ".pdn"];
+
+    private void OpenImagePath(string pngPath)
+    {
+        var path = ResolveEditablePath(pngPath);
         try
         {
             Process.Start(new ProcessStartInfo(path) { UseShellExecute = true });
@@ -407,6 +423,16 @@ public sealed partial class MainViewModel : ObservableObject, IDisposable
         {
             Status = $"Could not open the image: {exception.Message}";
         }
+    }
+
+    private static string ResolveEditablePath(string pngPath)
+    {
+        foreach (var extension in EditableExtensions)
+        {
+            var candidate = Path.ChangeExtension(pngPath, extension);
+            if (File.Exists(candidate)) return candidate;
+        }
+        return pngPath;
     }
 
     public void ToggleView() => IsGridView = !IsGridView;

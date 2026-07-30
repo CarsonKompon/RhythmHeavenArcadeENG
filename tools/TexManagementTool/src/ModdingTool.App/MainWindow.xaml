@@ -90,6 +90,9 @@
             <MenuItem Header="Clear TODO" Click="ClearOriginalsTodo" />
         </ContextMenu>
         <ContextMenu x:Key="OutputTextureContextMenu" x:Shared="False">
+            <MenuItem Header="Open image" Click="OpenOutputImage" />
+            <MenuItem Header="Open original image" Click="OpenOutputOriginalImage" />
+            <Separator />
             <MenuItem Header="Mark as unfinished" Click="MarkOutputsUnfinished" />
             <MenuItem Header="Clear unfinished" Click="ClearOutputsUnfinished" />
             <Separator />

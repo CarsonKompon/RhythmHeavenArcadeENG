@@ -30,7 +30,13 @@ public sealed class TextureWorkspace
         await store.SaveAsync(outputFolder, Project, cancellationToken);
     }
 
-    public IReadOnlyList<string> ScanOriginals() => ScanFolder(OriginalFolder);
+    public IReadOnlyList<string> ScanOriginals()
+    {
+        // Once a texture exists in the output folder it is considered "claimed" and must
+        // disappear from the originals list (copying/dragging removes it immediately).
+        var outputs = ScanFolder(OutputFolder).ToHashSet(StringComparer.OrdinalIgnoreCase);
+        return ScanFolder(OriginalFolder).Where(fileName => !outputs.Contains(fileName)).ToArray();
+    }
 
     public IReadOnlyList<string> ScanOutputs() => ScanFolder(OutputFolder);
 

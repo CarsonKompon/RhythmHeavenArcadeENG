@@ -287,6 +287,16 @@ public partial class MainWindow : Window
 
     private async void MoveTextureDown(object sender, RoutedEventArgs e) => await viewModel.MoveSelectedItemAsync(1);
 
+    private void OpenOutputImage(object sender, RoutedEventArgs e)
+    {
+        if (GetContextSelection(sender).FirstOrDefault() is { } item) viewModel.OpenInEditor(item);
+    }
+
+    private void OpenOutputOriginalImage(object sender, RoutedEventArgs e)
+    {
+        if (GetContextSelection(sender).FirstOrDefault() is { } item) viewModel.OpenOriginalInEditor(item);
+    }
+
     private async void OutputGroupExpanded(object sender, RoutedEventArgs e)
     {
         if (sender is Expander { DataContext: System.Windows.Data.CollectionViewGroup { Name: OutputGroupViewModel group } })
