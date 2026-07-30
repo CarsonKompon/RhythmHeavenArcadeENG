@@ -1502,6 +1502,13 @@
     },
     {
       "File": "ic8",
+      "Offset": "0x238994",
+      "Encoding": "utf8",
+      "Original": "シーケンス\u3000テスト",
+      "Text": "Sequence Test"
+    },
+    {
+      "File": "ic8",
       "Offset": "0x238ab8",
       "Encoding": "utf8",
       "Original": "フツーなドラム",
@@ -1905,6 +1912,349 @@
       "Encoding": "utf8",
       "Original": "なっとくの\u3000せいかくさ",
       "Text": "Satisfying accuracy"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x239300",
+      "Encoding": "utf8",
+      "Original": "最高レベルです！！",
+      "Text": "Top tier!!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x23931c",
+      "Encoding": "utf8",
+      "Original": "かなり良いです！",
+      "Text": "Pretty good!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x239338",
+      "Encoding": "utf8",
+      "Original": "人並みです。",
+      "Text": "Average."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x23934c",
+      "Encoding": "utf8",
+      "Original": "もう一歩。",
+      "Text": "Needs work..."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x23935c",
+      "Encoding": "utf8",
+      "Original": "う〜ん…",
+      "Text": "Hmm..."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x239449",
+      "Encoding": "utf8",
+      "Original": "Cエラー",
+      "Text": "C Error"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x239459",
+      "Encoding": "utf8",
+      "Original": "l\n\n\n\n無効データ",
+      "Text": "l\n\n\n\nInvalid Data"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x239470",
+      "Encoding": "utf8",
+      "Original": "リズム天国へようこそ！",
+      "Text": "Greetings!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x239494",
+      "Encoding": "utf8",
+      "Original": "ごあいさつ\nこのたびは、「リズム天国」をお買い上げいただきまことにありがとうございます。あ、おともだちに借りているのかな？そ、それとも、ちゅ、中古ですか！？\nま、それはさておき。このゲームに興味をもっていただいて光栄です。あなたとの出会いに感謝です！\n末永く楽しんでいただけたら、うれしいでーす！！\nありがとうございました。",
+      "Text": "Greetings!\n\nThank you for buying Rhythm Heaven.\nOh... you've borrowed it from a friend?\nOr is it... s-secondhand?\nWell, that's beside the point.\n\nThe fact is, we're truly honored that you've put your interest into this game.\n\nIt's been nice meeting you, and we hope this game gives you joy and fulfillment for years to come!\n\nThank you very much!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x239674",
+      "Encoding": "utf8",
+      "Original": "取り扱い説明書",
+      "Text": "How to Play"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x23968c",
+      "Encoding": "utf8",
+      "Original": "このゲームの遊び方\n\nっていうか、とくに説明がいるほど複雑なゲームじゃないんですヨ〜。だから、ここに書くこともとくにないんですよねぇ。\nあ、そうそう、音楽にノるのがポイントなので、ノリノリで遊ぶのがいいですヨ！オススメでーす！\nそんなとこですね。よろしくどうぞ〜。",
+      "Text": "How to play the game:\n\nWell, this is a pretty straightforward game.\nWhat can I really say...?\nOh, right, the idea is to play along to the music, so try to feel the flow when you play.\nThat's my advice!\n\nAnd that's about it. Pleasure to meet you, by the way!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x239814",
+      "Encoding": "utf8",
+      "Original": "経営者に聞く",
+      "Text": "From the Barista"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x239828",
+      "Encoding": "utf8",
+      "Original": "私は喫茶店を経営しております。まぁ、分かりやすく言うと喫茶店のマスターです。経営のほうは常連さんのおかげで、まずまずといったカンジですね。あ、そうそう、先に言っておきますが、私は犬です。\nうちのお客さんは、音楽が好きな方が多いんですよねぇ。とくに、リズムに関して、かなりのこだわりをお持ちの方が来られます。なかには、パーフェクトキャンペーンをいくつも達成されてる方もいらっしゃって、もう ビックリしちゃいますヨ！\nまぁ、いつもはこんなカンジで喫茶店のほうを営んでおりますが、実はこれ、仮のすがたなんです。本当の私は… おはずかしい話ですが、犬用のヘッドホンをしながらノリノリで、はしゃぎまわっているんです！やはり、ノリノリなしではやってられないんですよねぇ。こまったものです。ははは。\nわりといろいろな所に遊びに出かけたりもしているので、もし見かけたらナデナデして下さいネ〜！\nではまた。",
+      "Text": "I own and operate a cafe.\nI guess you could call me the Barista.\nAnyway, it's going well, thanks to the regulars.\nAnd, well, just to let you know, I'm a dog.\n\nMany of my customers love listening to music.\nA lot of them have especially good rhythm,\nand a few have even achieved a full set of Perfects!\nI'm always amazed by them!\n\nI may look all professional when I run my cafe,\nbut I'll be honest, I'm really putting on a front.\n\nSee, it's a little embarassing, but when I'm off the clock,\nI'm always jamming out with these little dog-sized headphones!\n\nWhat can I say? I need a little flow wherever I go.\nIt's complicated. Haha...\n\nI do go out from time to time, so if you happen to run into me... please pet me!\n\nSee you around!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x239cbc",
+      "Encoding": "utf8",
+      "Original": "毛ぬき投書",
+      "Text": "Plucking Letter"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x239ccc",
+      "Encoding": "utf8",
+      "Original": "わたしは野菜をつくっているおじさんです。最近、うちの野菜たちにヒゲが生えるんです！とてもブキミだし、これでは売り物にならないんでヒゲをぬくんですが、これがまたキレイにぬけないのです。こまったわたしは気をまぎらわせようと、音楽をききながらノリノリで野菜たちの毛をぬきました。するとなんと！キレイにぬけるのです！しかもなんだか楽しいんです！音楽のチカラってすばらしいですね。みなさんもぜひ野菜の毛をぬいてみてください！",
+      "Text": "I'm an old gentleman who maintains a vegetable farm.\n\nSo, one day, all my vegetables just started growing hair!\nIt was so creepy! I couldn't sell them like that!\n\nI tried plucking the hairs, but I just couldn't get them all nice and smooth like a vegetable ought to be.\n\nWell, to lighten up the mood, I put on some music.\nBefore I knew it, I found myself plucking to the beat.\nAnd... I plucked them clean! It's even a little fun!\n\nThe power of music is really something else!\nYou've got to try plucking hairs off of your vegetables!\nI can't recommend it enough!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x239f3c",
+      "Encoding": "utf8",
+      "Original": "ナイトウォーク情報",
+      "Text": "Night Walk Information"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x239f58",
+      "Encoding": "utf8",
+      "Original": "ナイトウォークに出演している彼は、とっても音楽がスキなのだそうです。以前も音楽関係の仕事をしていたそうで、そのコネで今回このゲームに出演しているのだそうです。この前、街で偶然彼をみつけたので話をきいてみると「音楽大スキ！」と言い残し、階段をのぼってどっかに行っちゃいました。そんな音楽好きの彼に またどこかで会えたらいいなぁと、チョットだけ思いました。そういえば彼、なんていう名前なのかなぁ？\nさぁ、ここでクイズです！\nその彼は名前は…",
+      "Text": "There's this strange fellow who you might recognize from Night Walk.\nHe seems to really love music.\n\nApparently he's worked with music before and landed a role in this game through connections.\n\nI ran into him in the city one time.\n\nAll he said was \"I love music!\", and then just disappeared up some stairs.\nI wonder if I'll ever meet that music-loving guy again.\n\nCome to think of it, I don't even know his name...\n\nOkay, time for a quiz!\nHis name is..."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x23a1fd",
+      "Encoding": "utf8",
+      "Original": "s\n各番号に入る文字を答えてくださいネ！\n正解すると、次のページの文章を読むことができまーす！！",
+      "Text": "\nAnswer which letters go in each of the numbers!\nIf you answer correctly, you'll be able to read the following text!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x23a28f",
+      "Encoding": "utf8",
+      "Original": "Cリズムゲームの「クイズ」のヒミツ",
+      "Text": "Quiz Show's Secret"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x23a448",
+      "Encoding": "utf8",
+      "Original": "エアーバッター速報",
+      "Text": "Spaceball Report"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x23a464",
+      "Encoding": "utf8",
+      "Original": "ただいま宇宙空間で活躍中のエアーバッターさんにインタビューしてみました！\n\nQ．今シーズンの調子はどうですか？\nA．おにぎり食べてるから、バッチシです！\n\nQ．目標は？\nA．おにぎりを欠かさないこと！です。\n\nQ．彼女はいますか？\nA．はい、います。\n\nQ．彼女の得意料理は？\nA．おにぎりです！\n\nQ．なぜ、ゲーム中に かぶりものを？\nA．なんのことですか？\n\nQ．なぜ ウサギなどのコスチュームを？\nA．しりません。\n\nQ．質問に答えてください！\nA．もう、時間ですので失礼します。\n\nここで、エアーバッターさんは席を外されてしまいました。なにかワケありのようです。以上、宇宙空間からでした。",
+      "Text": "We're here in outer space for an exclusive interview with the spacefaring baseball player, the Space Batter!\n\nQ: How is this season looking so far?\nA: I've been eating rice balls, so it's right on the mark!\n\nQ: What would you say your goal is?\nA: To not miss any rice balls!\n\nQ: You have a girlfriend, right?\nA: Yes, I do.\n\nQ: What would you say is her best trait?\nA: She makes a mean rice ball!\n\nQ: Why do you wear masks in the middle of games?\nA: Hm? What do you mean?\n\nQ: Like that rabbit uniform you wore, for instance?\nA: I have no idea what you're talking about.\n\nQ: Please answer the question!\nA: I'll have to take my leave now. Excuse me.\n\nHe's just left his seat!\nIt seems there's more to this than he's letting on.\nThat concludes this interstellar interview."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x23a798",
+      "Encoding": "utf8",
+      "Original": "うまマシーン開発秘話",
+      "Text": "Horse Machine's Story"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x23a7b8",
+      "Encoding": "utf8",
+      "Original": "メダルでもらえるおまけ「うまマシーン」の開発にたずさわった、Fさんに開発のお話をきくことができました。\nFさん「うまを走らせる気持ちよさを伝えたいという想いから開発がスタートしました」\nシンプルながら熱い想いをことばに託すFさん。\nFさん「しかし、ゲームとしてのいろいろな条件を満たそうとすると出口が見つからず、開発の断念を意識した時期もありました」\n苦しい時期もあったFさん。自分の想うものを決められた枠内で表現するのは大変なんですね。\nFさん「遊んでくれた人がほんのチョットでもハッピーになってくれたら、もうそれで苦労なんか吹っ飛んじゃいますけどネ！」\nサービス精神旺盛なFさん。これからの作品も期待しております。ありがとうございました。",
+      "Text": "We were given the chance to interview Mr. F, inventor of the Horse Machine in the Rhythm Toys section, about its development.\n\nMr. F: The idea came about because I just really wanted to share the joys of riding a horse.\nSo development sort of revolved around that idea.\n\nMr. F's comments were as simple as they were passionate.\n\nMr. F: But in trying to make a game out of it, I found myself losing sight of that end goal.\nI considered giving up many times.\n\nIt was a struggle for Mr. F, who found it difficult to express his vision within a standard framework.\n\nMr. F: But thinking about the kinds of people who use the Horse Machine and get even a little joy out of it...\nWell, the hardships sort of just drift away.\n\nMr. F, you are truly devoted to your craft.\nWe look forward to seeing your next creations.\nThank you!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x23ab64",
+      "Encoding": "utf8",
+      "Original": "マーチャ活動記録",
+      "Text": "Squadmate Activity Log"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x23ab80",
+      "Encoding": "utf8",
+      "Original": "４月１６日 今日からマーチャに入隊！みんなの役に立つようにがんばるぞー！\n\n４月２０日 今日はみんなと「あしぶみ」がそろわず、隊長におこられちゃった。\n\n４月２８日 今日は駅前の清掃活動をした。みしらぬおばあちゃんが「キレイにしてくれてありがとう」と言ってアメをくれた。うれしかった！\n５月４日 最近なんだかだるい。これが５月病というものなのかな？しっかりしないと、おいてけぼりをされそうだ…\n\n５月８日 隊長のようすがおかしい… 昨日、宇宙でウサギと遊んだと言っている。大丈夫かな…？\n\n５月１６日 最近、隊長そっくりの人をよくみかける。\n気のせいだろうか？\n５月２２日 ボクは見てしまった。隊長が…\n\n\n活動記録はここで終わっている。\nいったい、隊長の身になにが！？",
+      "Text": "April 16:\nI've enlisted in the Marcher group!\nI'm gonna give it my all and help everybody I can!\n\nApril 20:\nToday I marched out of line with the others.\nSarge gave me an earful for that one...\n\nApril 28:\nToday we were assigned to clean the front of the station.\nThis pleasant old lady came by and offered me some candy for my hard work.\nThat made my whole day!\n\nMay 4:\nI've been pretty sluggish lately.\nIs this what they mean by \"spring fever\"?\nIf I don't shape up soon, I might get shipped out...\n\nMay 8:\nSomething's up with Sarge...\nYesterday, he told us that he's been dancing with some rabbits up in outer space.\nIs he... okay?\n\nMay 16:\nRecently, I've been coming across other people who look just like him...\nIt's got to be my imagination, right?\n\nMay 22:\nYou'll never believe it! Sarge was...\n\nThe log ends here.\nJust what could've been happening with Sarge?"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x23af5c",
+      "Encoding": "utf8",
+      "Original": "はいどーもー！DJ SALUでーす！\n今日もステキなゲストが来てくれています。ラップメン（RM）のおふたりでーす。よろしくどうぞ〜！\nRM「あ、どうも ラップメンです」\nDJ「新曲、いいじゃないですか〜！」\nRM「せやろ〜。わかりますか？」\nDJ「うん、うん。サイコー！」\nRM「ところで、なやみがあるんですわ」\nDJ「え！？え〜っと、…ど、どんな？」\nRM「なんか、うちらのバッタモンが現れたんですわ、ラップウィメンとかいう」\nDJ「ほんとですか！？」\nRM「うん。しかも楽屋にあった うちらのおやつをないしょで食べてもうたんですわ」\nDJ「エー！ショックですねぇ…」\nRM「しかも、おき手紙があってね」\nDJ「なんて？」\n\nRM「べつばら サイコーって」\nDJ「なんて大胆な…」\nRM「でっしゃろ？くやしくて叫びました」\nDJ「おやつがナイヨ〜ってですか？」\nRM「！？ なんでしってんの？」\nDJ「だってリズム天国やってるもーん！ではここでCMでーす」\nCM「ノリ感アップに… リズム天国！買ってネ！」",
+      "Text": "Hey there! I'm DJ MON-K!\nWe've got a couple of wonderful guests here today.\nAllow me to introcude the Rap Men (RM)!\n\nDJ: Pleased to meet you!\nRM: Hey, viewers at home! We are the Rap Men!\nDJ: Your latest song is really good, huh?\nRM: Thanks! You get it now, huh?\nDJ: Uh uh! It's AWESOME!\nRM: That being said, we're kind of in a jam right now.\nDJ: O-oh! W-what's wrong?\nRM: Well first, some knock-off rap duo spring up outta nowhere!\nThey call themselves the \"Rap Women\", I think?\nDJ: Maybe so, huh?\nRM: Yeah. And those wannabes ate our stash of snacks we kept in our dressing room!\nDJ: Unbelievable!\nRM: And if that wasn't enough, they left a little note.\nDJ: What did it say?\nRM: It just said \"Sweets are so AWESOME!\"\nDJ: Oh wow. How loathsome.\nRM: Right!? It was enough to make me yell...\nDJ: You were like, \"Wait a sect, we LOST SOME!\"\nRM: Uh... Yeah! How do you know that?\nDJ: I've been playing Rhythm Heaven!\nRoll the commercial!\n\nAD: Up your flow with Rhythm Heaven!\nAvailable now! Game and system sold separately."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x23b41a",
+      "Encoding": "utf8",
+      "Original": "Rおわり",
+      "Text": "End.\n"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x23b428",
+      "Encoding": "utf8",
+      "Original": "歌詞カード①",
+      "Text": "Lyrics Card ①"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x23b43c",
+      "Encoding": "utf8",
+      "Original": "ザ☆ぼんおどり\nうた：時東ぁみ\n作詞/作曲：つんく\n\nは〜花火あがれば〜\nは〜あ〜歓声あがる〜\n\nは〜\u3000人気あがれば〜\nは〜あ〜\u3000給料あがる〜\n祭りだわっしょい！\nにっぽん中がわっしょい！\n\nそれ\u3000ひっくり返って\u3000ドンドパンパン\nは〜\u3000盆踊り〜\n\nは〜雨があがれば〜\nは〜あ〜やぐらに あがる〜\n\n\nほら！祭りだわっしょい！\nこれぞ\u3000メイド イン ジャパン\u3000\n\nそれ\u3000ひっくり返って\u3000ドンドパンパン\nは〜\u3000盆踊り〜",
+      "Text": "The☆Bon Odori\n\nVocals: Ami Tokito\nLyrics/Music: Tsunku♂\nArrangement: Koichi Yuasa (The☆Bon Odori) / Kaoru Okubo (The☆Bon Dance)\nTranslation: castIeRook, Mizuka Lover\n\n(This song appears in The☆Bon Odori)"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x23b674",
+      "Encoding": "utf8",
+      "Original": "歌詞カード②",
+      "Text": "Lyrics Card ②"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x23b8bc",
+      "Encoding": "utf8",
+      "Original": "歌詞カード③",
+      "Text": "Lyrics Card ③"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x23bc28",
+      "Encoding": "utf8",
+      "Original": "さいごの通達",
+      "Text": "Final Words"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x23bc3c",
+      "Encoding": "utf8",
+      "Original": "なぞのリズム組織から最後の通達が届きました。\n\n「おめでとう！！リミックス８のパーフェクト、かなりサイコーでした〜！…と、明るく祝福するのはやめておく。たしかにキミは、この「リズム天国」でスバラシイ成績を残した。これはまぎれもない事実で、我々も十分みとめている。キミは最高だ！もう、超サイコーなんでーす！！…と、つい、うれしくなってしまうが、楽しくたたえるのは やめておく。\n今回、このゲームでキミが体感したリズムは、リズム界のほんのチョコットである。もしキミがリズムに対して、よりいっそうの興味を持ってくれたならば、ぜひこれを機会にノリノリになってほしい！だって、ノリノリってサイコーなんだヨ！！もう、超オススメなんだからー！！…と、つい、ウキウキしてしまうが、うかれてオススメするのはやめておく。\n我々は、本気だ。\n本気でキミに、ノリノリであってほしいのだ！\nこのリズム界をリードするのが、キミであると信じている！っていうか、キミしか信じられなーい！！\nもう、キミってサイコーなんだもーん！！\n遊んでくれてありがとう！」",
+      "Text": "You've received these final words from the Rhythm League.\n\n\"Congratulations on getting a Perfect on Remix 8!\nSuch a feat certainly is impressive!\n...is how I should be congratulating you, but I wont.\nYou have performed outstandingly here in Rhythm Heaven.\nThat much is undeniable, and we fully recognize it.\nYou are the best! One of the greatest!\n... is how I feel, but that's enough praise.\n\nSee, any rhythm you experienced in this game is just a tiny fraction of a world of rhythm.\nIf this experience has made you more interested in rhythm at all,\nwe strongly encourage learning more about it.\nBecause developing your flow is the best!\nIt can't be recommended enough! And... well... ahem.\nI should stop getting excited and start recommending.\n\nWe're serious\nWe really want you to develop your flow even further!\n\nWe believe you have the potential to lead a world of rhythm!\nIn fact, it's got to be you, you're the only one we believe in!\n\nYou really are the best!\nThank you so much for playing!\""
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x23c198",
+      "Encoding": "utf8",
+      "Original": "Rなぞのリズム組織代表",
+      "Text": "Chairman of the Rhythm League"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x23c1b9",
+      "Encoding": "utf8",
+      "Original": "Rスペースおじさん",
+      "Text": "Space Gramps"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x23c1d4",
+      "Encoding": "utf8",
+      "Original": "忍者の巻物",
+      "Text": "Ninja Scroll"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x23c1e4",
+      "Encoding": "utf8",
+      "Original": "みなさん、はじめまして。オレは田中っていいます。この前、うらの倉庫で古い巻物をみつけたんです。その中にはこう書いてありました。\n\n「これを見ているオヌシ。オヌシは、この巻物をたまたま見つけたのではない。見つけるべくして、見つかるように忍術をかけておいたものなのだ。わかるか？そう、これを書いているワシは忍者であり、オヌシのご先祖さまというわけだ。\n先日ワシは、ワシの主人であるトノを矢の雨からお守りした。もちろん、命がけだ。その大仕事を終えた夜、夢をみた。そこには、若い男がいた。世の中に背をむけて生きている、とんがった若者だ。占いオババによると、その若者、どうもオヌシらしいのだ。そして、ワシと同じように命がけで、ある人を守っている。女性だ。その女性はトノの子孫なのだそうだ。こんな巻物を突然見ても、あまりピンとこないかもしれないが、願わくばその女性はオヌシが守り続けて欲しい。」\n今、オレの心にはある女性がいます。その女性は、先日、パチンコで狙いうちされそうになっているのを、オレが必死で助けた女性です。これから、どうなるってわけじゃないけど、ここはひとつ、ご先祖様の忍術にまんまとかけられてみようかな…",
+      "Text": "I'm Tanaka. It's nice to meet you.\nSo, the other day I found a bizarre scroll in the back of our storage.\nWritten was the following:\n\n\"To you who reads this: you did not come across this scroll by chance.\nI used the powers of ninjutsu to ensure that it would reach you.\nDo you understand?\n\nIndeed, the writer of this scroll is not only a ninja, but your ancestor.\n\nThe other day, I protected my lord from a storm of arrows.\nI risked my life for him.\n\nThe night following this daunting task, a dream came to me.\nI saw a young man. A discontented yound man with his back against the world.\nAccording to our fortune teller, that young man is you.\n\nMuch like me, you risk your life to protect someone.\nA young woman.\nShe too is said to be a descendant of my lord.\n\nI know not if you can comprehend this scroll, but if so,\nI ask only that you continue to protect her.\"\n\nNow, there actually is a woman in my heart.\nThe other day, I saved her from a slingshot attack.\nI put my life on the line for her.\n\nWho knows what could happen next?\nMy ancestor's ninjutsu might just help in a pinch one day."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x23c7c8",
+      "Encoding": "utf8",
+      "Original": "リズム漫才",
+      "Text": "Rhythm Stand-Up"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x23c7d8",
+      "Encoding": "utf8",
+      "Original": "きーやん「どうもー、きーやんでーす！」\nあおくん「どうもー、あおくんでーす！」\nふたり「Y&Bでーす！よろしくどうぞ〜！」\nきーやん「なぁなぁ、あおくん。あんな、この前な、音楽教室に体験入学してん！」\nあおくん「エー！ウソー！？きいてないよー！きーやん、楽器はじめるん！？ギター？ドラム？なになに？」\nきーやん「オレのパートはな…」\nあおくん「うんうん、なになに？」\nきーやん「オレのパートは リズムやねん！」\nあおくん「は？リズムって、きーやん、それ楽器ちゃうやん！なんやリズムって」\nきーやん「ちゃうねん、ドラムやりたいって先生にゆうたらな、まずリズムをしなさいって言われてん！」\nあおくん「きーやん、それ、たぶんな、リズム感をきたえなさいってゆうたんやと思うで」\nきーやん「あ、そうや！たしかそう言ってたわ！あおくん、すごいな！なんで分かるん！？エスパーか？」\nあおくん「なんでって…、分かるわ！！常識やわ！！！」\nきーやん「まぁまぁ、そんなに怒らんといて〜や」\nあおくん「あ、あぁ、せやな、ごめんな…」\nきーやん「あ！あおくん、チャックあいてるで」\nあおくん「エッ！？うゎ、ウソ！！マジ！？」\nきーやん「ウソ」\nあおくん「ずるっ！」\nきーやん「ずるって、古いな」\nあおくん「うるさい！ほっとけ！！」\nきーやん「ムカー！！！」\nあおくん「うわっ！な、なんで逆ギレやねん。もう、わけわからんわ！」\nきーやん「ほんでな、リズム感の話やけどな」\nあおくん「あ、あぁ、そうやったな」\nきーやん「まったく…、話を脱線させんといてや」\nあおくん「あぁ、ごめんな…って、どっちがやねん！！！話、脱線させたん、きーやんやろがーーー！！チャックあいてるとかウソぶっこいといてー！！！」\nきーやん「まぁまぁ、そんなに怒らんでも」\nあおくん「やかましいわ！まったく…、ほんで、なんなん、リズム感の話って？」\nきーやん「洗剤的なアルミ缶は、訓練したら成長するんやて。」\nあおくん「あほ！ それを言うなら、潜在的なリズム感やろ！」\nふたり「しっつれいしましたー！」",
+      "Text": "Yellow: Hello, I'm Yellow!\nBlue: Hello, I'm Blue!\nBoth: Y&B! Nice to meet you!\n\nYellow: Hey Blue! You heard? I'm taking a music class!\nBlue: Wait, really? No way! What instrument are you learning, Yellow?\nIs it the guitar? Drums maybe?\nYellow: Well, my part is...\nBlue: Yeah? What?\nYellow: I'll be playing rhythm!\nBlue: Wha? You can't \"play\" rhythm, Yellow.\nIt's not an instrument. Where did you hear that?\nYellow: Well, I told my teacher I wanted to play drums,\nbut he told me I should practice \"rhythm\" first!\nBlue: Yellow, I think he meant you need to improve your sense of rhythm.\nYellow: Oh yeah, that's much closer! That's incredible!\nHow did you know? Are you psychic?\nBlue: How did I- Why wouldn't I know!? It's just common sense!\nYellow: Hey, man! No need to get so angry.\nBlue: Ah... You know, you're right, I'm sorry...\nYellow: Oop! Blue, your fly is down!\nBlue: Huh!? Wait, really?\nYellow: Just kidding!\nBlue: Why I oughta...!\nYellow: \"Why I oughta-!\" Man, that's kind of a cheesy line, don't you think?\nBlue: Shut it... I've had enough.\nYellow: GRAAAGH!\nBlue: Huh!? Why are you mad? What did I do?\nYellow: Well, weren't we talking about my music class?\nBlue: Huh? Oh, yeah, that's right.\nYellow: Geez... way to derail the whole thing...\nBlue: Ah, I'm sorry... wait I'M sorry?\nYou were the one who--- by lying that my fly was down!\nYellow: Hey hey, no need to get so angry.\nBlue: Oh, that's rich! Anyway, what about your sense of rhythm?\nYellow: Right! My classmates said that my \"scents of rhythm\" will improve with practice.\nBlue: Your SENSE of rhythm! Idiot!\n\nBoth: Thank you! You've been a wonderful audience!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x23d1cc",
+      "Encoding": "utf8",
+      "Original": "よろこびの声",
+      "Text": "Testimonials"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x23d1e1",
+      "Encoding": "utf8",
+      "Original": "リズム天国を楽しんでいただいた方からたくさんのよろこびの声が届きました。あまりに多くの方からお手紙やメールをいただき（！）、すべては紹介しきれませんが、そのなかのごく一部をここで紹介させていただきます。みなさんも、ぜひ一度お試しくださり、その効果をお友達にもお伝えください！！\n\n\nリズム感が良くなっただけなのに…",
+      "Text": "We've received many letters from satisfied players of Rhythm Heaven.\n\nSo, SO many in fact(!), that we can't show all of them,\nbut here are just a few of our players' thoughts!\n\nJust by improving my sense of rhythm..."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x23d3b7",
+      "Encoding": "utf8",
+      "Original": "mこんなにモテて、ホントにいいの！？",
+      "Text": "I've become... popular?"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x23d3ef",
+      "Encoding": "utf8",
+      "Original": "s\n「リズム天国」に出会うまでは、全く女性に縁のなかった私ですが、今ではモテモテで…人生観が変わりました。",
+      "Text": "Before I found Rhythm Heaven, I had no luck with women...\nBut now, I'm a real hot shot with a new lease on life!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x23d48c",
+      "Encoding": "utf8",
+      "Original": "RTさん ３８才 会社員",
+      "Text": "Mr. T, Age 38, Office Worker"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x23d4aa",
+      "Encoding": "utf8",
+      "Original": "L\nリズム感が良くなっただけなのに…",
+      "Text": "Just by improving my sense of rhythm..."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x23d4e1",
+      "Encoding": "utf8",
+      "Original": "m歌が上手だねって言われちゃった！？",
+      "Text": "I've become a better singer?"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x23d519",
+      "Encoding": "utf8",
+      "Original": "s\n「リズム天国」に出会うまでは、オンチの代表みたいに言われてた私なのに、最近よくホメられるんです。相変わらずオンチなのに不思議。でもうれしい！",
+      "Text": "Before I found Rhythm Heaven, I was the textbook definition of tone-deaf.\nBut lately people have told me my singing is much nicer!\nI'm still tone-deaf, of course, but at least I'm happy!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x23d5ef",
+      "Encoding": "utf8",
+      "Original": "RHさん ２９才 主婦",
+      "Text": "Mrs. H, Age 29, Housewife"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x23d60c",
+      "Encoding": "utf8",
+      "Original": "わかる！リズムの公式",
+      "Text": "Understanding Rhythm"
     },
     {
       "File": "ic8",
