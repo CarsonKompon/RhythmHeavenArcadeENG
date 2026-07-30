@@ -316,7 +316,23 @@ public sealed class MainViewModel : INotifyPropertyChanged
 
     private void RevertSelected()
     {
-        if (SelectedEntry is { } e) e.Edited = e.Original;
+        if (SelectedEntry is { } e) RevertEntries([e]);
+    }
+
+    // Restores the given entries to their original text. Refreshes so row highlighting
+    // (and the Modified-only filter) update immediately.
+    public void RevertEntries(IEnumerable<TextEntry> entries)
+    {
+        bool changed = false;
+        foreach (var e in entries)
+        {
+            if (!e.IsModified) continue;
+            e.Edited = e.Original;
+            changed = true;
+        }
+        if (!changed) return;
+        OnPropertyChanged(nameof(ModifiedCount));
+        RefreshEntriesView();
     }
 
     // Scans the decrypted code image for pointers into the chosen text region and

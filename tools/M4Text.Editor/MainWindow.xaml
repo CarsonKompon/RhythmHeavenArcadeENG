@@ -110,6 +110,8 @@
                   VirtualizingPanel.IsVirtualizing="True" VirtualizingPanel.VirtualizationMode="Recycling">
             <DataGrid.ContextMenu>
                 <ContextMenu>
+                    <MenuItem Header="Revert selected to original" Click="RevertSelected_Click" />
+                    <Separator />
                     <MenuItem Header="Hide selected" Click="HideSelected_Click" />
                     <MenuItem Header="Unhide selected" Click="UnhideSelected_Click" />
                 </ContextMenu>

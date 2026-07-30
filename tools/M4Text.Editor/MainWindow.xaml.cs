@@ -34,6 +34,14 @@ public partial class MainWindow : Window
     private void HideSelected_Click(object sender, RoutedEventArgs e) => SetSelectionHidden(true);
     private void UnhideSelected_Click(object sender, RoutedEventArgs e) => SetSelectionHidden(false);
 
+    private void RevertSelected_Click(object sender, RoutedEventArgs e)
+    {
+        if (DataContext is not MainViewModel vm) return;
+        var items = StringsGrid.SelectedItems.OfType<TextEntry>().ToList();
+        if (items.Count == 0) return;
+        vm.RevertEntries(items);
+    }
+
     private void SetSelectionHidden(bool hidden)
     {
         if (DataContext is not MainViewModel vm) return;
