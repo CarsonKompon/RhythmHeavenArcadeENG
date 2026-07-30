@@ -142,7 +142,7 @@
       "isTodo": false,
       "isUnfinished": false,
       "copySourceFileName": "2995d00.png",
-      "brightness": 44,
+      "brightness": 42,
       "groupId": "b55c54fe-d942-487e-9dda-91066e406dec",
       "order": 5
     },
@@ -22310,7 +22310,7 @@
       "id": "b55c54fe-d942-487e-9dda-91066e406dec",
       "name": "Game_RhythmTweezers_NoPeeking",
       "order": 12,
-      "isCollapsed": false
+      "isCollapsed": true
     },
     {
       "id": "4a8d67f3-05f0-44ee-a320-cfcc3f25a67c",
@@ -22370,7 +22370,7 @@
       "id": "ae2d928a-3383-4285-a1bb-54f5a86f4b7a",
       "name": "Game_MarchingOrders_BunnySuit",
       "order": 22,
-      "isCollapsed": true
+      "isCollapsed": false
     },
     {
       "id": "1be54dd3-345e-4a69-abaf-aa693628098c",

@@ -39,6 +39,7 @@ public partial class MainWindow : Window
         viewModel.RightHideGroups = settings.RightHideGroups ?? settings.HideGroups;
         viewModel.LeftOnlyUnfinished = settings.LeftOnlyUnfinished;
         viewModel.RightOnlyUnfinished = settings.RightOnlyUnfinished;
+        viewModel.SplitView = settings.SplitView;
         if (Directory.Exists(settings.OriginalFolder) && Directory.Exists(settings.OutputFolder))
         {
             pendingOriginalFolder = settings.OriginalFolder;
@@ -89,7 +90,8 @@ public partial class MainWindow : Window
         viewModel.LeftHideGroups,
         viewModel.RightHideGroups,
         viewModel.LeftOnlyUnfinished,
-        viewModel.RightOnlyUnfinished);
+        viewModel.RightOnlyUnfinished,
+        viewModel.SplitView);
 
     private void ToggleView(object sender, RoutedEventArgs e)
     {
@@ -181,7 +183,7 @@ public partial class MainWindow : Window
                 viewModel.SelectedOutput = inspectorBeforeDrag.IsOutput ? inspectorBeforeDrag : null;
             }
 
-            DragDrop.DoDragDrop(listBox, new DataObject(typeof(TextureItemViewModel[]), dragItems), DragDropEffects.Copy | DragDropEffects.Move);
+            DragDrop.DoDragDrop(listBox, new DataObject(typeof(TextureItemViewModel[]), dragItems), DragDropEffects.Copy | DragDropEffects.Move | DragDropEffects.Link);
         }
     }
 
@@ -319,6 +321,31 @@ public partial class MainWindow : Window
         {
             viewModel.OpenInEditor(item);
         }
+    }
+
+    private double splitFraction = 0.5;
+
+    private void SplitContainerSizeChanged(object sender, SizeChangedEventArgs e) => UpdateSplitReveal();
+
+    private void SplitContainerVisibilityChanged(object sender, DependencyPropertyChangedEventArgs e) => UpdateSplitReveal();
+
+    private void SplitThumbDragDelta(object sender, System.Windows.Controls.Primitives.DragDeltaEventArgs e)
+    {
+        if (SplitContainer.ActualWidth <= 0) return;
+        splitFraction = Math.Clamp(splitFraction + e.HorizontalChange / SplitContainer.ActualWidth, 0, 1);
+        UpdateSplitReveal();
+    }
+
+    private void UpdateSplitReveal()
+    {
+        var width = SplitContainer.ActualWidth;
+        var height = SplitContainer.ActualHeight;
+        if (width <= 0 || height <= 0) return;
+        // Round to a whole pixel so the exact clip geometry and the layout-rounded divider land on the same seam.
+        var revealX = Math.Round(width * splitFraction);
+        ModifiedSplitImage.Clip = new System.Windows.Media.RectangleGeometry(new Rect(0, 0, revealX, height));
+        SplitDivider.Margin = new Thickness(revealX - SplitDivider.Width / 2, 0, 0, 0);
+        SplitThumb.Margin = new Thickness(revealX - SplitThumb.Width / 2, 0, 0, 0);
     }
 
     private void PaneDragOver(object sender, DragEventArgs e)

@@ -300,8 +300,32 @@
             <Border Grid.Column="4" Background="{StaticResource Panel}" BorderBrush="#D3D1C9" BorderThickness="1" CornerRadius="4" Padding="16">
                 <StackPanel DataContext="{Binding SelectedTexture}">
                     <TextBlock Text="INSPECTOR" FontFamily="Bahnschrift" FontSize="16" FontWeight="SemiBold" />
+                    <CheckBox Content="Split view (compare with original)" Margin="0,10,0,0"
+                              Visibility="{Binding IsOutput, Converter={StaticResource BooleanToVisibilityConverter}}"
+                              IsChecked="{Binding DataContext.SplitView, RelativeSource={RelativeSource AncestorType=Window}}" />
                     <Border Height="230" Background="#E9E8E2" BorderBrush="#D1D2CB" BorderThickness="1" CornerRadius="3" Margin="0,14,0,12">
-                        <Image Source="{Binding Thumbnail}" Stretch="Uniform" Margin="10" Loaded="ThumbnailLoaded" />
+                        <Grid>
+                            <Image Source="{Binding Thumbnail}" Stretch="Uniform" Margin="10" Loaded="ThumbnailLoaded"
+                                   Visibility="{Binding DataContext.ShowSingleInspector, RelativeSource={RelativeSource AncestorType=Window}, Converter={StaticResource BooleanToVisibilityConverter}}" />
+                            <Grid x:Name="SplitContainer" Margin="10" ClipToBounds="True"
+                                  SizeChanged="SplitContainerSizeChanged" IsVisibleChanged="SplitContainerVisibilityChanged"
+                                  Visibility="{Binding DataContext.ShowSplitInspector, RelativeSource={RelativeSource AncestorType=Window}, Converter={StaticResource BooleanToVisibilityConverter}}">
+                                <!-- Base layer: the untouched original fills the whole area. -->
+                                <Image x:Name="OriginalSplitImage" Stretch="Uniform" Loaded="ThumbnailLoaded"
+                                       DataContext="{Binding DataContext.ComparisonOriginal, RelativeSource={RelativeSource AncestorType=Window}}"
+                                       Source="{Binding Thumbnail}" />
+                                <!-- Reveal layer: identical fill layout to the base, clipped from the left in code-behind so it lines up pixel-for-pixel. -->
+                                <Image x:Name="ModifiedSplitImage" Stretch="Uniform"
+                                       Source="{Binding Thumbnail}" Loaded="ThumbnailLoaded" />
+                                <Border x:Name="SplitDivider" Width="2" HorizontalAlignment="Left" Background="White" IsHitTestVisible="False" />
+                                <Thumb x:Name="SplitThumb" Width="16" HorizontalAlignment="Left" Cursor="SizeWE"
+                                       Opacity="0" DragDelta="SplitThumbDragDelta" />
+                                <TextBlock Text="MODIFIED" FontFamily="Bahnschrift" FontSize="10" FontWeight="SemiBold"
+                                           Foreground="White" Background="#99000000" Padding="4,1" HorizontalAlignment="Left" VerticalAlignment="Top" />
+                                <TextBlock Text="ORIGINAL" FontFamily="Bahnschrift" FontSize="10" FontWeight="SemiBold"
+                                           Foreground="White" Background="#99000000" Padding="4,1" HorizontalAlignment="Right" VerticalAlignment="Top" />
+                            </Grid>
+                        </Grid>
                     </Border>
                     <TextBlock Text="{Binding FileName, TargetNullValue=Select a texture}" FontWeight="SemiBold" TextTrimming="CharacterEllipsis" />
                     <TextBlock Text="{Binding FullPath}" Foreground="{StaticResource Muted}" FontSize="10" TextWrapping="Wrap" Margin="0,3,0,18" />

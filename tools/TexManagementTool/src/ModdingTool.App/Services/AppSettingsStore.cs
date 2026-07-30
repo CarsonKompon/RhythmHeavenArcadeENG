@@ -15,7 +15,8 @@ public sealed record AppSettings(
     bool? LeftHideGroups = null,
     bool? RightHideGroups = null,
     bool LeftOnlyUnfinished = false,
-    bool RightOnlyUnfinished = false);
+    bool RightOnlyUnfinished = false,
+    bool SplitView = false);
 
 public static class AppSettingsStore
 {

@@ -35,6 +35,8 @@ public sealed partial class MainViewModel : ObservableObject, IDisposable
     [ObservableProperty] private string? outputFolder;
     [ObservableProperty] private TextureItemViewModel? selectedOutput;
     [ObservableProperty] private TextureItemViewModel? selectedTexture;
+    [ObservableProperty] private TextureItemViewModel? comparisonOriginal;
+    [ObservableProperty] private bool splitView;
     [ObservableProperty] private bool hideSeenOriginals;
     [ObservableProperty] private bool hideTodoOriginals;
     [ObservableProperty] private PaneSource leftPaneSource = PaneSource.Originals;
@@ -61,6 +63,8 @@ public sealed partial class MainViewModel : ObservableObject, IDisposable
 
     public bool CanShowPreviousOriginals => OriginalPage > 1;
     public bool CanShowNextOriginals => OriginalPage < OriginalPageCount;
+    public bool ShowSplitInspector => SplitView && ComparisonOriginal is not null;
+    public bool ShowSingleInspector => !ShowSplitInspector;
     public bool IsLeftOriginals => LeftPaneSource == PaneSource.Originals;
     public bool IsLeftOutput => LeftPaneSource == PaneSource.Output;
     public bool IsRightOriginals => RightPaneSource == PaneSource.Originals;
@@ -317,6 +321,29 @@ public sealed partial class MainViewModel : ObservableObject, IDisposable
     {
         OnPropertyChanged(nameof(IsRightOriginals));
         OnPropertyChanged(nameof(IsRightOutput));
+    }
+
+    partial void OnSelectedTextureChanged(TextureItemViewModel? value)
+    {
+        // Pair the selected output with its untouched original so the split view can compare them.
+        ComparisonOriginal = value is { IsOutput: true } && OriginalFolder is not null &&
+                             File.Exists(Path.Combine(OriginalFolder, value.FileName))
+            ? new TextureItemViewModel(value.FileName, OriginalFolder, false)
+            : null;
+        // Kick off the load directly so the original renders even if its Image never raises Loaded.
+        if (ComparisonOriginal is { } original) _ = original.EnsureThumbnailAsync();
+    }
+
+    partial void OnComparisonOriginalChanged(TextureItemViewModel? value)
+    {
+        OnPropertyChanged(nameof(ShowSplitInspector));
+        OnPropertyChanged(nameof(ShowSingleInspector));
+    }
+
+    partial void OnSplitViewChanged(bool value)
+    {
+        OnPropertyChanged(nameof(ShowSplitInspector));
+        OnPropertyChanged(nameof(ShowSingleInspector));
     }
 
     public async Task MoveSelectedItemAsync(int direction)
