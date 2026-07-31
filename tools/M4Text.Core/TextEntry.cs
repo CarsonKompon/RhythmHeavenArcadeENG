@@ -80,6 +80,15 @@ public sealed class TextEntry : INotifyPropertyChanged
         set { if (_isHidden == value) return; _isHidden = value; OnPropertyChanged(); }
     }
 
+    // UI-only free-text comment about a slot (e.g. context, TODO, source of the string).
+    // Persisted by the editor (keyed on File+Offset) and in the changes file; never written to the ROM.
+    private string _notes = string.Empty;
+    public string Notes
+    {
+        get => _notes;
+        set { var v = value ?? string.Empty; if (_notes == v) return; _notes = v; OnPropertyChanged(); }
+    }
+
     /// <summary>
     /// Encodes the edited text and pads to exactly <see cref="MaxBytes"/> so the
     /// slot is fully overwritten (no stale tail from the original string).

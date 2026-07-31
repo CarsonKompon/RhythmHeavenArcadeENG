@@ -148,6 +148,7 @@
                      typing; the (global) status-bar counts are debounced in the VM so
                      the whole list isn't rescanned on every keystroke. -->
                 <DataGridTextColumn Header="Edited (English, \n = line break)" Binding="{Binding Edited, Converter={StaticResource Escape}, UpdateSourceTrigger=PropertyChanged}" Width="2*" />
+                <DataGridTextColumn Header="Notes" Binding="{Binding Notes, UpdateSourceTrigger=PropertyChanged}" Width="*" />
             </DataGrid.Columns>
         </DataGrid>
 

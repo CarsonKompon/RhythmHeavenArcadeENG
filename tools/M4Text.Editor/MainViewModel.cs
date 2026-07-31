@@ -20,6 +20,10 @@ public sealed class MainViewModel : INotifyPropertyChanged
     // reload/rescan. Persisted next to the .dec files; never affects the ROM bytes.
     private readonly HashSet<string> _hidden = new(StringComparer.OrdinalIgnoreCase);
 
+    // Per-slot free-text notes, keyed by "file:offsetHex". Persisted next to the .dec
+    // files (and in the changes file) so comments survive reloads and travel with edits.
+    private readonly Dictionary<string, string> _notes = new(StringComparer.OrdinalIgnoreCase);
+
     // Remembers the last changes.m4text.json the user saved/loaded so the Save/Load
     // dialogs reopen on it. Persisted per-user (survives across work folders/sessions).
     private string? _lastChangesPath;
@@ -221,6 +225,10 @@ public sealed class MainViewModel : INotifyPropertyChanged
             LoadHidden();
             ApplyHidden(_all);
 
+            // Restore the persisted notes onto the freshly loaded entries.
+            LoadNotes();
+            ApplyNotes(_all);
+
             // Rebuild the view from the new list (avoids mutating a live/deferred view).
             EntriesView = BuildView(_all);
             RaiseCounts();
@@ -254,6 +262,18 @@ public sealed class MainViewModel : INotifyPropertyChanged
     // only the global counts are deferred, so typing never rescans the full list.
     private void OnEntryChanged(object? sender, PropertyChangedEventArgs e)
     {
+        // Persist notes as they're typed so comments aren't lost without an explicit save.
+        if (e.PropertyName == nameof(TextEntry.Notes) && sender is TextEntry entry)
+        {
+            if (!_suppressNoteSave)
+            {
+                var key = HiddenKey(entry);
+                if (string.IsNullOrEmpty(entry.Notes)) _notes.Remove(key);
+                else _notes[key] = entry.Notes;
+                SaveNotes();
+            }
+            return;
+        }
         _countsDebounce.Stop();
         _countsDebounce.Start();
     }
@@ -647,6 +667,45 @@ public sealed class MainViewModel : INotifyPropertyChanged
             e.IsHidden = _hidden.Contains(HiddenKey(e));
     }
 
+    private string NotesPath => Path.Combine(WorkFolder, ".m4text-notes.json");
+
+    private void LoadNotes()
+    {
+        _notes.Clear();
+        try
+        {
+            if (File.Exists(NotesPath) &&
+                System.Text.Json.JsonSerializer.Deserialize<Dictionary<string, string>>(File.ReadAllText(NotesPath)) is { } map)
+                foreach (var kv in map) _notes[kv.Key] = kv.Value;
+        }
+        catch { /* a corrupt/absent notes file just means no comments */ }
+    }
+
+    private void SaveNotes()
+    {
+        try
+        {
+            if (!Directory.Exists(WorkFolder)) return;
+            File.WriteAllText(NotesPath, System.Text.Json.JsonSerializer.Serialize(
+                _notes.OrderBy(kv => kv.Key).ToDictionary(kv => kv.Key, kv => kv.Value)));
+        }
+        catch { /* non-fatal: notes are a convenience, not ROM data */ }
+    }
+
+    // Applies the persisted notes onto freshly loaded entries.
+    private void ApplyNotes(IEnumerable<TextEntry> entries)
+    {
+        _suppressNoteSave = true;
+        try
+        {
+            foreach (var e in entries)
+                e.Notes = _notes.TryGetValue(HiddenKey(e), out var note) ? note : string.Empty;
+        }
+        finally { _suppressNoteSave = false; }
+    }
+
+    private bool _suppressNoteSave;
+
     // ---- Portable changes file (ROM-free, human-editable JSON) ---------------
 
     // Writes only the edits (and hide-list) to JSON so they can be committed to a repo
@@ -711,6 +770,17 @@ public sealed class MainViewModel : INotifyPropertyChanged
             foreach (var k in patch.Hidden) _hidden.Add(k);
             ApplyHidden(_all);
             SaveHidden();
+        }
+
+        // Merge notes from the file into the current set (patch.Apply already set them on
+        // the entries; mirror that into our persisted store).
+        var patchNotes = patch.Edits.Where(ed => !string.IsNullOrEmpty(ed.Notes));
+        if (patchNotes.Any())
+        {
+            foreach (var ed in patchNotes)
+                if (M4TextPatch.TryParseOffset(ed.Offset, out var off))
+                    _notes[$"{ed.File}:{off:x}"] = ed.Notes!;
+            SaveNotes();
         }
 
         RaiseCounts();

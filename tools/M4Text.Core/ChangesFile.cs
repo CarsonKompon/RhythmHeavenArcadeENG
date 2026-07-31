@@ -1,6 +1,7 @@
 using System.Globalization;
 using System.Text.Encodings.Web;
 using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace M4Text;
 
@@ -40,13 +41,13 @@ public sealed class M4TextPatch
     public void Save(string path) => File.WriteAllText(path, Serialize());
 
     /// <summary>
-    /// Builds a patch from a set of entries (only the modified ones are recorded)
-    /// plus an optional hide-list. Ordered by file then offset for stable diffs.
+    /// Builds a patch from a set of entries (modified slots, plus any slot carrying a
+    /// note) plus an optional hide-list. Ordered by file then offset for stable diffs.
     /// </summary>
     public static M4TextPatch FromEntries(IEnumerable<TextEntry> entries, IEnumerable<string>? hidden = null)
         => new()
         {
-            Edits = entries.Where(e => e.IsModified)
+            Edits = entries.Where(e => e.IsModified || !string.IsNullOrEmpty(e.Notes))
                 .OrderBy(e => e.File, StringComparer.OrdinalIgnoreCase)
                 .ThenBy(e => e.Offset)
                 .Select(e => new PatchEdit
@@ -56,6 +57,7 @@ public sealed class M4TextPatch
                     Encoding = e.Encoding,
                     Original = e.Original,
                     Text = e.Edited,
+                    Notes = string.IsNullOrEmpty(e.Notes) ? null : e.Notes,
                 })
                 .ToList(),
             Hidden = (hidden ?? Enumerable.Empty<string>())
@@ -88,8 +90,10 @@ public sealed class M4TextPatch
                 !string.Equals(ed.Original, entry.Original, StringComparison.Ordinal))
                 mismatched++;
             entry.Edited = ed.Text ?? entry.Original;
+            if (ed.Notes is { } note) entry.Notes = note;
             applied++;
         }
+
         return new ApplyResult(applied, missing, mismatched);
     }
 
@@ -113,6 +117,10 @@ public sealed class PatchEdit
     public string Encoding { get; set; } = "";
     public string Original { get; set; } = "";
     public string Text { get; set; } = "";
+
+    // Optional free-text comment about this slot. Omitted from the JSON when empty.
+    [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+    public string? Notes { get; set; }
 }
 
 /// <summary>Outcome of applying a patch: how many edits landed, were not found, or
