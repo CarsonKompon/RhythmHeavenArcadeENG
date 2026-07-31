@@ -22370,7 +22370,7 @@
       "id": "ae2d928a-3383-4285-a1bb-54f5a86f4b7a",
       "name": "Game_MarchingOrders_BunnySuit",
       "order": 22,
-      "isCollapsed": false
+      "isCollapsed": true
     },
     {
       "id": "1be54dd3-345e-4a69-abaf-aa693628098c",
