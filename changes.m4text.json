@@ -3959,6 +3959,328 @@
     },
     {
       "File": "ic8",
+      "Offset": "0x249c14",
+      "Encoding": "utf8",
+      "Original": "ベーシック\u3000１",
+      "Text": "Basic 1"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x249c2c",
+      "Encoding": "utf8",
+      "Original": "ベーシック\u3000２",
+      "Text": "Basic 2"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x249c44",
+      "Encoding": "utf8",
+      "Original": "ショート\u3000１",
+      "Text": "Short 1"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x249c58",
+      "Encoding": "utf8",
+      "Original": "ショート\u3000２",
+      "Text": "Short 2"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x249c6c",
+      "Encoding": "utf8",
+      "Original": "ショート\u3000３",
+      "Text": "Short 3"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x249c80",
+      "Encoding": "utf8",
+      "Original": "ショート\u3000４",
+      "Text": "Short 4"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x249c94",
+      "Encoding": "utf8",
+      "Original": "ショート\u3000５",
+      "Text": "Short 5"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x249ca8",
+      "Encoding": "utf8",
+      "Original": "ショート\u3000６",
+      "Text": "Short 6"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x249cbc",
+      "Encoding": "utf8",
+      "Original": "ショート\u3000７",
+      "Text": "Short 7"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x249cd0",
+      "Encoding": "utf8",
+      "Original": "ショート\u3000８",
+      "Text": "Short 8"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x249ce4",
+      "Encoding": "utf8",
+      "Original": "ショート\u3000９",
+      "Text": "Short 9"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x249cf8",
+      "Encoding": "utf8",
+      "Original": "ロング\u3000１",
+      "Text": "Long 1"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x249d08",
+      "Encoding": "utf8",
+      "Original": "ロング\u3000２",
+      "Text": "Long 2"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x249d18",
+      "Encoding": "utf8",
+      "Original": "ロング\u3000３",
+      "Text": "Long 3"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x249d28",
+      "Encoding": "utf8",
+      "Original": "ロング\u3000４",
+      "Text": "Long 4"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x249d38",
+      "Encoding": "utf8",
+      "Original": "ロング\u3000５",
+      "Text": "Long 5"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x249d48",
+      "Encoding": "utf8",
+      "Original": "ロング\u3000６",
+      "Text": "Long 6"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x249d58",
+      "Encoding": "utf8",
+      "Original": "ハイテク\u3000１",
+      "Text": "Expert 1"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x249d6c",
+      "Encoding": "utf8",
+      "Original": "ハイテク\u3000２",
+      "Text": "Expert 2"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x249e0c",
+      "Encoding": "utf8",
+      "Original": "リスニングではチェックのある曲だけ再生します。\u3000よろしいですか〜？",
+      "Text": "In listening mode, only the songs with a check mark will be played."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x249e70",
+      "Encoding": "utf8",
+      "Original": "この演奏データを削除するヨ！\nホントにOK？",
+      "Text": "You'll erase this performance data!\nIs that really OK?"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x249eb0",
+      "Encoding": "utf8",
+      "Original": "チェックのついている曲が、\nひとつもありません。",
+      "Text": "There's not even one song\nthat has a check mark on it."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x249ef8",
+      "Encoding": "utf8",
+      "Original": "リスニング",
+      "Text": "Listen"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x249f08",
+      "Encoding": "utf8",
+      "Original": "ドラミング",
+      "Text": "Drum"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x249f18",
+      "Encoding": "utf8",
+      "Original": "ならびかえ",
+      "Text": "Sort"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x249f28",
+      "Encoding": "utf8",
+      "Original": "データ消去",
+      "Text": "Erase Data"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x249f38",
+      "Encoding": "utf8",
+      "Original": "サイレント",
+      "Text": "Silence"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x249f48",
+      "Encoding": "utf8",
+      "Original": "恋のハニースイ〜トエンジェル",
+      "Text": "Koi no Honey Sweet Angel"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x249f74",
+      "Encoding": "utf8",
+      "Original": "恋のハニースイ〜…",
+      "Text": "Koi no Honey..."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x249f90",
+      "Encoding": "utf8",
+      "Original": "WISH 君を待てなくて",
+      "Text": "WISH Kimi o Matenakute"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x249fac",
+      "Encoding": "utf8",
+      "Original": "WISH 君を待て…",
+      "Text": "WISH Kimi o..."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x249fc4",
+      "Encoding": "utf8",
+      "Original": "バイキンはかせ",
+      "Text": "Sick Beats"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x249fdc",
+      "Encoding": "utf8",
+      "Original": "リミックス７",
+      "Text": "Remix 7"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x249ff0",
+      "Encoding": "utf8",
+      "Original": "リミックス８",
+      "Text": "Remix 8"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24a004",
+      "Encoding": "utf8",
+      "Original": "リミックス６",
+      "Text": "Remix 6"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24a018",
+      "Encoding": "utf8",
+      "Original": "タイトル",
+      "Text": "Title Screen"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24a028",
+      "Encoding": "utf8",
+      "Original": "メニュー",
+      "Text": "Menu"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24a038",
+      "Encoding": "utf8",
+      "Original": "ゲームセレクト",
+      "Text": "Game Select"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24a050",
+      "Encoding": "utf8",
+      "Original": "リズム資料室",
+      "Text": "Rhythm Data Room"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24a064",
+      "Encoding": "utf8",
+      "Original": "オープニング",
+      "Text": "Opening"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24a078",
+      "Encoding": "utf8",
+      "Original": "スタッフクレジット",
+      "Text": "Staff Credits"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24a094",
+      "Encoding": "utf8",
+      "Original": "ゲームセレクト２",
+      "Text": "Game Select 2"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24a0b0",
+      "Encoding": "utf8",
+      "Original": "やりなおし",
+      "Text": "Try Again"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24a0c0",
+      "Encoding": "utf8",
+      "Original": "平凡",
+      "Text": "OK"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24a0c8",
+      "Encoding": "utf8",
+      "Original": "ハイレベル",
+      "Text": "Superb"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24a0d8",
+      "Encoding": "utf8",
+      "Original": "パーフェクト",
+      "Text": "Perfect"
+    },
+    {
+      "File": "ic8",
       "Offset": "0x24ec74",
       "Encoding": "utf8",
       "Original": "レディース＆ジェドメン！\nウエルカム トゥ ザ\nリズム天国!!\nナイス トゥ ミーチュー",
