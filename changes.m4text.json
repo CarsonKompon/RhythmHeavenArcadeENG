@@ -4433,14 +4433,16 @@
       "Offset": "0x24a42c",
       "Encoding": "utf8",
       "Original": ".1:0ど:1んど\u3000.2:0ぱ.2:1ん.2:0ぱ",
-      "Text": ".1:0Dondo .2:0panpa"
+      "Text": ".1:0Ｄondo .2:0panpa",
+      "Notes": "Bon Odori Lyrics"
     },
     {
       "File": "ic8",
       "Offset": "0x24a454",
       "Encoding": "utf8",
       "Original": ".1:0ど:1ーん\u3000.2:0ぱ.2:1ーん\u3000.2:0ぱ.2:1ん",
-      "Text": ".1:0Do-n .2:0pa-n .2:0pan"
+      "Text": ".1:0Ｄo-n .2:0pa-n .2:0pan",
+      "Notes": "Bon Odori Lyrics"
     },
     {
       "File": "ic8",
@@ -4461,8 +4463,8 @@
       "Offset": "0x24a4b0",
       "Encoding": "utf8",
       "Original": ".0:0ハァ〜",
-      "Text": ".0:0ha〜",
-      "Notes": "Bon Odori - Capital letters not working yet"
+      "Text": ".0:0Ｈa〜",
+      "Notes": "Bon Odori Lyrics"
     },
     {
       "File": "ic8",
@@ -4470,30 +4472,30 @@
       "Encoding": "utf8",
       "Original": ".0:0はなび\u3000あがれば〜",
       "Text": ".0:0when rockets go to fly〜",
-      "Notes": "Bon Odori - Capital letters not working yet"
+      "Notes": "Bon Odori Lyrics"
     },
     {
       "File": "ic8",
       "Offset": "0x24a4e0",
       "Encoding": "utf8",
       "Original": ".1:0ど:1ーん\u3000.1:0ど:1ーん\u3000.2:0ぱ.2:1ーん\u3000.2:0ぱ.2:1ーん",
-      "Text": ".1:0dondo .2:0pan pan",
-      "Notes": "Bon Odori - Capital letters not working yet"
+      "Text": ".1:0Ｄon do .2:0pan pan",
+      "Notes": "Bon Odori Lyrics"
     },
     {
       "File": "ic8",
       "Offset": "0x24a52c",
       "Encoding": "utf8",
       "Original": ".1:0ど:1んど\u3000.2:0ぱ.2:1ーん\u3000.2:0ぱ.2:1ん",
-      "Text": ".1:0dondo .2:0pan pan",
-      "Notes": "Bon Odori - Capital letters not working yet"
+      "Text": ".1:0Ｄondo .2:0pan pan",
+      "Notes": "Bon Odori Lyrics"
     },
     {
       "File": "ic8",
       "Offset": "0x24a564",
       "Encoding": "utf8",
       "Original": ".0:0ハァ〜\u3000ア〜",
-      "Text": ".0:0ha〜 ah〜",
+      "Text": ".0:0Ｈa〜 Ａh〜",
       "Notes": "Bon Odori - Capital letters not working yet"
     },
     {
@@ -4501,7 +4503,7 @@
       "Offset": "0x24a57c",
       "Encoding": "utf8",
       "Original": ".0:0かんせい\u3000あがる〜",
-      "Text": ".0:0cheers will fill the sky〜",
+      "Text": ".0:0Ｃheers filling the sky〜",
       "Notes": "Bon Odori - Capital letters not working yet"
     },
     {
@@ -4509,7 +4511,7 @@
       "Offset": "0x24a59c",
       "Encoding": "utf8",
       "Original": ".2:0ぱ.2:1ーん\u3000.2:0ぱ.2:1ーん\u3000.1:0ど:1んど\u3000.1:0ど:1ーん",
-      "Text": ".2:0pan .2:0pa .1:0dondo .1:0do",
+      "Text": ".2:0Ｐan .2:0pan .1:0dondo .1:0do",
       "Notes": "Bon Odori - Capital letters not working yet"
     },
     {
@@ -4517,7 +4519,7 @@
       "Offset": "0x24a5e8",
       "Encoding": "utf8",
       "Original": ".2:0ぱ.2:1ん.2:0ぱ\u3000.1:0ど:1ーん\u3000.2:0ぱ.2:1ん",
-      "Text": ".2:0panpa .1:0do .2:0pa",
+      "Text": ".2:0Ｐanpa .1:0do .2:0pa",
       "Notes": "Bon Odori - Capital letters not working yet"
     },
     {
@@ -4525,7 +4527,7 @@
       "Offset": "0x24a624",
       "Encoding": "utf8",
       "Original": ".0:0にんき\u3000あがれば〜",
-      "Text": ".0:0when spirits are high〜",
+      "Text": ".0:0Ｗhen spirits are high〜",
       "Notes": "Bon Odori - Capital letters not working yet"
     },
     {
@@ -4533,7 +4535,7 @@
       "Offset": "0x24a644",
       "Encoding": "utf8",
       "Original": ".0:0きゅうりょう\u3000あがる〜",
-      "Text": ".0:0the more people will buy〜",
+      "Text": ".0:0Ｔhe more people will buy〜",
       "Notes": "Bon Odori - Capital letters not working yet"
     },
     {
@@ -4541,7 +4543,7 @@
       "Offset": "0x24a66c",
       "Encoding": "utf8",
       "Original": ".0:0まつりだ\u3000わっしょい！",
-      "Text": ".0:0it's a festival hooray!",
+      "Text": ".0:0Ｉt's a festival hooray!",
       "Notes": "Bon Odori - Capital letters not working yet"
     },
     {
@@ -4549,7 +4551,7 @@
       "Offset": "0x24a694",
       "Encoding": "utf8",
       "Original": ".1:0ど:1んど\u3000.2:0ぱ.2:1ん.2:0ぱ\u3000.1:0ど:1んど\u3000.2:0ぱ.2:1ん.2:0ぱ",
-      "Text": ".1:0dondo .2:0panpa .1:0dondo .2:0panpa",
+      "Text": ".1:0Ｄondo .2:0panpa .1:0dondo .2:0panpa",
       "Notes": "Bon Odori - Capital letters not working yet"
     },
     {
@@ -4557,7 +4559,7 @@
       "Offset": "0x24a6e8",
       "Encoding": "utf8",
       "Original": ".0:0にっぽんじゅうが\u3000わっしょい！",
-      "Text": ".0:0all japan says hooray!",
+      "Text": ".0:0Ａll Ｊapan says hooray!",
       "Notes": "Bon Odori - Capital letters not working yet"
     },
     {
@@ -4565,7 +4567,7 @@
       "Offset": "0x24a71c",
       "Encoding": "utf8",
       "Original": ".1:0ど:1んど\u3000.2:0ぱ.2:1ん.2:0ぱ\u3000.2:0ぱ.2:1ん",
-      "Text": ".1:0dondo .2:0panpa .2:0pa",
+      "Text": ".1:0Ｄondo .2:0panpa .2:0pan",
       "Notes": "Bon Odori - Capital letters not working yet"
     },
     {
@@ -4573,7 +4575,7 @@
       "Offset": "0x24a758",
       "Encoding": "utf8",
       "Original": ".0:0ソレ\u3000ひっくり\u3000かえって",
-      "Text": ".0:0now we turn around and",
+      "Text": ".0:0Ｎow we turn around and",
       "Notes": "Bon Odori - Capital letters not working yet"
     },
     {
@@ -4581,7 +4583,7 @@
       "Offset": "0x24a784",
       "Encoding": "utf8",
       "Original": ".0:0ハァ〜\u3000ぼんおどり",
-      "Text": ".0:0haa〜 bon odori",
+      "Text": ".0:0Ｈaa〜 Ｂon Ｏdori",
       "Notes": "Bon Odori - Capital letters not working yet"
     },
     {
@@ -4589,7 +4591,7 @@
       "Offset": "0x24a7a4",
       "Encoding": "utf8",
       "Original": ".2:0ぱ.2:1ん.2:0ぱ\u3000.1:0ど:1んど",
-      "Text": ".2:0panpa .1:0dondo",
+      "Text": ".2:0Ｐanpa .1:0dondo",
       "Notes": "Bon Odori - Capital letters not working yet"
     },
     {
@@ -4597,7 +4599,7 @@
       "Offset": "0x24a7cc",
       "Encoding": "utf8",
       "Original": ".2:0ぱ.2:1ーん\u3000.2:0ぱ.2:1ん.2:0ぱ\u3000.2:0ぱ.2:1ん",
-      "Text": ".2:0pan .2:0panpa .2:0pa",
+      "Text": ".2:0Ｐan .2:0panpa .2:0pan",
       "Notes": "Bon Odori - Capital letters not working yet"
     },
     {
@@ -4605,7 +4607,7 @@
       "Offset": "0x24a808",
       "Encoding": "utf8",
       "Original": ".0:0アメが\u3000あがれば〜",
-      "Text": ".0:0when the rain is dry〜",
+      "Text": ".0:0Ｗhen the rain is dry〜",
       "Notes": "Bon Odori - Capital letters not working yet"
     },
     {
@@ -4613,7 +4615,7 @@
       "Offset": "0x24a828",
       "Encoding": "utf8",
       "Original": ".0:0やぐらに\u3000あがる〜",
-      "Text": ".0:0climb the tower and spy〜",
+      "Text": ".0:0Ｃlimb a tower and spy〜",
       "Notes": "Bon Odori - Capital letters not working yet"
     },
     {
@@ -4621,7 +4623,7 @@
       "Offset": "0x24a848",
       "Encoding": "utf8",
       "Original": ".0:0ほら！\u3000まつりだ\u3000わっしょい！",
-      "Text": ".0:0it's a festival, hooray!",
+      "Text": ".0:0Ｉt's a festival, hooray!",
       "Notes": "Bon Odori - Capital letters not working yet"
     },
     {
@@ -4629,7 +4631,7 @@
       "Offset": "0x24a87c",
       "Encoding": "utf8",
       "Original": ".0:0これぞ",
-      "Text": ".0:0this is!",
+      "Text": ".0:0Ｉt is!",
       "Notes": "Bon Odori - Capital letters not working yet"
     },
     {
@@ -4637,7 +4639,7 @@
       "Offset": "0x24a88c",
       "Encoding": "utf8",
       "Original": ".0:0メイド\u3000イン\u3000ジャ.2パ:1ン",
-      "Text": ".0:0it's made in ja.2pan",
+      "Text": ".0:0Ｉt's made in Ｊa.2pan",
       "Notes": "Bon Odori - Capital letters not working yet"
     },
     {
@@ -5062,15 +5064,15 @@
       "Offset": "0x24b5e4",
       "Encoding": "utf8",
       "Original": ".1:0ど:1ーん\u3000.1:0ど:1ーん\u3000.2:0ぱ.2:1ーん\u3000.2:0ぱ.2:1ん",
-      "Text": ".1:0do-n .1:0do-n .2:0pa-n .2:0pan",
-      "Notes": "Bon Odori - Capital letters not working yet"
+      "Text": ".1:0Ｄo−n .1:0do−n .2:0pa−n .2:0pan",
+      "Notes": "Bon Odori Lyrics"
     },
     {
       "File": "ic8",
       "Offset": "0x24b62c",
       "Encoding": "utf8",
       "Original": "こい\u3000してる？",
-      "Text": "Are you in love?",
+      "Text": "Ａre you in love?",
       "Notes": "Spoken by the mice in Remix 2"
     },
     {
@@ -5078,7 +5080,7 @@
       "Offset": "0x24b644",
       "Encoding": "utf8",
       "Original": "アセるー！！",
-      "Text": "Keep up the pace!",
+      "Text": "Ｓpeed it up!",
       "Notes": "Spoken by the mice in Remix 2"
     },
     {
@@ -5086,7 +5088,7 @@
       "Offset": "0x24b658",
       "Encoding": "utf8",
       "Original": "がんばって〜！",
-      "Text": "Go for it!",
+      "Text": "Ｇo for it!",
       "Notes": "Spoken by the mice in Remix 2"
     },
     {
@@ -5101,7 +5103,7 @@
       "Offset": "0x24b690",
       "Encoding": "utf8",
       "Original": "いこっか",
-      "Text": "Shall we?",
+      "Text": "Ｓhall we?",
       "Notes": "Spoken by Rap Women"
     },
     {
@@ -5109,7 +5111,7 @@
       "Offset": "0x24b6a0",
       "Encoding": "utf8",
       "Original": "またやろな〜",
-      "Text": "Again sometime〜",
+      "Text": "Ａgain soon〜",
       "Notes": "Spoken by Rap Women"
     },
     {
@@ -5308,21 +5310,21 @@
       "Offset": "0x24bb74",
       "Encoding": "utf8",
       "Original": ".1:0ど:1ーん\u3000.1:0ど:1ーん\u3000.2:0ぱ.2:1ん",
-      "Text": ".1:0do-n do-n .2:0pan"
+      "Text": ".1:0Ｄo−n do−n .2:0pan"
     },
     {
       "File": "ic8",
       "Offset": "0x24bba8",
       "Encoding": "utf8",
       "Original": ".2:0ぱ.2:1ん\u3000.2:0ぱ.2:1ん",
-      "Text": ".2:0pan pan"
+      "Text": ".2:0Ｐan pan"
     },
     {
       "File": "ic8",
       "Offset": "0x24bbc8",
       "Encoding": "utf8",
       "Original": ".6:1ぼんおどり\u3000しましょう！",
-      "Text": ".6:1Let's do the Bon Odori dance!",
+      "Text": ".6:1Ｌet's do the Ｂon Ｏdori dance!",
       "Notes": "Bon Odori Tutorial"
     },
     {
@@ -5330,21 +5332,21 @@
       "Offset": "0x24bbf4",
       "Encoding": "utf8",
       "Original": ".6:1みんなの\u3000てびょうしを\u3000まねしてネ。",
-      "Text": ".6:1Clap whenever you hear a \"pan\"."
+      "Text": ".6:1Ｃlap whenever you hear a \"pan\"."
     },
     {
       "File": "ic8",
       "Offset": "0x24bc40",
       "Encoding": "utf8",
       "Original": ".6:1も〜いっちょ\u3000いってみよう！",
-      "Text": ".6:1When you hear \"panpa\", clap twice!"
+      "Text": ".6:1Ｗhen you hear \"panpa\", clap twice!"
     },
     {
       "File": "ic8",
       "Offset": "0x24bc70",
       "Encoding": "utf8",
       "Original": ".6:1では、\u3000ほんばん\u3000がんばってネ！",
-      "Text": ".6:1The festival is starting! Do your best!"
+      "Text": ".6:1Ｔhe festival is starting! Ｄo your best!"
     },
     {
       "File": "ic8",
