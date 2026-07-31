@@ -4645,42 +4645,162 @@
       "Offset": "0x24a8b8",
       "Encoding": "utf8",
       "Original": "前半、ばっちりだね！",
-      "Text": "The first half was right on!"
+      "Text": "The first half was right on!",
+      "Notes": "Bon Odori Results"
     },
     {
       "File": "ic8",
       "Offset": "0x24a8d8",
       "Encoding": "utf8",
       "Original": "前半が\u3000いまひとつだったなぁ。",
-      "Text": "The first half wasn't so good..."
+      "Text": "The first half wasn't so good...",
+      "Notes": "Bon Odori Results"
     },
     {
       "File": "ic8",
       "Offset": "0x24a908",
       "Encoding": "utf8",
       "Original": "後半で\u3000もりあがったね〜！",
-      "Text": "The second half was fantastic!"
+      "Text": "The second half was fantastic!",
+      "Notes": "Bon Odori Results"
     },
     {
       "File": "ic8",
       "Offset": "0x24a930",
       "Encoding": "utf8",
       "Original": "後半、もりさがっちゃってたなぁ。",
-      "Text": "The second half was dreadful..."
+      "Text": "The second half was dreadful...",
+      "Notes": "Bon Odori Results"
     },
     {
       "File": "ic8",
       "Offset": "0x24a964",
       "Encoding": "utf8",
       "Original": "クライマックスが\u3000きまってた！！",
-      "Text": "You nailed the climax!"
+      "Text": "You nailed the climax!",
+      "Notes": "Bon Odori Results"
     },
     {
       "File": "ic8",
       "Offset": "0x24a998",
       "Encoding": "utf8",
       "Original": "さいごに\u3000ちゃんと\u3000シメてたね！",
-      "Text": "The last \"pan pan\" was good!"
+      "Text": "The last \"pan pan\" was good!",
+      "Notes": "Bon Odori Results"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24a9d1",
+      "Encoding": "utf8",
+      "Original": "5♪ WISH 君を待てなくて\u3000",
+      "Text": "5♪ WISH - Can't Wait for You",
+      "Notes": "Remix 5"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24a9f5",
+      "Encoding": "utf8",
+      "Original": "L\u3000うた\u3000\u3000総史（ワタシメスラッグ）",
+      "Text": "L\u3000Vocals: Soshi Tanaka",
+      "Notes": "Remix 5"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24aa2d",
+      "Encoding": "utf8",
+      "Original": "L作詞\u3000作曲\n\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000つんく\n編曲\n\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000湯浅\u3000公一",
+      "Text": "LMusic:\n\u3000\u3000Tsunku\nArrangement:\n\u3000\u3000Yuasa Kouichi",
+      "Notes": "Remix 5"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24aa91",
+      "Encoding": "utf8",
+      "Original": "C提供\u3000\u3000TNX",
+      "Text": "CCourtesy of TNX",
+      "Notes": "Remix 5"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24aaa7",
+      "Encoding": "utf8",
+      "Original": "5\u3000♪\u3000恋のハニースイ〜トエンジェル",
+      "Text": "5\u3000♪ Honey Sweet Angel of Love",
+      "Notes": "Remix 3"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24aadf",
+      "Encoding": "utf8",
+      "Original": "5\u3000うた\u3000\u3000時東\u3000ぁみ",
+      "Text": "5\u3000Vocals: Ami Tokito",
+      "Notes": "Remix 3"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24ab03",
+      "Encoding": "utf8",
+      "Original": "5\u3000作詞\u3000作曲\u3000\u3000つんく",
+      "Text": "5\u3000Music: Tsunku",
+      "Notes": "Remix 3"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24ab2b",
+      "Encoding": "utf8",
+      "Original": "5\u3000編曲\u3000\u3000鈴木Daichi秀行",
+      "Text": "5\u3000Arrangement: Suzuki \"Daichi\"",
+      "Notes": "Remix 3"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24ab56",
+      "Encoding": "utf8",
+      "Original": "C提供\u3000\u3000TNX",
+      "Text": "CCourtesy of TNX",
+      "Notes": "Remix 3"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24ab6a",
+      "Encoding": "utf8",
+      "Original": "こんにちは！",
+      "Text": "Hello!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24ab80",
+      "Encoding": "utf8",
+      "Original": "がんばってますか？\nあなたの\u3000リズム感、\n良くなっていると\nうれしいな。",
+      "Text": "Are you keeping at it?\nI'd be really happy if\nyour sense of rhythm\nis getting better!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24abe8",
+      "Encoding": "utf8",
+      "Original": "クリアしたゲームは\nなれたころが\u3000いちばん\n楽しいから、何回も\nあそんでみてネ！",
+      "Text": "Games you've cleared are\nmost fun once you're used\nto them so try playing\nthem over and over!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24ac5c",
+      "Encoding": "utf8",
+      "Original": "そうそう、\nゲームのスタッフでしたね。\n今は、どんなゲームを\n作ってるんでしょうねぇ…",
+      "Text": "Oh, that's right... You were\ntalking about the game's staff, right?\nI wonder what kind of\ngames they're making now..."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24acd9",
+      "Encoding": "utf8",
+      "Original": "Cま、それはさておき。\n\nでは、どうぞ〜！",
+      "Text": "CWell, setting that aside.\n\nHere you go~!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24ad48",
+      "Encoding": "utf8",
+      "Original": "つんく♂",
+      "Text": "Tsunku♂"
     },
     {
       "File": "ic8",

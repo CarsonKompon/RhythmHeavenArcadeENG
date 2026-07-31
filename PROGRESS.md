@@ -146,6 +146,7 @@ This is tracking all the progress of known textures that need to be updated or s
         - [x] End Card Text
     - [ ] Remix 3
         - [ ] Intro Card
+        - [x] In-game Text
         - [ ] Results Text
         - [x] End Card Text
     - [ ] Quiz Show
@@ -207,6 +208,7 @@ This is tracking all the progress of known textures that need to be updated or s
         - [x] End Card Text
     - [ ] Remix 5
         - [ ] Intro Card
+        - [x] In-game Text
         - [ ] Results Text
         - [x] End Card Text
     - [ ] The Snappy Trio
