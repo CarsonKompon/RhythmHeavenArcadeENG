@@ -4256,28 +4256,431 @@
       "Offset": "0x24a0b0",
       "Encoding": "utf8",
       "Original": "やりなおし",
-      "Text": "Try Again"
+      "Text": "Try Again",
+      "Notes": "Ranking"
     },
     {
       "File": "ic8",
       "Offset": "0x24a0c0",
       "Encoding": "utf8",
       "Original": "平凡",
-      "Text": "OK"
+      "Text": "OK",
+      "Notes": "Ranking"
     },
     {
       "File": "ic8",
       "Offset": "0x24a0c8",
       "Encoding": "utf8",
       "Original": "ハイレベル",
-      "Text": "Superb"
+      "Text": "Superb",
+      "Notes": "Ranking"
     },
     {
       "File": "ic8",
       "Offset": "0x24a0d8",
       "Encoding": "utf8",
       "Original": "パーフェクト",
-      "Text": "Perfect"
+      "Text": "Perfect",
+      "Notes": "Ranking"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24a17c",
+      "Encoding": "utf8",
+      "Original": "なぞのリズム組織から通達",
+      "Text": "Rhythm League Notes"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24a1a4",
+      "Encoding": "utf8",
+      "Original": "ガンバレ〜！！",
+      "Text": "Go for it~!!",
+      "Notes": "Spoken by Space Dancers"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24a1bc",
+      "Encoding": "utf8",
+      "Original": "がんばるのだー！！",
+      "Text": "Let's do our best-!!",
+      "Notes": "Spoken by Marcher commander"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24a1d8",
+      "Encoding": "utf8",
+      "Original": "ファイトー！！",
+      "Text": "Fight-!!",
+      "Notes": "Spoken by Tap Trial giraffe"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24a1f0",
+      "Encoding": "utf8",
+      "Original": "もう\u3000ひとふんばり！！",
+      "Text": "Just a bit more!!",
+      "Notes": "Spoken by Showtime monkey"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24a214",
+      "Encoding": "utf8",
+      "Original": "つぎで\u3000おわりでチュー！",
+      "Text": "That's it, boys!",
+      "Notes": "Spoken by Rat Race mice"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24a23c",
+      "Encoding": "utf8",
+      "Original": "かなり、\u3000サイコーでーす！",
+      "Text": "That was great! Really great!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24a264",
+      "Encoding": "utf8",
+      "Original": "まだまだです。",
+      "Text": "Still a ways to go."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24a27c",
+      "Encoding": "utf8",
+      "Original": "すばらしい\u3000はんだん\u3000りょくだ！",
+      "Text": "Fantastic judgement!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24a2b0",
+      "Encoding": "utf8",
+      "Original": "はんだん\u3000りょくが\u3000かけてます。",
+      "Text": "You knew what to do"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24a2e4",
+      "Encoding": "utf8",
+      "Original": "とても\u3000テクニカルだ！",
+      "Text": "Very technical!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24a308",
+      "Encoding": "utf8",
+      "Original": "もっと\u3000ウデを\u3000みがこう。",
+      "Text": "Polish your skills more."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24a330",
+      "Encoding": "utf8",
+      "Original": "それでは\u3000ここで\u3000おさらいを\u3000はじめる！",
+      "Text": "Okay, here's the opening act!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24a370",
+      "Encoding": "utf8",
+      "Original": "さきに\u3000いっとくが、\u3000わりと\u3000カンタンだ！！",
+      "Text": "Don't be daunted! It's easy!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24a3b4",
+      "Encoding": "utf8",
+      "Original": "たのしんでネ！",
+      "Text": "And, have fun!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24a3cd",
+      "Encoding": "utf8",
+      "Original": "いきます！",
+      "Text": "Here we go!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24a3e1",
+      "Encoding": "utf8",
+      "Original": "どうぞ。",
+      "Text": "By all means"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24a3f1",
+      "Encoding": "utf8",
+      "Original": "そこまで！！",
+      "Text": "Time's up!!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24a405",
+      "Encoding": "utf8",
+      "Original": "ザンネン！！",
+      "Text": "So close!!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24a419",
+      "Encoding": "utf8",
+      "Original": "おみごと！！",
+      "Text": "Well done!!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24a42c",
+      "Encoding": "utf8",
+      "Original": ".1:0ど:1んど\u3000.2:0ぱ.2:1ん.2:0ぱ",
+      "Text": ".1:0Dondo .2:0panpa"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24a454",
+      "Encoding": "utf8",
+      "Original": ".1:0ど:1ーん\u3000.2:0ぱ.2:1ーん\u3000.2:0ぱ.2:1ん",
+      "Text": ".1:0Do-n .2:0pa-n .2:0pan"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24a48c",
+      "Encoding": "utf8",
+      "Original": "おわり！",
+      "Text": "That's it!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24a49c",
+      "Encoding": "utf8",
+      "Original": "まわりの評判",
+      "Text": "Crowd's Response"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24a4b0",
+      "Encoding": "utf8",
+      "Original": ".0:0ハァ〜",
+      "Text": ".0:0ha~",
+      "Notes": "Bon Odori - Capital letters not working yet"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24a4c0",
+      "Encoding": "utf8",
+      "Original": ".0:0はなび\u3000あがれば〜",
+      "Text": ".0:0when rockets start to fly~",
+      "Notes": "Bon Odori - Capital letters not working yet"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24a4e0",
+      "Encoding": "utf8",
+      "Original": ".1:0ど:1ーん\u3000.1:0ど:1ーん\u3000.2:0ぱ.2:1ーん\u3000.2:0ぱ.2:1ーん",
+      "Text": ".1:0dondo .2:0pan pan",
+      "Notes": "Bon Odori - Capital letters not working yet"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24a52c",
+      "Encoding": "utf8",
+      "Original": ".1:0ど:1んど\u3000.2:0ぱ.2:1ーん\u3000.2:0ぱ.2:1ん",
+      "Text": ".1:0dondo .2:0pan pan",
+      "Notes": "Bon Odori - Capital letters not working yet"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24a564",
+      "Encoding": "utf8",
+      "Original": ".0:0ハァ〜\u3000ア〜",
+      "Text": ".0:0ha〜 ah〜",
+      "Notes": "Bon Odori - Capital letters not working yet"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24a57c",
+      "Encoding": "utf8",
+      "Original": ".0:0かんせい\u3000あがる〜",
+      "Text": ".0:0cheers will fill the sky〜",
+      "Notes": "Bon Odori - Capital letters not working yet"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24a59c",
+      "Encoding": "utf8",
+      "Original": ".2:0ぱ.2:1ーん\u3000.2:0ぱ.2:1ーん\u3000.1:0ど:1んど\u3000.1:0ど:1ーん",
+      "Text": ".2:0pan .2:0pa .1:0dondo .1:0do",
+      "Notes": "Bon Odori - Capital letters not working yet"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24a5e8",
+      "Encoding": "utf8",
+      "Original": ".2:0ぱ.2:1ん.2:0ぱ\u3000.1:0ど:1ーん\u3000.2:0ぱ.2:1ん",
+      "Text": ".2:0panpa .1:0do .2:0pa",
+      "Notes": "Bon Odori - Capital letters not working yet"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24a624",
+      "Encoding": "utf8",
+      "Original": ".0:0にんき\u3000あがれば〜",
+      "Text": ".0:0when spirits are high〜",
+      "Notes": "Bon Odori - Capital letters not working yet"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24a644",
+      "Encoding": "utf8",
+      "Original": ".0:0きゅうりょう\u3000あがる〜",
+      "Text": ".0:0the more people will buy〜",
+      "Notes": "Bon Odori - Capital letters not working yet"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24a66c",
+      "Encoding": "utf8",
+      "Original": ".0:0まつりだ\u3000わっしょい！",
+      "Text": ".0:0it's a festival hooray!",
+      "Notes": "Bon Odori - Capital letters not working yet"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24a694",
+      "Encoding": "utf8",
+      "Original": ".1:0ど:1んど\u3000.2:0ぱ.2:1ん.2:0ぱ\u3000.1:0ど:1んど\u3000.2:0ぱ.2:1ん.2:0ぱ",
+      "Text": ".1:0dondo .2:0panpa .1:0dondo .2:0panpa",
+      "Notes": "Bon Odori - Capital letters not working yet"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24a6e8",
+      "Encoding": "utf8",
+      "Original": ".0:0にっぽんじゅうが\u3000わっしょい！",
+      "Text": ".0:0all japan says hooray!",
+      "Notes": "Bon Odori - Capital letters not working yet"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24a71c",
+      "Encoding": "utf8",
+      "Original": ".1:0ど:1んど\u3000.2:0ぱ.2:1ん.2:0ぱ\u3000.2:0ぱ.2:1ん",
+      "Text": ".1:0dondo .2:0panpa .2:0pa",
+      "Notes": "Bon Odori - Capital letters not working yet"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24a758",
+      "Encoding": "utf8",
+      "Original": ".0:0ソレ\u3000ひっくり\u3000かえって",
+      "Text": ".0:0now we turn around and",
+      "Notes": "Bon Odori - Capital letters not working yet"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24a784",
+      "Encoding": "utf8",
+      "Original": ".0:0ハァ〜\u3000ぼんおどり",
+      "Text": ".0:0haa~ bon odori",
+      "Notes": "Bon Odori - Capital letters not working yet"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24a7a4",
+      "Encoding": "utf8",
+      "Original": ".2:0ぱ.2:1ん.2:0ぱ\u3000.1:0ど:1んど",
+      "Text": ".2:0panpa .1:0dondo",
+      "Notes": "Bon Odori - Capital letters not working yet"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24a7cc",
+      "Encoding": "utf8",
+      "Original": ".2:0ぱ.2:1ーん\u3000.2:0ぱ.2:1ん.2:0ぱ\u3000.2:0ぱ.2:1ん",
+      "Text": ".2:0pan .2:0panpa .2:0pa",
+      "Notes": "Bon Odori - Capital letters not working yet"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24a808",
+      "Encoding": "utf8",
+      "Original": ".0:0アメが\u3000あがれば〜",
+      "Text": ".0:0when the rain is dry〜",
+      "Notes": "Bon Odori - Capital letters not working yet"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24a828",
+      "Encoding": "utf8",
+      "Original": ".0:0やぐらに\u3000あがる〜",
+      "Text": ".0:0climb the tower and spy〜",
+      "Notes": "Bon Odori - Capital letters not working yet"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24a848",
+      "Encoding": "utf8",
+      "Original": ".0:0ほら！\u3000まつりだ\u3000わっしょい！",
+      "Text": ".0:0it's a festival, hooray!",
+      "Notes": "Bon Odori - Capital letters not working yet"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24a87c",
+      "Encoding": "utf8",
+      "Original": ".0:0これぞ",
+      "Text": ".0:0this is!",
+      "Notes": "Bon Odori - Capital letters not working yet"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24a88c",
+      "Encoding": "utf8",
+      "Original": ".0:0メイド\u3000イン\u3000ジャ.2パ:1ン",
+      "Text": ".0:0it's made in ja.2pan",
+      "Notes": "Bon Odori - Capital letters not working yet"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24a8b8",
+      "Encoding": "utf8",
+      "Original": "前半、ばっちりだね！",
+      "Text": "The first half was right on!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24a8d8",
+      "Encoding": "utf8",
+      "Original": "前半が\u3000いまひとつだったなぁ。",
+      "Text": "The first half wasn't so good..."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24a908",
+      "Encoding": "utf8",
+      "Original": "後半で\u3000もりあがったね〜！",
+      "Text": "The second half was fantastic!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24a930",
+      "Encoding": "utf8",
+      "Original": "後半、もりさがっちゃってたなぁ。",
+      "Text": "The second half was dreadful..."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24a964",
+      "Encoding": "utf8",
+      "Original": "クライマックスが\u3000きまってた！！",
+      "Text": "You nailed the climax!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24a998",
+      "Encoding": "utf8",
+      "Original": "さいごに\u3000ちゃんと\u3000シメてたね！",
+      "Text": "The last \"pan pan\" was good!"
     },
     {
       "File": "ic8",
