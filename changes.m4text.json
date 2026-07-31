@@ -5327,6 +5327,27 @@
     },
     {
       "File": "ic8",
+      "Offset": "0x24bbf4",
+      "Encoding": "utf8",
+      "Original": ".6:1みんなの\u3000てびょうしを\u3000まねしてネ。",
+      "Text": ".6:1Clap whenever you hear a \"pan\"."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24bc40",
+      "Encoding": "utf8",
+      "Original": ".6:1も〜いっちょ\u3000いってみよう！",
+      "Text": ".6:1When you hear \"panpa\", clap twice!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24bc70",
+      "Encoding": "utf8",
+      "Original": ".6:1では、\u3000ほんばん\u3000がんばってネ！",
+      "Text": ".6:1The festival is starting! Do your best!"
+    },
+    {
+      "File": "ic8",
       "Offset": "0x24ec74",
       "Encoding": "utf8",
       "Original": "レディース＆ジェドメン！\nウエルカム トゥ ザ\nリズム天国!!\nナイス トゥ ミーチュー",
