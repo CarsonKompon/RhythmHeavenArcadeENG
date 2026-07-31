@@ -4461,7 +4461,7 @@
       "Offset": "0x24a4b0",
       "Encoding": "utf8",
       "Original": ".0:0ハァ〜",
-      "Text": ".0:0ha~",
+      "Text": ".0:0ha〜",
       "Notes": "Bon Odori - Capital letters not working yet"
     },
     {
@@ -4469,7 +4469,7 @@
       "Offset": "0x24a4c0",
       "Encoding": "utf8",
       "Original": ".0:0はなび\u3000あがれば〜",
-      "Text": ".0:0when rockets start to fly~",
+      "Text": ".0:0when rockets go to fly〜",
       "Notes": "Bon Odori - Capital letters not working yet"
     },
     {
