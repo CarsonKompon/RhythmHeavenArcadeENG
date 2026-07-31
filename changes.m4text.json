@@ -4804,6 +4804,529 @@
     },
     {
       "File": "ic8",
+      "Offset": "0x24b0a6",
+      "Encoding": "utf8",
+      "Original": "おつかれさま！",
+      "Text": "Great job!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24b228",
+      "Encoding": "utf8",
+      "Original": "こんばんは。\nクイズナンダダ！？の時間です。",
+      "Text": "Welcome to...\n\"Push Your Buttons EX\""
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24b26c",
+      "Encoding": "utf8",
+      "Original": "今回は、\u3000なんと\nスペシャルです！",
+      "Text": "Tonight, you'll be playing\nas long as you can."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24b2a0",
+      "Encoding": "utf8",
+      "Original": "では\u3000さっそく\nいってみましょう！",
+      "Text": "It's for charity.\nSo try your best!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24b2d5",
+      "Encoding": "utf8",
+      "Original": "さて、 正解は？",
+      "Text": "The answer is..."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24b2ed",
+      "Encoding": "utf8",
+      "Original": "正解！！",
+      "Text": "Correct!!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24b2fd",
+      "Encoding": "utf8",
+      "Original": "では、\u3000つぎです。",
+      "Text": "Well then, next."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24b31d",
+      "Encoding": "utf8",
+      "Original": "残念！！",
+      "Text": "Too bad!!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24b32c",
+      "Encoding": "utf8",
+      "Original": "また挑戦して下さい。\nさようなら。",
+      "Text": "Come back for another\nchance. Goodbye!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24b360",
+      "Encoding": "utf8",
+      "Original": "スペースおねえさんの意見",
+      "Text": "Space Sister's Summary"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24b388",
+      "Encoding": "utf8",
+      "Original": "レッツゴー！",
+      "Text": "Let's go!!",
+      "Notes": "Shown at beginning of Space Dance"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24b39c",
+      "Encoding": "utf8",
+      "Original": "息が\u3000あってたネ！",
+      "Text": "Hey, you all kept in time!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24b3b8",
+      "Encoding": "utf8",
+      "Original": "なんだか\u3000乱れてたなぁ。",
+      "Text": "You guys got all out of order."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24b3e0",
+      "Encoding": "utf8",
+      "Original": "よい判断をしてるネ！",
+      "Text": "Your choreography paid off!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24b400",
+      "Encoding": "utf8",
+      "Original": "ちょっと\u3000あわててたなぁ。",
+      "Text": "You got your moves mixed up, huh?"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24b428",
+      "Encoding": "utf8",
+      "Original": "サビの手前が\u3000キマってたネ！",
+      "Text": "Your dance moves were out of this world!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24b454",
+      "Encoding": "utf8",
+      "Original": "サビの手前が\u3000ガタガタだったなぁ。",
+      "Text": "Your uncle is disappointed in you."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24b488",
+      "Encoding": "utf8",
+      "Original": "またごう！",
+      "Text": "Press A to hop!",
+      "Notes": "Shows when you start Mr. Upbeat"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24b498",
+      "Encoding": "utf8",
+      "Original": "そうです。",
+      "Text": "That's right.",
+      "Notes": "Shown in Mr. Upbeat"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24b4a8",
+      "Encoding": "utf8",
+      "Original": "そうそう！",
+      "Text": "Okay, let's go!",
+      "Notes": "Shown in Mr. Upbeat"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24b4b8",
+      "Encoding": "utf8",
+      "Original": "いいね〜！",
+      "Text": "Nice~!",
+      "Notes": "Shown in Mr. Upbeat"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24b4c8",
+      "Encoding": "utf8",
+      "Original": "よいヨ！",
+      "Text": "You got it!",
+      "Notes": "Shown in Mr. Upbeat"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24b4d8",
+      "Encoding": "utf8",
+      "Original": "しびれちゃう！",
+      "Text": "You're a needle ninja",
+      "Notes": "Shown in Mr. Upbeat"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24b4f0",
+      "Encoding": "utf8",
+      "Original": "ぎゃふん！",
+      "Text": "My feet!!",
+      "Notes": "Shown in Mr. Upbeat"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24b500",
+      "Encoding": "utf8",
+      "Original": "スゴイッスー！",
+      "Text": "HOW ARE YOU DOING IT?",
+      "Notes": "Shown in Mr. Upbeat"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24b518",
+      "Encoding": "utf8",
+      "Original": "うっそーん！？",
+      "Text": "Game&Watch one day..."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24b530",
+      "Encoding": "utf8",
+      "Original": "超人！",
+      "Text": "Insane!!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24b53c",
+      "Encoding": "utf8",
+      "Original": "やばーい！",
+      "Text": "Need insoles..."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24b54c",
+      "Encoding": "utf8",
+      "Original": "もれるー！！",
+      "Text": "Leaking--!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24b560",
+      "Encoding": "utf8",
+      "Original": "まいった！！",
+      "Text": "You're in trouble!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24b574",
+      "Encoding": "utf8",
+      "Original": "ウヒョー！！",
+      "Text": "You're relentless!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24b588",
+      "Encoding": "utf8",
+      "Original": "大丈夫！？",
+      "Text": "You okay!?"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24b598",
+      "Encoding": "utf8",
+      "Original": "なんてこった！！",
+      "Text": "I see Rhythm Heaven..."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24b5b4",
+      "Encoding": "utf8",
+      "Original": "ゆっくり\u3000しよか",
+      "Text": "Okay, lets slow it down.",
+      "Notes": "Said by the Rap Men"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24b5d1",
+      "Encoding": "utf8",
+      "Original": "さいごです。",
+      "Text": "This is the last."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24b5e4",
+      "Encoding": "utf8",
+      "Original": ".1:0ど:1ーん\u3000.1:0ど:1ーん\u3000.2:0ぱ.2:1ーん\u3000.2:0ぱ.2:1ん",
+      "Text": ".1:0do-n .1:0do-n .2:0pa-n .2:0pan",
+      "Notes": "Bon Odori - Capital letters not working yet"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24b62c",
+      "Encoding": "utf8",
+      "Original": "こい\u3000してる？",
+      "Text": "Are you in love?",
+      "Notes": "Spoken by the mice in Remix 2"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24b644",
+      "Encoding": "utf8",
+      "Original": "アセるー！！",
+      "Text": "Keep up the pace!",
+      "Notes": "Spoken by the mice in Remix 2"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24b658",
+      "Encoding": "utf8",
+      "Original": "がんばって〜！",
+      "Text": "Go for it!",
+      "Notes": "Spoken by the mice in Remix 2"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24b670",
+      "Encoding": "utf8",
+      "Original": "アノコらの\u3000コメント",
+      "Text": "The Girls' Comments"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24b690",
+      "Encoding": "utf8",
+      "Original": "いこっか",
+      "Text": "Shall we?",
+      "Notes": "Spoken by Rap Women"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24b6a0",
+      "Encoding": "utf8",
+      "Original": "またやろな〜",
+      "Text": "Again sometime〜",
+      "Notes": "Spoken by Rap Women"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24b6b4",
+      "Encoding": "utf8",
+      "Original": "「〜ですか？」の\u3000ノリが\u3000バッチリや！",
+      "Text": "Your \"Isn't it\" totally was!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24b6f0",
+      "Encoding": "utf8",
+      "Original": "「〜ですか？」の\u3000ノリが\u3000あかん。",
+      "Text": "Your \"Isn't it\" totally wasn't."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24b724",
+      "Encoding": "utf8",
+      "Original": "「〜かもネ」の\u3000ノリに\u3000シビれたで！",
+      "Text": "Your \"Could be\" will be a hit!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24b75c",
+      "Encoding": "utf8",
+      "Original": "「〜かもネ」の\u3000ノリが\u3000キビシーッス。",
+      "Text": "Your \"Could be\" couldn't cut it."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24b798",
+      "Encoding": "utf8",
+      "Original": "「〜サイコー！」の\u3000ノリが\u3000サイコーやん！",
+      "Text": "Your \"The BEST!\" was exactly that."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24b7d8",
+      "Encoding": "utf8",
+      "Original": "「〜サイコー！」の\u3000ノリが\u3000サイコーちゃう。",
+      "Text": "Like, your \"The BEST\" wasn't your best."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24b81c",
+      "Encoding": "utf8",
+      "Original": "アノコらのコメント",
+      "Text": "Pink and Blue's Rap Review"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24b838",
+      "Encoding": "utf8",
+      "Original": "「ですか？」の\u3000ノリが\u3000バッチリや！",
+      "Text": "Your \"Isn't it\" totally was!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24b870",
+      "Encoding": "utf8",
+      "Original": "「ですか？」の\u3000ノリが\u3000あかん。",
+      "Text": "Your \"Isn't it\" totally wasn't."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24b8a4",
+      "Encoding": "utf8",
+      "Original": "「かもネ」の\u3000ノリに\u3000シビれたで！",
+      "Text": "Your \"Could be\" will be a hit!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24b8d8",
+      "Encoding": "utf8",
+      "Original": "「かもネ」の\u3000ノリが\u3000キビシーッス。",
+      "Text": "Your \"Could be\" couldn't cut it."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24b910",
+      "Encoding": "utf8",
+      "Original": "「サイコー！」の\u3000ノリが\u3000サイコーやん！",
+      "Text": "Your \"The BEST!\" was exactly that."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24b950",
+      "Encoding": "utf8",
+      "Original": "「サイコー！」の\u3000ノリが\u3000サイコーちゃう。",
+      "Text": "Like, your \"The BEST\" wasn't your best."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24b990",
+      "Encoding": "utf8",
+      "Original": "なかまの声",
+      "Text": "Peer Review"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24b9a0",
+      "Encoding": "utf8",
+      "Original": "だいぶ\u3000よかったヨ！",
+      "Text": "You got the basics down pat!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24b9c0",
+      "Encoding": "utf8",
+      "Original": "イマイチだったねぇ…",
+      "Text": "You can do better than that..."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24b9e0",
+      "Encoding": "utf8",
+      "Original": "ゆったりするところが\u3000よかったヨ！",
+      "Text": "The slow claps were great!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24ba14",
+      "Encoding": "utf8",
+      "Original": "ゆったりするところが\u3000なんだかなァ…",
+      "Text": "The slow claps messed you up."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24ba4c",
+      "Encoding": "utf8",
+      "Original": "あんなトコ\u3000よく\u3000キメたネ〜！\u3000すごいヨー！！",
+      "Text": "Wow! You nailed the simultaneous clap!",
+      "Notes": "Only shows when you hit the simultaneous clap"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24ba94",
+      "Encoding": "utf8",
+      "Original": "ＳＡＬＵから\u3000ひとこと",
+      "Text": "A word from MAN-K"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24bab8",
+      "Encoding": "utf8",
+      "Original": "イケてる！\u3000イケてる！",
+      "Text": "You're good at it! You're good!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24badc",
+      "Encoding": "utf8",
+      "Original": "イケてない。",
+      "Text": "Not good enough."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24baf0",
+      "Encoding": "utf8",
+      "Original": "いいスピードだゼ！",
+      "Text": "Your taps were super fast!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24bb0c",
+      "Encoding": "utf8",
+      "Original": "スピードが\u3000足りないナ。",
+      "Text": "You can't keep up the speed."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24bb34",
+      "Encoding": "utf8",
+      "Original": "テクが\u3000ある！",
+      "Text": "You have technique!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24bb4c",
+      "Encoding": "utf8",
+      "Original": "テク不足だナ。",
+      "Text": "It needs some work..."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24bb64",
+      "Encoding": "utf8",
+      "Original": "ついてきナ",
+      "Text": "Follow.",
+      "Notes": "Spoken in Turbo Tap Trial"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24bb74",
+      "Encoding": "utf8",
+      "Original": ".1:0ど:1ーん\u3000.1:0ど:1ーん\u3000.2:0ぱ.2:1ん",
+      "Text": ".1:0do-n do-n .2:0pan"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24bba8",
+      "Encoding": "utf8",
+      "Original": ".2:0ぱ.2:1ん\u3000.2:0ぱ.2:1ん",
+      "Text": ".2:0pan pan"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24bbc8",
+      "Encoding": "utf8",
+      "Original": ".6:1ぼんおどり\u3000しましょう！",
+      "Text": ".6:1Let's do the Bon Odori dance!",
+      "Notes": "Bon Odori Tutorial"
+    },
+    {
+      "File": "ic8",
       "Offset": "0x24ec74",
       "Encoding": "utf8",
       "Original": "レディース＆ジェドメン！\nウエルカム トゥ ザ\nリズム天国!!\nナイス トゥ ミーチュー",
