@@ -11,6 +11,7 @@ These are decisions I've made for this translation project, but am open to furth
 - "Toss Team" is preferred over "Toss Boys"
 - "Turbo Tap Trial" is preferred over "Tap Trial 2"
 - "Ninja Descendant" is preferred over "Ninja Bodyguard 2"
+- The on-screen lyrics for Rap Men, Rap Women, The Bon Odori, and The Bon Dance should be presented in full english, even though the audio itself isn't translated.
 
 # Software
 
