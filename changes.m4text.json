@@ -7,7 +7,8 @@
       "Offset": "0x2325d0",
       "Encoding": "utf8",
       "Original": "１ゲームサービスしちゃう！",
-      "Text": "You got 1 more game!"
+      "Text": "You got 1 more game!",
+      "Notes": "+1 Game for getting a Superb"
     },
     {
       "File": "ic8",
@@ -749,126 +750,144 @@
       "Offset": "0x237c98",
       "Encoding": "utf8",
       "Original": "大会当日はイマイチでした。",
-      "Text": "The tournament didn't go so well..."
+      "Text": "The tournament didn't go so well...",
+      "Notes": "Karate Man EX End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x237cc0",
       "Encoding": "utf8",
       "Original": "大会当日、わりといいカンジでした！",
-      "Text": "I may not have won, but I did really well!"
+      "Text": "I may not have won, but I did really well!",
+      "Notes": "Karate Man EX End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x237cf4",
       "Encoding": "utf8",
       "Original": "あの大会で優勝しちゃった！！",
-      "Text": "I won the tournament, and took home gold!"
+      "Text": "I won the tournament, and took home gold!",
+      "Notes": "Karate Man EX End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x237d20",
       "Encoding": "utf8",
       "Original": "毛が速すぎるんだよなぁ…",
-      "Text": "I can't pluck at this speed!"
+      "Text": "I can't pluck at this speed!",
+      "Notes": "Rhythm Tweezers EX End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x237d48",
       "Encoding": "utf8",
       "Original": "なかなか手ごわい毛だったなぁ",
-      "Text": "These hairs are too tough to pluck."
+      "Text": "These hairs are too tough to pluck.",
+      "Notes": "Rhythm Tweezers EX End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x237d74",
       "Encoding": "utf8",
       "Original": "うーん、スッキリ！花でも見るか！",
-      "Text": "Look at those flowers! They're so relaxing..."
+      "Text": "Look at those flowers! They're so relaxing...",
+      "Notes": "Rhythm Tweezers EX End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x237da8",
       "Encoding": "utf8",
       "Original": "たいきゃく！たいきゃくでーす！！",
-      "Text": "MONSTER! Retreat! Retreat!!"
+      "Text": "MONSTER! Retreat! Retreat!!",
+      "Notes": "Marching Orders EX End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x237ddc",
       "Encoding": "utf8",
       "Original": "あっ、まいごちゃん 発見でーす！",
-      "Text": "Ah, there's the lost puppy!"
+      "Text": "Ah, there's the lost puppy!",
+      "Notes": "Marching Orders EX End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x237e0c",
       "Encoding": "utf8",
       "Original": "まいごちゃんを助けたヨ！やった！！",
-      "Text": "We rescued the lost puppy! Hooray!"
+      "Text": "We rescued the lost puppy! Hooray!",
+      "Notes": "Marching Orders EX End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x237e40",
       "Encoding": "utf8",
       "Original": "うわっ、ダメだ〜！",
-      "Text": "Agh, it's over..."
+      "Text": "Agh, it's over...",
+      "Notes": "Spaceball EX End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x237e5c",
       "Encoding": "utf8",
       "Original": "えい。",
-      "Text": "Graaaah!"
+      "Text": "Graaaah!",
+      "Notes": "Spaceball EX End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x237e68",
       "Encoding": "utf8",
       "Original": "やりましたー！！",
-      "Text": "A home run! I did it!"
+      "Text": "A home run! I did it!",
+      "Notes": "Spaceball EX End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x237e84",
       "Encoding": "utf8",
       "Original": "おいてかないで〜っ！",
-      "Text": "Wait! Don't leave without us!"
+      "Text": "Wait! Don't leave without us!",
+      "Notes": "Clappy Trio EX End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x237ea4",
       "Encoding": "utf8",
       "Original": "楽しいスペースクルージング。",
-      "Text": "This is one nice space cruise!"
+      "Text": "This is one nice space cruise!",
+      "Notes": "Clappy Trio EX End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x237ed0",
       "Encoding": "utf8",
       "Original": "未知の星に１番のり！偉業！！",
-      "Text": "I've discovered a new planet! Stellar!"
+      "Text": "I've discovered a new planet! Stellar!",
+      "Notes": "Clappy Trio EX End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x237efc",
       "Encoding": "utf8",
       "Original": "まだまだ、これからだネ。",
-      "Text": "This is going to take a while..."
+      "Text": "This is going to take a while...",
+      "Notes": "Remix 1 EX End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x237f24",
       "Encoding": "utf8",
       "Original": "ふつうでした〜。ピヨピヨ。",
-      "Text": "Just a normal chick. Cheep-Cheep!"
+      "Text": "Just a normal chick. Cheep-Cheep!",
+      "Notes": "Remix 1 EX End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x237f4c",
       "Encoding": "utf8",
       "Original": "りっぱに成長したネ！りりしい！！",
-      "Text": "You've grown splendidly! You seem dignified!"
+      "Text": "You've grown splendidly! You seem dignified!",
+      "Notes": "Remix 1 EX End Card"
     },
     {
       "File": "ic8",
@@ -1974,21 +1993,24 @@
       "Offset": "0x241be4",
       "Encoding": "utf8",
       "Original": "明日が あるさ。",
-      "Text": "I must try again..."
+      "Text": "I must try again...",
+      "Notes": "Karate Man End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x241bfc",
       "Encoding": "utf8",
       "Original": "とりあえず、ごはん 食べとこう！",
-      "Text": "Time for a lunch break!"
+      "Text": "Time for a lunch break!",
+      "Notes": "Karate Man End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x241c2c",
       "Encoding": "utf8",
       "Original": "こんなに ブッとばしちゃった！！",
-      "Text": "Look at all this stuff I hit!"
+      "Text": "Look at all this stuff I hit!",
+      "Notes": "Karate Man End Card"
     },
     {
       "File": "ic8",
@@ -2002,21 +2024,24 @@
       "Offset": "0x241cc0",
       "Encoding": "utf8",
       "Original": "テンポが なんだー！！",
-      "Text": "What's with the speed changes!?"
+      "Text": "What's with the speed changes!?",
+      "Notes": "Karate Man 2 End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x241ce0",
       "Encoding": "utf8",
       "Original": "ま、さておき。 ごはん 食べよう！",
-      "Text": "Well, that's that. Let's eat!"
+      "Text": "Well, that's that. Let's eat!",
+      "Notes": "Karate Man 2 End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x241d10",
       "Encoding": "utf8",
       "Original": "ざっと こんなモンだぜー！！",
-      "Text": "I think we've gone through everything!"
+      "Text": "I think we've gone through everything!",
+      "Notes": "Karate Man 2 End Card"
     },
     {
       "File": "ic8",
@@ -2030,21 +2055,24 @@
       "Offset": "0x241d94",
       "Encoding": "utf8",
       "Original": "仲間が帰っちゃった！",
-      "Text": "The trio just went solo!"
+      "Text": "The trio just went solo!",
+      "Notes": "Clappy Trio End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x241db4",
       "Encoding": "utf8",
       "Original": "満足するのは まだ早いかもね。",
-      "Text": "You need to come to practice more..."
+      "Text": "You need to come to practice more...",
+      "Notes": "Clappy Trio End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x241de0",
       "Encoding": "utf8",
       "Original": "この三人衆、 息ピッタリだ！！",
-      "Text": "Trio-riffic!"
+      "Text": "Trio-riffic!",
+      "Notes": "Clappy Trio End Card"
     },
     {
       "File": "ic8",
@@ -2058,21 +2086,24 @@
       "Offset": "0x241e68",
       "Encoding": "utf8",
       "Original": "キャー！ ゆるしてー！！",
-      "Text": "I spent everything on this outfit!"
+      "Text": "I spent everything on this outfit!",
+      "Notes": "Snappy Trio End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x241e8c",
       "Encoding": "utf8",
       "Original": "あとチョットなんだけどね…",
-      "Text": "We were so close..."
+      "Text": "We were so close...",
+      "Notes": "Snappy Trio End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x241eb4",
       "Encoding": "utf8",
       "Original": "息ピッタリでーす！ イェーイ！",
-      "Text": "Perfect sync! It's gotta be the outfits..."
+      "Text": "Perfect sync! It's gotta be the outfits...",
+      "Notes": "Snappy Trio End Card"
     },
     {
       "File": "ic8",
@@ -2086,21 +2117,24 @@
       "Offset": "0x241f50",
       "Encoding": "utf8",
       "Original": "赤いモノ、量産は たいへんだなぁ…",
-      "Text": "Producing these is harder than I thought..."
+      "Text": "Producing these is harder than I thought...",
+      "Notes": "Polyrhythm End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x241f84",
       "Encoding": "utf8",
       "Original": "どんどん 赤いモノを 生産だ！",
-      "Text": "Still getting the hang of making these."
+      "Text": "Still getting the hang of making these.",
+      "Notes": "Polyrhythm End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x241fb0",
       "Encoding": "utf8",
       "Original": "赤いモノを 生産しまくりだネ！！",
-      "Text": "We've produced more than we can stock!"
+      "Text": "We've produced more than we can stock!",
+      "Notes": "Polyrhythm End Card"
     },
     {
       "File": "ic8",
@@ -2114,21 +2148,24 @@
       "Offset": "0x242044",
       "Encoding": "utf8",
       "Original": "赤いモノ、もっと生産しなきゃ…",
-      "Text": "We need to produce a whole lore mote..."
+      "Text": "We need to produce a whole lore mote...",
+      "Notes": "Polyrhythm 2 End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x242074",
       "Encoding": "utf8",
       "Original": "もっともっと 赤いモノを 生産だ！",
-      "Text": "Producing more of these wouldn't hurt!"
+      "Text": "Producing more of these wouldn't hurt!",
+      "Notes": "Polyrhythm 2 End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x2420a4",
       "Encoding": "utf8",
       "Original": "赤いモノを じゃんじゃん生産しちゃうヨ！！",
-      "Text": "Red rod production is at an all time high!"
+      "Text": "Red rod production is at an all time high!",
+      "Notes": "Polyrhythm 2 End Card"
     },
     {
       "File": "ic8",
@@ -2142,21 +2179,24 @@
       "Offset": "0x24214c",
       "Encoding": "utf8",
       "Original": "つぎは もっと がんばってネ…",
-      "Text": "Didn't see that hole in the dark!"
+      "Text": "Didn't see that hole in the dark!",
+      "Notes": "Night Walk End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x242178",
       "Encoding": "utf8",
       "Original": "夜空の おさんぽ、 たのしいな。",
-      "Text": "Nothing like a stroll at night."
+      "Text": "Nothing like a stroll at night.",
+      "Notes": "Night Walk End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x2421a8",
       "Encoding": "utf8",
       "Original": "星たちが かんげいしてるヨ！",
-      "Text": "You followed us up here!"
+      "Text": "You followed us up here!",
+      "Notes": "Night Walk End Card"
     },
     {
       "File": "ic8",
@@ -2170,21 +2210,24 @@
       "Offset": "0x242230",
       "Encoding": "utf8",
       "Original": "うひゃー！ しっぱいしちゃった！！",
-      "Text": "No! You fell!"
+      "Text": "No! You fell!",
+      "Notes": "Night Walk 2 End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x242264",
       "Encoding": "utf8",
       "Original": "夜風が とっても きもちいいな。",
-      "Text": "The night breeze feels so cool..."
+      "Text": "The night breeze feels so cool...",
+      "Notes": "Night Walk 2 End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x242294",
       "Encoding": "utf8",
       "Original": "星たちと おともだちだヨ！",
-      "Text": "You made friends with the stars!"
+      "Text": "You made friends with the stars!",
+      "Notes": "Night Walk 2 End Card"
     },
     {
       "File": "ic8",
@@ -2198,21 +2241,24 @@
       "Offset": "0x242320",
       "Encoding": "utf8",
       "Original": "これじゃ 売りものに ならん！",
-      "Text": "I can't sell these!"
+      "Text": "I can't sell these!",
+      "Notes": "Rhythm Tweezers End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x24234c",
       "Encoding": "utf8",
       "Original": "なんで うちのヤサイは 毛がはえるんだ？",
-      "Text": "Wh-why do my vegetables grow hair?"
+      "Text": "Wh-why do my vegetables grow hair?",
+      "Notes": "Rhythm Tweezers End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x242388",
       "Encoding": "utf8",
       "Original": "スッキリそうかい！ 空気がうまい！！",
-      "Text": "So nice and clean! Even the air seems fresher!"
+      "Text": "So nice and clean! Even the air seems fresher!",
+      "Notes": "Rhythm Tweezers End Card"
     },
     {
       "File": "ic8",
@@ -2226,21 +2272,24 @@
       "Offset": "0x242428",
       "Encoding": "utf8",
       "Original": "なんで 毛が はえるんだー！？",
-      "Text": "They're growing back already!?"
+      "Text": "They're growing back already!?",
+      "Notes": "Rhythm Tweezers 2 End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x242454",
       "Encoding": "utf8",
       "Original": "しかしなんで うちのヤサイだけに 毛が…？",
-      "Text": "Why do only my vegetables grow hair, anyway...?"
+      "Text": "Why do only my vegetables grow hair, anyway...?",
+      "Notes": "Rhythm Tweezers 2 End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x242490",
       "Encoding": "utf8",
       "Original": "スッキリそうかい！ 空気がうますぎ！！",
-      "Text": "How refreshing! The air is cool and crisp!"
+      "Text": "How refreshing! The air is cool and crisp!",
+      "Notes": "Rhythm Tweezers 2 End Card"
     },
     {
       "File": "ic8",
@@ -2254,21 +2303,24 @@
       "Offset": "0x242530",
       "Encoding": "utf8",
       "Original": "研究は失敗だ。",
-      "Text": "Experiment failed..."
+      "Text": "Experiment failed...",
+      "Notes": "Sick Beats End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x242548",
       "Encoding": "utf8",
       "Original": "失敗は成功のもとカモ！",
-      "Text": "You must fail to succeed!"
+      "Text": "You must fail to succeed!",
+      "Notes": "Sick Beats End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x24256c",
       "Encoding": "utf8",
       "Original": "ものすごいクスリができた！！",
-      "Text": "We've created breakthrough medicine!"
+      "Text": "We've created breakthrough medicine!",
+      "Notes": "Sick Beats End Card"
     },
     {
       "File": "ic8",
@@ -2282,21 +2334,24 @@
       "Offset": "0x2425ec",
       "Encoding": "utf8",
       "Original": "なかなか ムズカシー！",
-      "Text": "Ow! That was hard..."
+      "Text": "Ow! That was hard...",
+      "Notes": "Bouncy Road End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x24260c",
       "Encoding": "utf8",
       "Original": "けっこうな コンビネーションだったネ！",
-      "Text": "Nice combo!"
+      "Text": "Nice combo!",
+      "Notes": "Bouncy Road End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x242644",
       "Encoding": "utf8",
       "Original": "かんたん かんたん♪",
-      "Text": "Where's the challenge?"
+      "Text": "Where's the challenge?",
+      "Notes": "Bouncy Road End Card"
     },
     {
       "File": "ic8",
@@ -2317,21 +2372,24 @@
       "Offset": "0x2426e4",
       "Encoding": "utf8",
       "Original": "エーン！ しっぱい！！",
-      "Text": "Ow! We failed!"
+      "Text": "Ow! We failed!",
+      "Notes": "Bouncy Road 2 End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x242704",
       "Encoding": "utf8",
       "Original": "なかなか がんばっていたネ！",
-      "Text": "We're working our hardest!"
+      "Text": "We're working our hardest!",
+      "Notes": "Bouncy Road 2 End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x242730",
       "Encoding": "utf8",
       "Original": "らくちん らくちん♪",
-      "Text": "Easy come, easy go."
+      "Text": "Easy come, easy go.",
+      "Notes": "Bouncy Road 2 End Card"
     },
     {
       "File": "ic8",
@@ -2345,21 +2403,24 @@
       "Offset": "0x2427d0",
       "Encoding": "utf8",
       "Original": "ゲッ！ トノが きぜつしてる！！",
-      "Text": "My lord has fainted! Nooooo!"
+      "Text": "My lord has fainted! Nooooo!",
+      "Notes": "Ninja Bodyguard End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x242800",
       "Encoding": "utf8",
       "Original": "トノ！ ごめんなさ〜い。",
-      "Text": "I can't apologize enough, my lord!"
+      "Text": "I can't apologize enough, my lord!",
+      "Notes": "Ninja Bodyguard End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x242824",
       "Encoding": "utf8",
       "Original": "アッパレって 言われちゃったゼ！！",
-      "Text": "Not a scratch! He said I'm admirable!"
+      "Text": "Not a scratch! He said I'm admirable!",
+      "Notes": "Ninja Bodyguard End Card"
     },
     {
       "File": "ic8",
@@ -2373,21 +2434,24 @@
       "Offset": "0x2428b0",
       "Encoding": "utf8",
       "Original": "まけるな！ おまえが頼りなのだー！！",
-      "Text": "You can't give up! She's counting on you!"
+      "Text": "You can't give up! She's counting on you!",
+      "Notes": "Ninja Descendant End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x2428e8",
       "Encoding": "utf8",
       "Original": "うむ、スジは良いな。がんばれ！",
-      "Text": "You are... strong. Don't give up yet."
+      "Text": "You are... strong. Don't give up yet.",
+      "Notes": "Ninja Descendant End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x242918",
       "Encoding": "utf8",
       "Original": "オヌシは強い。お幸せに…！",
-      "Text": "You've proven yourself! The saviour!"
+      "Text": "You've proven yourself! The saviour!",
+      "Notes": "Ninja Descendant End Card"
     },
     {
       "File": "ic8",
@@ -2401,21 +2465,24 @@
       "Offset": "0x2429a8",
       "Encoding": "utf8",
       "Original": "逃げたヤツにイタズラされた！",
-      "Text": "Escaped ghosts are nothing but trouble."
+      "Text": "Escaped ghosts are nothing but trouble.",
+      "Notes": "Sneaky Spirits End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x2429d4",
       "Encoding": "utf8",
       "Original": "しとめた！",
-      "Text": "Keep moving!"
+      "Text": "Keep moving!",
+      "Notes": "Sneaky Spirits End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x2429e4",
       "Encoding": "utf8",
       "Original": "いっぱい しとめた！！",
-      "Text": "No ghost escapes on your watch!"
+      "Text": "No ghost escapes on your watch!",
+      "Notes": "Sneaky Spirits End Card"
     },
     {
       "File": "ic8",
@@ -2429,21 +2496,24 @@
       "Offset": "0x242a70",
       "Encoding": "utf8",
       "Original": "うわー！ やられほうだいだ！",
-      "Text": "Gah! They slipped right past you!"
+      "Text": "Gah! They slipped right past you!",
+      "Notes": "Sneaky Spirits 2 End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x242a9c",
       "Encoding": "utf8",
       "Original": "おばけ「ナ、ナンダヨ〜」",
-      "Text": "L-let me go! Please!"
+      "Text": "L-let me go! Please!",
+      "Notes": "Sneaky Spirits 2 End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x242ac4",
       "Encoding": "utf8",
       "Original": "みんな、反省してネ！",
-      "Text": "You ghosts will remember this!"
+      "Text": "You ghosts will remember this!",
+      "Notes": "Sneaky Spirits 2 End Card"
     },
     {
       "File": "ic8",
@@ -2457,21 +2527,24 @@
       "Offset": "0x242b48",
       "Encoding": "utf8",
       "Original": "刃こぼれしちまった！",
-      "Text": "I've broken my blade!"
+      "Text": "I've broken my blade!",
+      "Notes": "Samurai Slice End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x242b68",
       "Encoding": "utf8",
       "Original": "さらに精進（しょうじん）すべし！",
-      "Text": "I shall push myself harder!"
+      "Text": "I shall push myself harder!",
+      "Notes": "Samurai Slice End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x242b9c",
       "Encoding": "utf8",
       "Original": "切れあじ、 サイコーだ！！",
-      "Text": "Have you ever seen swords this sharp?"
+      "Text": "Have you ever seen swords this sharp?",
+      "Notes": "Samurai Slice End Card"
     },
     {
       "File": "ic8",
@@ -2485,21 +2558,24 @@
       "Offset": "0x242c2c",
       "Encoding": "utf8",
       "Original": "これで ゆるしてください。",
-      "Text": "Can I have my ball back?"
+      "Text": "Can I have my ball back?",
+      "Notes": "Spaceball End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x242c54",
       "Encoding": "utf8",
       "Original": "さらに上を目指して練習だ！",
-      "Text": "Must... train... harder..."
+      "Text": "Must... train... harder...",
+      "Notes": "Spaceball End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x242c7c",
       "Encoding": "utf8",
       "Original": "こんなの もらっちゃったー！",
-      "Text": "I won first \"space\"!"
+      "Text": "I won first \"space\"!",
+      "Notes": "Spaceball End Card"
     },
     {
       "File": "ic8",
@@ -2513,21 +2589,24 @@
       "Offset": "0x242d10",
       "Encoding": "utf8",
       "Original": "ナニスルノデスカー！",
-      "Text": "Next time, swing some more!"
+      "Text": "Next time, swing some more!",
+      "Notes": "Spaceball 2 End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x242d30",
       "Encoding": "utf8",
       "Original": "こんなところで 終われない！",
-      "Text": "I can't give up now!"
+      "Text": "I can't give up now!",
+      "Notes": "Spaceball 2 End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x242d5c",
       "Encoding": "utf8",
       "Original": "みんな、見て見てー！",
-      "Text": "Guys, guys, look what I won!"
+      "Text": "Guys, guys, look what I won!",
+      "Notes": "Spaceball 2 End Card"
     },
     {
       "File": "ic8",
@@ -2548,21 +2627,24 @@
       "Offset": "0x242df4",
       "Encoding": "utf8",
       "Original": "無念だわ。",
-      "Text": "Better tap out."
+      "Text": "Better tap out.",
+      "Notes": "Tap Trial End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x242e04",
       "Encoding": "utf8",
       "Original": "ちょっと、 ヘンなトコあったけどネ！",
-      "Text": "You were ALMOST as good as a monkey..."
+      "Text": "You were ALMOST as good as a monkey...",
+      "Notes": "Tap Trial End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x242e3c",
       "Encoding": "utf8",
       "Original": "気分は もう、サイコー！！",
-      "Text": "Tap loves you too, Giraffe!"
+      "Text": "Tap loves you too, Giraffe!",
+      "Notes": "Tap Trial End Card"
     },
     {
       "File": "ic8",
@@ -2576,21 +2658,24 @@
       "Offset": "0x242ecc",
       "Encoding": "utf8",
       "Original": "ガーン！",
-      "Text": "Yikes..."
+      "Text": "Yikes...",
+      "Notes": "Turbo Tap Trial End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x242edc",
       "Encoding": "utf8",
       "Original": "う〜ん… すこし ちがうカンジ…",
-      "Text": "Hey... Where'd our rhythm go?"
+      "Text": "Hey... Where'd our rhythm go?",
+      "Notes": "Turbo Tap Trial End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x242f0c",
       "Encoding": "utf8",
       "Original": "この気持ち、とまらなーい！",
-      "Text": "Monkeys are the key to tappiness!"
+      "Text": "Monkeys are the key to tappiness!",
+      "Notes": "Turbo Tap Trial End Card"
     },
     {
       "File": "ic8",
@@ -2604,21 +2689,24 @@
       "Offset": "0x242f9c",
       "Encoding": "utf8",
       "Original": "わぁっ！おいてけぼりされた！",
-      "Text": "Wait! You left without us!"
+      "Text": "Wait! You left without us!",
+      "Notes": "Marching Orders End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x242fc8",
       "Encoding": "utf8",
       "Original": "今日の任務は、おそうじでーす♪",
-      "Text": "Today's mission: Cleaning."
+      "Text": "Today's mission: Cleaning.",
+      "Notes": "Marching Orders End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x242ff8",
       "Encoding": "utf8",
       "Original": "宇宙人の救出、大成功！！",
-      "Text": "Success! We rescued the alien!"
+      "Text": "Success! We rescued the alien!",
+      "Notes": "Marching Orders End Card"
     },
     {
       "File": "ic8",
@@ -2632,21 +2720,24 @@
       "Offset": "0x243088",
       "Encoding": "utf8",
       "Original": "こ、これでは、イカン！う〜む…",
-      "Text": "This is unacceptable..."
+      "Text": "This is unacceptable...",
+      "Notes": "Marching Orders 2 End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x2430b8",
       "Encoding": "utf8",
       "Original": "ぐっ！ もっとカッコよくおどらなければ！",
-      "Text": "I know we can perform better than that!"
+      "Text": "I know we can perform better than that!",
+      "Notes": "Marching Orders 2 End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x2430f4",
       "Encoding": "utf8",
       "Original": "ごほうびに、こんなのもらってしまった！！",
-      "Text": "Now THIS is a reward!"
+      "Text": "Now THIS is a reward!",
+      "Notes": "Marching Orders 2 End Card"
     },
     {
       "File": "ic8",
@@ -2660,21 +2751,24 @@
       "Offset": "0x2431a4",
       "Encoding": "utf8",
       "Original": "こんなのヤダ〜、 こわいヨ〜！",
-      "Text": "I hate this~ I'm scared!"
+      "Text": "I hate this~ I'm scared!",
+      "Notes": "Wizard's Waltz End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x2431d0",
       "Encoding": "utf8",
       "Original": "もっと 花がさくと うれしいな〜。",
-      "Text": "These will look SO lovely when they bloom!"
+      "Text": "These will look SO lovely when they bloom!",
+      "Notes": "Wizard's Waltz End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x243200",
       "Encoding": "utf8",
       "Original": "わーい、 わたし もう さみしくないヨ！",
-      "Text": "Who could feel lonely with all these flowers?"
+      "Text": "Who could feel lonely with all these flowers?",
+      "Notes": "Wizard's Waltz End Card"
     },
     {
       "File": "ic8",
@@ -2688,21 +2782,24 @@
       "Offset": "0x243298",
       "Encoding": "utf8",
       "Original": "月に帰りた〜い！",
-      "Text": "That didn't quite work.."
+      "Text": "That didn't quite work..",
+      "Notes": "Bunny Hop End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x2432b4",
       "Encoding": "utf8",
       "Original": "着地は失敗しちゃった…",
-      "Text": "Didn't quite stick the landing..."
+      "Text": "Didn't quite stick the landing...",
+      "Notes": "Bunny Hop End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x2432d8",
       "Encoding": "utf8",
       "Original": "まん点！！",
-      "Text": "Great landing!"
+      "Text": "Great landing!",
+      "Notes": "Bunny Hop End Card"
     },
     {
       "File": "ic8",
@@ -2716,21 +2813,24 @@
       "Offset": "0x243340",
       "Encoding": "utf8",
       "Original": "ゲホゲホッ… 失敗。",
-      "Text": "I think I blew it..."
+      "Text": "I think I blew it...",
+      "Notes": "Fireworks End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x243360",
       "Encoding": "utf8",
       "Original": "なかなかのデキだぜ！",
-      "Text": "That wasn't half bad!"
+      "Text": "That wasn't half bad!",
+      "Notes": "Fireworks End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x243380",
       "Encoding": "utf8",
       "Original": "花火のことならオレにまかせろ！！",
-      "Text": "I am THE go-to fireworks guy!"
+      "Text": "I am THE go-to fireworks guy!",
+      "Notes": "Fireworks End Card"
     },
     {
       "File": "ic8",
@@ -2744,21 +2844,24 @@
       "Offset": "0x243418",
       "Encoding": "utf8",
       "Original": "ふ〜…  アカンわ。",
-      "Text": "I should stick to pencils."
+      "Text": "I should stick to pencils.",
+      "Notes": "Power Calligraphy End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x243434",
       "Encoding": "utf8",
       "Original": "お習字を もっと楽しもう！",
-      "Text": "Precision! Grace! What's not to like?"
+      "Text": "Precision! Grace! What's not to like?",
+      "Notes": "Power Calligraphy End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x24345c",
       "Encoding": "utf8",
       "Original": "お習字って ノリノリだネ！！",
-      "Text": "Woo! Calligraphy party?"
+      "Text": "Woo! Calligraphy party?",
+      "Notes": "Power Calligraphy End Card"
     },
     {
       "File": "ic8",
@@ -2772,42 +2875,48 @@
       "Offset": "0x2434a0",
       "Encoding": "utf8",
       "Original": "なかよし３人組、\n声をかけあいながら\nいつも楽しくトスの\n練習してます。",
-      "Text": "This trio of friends love\npracticing volleyball.\nListen for their names\nas they pass their ball!"
+      "Text": "This trio of friends love\npracticing volleyball.\nListen for their names\nas they pass their ball!",
+      "Notes": "Power Calligraphy 2 End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x243508",
       "Encoding": "utf8",
       "Original": "ダメダメだァ〜！",
-      "Text": "We've been tossed out!"
+      "Text": "We've been tossed out!",
+      "Notes": "Power Calligraphy 2 End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x243524",
       "Encoding": "utf8",
       "Original": "まだまだもっと上手にできるはず！",
-      "Text": "Next time, we'll toss better than the best!"
+      "Text": "Next time, we'll toss better than the best!",
+      "Notes": "Power Calligraphy 2 End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x243558",
       "Encoding": "utf8",
       "Original": "目標は、 トス世界選手権 優勝だー！！",
-      "Text": "Toss World Championship, here we come!"
+      "Text": "Toss World Championship, here we come!",
+      "Notes": "Toss Team End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x243590",
       "Encoding": "utf8",
       "Original": "ボロボロだァ〜！",
-      "Text": "We're a complete wreck!"
+      "Text": "We're a complete wreck!",
+      "Notes": "Toss Team End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x2435ac",
       "Encoding": "utf8",
       "Original": "最強メンバーのたんじょうだー！！",
-      "Text": "The ultimate team is born!!"
+      "Text": "The ultimate team is born!!",
+      "Notes": "Toss Team End Card"
     },
     {
       "File": "ic8",
@@ -2821,21 +2930,24 @@
       "Offset": "0x24363c",
       "Encoding": "utf8",
       "Original": "チーズ 食べたいよ〜…",
-      "Text": "We could try eating the plate.."
+      "Text": "We could try eating the plate..",
+      "Notes": "Rat Race End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x24365c",
       "Encoding": "utf8",
       "Original": "チーズ おいしいね。",
-      "Text": "I love cheese. Like, a LOT."
+      "Text": "I love cheese. Like, a LOT.",
+      "Notes": "Rat Race End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x24367c",
       "Encoding": "utf8",
       "Original": "みんな、 よかったネ！",
-      "Text": "We need a family to eat it all!"
+      "Text": "We need a family to eat it all!",
+      "Notes": "Rat Race End Card"
     },
     {
       "File": "ic8",
@@ -2849,21 +2961,24 @@
       "Offset": "0x243704",
       "Encoding": "utf8",
       "Original": "大しっぱいだ〜！！",
-      "Text": "The show was a failure!"
+      "Text": "The show was a failure!",
+      "Notes": "Tram & Pauline End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x243720",
       "Encoding": "utf8",
       "Original": "ちゅうとハンパでした…",
-      "Text": "At least we only messed up half.."
+      "Text": "At least we only messed up half..",
+      "Notes": "Tram & Pauline End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x243744",
       "Encoding": "utf8",
       "Original": "コンビネーション バッチシ！！",
-      "Text": "We're the perfect duo!"
+      "Text": "We're the perfect duo!",
+      "Notes": "Tram & Pauline End Card"
     },
     {
       "File": "ic8",
@@ -2877,21 +2992,24 @@
       "Offset": "0x2437c8",
       "Encoding": "utf8",
       "Original": "お客さん、 おこってたネ…",
-      "Text": "We've betrayed the audience..."
+      "Text": "We've betrayed the audience...",
+      "Notes": "Showtime End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x2437f0",
       "Encoding": "utf8",
       "Original": "ボクたち こんなもんじゃないはず…",
-      "Text": "I know we're capable of more than this..."
+      "Text": "I know we're capable of more than this...",
+      "Notes": "Showtime End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x243824",
       "Encoding": "utf8",
       "Original": "やった！！ お客さん 楽しんでくれたー！！",
-      "Text": "They loved us out there!"
+      "Text": "They loved us out there!",
+      "Notes": "Showtime End Card"
     },
     {
       "File": "ic8",
@@ -2905,21 +3023,24 @@
       "Offset": "0x2438c0",
       "Encoding": "utf8",
       "Original": "ブ、 ブラックホールだー！！",
-      "Text": "Our despair lead us into a black hole!"
+      "Text": "Our despair lead us into a black hole!",
+      "Notes": "Space Dance End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x2438ec",
       "Encoding": "utf8",
       "Original": "あの星のように かがやきたいな…",
-      "Text": "Let's aim for the stars!"
+      "Text": "Let's aim for the stars!",
+      "Notes": "Space Dance End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x24391c",
       "Encoding": "utf8",
       "Original": "ボクたちは スペーススーパースター！！",
-      "Text": "We are galactic superstars!"
+      "Text": "We are galactic superstars!",
+      "Notes": "Space Dance End Card"
     },
     {
       "File": "ic8",
@@ -2933,21 +3054,24 @@
       "Offset": "0x2439ac",
       "Encoding": "utf8",
       "Original": "お、おわりだー！！",
-      "Text": "We cannot go on like THIS!"
+      "Text": "We cannot go on like THIS!",
+      "Notes": "Cosmic Dance End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x2439c8",
       "Encoding": "utf8",
       "Original": "あなたたちって こんなものなの？",
-      "Text": "Is that the best you guys can do?"
+      "Text": "Is that the best you guys can do?",
+      "Notes": "Cosmic Dance End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x2439f8",
       "Encoding": "utf8",
       "Original": "ボクたちは スーパーコスモスターさ！！",
-      "Text": "All aboard... for SPACE!"
+      "Text": "All aboard... for SPACE!",
+      "Notes": "Cosmic Dance End Card"
     },
     {
       "File": "ic8",
@@ -2961,21 +3085,24 @@
       "Offset": "0x243a90",
       "Encoding": "utf8",
       "Original": "オレたち、 ダサいやん…",
-      "Text": "We need more practice..."
+      "Text": "We need more practice...",
+      "Notes": "Rap Men End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x243ab4",
       "Encoding": "utf8",
       "Original": "チェッ。 なんか 調子わるいわぁ。",
-      "Text": "I think our tone was off."
+      "Text": "I think our tone was off.",
+      "Notes": "Rap Men End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x243ae4",
       "Encoding": "utf8",
       "Original": "これからも よろしく たのんまっせー！！",
-      "Text": "We're looking forward to hearing from you again!"
+      "Text": "We're looking forward to hearing from you again!",
+      "Notes": "Rap Men End Card"
     },
     {
       "File": "ic8",
@@ -2989,21 +3116,24 @@
       "Offset": "0x243b88",
       "Encoding": "utf8",
       "Original": "こんなん ちゃうわぁ…",
-      "Text": "No... This isn't right."
+      "Text": "No... This isn't right.",
+      "Notes": "Rap Women End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x243ba8",
       "Encoding": "utf8",
       "Original": "なんか ちょっと イマイチかも…！",
-      "Text": "I know we can rap better than this!"
+      "Text": "I know we can rap better than this!",
+      "Notes": "Rap Women End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x243bd8",
       "Encoding": "utf8",
       "Original": "そうそう コレコレ、これやわー！！イェーイ！",
-      "Text": "Yes, yes, YES! We've got it!"
+      "Text": "Yes, yes, YES! We've got it!",
+      "Notes": "Rap Women End Card"
     },
     {
       "File": "ic8",
@@ -3017,21 +3147,24 @@
       "Offset": "0x243c74",
       "Encoding": "utf8",
       "Original": "ま、 こんなものさ。",
-      "Text": "I can do it. I can do it..."
+      "Text": "I can do it. I can do it...",
+      "Notes": "Quiz Show End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x243c94",
       "Encoding": "utf8",
       "Original": "次回に向けて 勉強、勉強…Zzz",
-      "Text": "Must study... for next time... Zzz..."
+      "Text": "Must study... for next time... Zzz...",
+      "Notes": "Quiz Show End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x243cc0",
       "Encoding": "utf8",
       "Original": "世界旅行 もらっちゃった！",
-      "Text": "I won the grand prize! A world tour!"
+      "Text": "I won the grand prize! A world tour!",
+      "Notes": "Quiz Show End Card"
     },
     {
       "File": "ic8",
@@ -3045,21 +3178,24 @@
       "Offset": "0x243d40",
       "Encoding": "utf8",
       "Original": "さむいわ…",
-      "Text": "I'm so cold..."
+      "Text": "I'm so cold...",
+      "Notes": "Bon Odori End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x243d50",
       "Encoding": "utf8",
       "Original": "せんこう花火って、せつないね。",
-      "Text": "Oh... The quaint fizzle of a sparkler..."
+      "Text": "Oh... The quaint fizzle of a sparkler...",
+      "Notes": "Bon Odori End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x243d80",
       "Encoding": "utf8",
       "Original": "あー、楽しかった！",
-      "Text": "I can't wait for next year!"
+      "Text": "I can't wait for next year!",
+      "Notes": "Bon Odori End Card"
     },
     {
       "File": "ic8",
@@ -3073,21 +3209,24 @@
       "Offset": "0x243df0",
       "Encoding": "utf8",
       "Original": "もういや…",
-      "Text": "It's over..."
+      "Text": "It's over...",
+      "Notes": "Bon Dance End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x243e00",
       "Encoding": "utf8",
       "Original": "うーん、雨がふってきちゃった。",
-      "Text": "When did it start raining?"
+      "Text": "When did it start raining?",
+      "Notes": "Bon Dance End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x243e30",
       "Encoding": "utf8",
       "Original": "ボンダンスって すごく楽しいよネー！",
-      "Text": "Our new Bon Dance is a lot of fun!"
+      "Text": "Our new Bon Dance is a lot of fun!",
+      "Notes": "Bon Dance End Card"
     },
     {
       "File": "ic8",
@@ -3101,168 +3240,192 @@
       "Offset": "0x243ec8",
       "Encoding": "utf8",
       "Original": "今回のデキ ： 猫のおやつクラス",
-      "Text": "You were as good as... a cat's snack."
+      "Text": "You were as good as... a cat's snack.",
+      "Notes": "Remix 1 End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x243ef8",
       "Encoding": "utf8",
       "Original": "今回のデキ ： 朝食クラス",
-      "Text": "You were as good as... breakfast."
+      "Text": "You were as good as... breakfast.",
+      "Notes": "Remix 1 End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x243f1c",
       "Encoding": "utf8",
       "Original": "今回のデキ ： なんと、 ディナークラス！！",
-      "Text": "You were as good as... why, a delicious dinner!"
+      "Text": "You were as good as... why, a delicious dinner!",
+      "Notes": "Remix 1 End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x243f5c",
       "Encoding": "utf8",
       "Original": "今回の熱気 ： ひとりで練習レベル",
-      "Text": "That was as lively as... playing by yourself."
+      "Text": "That was as lively as... playing by yourself.",
+      "Notes": "Remix 2 End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x243f8c",
       "Encoding": "utf8",
       "Original": "今回の熱気 ： 楽しくキャッチボールレベル",
-      "Text": "That was as lively as... a pleasant game of catch."
+      "Text": "That was as lively as... a pleasant game of catch.",
+      "Notes": "Remix 2 End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x243fc8",
       "Encoding": "utf8",
       "Original": "今回の熱気 ： すごい大会レベル！！",
-      "Text": "That was as lively as... a baseball tournament!"
+      "Text": "That was as lively as... a baseball tournament!",
+      "Notes": "Remix 2 End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x243ffc",
       "Encoding": "utf8",
       "Original": "今回のラブ ： ブロークンハートかも…",
-      "Text": "Their love ended in... heartbreak..."
+      "Text": "Their love ended in... heartbreak...",
+      "Notes": "Remix 3 End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x244034",
       "Encoding": "utf8",
       "Original": "今回のラブ ： とってもフレンドリーな感じ♪",
-      "Text": "Their love ended in... a good friendship."
+      "Text": "Their love ended in... a good friendship.",
+      "Notes": "Remix 3 End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x244074",
       "Encoding": "utf8",
       "Original": "今回のラブ ： ラブラブでーす！！",
-      "Text": "Their love ended in... a tender marriage!"
+      "Text": "Their love ended in... a tender marriage!",
+      "Notes": "Remix 3 End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x2440a4",
       "Encoding": "utf8",
       "Original": "今回の天気 ： 雨",
-      "Text": "The forecast... rain."
+      "Text": "The forecast... rain.",
+      "Notes": "Remix 4 End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x2440bc",
       "Encoding": "utf8",
       "Original": "今回の天気 ： くもり",
-      "Text": "The forecast... very cloudy."
+      "Text": "The forecast... very cloudy.",
+      "Notes": "Remix 4 End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x2440dc",
       "Encoding": "utf8",
       "Original": "今回の天気 ： ハッピーな晴れ！！",
-      "Text": "The forecast... clear skies all day!"
+      "Text": "The forecast... clear skies all day!",
+      "Notes": "Remix 4 End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x24410c",
       "Encoding": "utf8",
       "Original": "今回のふたり ： ジャマされてしまった！",
-      "Text": "This couple is... in trouble!"
+      "Text": "This couple is... in trouble!",
+      "Notes": "Remix 5 End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x244148",
       "Encoding": "utf8",
       "Original": "今回のふたり ： このさき、チョット不安かも…",
-      "Text": "This couple is... a little nervous..."
+      "Text": "This couple is... a little nervous...",
+      "Notes": "Remix 5 End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x24418c",
       "Encoding": "utf8",
       "Original": "今回のふたり ： 幸せになりました♪",
-      "Text": "This couple is... living happily-ever-after!"
+      "Text": "This couple is... living happily-ever-after!",
+      "Notes": "Remix 5 End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x2441c0",
       "Encoding": "utf8",
       "Original": "今回の内容 ： ややさみしいカンジ",
-      "Text": "Your fish tank is... pretty sparse."
+      "Text": "Your fish tank is... pretty sparse.",
+      "Notes": "Remix 6 End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x2441f0",
       "Encoding": "utf8",
       "Original": "今回の内容 ： 意外なカンジ",
-      "Text": "Your fish tank is... unique for sure!"
+      "Text": "Your fish tank is... unique for sure!",
+      "Notes": "Remix 6 End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x244218",
       "Encoding": "utf8",
       "Original": "今回の内容 ： アンビリーバボーなカンジ！！",
-      "Text": "Your fish tank is... unbelievable!"
+      "Text": "Your fish tank is... unbelievable!",
+      "Notes": "Remix 6 End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x244258",
       "Encoding": "utf8",
       "Original": "今回のきょうりゅう ： いじわる",
-      "Text": "Your Jurassic visit was... terrifying!"
+      "Text": "Your Jurassic visit was... terrifying!",
+      "Notes": "Remix 7 End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x244288",
       "Encoding": "utf8",
       "Original": "今回のきょうりゅう ： ほのぼの",
-      "Text": "Your Jurassic visit was... rather tame."
+      "Text": "Your Jurassic visit was... rather tame.",
+      "Notes": "Remix 7 End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x2442b8",
       "Encoding": "utf8",
       "Original": "今回のきょうりゅう ： 楽しすぎ〜！！",
-      "Text": "Your Jurassic visit was... too much fun!"
+      "Text": "Your Jurassic visit was... too much fun!",
+      "Notes": "Remix 7 End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x2442f0",
       "Encoding": "utf8",
       "Original": "今回のドライブ ： んもぅ…",
-      "Text": "Your road trip was... oh boy..."
+      "Text": "Your road trip was... oh boy...",
+      "Notes": "Remix 8 End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x244318",
       "Encoding": "utf8",
       "Original": "今回のドライブ ： まだまだかかるなぁ",
-      "Text": "Your road trip was... a little long."
+      "Text": "Your road trip was... a little long.",
+      "Notes": "Remix 8 End Card"
     },
     {
       "File": "ic8",
       "Offset": "0x244350",
       "Encoding": "utf8",
       "Original": "今回のドライブ ： とっても爽快！！",
-      "Text": "Your road trip was... absolutely spectacular!"
+      "Text": "Your road trip was... absolutely spectacular!",
+      "Notes": "Remix 8 End Card"
     },
     {
       "File": "ic8",
@@ -4412,7 +4575,7 @@
       "Offset": "0x24a3f1",
       "Encoding": "utf8",
       "Original": "そこまで！！",
-      "Text": "Time's up!!"
+      "Text": "Time’s up!!"
     },
     {
       "File": "ic8",
@@ -4809,77 +4972,86 @@
       "Offset": "0x24b0a6",
       "Encoding": "utf8",
       "Original": "おつかれさま！",
-      "Text": "Great job!"
+      "Text": "Great job!",
+      "Notes": "Spoken in Quiz Show"
     },
     {
       "File": "ic8",
       "Offset": "0x24b228",
       "Encoding": "utf8",
       "Original": "こんばんは。\nクイズナンダダ！？の時間です。",
-      "Text": "Welcome to...\n\"Push Your Buttons EX\""
+      "Text": "Good day!\nIt’s time to\nplay the quiz!",
+      "Notes": "Spoken in Quiz Show"
     },
     {
       "File": "ic8",
       "Offset": "0x24b26c",
       "Encoding": "utf8",
       "Original": "今回は、\u3000なんと\nスペシャルです！",
-      "Text": "Tonight, you'll be playing\nas long as you can."
+      "Text": "Tonight, you’ll be playing\nas long as you can.",
+      "Notes": "Spoken in Quiz Show"
     },
     {
       "File": "ic8",
       "Offset": "0x24b2a0",
       "Encoding": "utf8",
       "Original": "では\u3000さっそく\nいってみましょう！",
-      "Text": "It's for charity.\nSo try your best!"
+      "Text": "It’s for charity.\nSo try your best!",
+      "Notes": "Spoken in Quiz Show"
     },
     {
       "File": "ic8",
       "Offset": "0x24b2d5",
       "Encoding": "utf8",
       "Original": "さて、 正解は？",
-      "Text": "The answer is..."
+      "Text": "The answer is...",
+      "Notes": "Spoken in Quiz Show"
     },
     {
       "File": "ic8",
       "Offset": "0x24b2ed",
       "Encoding": "utf8",
       "Original": "正解！！",
-      "Text": "Correct!!"
+      "Text": "Correct!!",
+      "Notes": "Spoken in Quiz Show"
     },
     {
       "File": "ic8",
       "Offset": "0x24b2fd",
       "Encoding": "utf8",
       "Original": "では、\u3000つぎです。",
-      "Text": "Well then, next."
+      "Text": "Well then, next.",
+      "Notes": "Spoken in Quiz Show"
     },
     {
       "File": "ic8",
       "Offset": "0x24b31d",
       "Encoding": "utf8",
       "Original": "残念！！",
-      "Text": "Too bad!!"
+      "Text": "Too bad!!",
+      "Notes": "Spoken in Quiz Show"
     },
     {
       "File": "ic8",
       "Offset": "0x24b32c",
       "Encoding": "utf8",
       "Original": "また挑戦して下さい。\nさようなら。",
-      "Text": "Come back for another\nchance. Goodbye!"
+      "Text": "Come back for another\nchance. Goodbye!",
+      "Notes": "Spoken in Quiz Show"
     },
     {
       "File": "ic8",
       "Offset": "0x24b360",
       "Encoding": "utf8",
       "Original": "スペースおねえさんの意見",
-      "Text": "Space Sister's Summary"
+      "Text": "Space Sister’s Summary"
     },
     {
       "File": "ic8",
       "Offset": "0x24b388",
       "Encoding": "utf8",
       "Original": "レッツゴー！",
-      "Text": "Let's go!!",
+      "Text": "Let’s go!!",
       "Notes": "Shown at beginning of Space Dance"
     },
     {
@@ -5119,42 +5291,48 @@
       "Offset": "0x24b6b4",
       "Encoding": "utf8",
       "Original": "「〜ですか？」の\u3000ノリが\u3000バッチリや！",
-      "Text": "Your \"Isn't it\" totally was!"
+      "Text": "Your \"Isn't it\" totally was!",
+      "Notes": "Rap Women Results Text"
     },
     {
       "File": "ic8",
       "Offset": "0x24b6f0",
       "Encoding": "utf8",
       "Original": "「〜ですか？」の\u3000ノリが\u3000あかん。",
-      "Text": "Your \"Isn't it\" totally wasn't."
+      "Text": "Your \"Isn't it\" totally wasn't.",
+      "Notes": "Rap Women Results Text"
     },
     {
       "File": "ic8",
       "Offset": "0x24b724",
       "Encoding": "utf8",
       "Original": "「〜かもネ」の\u3000ノリに\u3000シビれたで！",
-      "Text": "Your \"Could be\" will be a hit!"
+      "Text": "Your \"Could be\" will be a hit!",
+      "Notes": "Rap Women Results Text"
     },
     {
       "File": "ic8",
       "Offset": "0x24b75c",
       "Encoding": "utf8",
       "Original": "「〜かもネ」の\u3000ノリが\u3000キビシーッス。",
-      "Text": "Your \"Could be\" couldn't cut it."
+      "Text": "Your \"Could be\" couldn't cut it.",
+      "Notes": "Rap Women Results Text"
     },
     {
       "File": "ic8",
       "Offset": "0x24b798",
       "Encoding": "utf8",
       "Original": "「〜サイコー！」の\u3000ノリが\u3000サイコーやん！",
-      "Text": "Your \"The BEST!\" was exactly that."
+      "Text": "Your \"The BEST!\" was exactly that.",
+      "Notes": "Rap Women Results Text"
     },
     {
       "File": "ic8",
       "Offset": "0x24b7d8",
       "Encoding": "utf8",
       "Original": "「〜サイコー！」の\u3000ノリが\u3000サイコーちゃう。",
-      "Text": "Like, your \"The BEST\" wasn't your best."
+      "Text": "Like, your \"The BEST\" wasn't your best.",
+      "Notes": "Rap Women Results Text"
     },
     {
       "File": "ic8",
@@ -5168,42 +5346,48 @@
       "Offset": "0x24b838",
       "Encoding": "utf8",
       "Original": "「ですか？」の\u3000ノリが\u3000バッチリや！",
-      "Text": "Your \"Isn't it\" totally was!"
+      "Text": "Your \"Isn't it\" totally was!",
+      "Notes": "Rap Men Results Text"
     },
     {
       "File": "ic8",
       "Offset": "0x24b870",
       "Encoding": "utf8",
       "Original": "「ですか？」の\u3000ノリが\u3000あかん。",
-      "Text": "Your \"Isn't it\" totally wasn't."
+      "Text": "Your \"Isn't it\" totally wasn't.",
+      "Notes": "Rap Men Results Text"
     },
     {
       "File": "ic8",
       "Offset": "0x24b8a4",
       "Encoding": "utf8",
       "Original": "「かもネ」の\u3000ノリに\u3000シビれたで！",
-      "Text": "Your \"Could be\" will be a hit!"
+      "Text": "Your \"Could be\" will be a hit!",
+      "Notes": "Rap Men Results Text"
     },
     {
       "File": "ic8",
       "Offset": "0x24b8d8",
       "Encoding": "utf8",
       "Original": "「かもネ」の\u3000ノリが\u3000キビシーッス。",
-      "Text": "Your \"Could be\" couldn't cut it."
+      "Text": "Your \"Could be\" couldn't cut it.",
+      "Notes": "Rap Men Results Text"
     },
     {
       "File": "ic8",
       "Offset": "0x24b910",
       "Encoding": "utf8",
       "Original": "「サイコー！」の\u3000ノリが\u3000サイコーやん！",
-      "Text": "Your \"The BEST!\" was exactly that."
+      "Text": "Your \"The BEST!\" was exactly that.",
+      "Notes": "Rap Men Results Text"
     },
     {
       "File": "ic8",
       "Offset": "0x24b950",
       "Encoding": "utf8",
       "Original": "「サイコー！」の\u3000ノリが\u3000サイコーちゃう。",
-      "Text": "Like, your \"The BEST\" wasn't your best."
+      "Text": "Like, your \"The BEST\" wasn't your best.",
+      "Notes": "Rap Men Results Text"
     },
     {
       "File": "ic8",
@@ -5332,21 +5516,335 @@
       "Offset": "0x24bbf4",
       "Encoding": "utf8",
       "Original": ".6:1みんなの\u3000てびょうしを\u3000まねしてネ。",
-      "Text": ".6:1Ｃlap whenever you hear a \"pan\"."
+      "Text": ".6:1Ｃlap whenever you hear a \"pan\".",
+      "Notes": "Bon Odori Tutorial"
     },
     {
       "File": "ic8",
       "Offset": "0x24bc40",
       "Encoding": "utf8",
       "Original": ".6:1も〜いっちょ\u3000いってみよう！",
-      "Text": ".6:1Ｗhen you hear \"panpa\", clap twice!"
+      "Text": ".6:1Ｗhen you hear \"panpa\", clap twice!",
+      "Notes": "Bon Odori Tutorial"
     },
     {
       "File": "ic8",
       "Offset": "0x24bc70",
       "Encoding": "utf8",
       "Original": ".6:1では、\u3000ほんばん\u3000がんばってネ！",
-      "Text": ".6:1Ｔhe festival is starting! Ｄo your best!"
+      "Text": ".6:1Ｔhe festival is starting! Ｄo your best!",
+      "Notes": "Bon Odori Tutorial"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24bca9",
+      "Encoding": "utf8",
+      "Original": "今回は、\n１つ前のレッスンを\n応用してみます。",
+      "Text": "今回は、\n１つ前のレッスンを\n応用してみます。",
+      "Notes": "Drum Lessons"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24d718",
+      "Encoding": "utf8",
+      "Original": "あなたのリズム感をしらべましょう",
+      "Text": "Let’s find out how good your rhythm is.",
+      "Notes": "Rhythm Test"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24d74c",
+      "Encoding": "utf8",
+      "Original": "これから、３回のテストをします",
+      "Text": "We’ll do 3 tests. Our machine prints slowly"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24d77c",
+      "Encoding": "utf8",
+      "Original": "では、１回目です",
+      "Text": "so use sound to guide."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24d798",
+      "Encoding": "utf8",
+      "Original": "２回目のテスト、いきます",
+      "Text": "Let’s move on to the second test."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24d7c0",
+      "Encoding": "utf8",
+      "Original": "さいごのテストです",
+      "Text": "Last test. Press A in time."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24d7dc",
+      "Encoding": "utf8",
+      "Original": "さて、結果は…？",
+      "Text": "The result...?"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24d7f8",
+      "Encoding": "utf8",
+      "Original": "すごい！\u3000電波時計なみの正確さ！！",
+      "Text": "Amazing! Accuracy like an atomic clock!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24d82c",
+      "Encoding": "utf8",
+      "Original": "正確な体内時計をお持ちです！",
+      "Text": "You have an accurate inner clock!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24d858",
+      "Encoding": "utf8",
+      "Original": "人並みの正確さをお持ちです。",
+      "Text": "You have average accuracy."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24d884",
+      "Encoding": "utf8",
+      "Original": "もう少し、がんばりましょう。",
+      "Text": "You should try a little harder."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24d8b0",
+      "Encoding": "utf8",
+      "Original": "だいぶ、努力が必要かも…",
+      "Text": "You can do better than that."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24d8d8",
+      "Encoding": "utf8",
+      "Original": "音に合わせて、Ａボタンを押してください",
+      "Text": "Just press the A Button in time with the sound."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24d914",
+      "Encoding": "utf8",
+      "Original": "そのまま、キープしつづけて下さい",
+      "Text": "Continue to keep the beat in that manner."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24d948",
+      "Encoding": "utf8",
+      "Original": "「ゼロ」と同時に、Ａボタンを押してください",
+      "Text": "Press A when the timer hits 0."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24d988",
+      "Encoding": "utf8",
+      "Original": "音が消えるところは、心でカウントしてください",
+      "Text": "When there’s no sound, count to keep the beat."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24d9cc",
+      "Encoding": "utf8",
+      "Original": "では、測定をはじめます",
+      "Text": "Now, we’ll start measuring"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24d9f0",
+      "Encoding": "utf8",
+      "Original": "あと半分",
+      "Text": "Halfway!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24da01",
+      "Encoding": "utf8",
+      "Original": "ルールはかんたん",
+      "Text": "The rules\nare simple:",
+      "Notes": "Spoken in Quiz Show"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24da1c",
+      "Encoding": "utf8",
+      "Original": "私がボタンをたたいた回数を当てるだけ。",
+      "Text": "Just count\nthe times I\nhit buttons.",
+      "Notes": "Spoken in Quiz Show"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24da58",
+      "Encoding": "utf8",
+      "Original": "「どうぞ」のあと、\n同じ数だけたたいて下さい。",
+      "Text": "When I say,\nhit to match\nmy total.",
+      "Notes": "Spoken in Quiz Show"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24da9c",
+      "Encoding": "utf8",
+      "Original": "Ａボタンと\u3000十字ボタン、どちらでもＯＫです。",
+      "Text": "Hit A or 十.\nFocus on the\nfinal total!",
+      "Notes": "Spoken in Quiz Show"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24dae0",
+      "Encoding": "utf8",
+      "Original": "では、いってみま\nしょう。",
+      "Text": "Let’s begin.",
+      "Notes": "Spoken in Quiz Show"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24db08",
+      "Encoding": "utf8",
+      "Original": "司会者の\u3000ひとこと",
+      "Text": "A word from the Producer",
+      "Notes": "Quiz Show Results Text"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24db25",
+      "Encoding": "utf8",
+      "Original": "最初の問題です",
+      "Text": "Here’s\nquestion 1.",
+      "Notes": "Spoken in Quiz Show"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24db3d",
+      "Encoding": "utf8",
+      "Original": "では、２問目",
+      "Text": "Now,\nquestion 2...",
+      "Notes": "Spoken in Quiz Show"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24db51",
+      "Encoding": "utf8",
+      "Original": "３問目です",
+      "Text": "Question 3!",
+      "Notes": "Spoken in Quiz Show"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24db65",
+      "Encoding": "utf8",
+      "Original": "さあ、４問目です！",
+      "Text": "Ready?\nQuestion 4!",
+      "Notes": "Spoken in Quiz Show"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24db84",
+      "Encoding": "utf8",
+      "Original": "ここからが、\n本番ですぞ！",
+      "Text": "This is it!\nThere’s no\ngoing back!",
+      "Notes": "Spoken in Quiz Show"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24dbac",
+      "Encoding": "utf8",
+      "Original": "とうとう、\n５問目です！！",
+      "Text": "Alright, it’s\nquestion 5!!",
+      "Notes": "Spoken in Quiz Show"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24dbd5",
+      "Encoding": "utf8",
+      "Original": "最終問題です！！",
+      "Text": "It's the last\nquestion!!",
+      "Notes": "Spoken in Quiz Show"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24dbf1",
+      "Encoding": "utf8",
+      "Original": "どうぞ",
+      "Text": "Go ahead.",
+      "Notes": "Spoken in Quiz Show"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24dbfd",
+      "Encoding": "utf8",
+      "Original": "さて、正解は？",
+      "Text": "The answer\nis...",
+      "Notes": "Spoken in Quiz Show"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24dc14",
+      "Encoding": "utf8",
+      "Original": "すばらしい！\n大正解！！\n賞金１００万点！！",
+      "Text": "Fantastic!\nAll answers correct!\nOne million points!!",
+      "Notes": "Spoken in Quiz Show"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24dc54",
+      "Encoding": "utf8",
+      "Original": "ではまた来週、\nさようなら。",
+      "Text": "We’ll see you all next\nweek, goodbye!",
+      "Notes": "Spoken in Quiz Show"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24dc80",
+      "Encoding": "utf8",
+      "Original": "まだつづきます。\n次はガンバって\n下さい。",
+      "Text": "There’s more!\nTry harder\nnext time...",
+      "Notes": "Spoken in Quiz Show"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24dcbc",
+      "Encoding": "utf8",
+      "Original": "また挑戦して\n下さい。\nさようなら。",
+      "Text": "Come back\nand try again\nnext week!",
+      "Notes": "Spoken in Quiz Show"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24dcf0",
+      "Encoding": "utf8",
+      "Original": "おしかったですね〜！",
+      "Text": "That was so close!!",
+      "Notes": "Quiz Show Results Text"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24dd10",
+      "Encoding": "utf8",
+      "Original": "次回、がんばって下さいネ。",
+      "Text": "Do your best next time, okay?",
+      "Notes": "Quiz Show Results Text"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24dd38",
+      "Encoding": "utf8",
+      "Original": "全問正解、おめでとうございました〜！",
+      "Text": "All questions correct, congratulations!",
+      "Notes": "Quiz Show Results Text"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24dd70",
+      "Encoding": "utf8",
+      "Original": "チワッス",
+      "Text": "Sup!"
     },
     {
       "File": "ic8",
@@ -5367,7 +5865,8 @@
       "Offset": "0x24ed68",
       "Encoding": "utf8",
       "Original": "カンタンなのに快感！から\nスリリングで刺激的！まで\n幅広く用意してます。\nお気軽にどうぞ〜",
-      "Text": "We got great variety!\nSimple, yet satisfying..\nThrilling and exciting..\nEnjoy at your leisure~"
+      "Text": "We got great variety!\nSimple, yet satisfying..\nThrilling and exciting..\nEnjoy at your leisure~",
+      "Notes": "Drummer Attract Mode"
     },
     {
       "File": "ic8",
