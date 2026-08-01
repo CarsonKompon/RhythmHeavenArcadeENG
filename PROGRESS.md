@@ -175,7 +175,7 @@ This is tracking all the progress of known textures that need to be updated or s
         - [ ] Intro Card
         - [x] Tutorial/Practice
         - [ ] In-game lyrics
-        - [ ] Results Text
+        - [x] Results Text
         - [x] End Card Text
     - [ ] Remix 4
         - [ ] Intro Card
@@ -229,7 +229,7 @@ This is tracking all the progress of known textures that need to be updated or s
     - [ ] Rap Women
         - [ ] Intro Card
         - [ ] In-game Lyrics
-        - [ ] Results Text
+        - [x] Results Text
         - [x] End Card Text
     - [ ] Turbo Tap Trial
         - [ ] Intro Card
