@@ -5844,7 +5844,188 @@
       "Offset": "0x24dd70",
       "Encoding": "utf8",
       "Original": "チワッス",
-      "Text": "Sup!"
+      "Text": "Ｙo.",
+      "Notes": "Spoken in Rap Men"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24dd80",
+      "Encoding": "utf8",
+      "Original": "いっしょに\u3000ノろうやないか",
+      "Text": "Ｗanna rap together？",
+      "Notes": "Spoken in Rap Men"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24dda8",
+      "Encoding": "utf8",
+      "Original": "ノりかた、\u3000おしえるし",
+      "Text": "Ｌemme break it down for you.",
+      "Notes": "Spoken in Rap Men"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24ddcc",
+      "Encoding": "utf8",
+      "Original": "「ウッ」\u3000っていうトコで\u3000Ａボタンや",
+      "Text": "Ｐress Ａ at the “Ｕh！”",
+      "Notes": "Spoken in Rap Men"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24de04",
+      "Encoding": "utf8",
+      "Original": "ちょっと\u3000きいててな",
+      "Text": "Ｊust listen to Ｙellow.",
+      "Notes": "Spoken in Rap Men"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24de24",
+      "Encoding": "utf8",
+      "Original": "わかる？",
+      "Text": "Ｇot it？",
+      "Notes": "Spoken in Rap Men"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24de34",
+      "Encoding": "utf8",
+      "Original": "ちょっと、\u3000やってみ",
+      "Text": "Ｎow you give it a try!",
+      "Notes": "Spoken in Rap Men"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24de54",
+      "Encoding": "utf8",
+      "Original": "「ウッ」\u3000ってトコやで〜",
+      "Text": "Ｔhis is the “Ｕh！” part.",
+      "Notes": "Spoken in Rap Men"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24de7c",
+      "Encoding": "utf8",
+      "Original": "「ウッ」\u3000ってトコやっちゅーに",
+      "Text": "Ｐush the Ａ Ｂutton at the “Ｕh！”.",
+      "Notes": "Spoken in Rap Men"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24deac",
+      "Encoding": "utf8",
+      "Original": "ＢＡＤ",
+      "Text": "ＢＡＤ",
+      "Notes": "Spoken in Rap Men"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24deb8",
+      "Encoding": "utf8",
+      "Original": "いまのは、\u3000「.b〜ですか？.8」の\u3000ノリやねん",
+      "Text": "Ｔhat was the “.bＩsn’t it？8” rap.",
+      "Notes": "Spoken in Rap Men"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24defc",
+      "Encoding": "utf8",
+      "Original": "こんどは、\u3000「.9〜かもネ.8」の\u3000ノリや",
+      "Text": "Ｎext we’ll try the “.9Ｃould be.8” rap.",
+      "Notes": "Spoken in Rap Men"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24df34",
+      "Encoding": "utf8",
+      "Original": "いっぺん\u3000きいてみてな",
+      "Text": "Ｇive it a listen.",
+      "Notes": "Spoken in Rap Men"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24df58",
+      "Encoding": "utf8",
+      "Original": "ほな、\u3000がんばってや",
+      "Text": "Ｙou can do it！ Ｌisten！",
+      "Notes": "Spoken in Rap Men"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24df78",
+      "Encoding": "utf8",
+      "Original": "あといっこ、\u3000「.a〜サイコー！！.8」の\u3000ノリや",
+      "Text": "Ｔhe last one is a “.aＴhe ＢＥＳＴ！.8” line.",
+      "Notes": "Spoken in Rap Men"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24dfbc",
+      "Encoding": "utf8",
+      "Original": "いっぺん\u3000きいてみてや",
+      "Text": "Ｌisten for the “Ｕh”s！",
+      "Notes": "Spoken in Rap Men"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24dfe0",
+      "Encoding": "utf8",
+      "Original": "よっしゃ、\u3000がんばってや",
+      "Text": "Ｇive it your best！",
+      "Notes": "Spoken in Rap Men"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24e008",
+      "Encoding": "utf8",
+      "Original": "ＯＫ！\u3000ホンマ、\u3000サイコーや",
+      "Text": "ＯＫ！ Ｙou can roll with us.",
+      "Notes": "Spoken in Rap Men"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24e05c",
+      "Encoding": "utf8",
+      "Original": "アイツらのコメント",
+      "Text": "Red and Yellow’s Review"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24e078",
+      "Encoding": "utf8",
+      "Original": "ほな、\u3000ほんばん\u3000いこか",
+      "Text": "Ｃ’mon, let’s get into it！",
+      "Notes": "Spoken in Rap Men"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24e0a0",
+      "Encoding": "utf8",
+      "Original": "またやろうな",
+      "Text": "Ａw yeah！",
+      "Notes": "Spoken in Rap Men"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24e0b4",
+      "Encoding": "utf8",
+      "Original": "おぉ、\u3000すぐできましたね！",
+      "Text": "Oh! You got it right away!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24e0dc",
+      "Encoding": "utf8",
+      "Original": "なかなか\u3000のみこみが早いですね！",
+      "Text": "You catch on real quick!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24e110",
+      "Encoding": "utf8",
+      "Original": "いいかんじです。",
+      "Text": "Looking good."
     },
     {
       "File": "ic8",

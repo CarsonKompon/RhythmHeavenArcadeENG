@@ -173,7 +173,7 @@ This is tracking all the progress of known textures that need to be updated or s
         - [x] End Card Text
     - [ ] Rap Men
         - [ ] Intro Card
-        - [ ] Tutorial/Practice
+        - [x] Tutorial/Practice
         - [ ] In-game lyrics
         - [ ] Results Text
         - [x] End Card Text
