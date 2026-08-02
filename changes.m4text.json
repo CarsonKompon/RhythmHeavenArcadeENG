@@ -6138,7 +6138,7 @@
       "Offset": "0x24e8b8",
       "Encoding": "utf8",
       "Original": "つぎは\u3000でっかいペンギン",
-      "Text": "Ｎext， we have Ｇlacier！",
+      "Text": "Ｈere come the big penguins！",
       "Notes": "Showtime Tutorial"
     },
     {
@@ -6146,7 +6146,7 @@
       "Offset": "0x24e8e0",
       "Encoding": "utf8",
       "Original": "イイカンジです",
-      "Text": "Ｇood job．",
+      "Text": "Ｇreat instinct！",
       "Notes": "Showtime Tutorial"
     },
     {
@@ -6162,7 +6162,7 @@
       "Offset": "0x24e90c",
       "Encoding": "utf8",
       "Original": "つぎは\u3000しろいペンギン",
-      "Text": "Ｈere comes Ｇonzales．",
+      "Text": "Ｎow come the white penguins．",
       "Notes": "Showtime Tutorial"
     },
     {
@@ -6170,7 +6170,7 @@
       "Offset": "0x24e930",
       "Encoding": "utf8",
       "Original": "はやいヨ！",
-      "Text": "Ｈe’s fast",
+      "Text": "Ｗatch out！",
       "Notes": "Showtime Tutorial"
     },
     {
@@ -6178,7 +6178,7 @@
       "Offset": "0x24e940",
       "Encoding": "utf8",
       "Original": "そろそろ\u3000はじまりまーす！！",
-      "Text": "Ｌadies and gentlemen．．．",
+      "Text": "Ｇet ready for the real thing．．．",
       "Notes": "Last line of Showtime Tutorial"
     },
     {
@@ -6186,14 +6186,16 @@
       "Offset": "0x24e96c",
       "Encoding": "utf8",
       "Original": "ペンギンと\u3000ショーを\u3000やります。",
-      "Text": "Ｉt's the last rehearsal！"
+      "Text": "Ｌet’s practice our penguin routine．",
+      "Notes": "Showtime Tutorial"
     },
     {
       "File": "ic8",
       "Offset": "0x24e9a0",
       "Encoding": "utf8",
       "Original": "あいずに\u3000あわせて\u3000Ａボタン！",
-      "Text": "Ｐress Ａ at the signal！"
+      "Text": "Ｐress Ａ on the count of ３！",
+      "Notes": "Showtime Tutorial"
     },
     {
       "File": "ic8",
@@ -6207,7 +6209,8 @@
       "Offset": "0x24e9ec",
       "Encoding": "utf8",
       "Original": "ほんばん\u3000スタート！",
-      "Text": "Ｎow Ｆlightless Ｆancy！"
+      "Text": "Ｉt’s showtime！",
+      "Notes": "Showtime In-game Text"
     },
     {
       "File": "ic8",

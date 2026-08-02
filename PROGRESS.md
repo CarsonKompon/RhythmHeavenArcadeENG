@@ -125,7 +125,7 @@ This is tracking all the progress of known textures that need to be updated or s
         - [x] End Card Text
     - [ ] Showtime
         - [ ] Intro Card
-        - [ ] Tutorial/Practice
+        - [x] Tutorial/Practice
         - [ ] Results Text
         - [x] End Card Text
     - [ ] Bunny Hop
