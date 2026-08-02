@@ -5924,7 +5924,7 @@
       "Offset": "0x24deb8",
       "Encoding": "utf8",
       "Original": "いまのは、\u3000「.b〜ですか？.8」の\u3000ノリやねん",
-      "Text": "Ｔhat was the “.bＩsn’t it？8” rap.",
+      "Text": "Ｔhat was an “.bＩsn’t it？.8” line.",
       "Notes": "Spoken in Rap Men"
     },
     {
@@ -5932,7 +5932,7 @@
       "Offset": "0x24defc",
       "Encoding": "utf8",
       "Original": "こんどは、\u3000「.9〜かもネ.8」の\u3000ノリや",
-      "Text": "Ｎext we’ll try the “.9Ｃould be.8” rap.",
+      "Text": "Ｎext we’ll try a “.9Ｃould be.8” line.",
       "Notes": "Spoken in Rap Men"
     },
     {
@@ -5948,7 +5948,7 @@
       "Offset": "0x24df58",
       "Encoding": "utf8",
       "Original": "ほな、\u3000がんばってや",
-      "Text": "Ｙou can do it！ Ｌisten！",
+      "Text": "Ｙou got this， listen！",
       "Notes": "Spoken in Rap Men"
     },
     {
@@ -5995,7 +5995,7 @@
       "Offset": "0x24e078",
       "Encoding": "utf8",
       "Original": "ほな、\u3000ほんばん\u3000いこか",
-      "Text": "Ｃ’mon, let’s get into it！",
+      "Text": "Ｃ’mon， let’s get into it!",
       "Notes": "Spoken in Rap Men"
     },
     {
@@ -6026,6 +6026,202 @@
       "Encoding": "utf8",
       "Original": "いいかんじです。",
       "Text": "Looking good."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24e6f0",
+      "Encoding": "utf8",
+      "Original": "スペースおじさんの意見",
+      "Text": "Space Uncle's Opinion"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24e714",
+      "Encoding": "utf8",
+      "Original": "息が\u3000あってるじゃないか！",
+      "Text": "Your moves were perectly aligned!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24e73c",
+      "Encoding": "utf8",
+      "Original": "なんだか\u3000乱れてるなぁ。",
+      "Text": "You just weren’t in sync."
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24e764",
+      "Encoding": "utf8",
+      "Original": "よい判断をしてるじゃないか！",
+      "Text": "You nailed every move!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24e790",
+      "Encoding": "utf8",
+      "Original": "サビの手前が\u3000キマってたヨ！",
+      "Text": "Your Uncle is beaming with pride!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24e7bc",
+      "Encoding": "utf8",
+      "Original": "みんなで\u3000ダンスするぞ。",
+      "Text": "Ｗe’re going to Ｓpace Ｄance.",
+      "Notes": "Space Dance Tutorial"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24e7e4",
+      "Encoding": "utf8",
+      "Original": "まず、\u3000３つの\u3000アクションを\u3000おぼえるのだ。",
+      "Text": "Ｔhis dance only has three steps.",
+      "Notes": "Space Dance Tutorial"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24e828",
+      "Encoding": "utf8",
+      "Original": "では、\u3000１つめ。",
+      "Text": "Ｆirst， turn right！",
+      "Notes": "Space Dance Tutorial"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24e844",
+      "Encoding": "utf8",
+      "Original": "マネするのだ！",
+      "Text": "Ｔry keeping sync！",
+      "Notes": "Space Dance Tutorial"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24e85c",
+      "Encoding": "utf8",
+      "Original": "つぎ",
+      "Text": "Ｎext",
+      "Notes": "Space Dance Tutorial"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24e864",
+      "Encoding": "utf8",
+      "Original": "ラスト",
+      "Text": "Lastly！",
+      "Notes": "Space Dance Tutorial"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24e870",
+      "Encoding": "utf8",
+      "Original": "では、\u3000ほんばんだ！",
+      "Text": "Ｎow， let’s dance！",
+      "Notes": "Space Dance Tutorial"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24e890",
+      "Encoding": "utf8",
+      "Original": "そんなかんじ",
+      "Text": "Ｊust like that",
+      "Notes": "Space Dance Tutorial"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24e8a4",
+      "Encoding": "utf8",
+      "Original": "よくきいてね",
+      "Text": "Ｌisten now"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24e8b8",
+      "Encoding": "utf8",
+      "Original": "つぎは\u3000でっかいペンギン",
+      "Text": "Ｎext， we have Ｇlacier！",
+      "Notes": "Showtime Tutorial"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24e8e0",
+      "Encoding": "utf8",
+      "Original": "イイカンジです",
+      "Text": "Ｇood job．",
+      "Notes": "Showtime Tutorial"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24e8f8",
+      "Encoding": "utf8",
+      "Original": "ガンバッテ！",
+      "Text": "Ｇood luck！",
+      "Notes": "Showtime Tutorial"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24e90c",
+      "Encoding": "utf8",
+      "Original": "つぎは\u3000しろいペンギン",
+      "Text": "Ｈere comes Ｇonzales．",
+      "Notes": "Showtime Tutorial"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24e930",
+      "Encoding": "utf8",
+      "Original": "はやいヨ！",
+      "Text": "Ｈe’s fast",
+      "Notes": "Showtime Tutorial"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24e940",
+      "Encoding": "utf8",
+      "Original": "そろそろ\u3000はじまりまーす！！",
+      "Text": "Ｌadies and gentlemen．．．",
+      "Notes": "Last line of Showtime Tutorial"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24e96c",
+      "Encoding": "utf8",
+      "Original": "ペンギンと\u3000ショーを\u3000やります。",
+      "Text": "Ｉt's the last rehearsal！"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24e9a0",
+      "Encoding": "utf8",
+      "Original": "あいずに\u3000あわせて\u3000Ａボタン！",
+      "Text": "Ｐress Ａ at the signal！"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24e9d0",
+      "Encoding": "utf8",
+      "Original": "ペンギンのようす",
+      "Text": "A word from Wardrobe"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24e9ec",
+      "Encoding": "utf8",
+      "Original": "ほんばん\u3000スタート！",
+      "Text": "Ｎow Ｆlightless Ｆancy！"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24ea0c",
+      "Encoding": "utf8",
+      "Original": "ペンギンも満足。",
+      "Text": "The penguins are happy!"
+    },
+    {
+      "File": "ic8",
+      "Offset": "0x24ea28",
+      "Encoding": "utf8",
+      "Original": "ペンギン、不満足。",
+      "Text": "The penguins are scared..."
     },
     {
       "File": "ic8",
