@@ -1,4 +1,4 @@
-# Rhythm Heaven Arcade ENG
+# Rhythm Heaven Arcade English (ENG)
 
 This is an English mod/texture pack for Rhythm Tengoku (the arcade release by SEGA for the NAOMI).
 
